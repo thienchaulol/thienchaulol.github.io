@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Thien Chau</title>
-        <!--<meta name="description" content="An interactive getting started guide for Brackets.">-->
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
@@ -32,11 +31,30 @@
                 <li>Puppy Party(Android)</li>
                     <p><em>Team Members: Thien Chau(Programmer), Quynh Nguyen(Artist)</em></p>
                     <p>Puppy Party is a 2D incremental game created in Unity. I've posted the game here:</p>
-                    <object id="UnityObject" classid="clsid:444785F1-DE89-4295-863A-D46C3A781394" width="420" height="750" codebase="http://webplayer.unity3d.com/download_webplayer/UnityWebPlayer.cab#version=2,0,0,0">
-                        <param name="unity3d" value="WebPlayer.unity3d" />
-                        <embed id="UnityEmbed" src="PuppyPartyWebPlayer/index.html" width="420" height="750"
-                        type="application/vnd.unity" pluginspage="http://www.unity3d.com/unity-web-player-2.x" />
-                    </object>
+                <!----------------------PUPPY PARTY CODE------------------------------>
+                <!--Moved this portion from the "index.html" file produced when "Building" a WebGL build from Unity 5.5-->
+                <!--Also moved the "Release" and "TemplateData" folder from the WebGL build-->
+                    <div class="template-wrap clear">
+                      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="640px" width="360px"></canvas>
+                      <br>
+                    </div>
+                    <script type='text/javascript'>
+                    var Module = {
+                        TOTAL_MEMORY: 268435456,
+                        errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+                        compatibilitycheck: null,
+                        backgroundColor: "#222C36",
+                        splashStyle: "Light",
+                        dataUrl: "Release/PuppyPartyWebPlayer.data",
+                        codeUrl: "Release/PuppyPartyWebPlayer.js",
+                        asmUrl: "Release/PuppyPartyWebPlayer.asm.js",
+                        memUrl: "Release/PuppyPartyWebPlayer.mem",
+                    };
+                    </script>
+                    <script src="Release/UnityLoader.js"></script>
+                <!--Took this portion from the "index.html" file produced when Building a WebGL build from Unity 5.5-->
+                <!----------------------PUPPY PARTY CODE------------------------------>
+                
                 <li>This Website</li>
                     <p>I started learning HTML and CSS on January 23rd, 2017. I learned from <a href="https://www.codecademy.com/learn/web">Codecademy</a> and used <a href="https://pages.github.com/">Github Pages</a> to host my website.</p>
             </ul>
