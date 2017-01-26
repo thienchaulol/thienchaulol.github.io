@@ -15,51 +15,53 @@
         <p><em>Insert professional photo</em></p>
         
         <h3>About Me</h3>
+        My full name is Thien Duc Chau and I am a third year Computer Science major attending the University of California, Riverside. I am expected to finish my Bachelor Degree program in the Spring of 2018. In my free time, I like to develop software or play video games. To develop, I use Unity3D and code my scripts in C#. As for video games, I am a PC-user and play mainly League of Legends. I enjoy League of Legends a lot and it has been my go-to game for the past few years.
         
         <h3>Hobbies</h3>
-        <h4>Games</h4>
-            <ul>
-                <p><em>These are the two games I play most frequently</em></p>
-                <li>League of Legends(MOBA)</li>
-                    <p>League of Legends is the main game I play in my free time. I started playing League of Legends in my junior year of highschool (Season 2, 2013) and have played every season since then. I've had a lot of great experiences playing League of Legends and it has shaped my personality and shown me many morals.</p>
-                <li>Minecraft(MMORPG)</li>
-                    <p>I started playing Minecraft in middle school and still play every now and then. Minecraft has always been a fun and fulfilling game for me to play solo or with my friends. In order to play with friends, I would join populated Minecraft servers and we would choose minigames to play or my group of friends would set up a Minecraft server and start our world.</p>
-                <p><em>The list goes on..</em></p>
-            </ul>
-        <h4>Development</h4>
+        <h4>Software Development</h4>
             <ul>
                 <li>Puppy Party(Android)</li>
-                    <p><em>Team Members: Thien Chau(Programmer), Quynh Nguyen(Artist)</em></p>
-                    <p>Puppy Party is a 2D incremental game created in Unity. I've posted the game here:</p>
+                    <p style="margin-left:20px"><em>Team Members: Thien Chau(Programmer), Quynh Nguyen(Artist)</em></p>
+                    <p style="margin-left:20px">Puppy Party is a 2D incremental game created in Unity. The player taps the screen for points(dog treats) and can spend their points to progress their character. I've posted the game here:</p>
                 <!----------------------PUPPY PARTY CODE------------------------------>
                 <!--Moved this portion from the "index.html" file produced when "Building" a WebGL build from Unity 5.5-->
                 <!--Also moved the "Release" and "TemplateData" folder from the WebGL build-->
-                    <div class="template-wrap clear">
-                      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="640px" width="360px"></canvas>
-                      <br>
+                    <div style="margin-left:20px"class="template-wrap clear">
+                    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="640px" width="360px"></canvas>
+                    <br>
+                    <div class="logo"></div>
+                    <div class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+                    <div class="title">Puppy Party</div>
                     </div>
                     <script type='text/javascript'>
-                    var Module = {
-                        TOTAL_MEMORY: 268435456,
-                        errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-                        compatibilitycheck: null,
-                        backgroundColor: "#222C36",
-                        splashStyle: "Light",
-                        dataUrl: "Release/PuppyPartyWebPlayer.data",
-                        codeUrl: "Release/PuppyPartyWebPlayer.js",
-                        asmUrl: "Release/PuppyPartyWebPlayer.asm.js",
-                        memUrl: "Release/PuppyPartyWebPlayer.mem",
-                    };
+                        var Module = {
+                            TOTAL_MEMORY: 268435456,
+                            errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+                            compatibilitycheck: null,
+                            backgroundColor: "#222C36",
+                            splashStyle: "Light",
+                            dataUrl: "Release/PPWebBuild.data",
+                            codeUrl: "Release/PPWebBuild.js",
+                            asmUrl: "Release/PPWebBuild.asm.js",
+                            memUrl: "Release/PPWebBuild.mem",
+                        };
                     </script>
                     <script src="Release/UnityLoader.js"></script>
                 <!--Took this portion from the "index.html" file produced when Building a WebGL build from Unity 5.5-->
                 <!----------------------PUPPY PARTY CODE------------------------------>
-                
                 <li>This Website</li>
-                    <p>I started learning HTML and CSS on January 23rd, 2017. I learned from <a href="https://www.codecademy.com/learn/web">Codecademy</a> and used <a href="https://pages.github.com/">Github Pages</a> to host my website.</p>
+                    <p style="margin-left:20px">I started learning HTML and CSS on January 23rd, 2017. I learned from <a href="https://www.codecademy.com/learn/web">Codecademy</a> and used <a href="https://pages.github.com/">Github Pages</a> to host my website.</p>
             </ul>
         <!--<h3>Projects</h3>-->
-        
+        <h4>Playing Video Games</h4>
+            <ul>
+                <p><em>These are the two games I play most frequently</em></p>
+                <li>League of Legends(MOBA)</li>
+                    <p style="margin-left:20px">League of Legends is the main game I play in my free time. I started playing League of Legends in my junior year of highschool (Season 2, 2013) and have played every season since then. I've had a lot of great experiences playing League of Legends and it has shaped my personality and shown me many morals.</p>
+                <li>Minecraft(MMORPG)</li>
+                    <p style="margin-left:20px">I started playing Minecraft in middle school and still play every now and then. Minecraft has always been a fun and fulfilling game for me to play solo or with my friends. In order to play with friends, I would join populated Minecraft servers and we would choose minigames to play or my group of friends would set up a Minecraft server and start our world.</p>
+                <p><em>The list goes on..</em></p>
+            </ul>
         <h3>Links and Contact Info</h3>
         <ul>
             <li><a href="https://www.linkedin.com/in/thienchau">My LinkedIn</a></li>
@@ -69,25 +71,3 @@
         
     </body>
 </html>
-<!--
-
-    [[[[[[[[[[[[[[[      ]]]]]]]]]]]]]]]
-    [::::::::::::::      ::::::::::::::]
-    [::::::::::::::      ::::::::::::::]
-    [::::::[[[[[[[:      :]]]]]]]::::::]
-    [:::::[                      ]:::::]
-    [:::::[                      ]:::::]
-    [:::::[                      ]:::::]
-    [:::::[                      ]:::::]
-    [:::::[     CODE THE WEB     ]:::::]
-    [:::::[  http://brackets.io  ]:::::]
-    [:::::[                      ]:::::]
-    [:::::[                      ]:::::]
-    [:::::[                      ]:::::]
-    [:::::[                      ]:::::]
-    [::::::[[[[[[[:      :]]]]]]]::::::]
-    [::::::::::::::      ::::::::::::::]
-    [::::::::::::::      ::::::::::::::]
-    [[[[[[[[[[[[[[[      ]]]]]]]]]]]]]]]
-
--->
