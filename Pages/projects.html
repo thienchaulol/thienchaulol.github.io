@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Thien Chau</title>
+        <link rel="stylesheet" href="../main.css">
+    </head>
+    <body>
+        <h1 align="center">
+            <a class="topRow" href="../index.html" style="text-decoration:none">HOME</a>&emsp;&emsp;
+            <a class="topRow" href="projects.html" style="text-decoration:none">PROJECTS</a>&emsp;&emsp;
+            <a class="topRow" href="hobbies.html" style="text-decoration:none">HOBBIES</a>&emsp;&emsp;
+            <a class="topRow" href="links.html" style="text-decoration:none">LINKS</a>
+        </h1>  
+        <h4 align="center">Undergraduate student at UCR, Software Developer, and Gamer</h4>
+        <a name="PuppyParty"></a> <!--Page Jump Tag-->
+        <h3>Puppy Party(Android)</h3>
+            <p style="margin-left:20px">
+                <u>Team Members</u>: Thien Chau, <a href="https://qnguy019.github.io/">Quynh Nguyen</a><br>
+                Puppy Party is a 2D incremental game created in Unity. The player taps the screen for points(dog treats) and can spend their points to progress their character. Here is the most recent version of the game:
+            </p>
+        <!----------------------PUPPY PARTY CODE BEGIN------------------------------>
+        <!--Moved this portion from the "index.html" file produced when "Building" a WebGL build from Unity 5.5-->
+        <!--Also moved the "Release" and "TemplateData" folder from the WebGL build-->
+            <div style="margin-left:20px" class="template-wrap clear">
+                <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="640px" width="360px"></canvas>
+                <br>
+            </div>
+            <script type='text/javascript'>
+                var Module = {
+                    TOTAL_MEMORY: 268435456,
+                    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+                    compatibilitycheck: null,
+                    backgroundColor: "#222C36",
+                    splashStyle: "Light",
+                    dataUrl: "../Release/PPWebBuild.data",
+                    codeUrl: "../Release/PPWebBuild.js",
+                    asmUrl: "../Release/PPWebBuild.asm.js",
+                    memUrl: "../Release/PPWebBuild.mem",
+                };
+            </script>
+            <script src="../Release/UnityLoader.js"></script>
+        <!--Took this portion from the "index.html" file produced when Building a WebGL build from Unity 5.5-->
+        <!----------------------PUPPY PARTY CODE END------------------------------>
+        <h3>Software Construction Project</h3>
+            <p style="margin-left:20px">              
+            </p>
+        <h3>Embedded Systems Project</h3>
+            <p style="margin-left:20px">                
+            </p>
+    </body>
+</html>

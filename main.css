@@ -16,6 +16,11 @@ body {
     padding: 2em 2em 4em;
 }
 
+.topRow{
+    font-family:serif;
+    color:black;
+}
+
 h1, h2, h5, h6 {
     color: #222;
     font-weight: 600;
