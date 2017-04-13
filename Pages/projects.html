@@ -18,7 +18,9 @@
         <h3>Puppy Party(Android)</h3>
             <p style="margin-left:20px">
                 <u>Team Members</u>: Thien Chau, <a href="https://qnguy019.github.io/">Quynh Nguyen</a><br>
-                Puppy Party is a 2D incremental game created in Unity. The player taps the screen for points(dog treats) and can spend their points to progress their character. Here is the most recent version of the game:
+                <u>Code Repo </u>: <a href="https://github.com/thienchaulol/Puppy-Party">Puppy Party</a><br>
+                Puppy Party is a side project of mine that I'm working on. It is a mobile clicker app for Android/iOS. I used Unity3D to create the game and coded the scripts for the game using C#.<br>
+                When the game starts, you can accumulate treats by clicking on the screen. When you have enough treats, you can upgrade your "treats per tap" or purchase a dog that accumulates treats every second. Once you have a dog, you can make your dog even cuter by purchasing accessories!<br>
             </p>
         <!----------------------PUPPY PARTY CODE BEGIN------------------------------>
         <!--Moved this portion from the "index.html" file produced when "Building" a WebGL build from Unity 5.5-->
@@ -43,14 +45,23 @@
             <script src="../Release/UnityLoader.js"></script>
         <!--Took this portion from the "index.html" file produced when Building a WebGL build from Unity 5.5-->
         <!----------------------PUPPY PARTY CODE END------------------------------>
-        <h3>Embedded Systems Project (CS120B at UCR)</h3>
+        <h3>Intro to Embedded Systems Project (CS120B at UCR)</h3>
             <p style="margin-left:20px">
+                <u>Code Repo</u>: <a href="https://github.com/thienchaulol/CS120B-Final-Project--LED-Tower-Defense">LED Tower Defense</a><br>
+                LED Tower Defense was my final project for my CS120B Intro to Embedded Systems class. I coded my project using Atmel Studio 7(C++) and the Arduino IDE(C). The Atmel Studio code was uploaded to my ATMega1284 microcontroller and the Arduino IDE code was uploaded to my Arduino Uno.<br> 
+                The code on the ATMega1284 dealt with the game logic, LCD display, user input, cursor movement and communication with the Arduino Uno.<br>
+                The code on the Arduino Uno dealt with the LEDs on the 16x32 LED Matrix and communication with the ATmega1284.<br>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/5lrYyHUJa3I" frameborder="0" allowfullscreen></iframe>
             </p>
-<!--
-        <h3>Embedded Systems Project</h3>
-            <p style="margin-left:20px">                
+        <h3>Intro to Artificial Intelligence Project (CS170 at UCR)</h3>
+            <p style="margin-left:20px">
+                <u>Code Repo</u>: <a href="https://github.com/thienchaulol/CS170-AI-Search-Algorithms">AI Search Algorithms</a><br>
+                    In this project, I used search algorithms and C++ to create an 8-puzzle solver. I coded three algorithms: Uniform Cost Search, A* with the Misplaced Tile Heuristic, and A* with the Manhattan Distance Heuristic.<br>
+                    To start off, I stored the initial 8-puzzle in a struct named "node", in the node I stored the puzzle as a 2D vector of doubles. The node had node-pointers to it's children which were the possible moves for the puzzle. Depending on the search algorithm, one of the moves would be chosen, the current puzzle would be pushed onto a queue for future output, and the program would run on the new puzzle. This process is repeated until a solution is found.<br>
+                    Uniform Cost Search checks every move at every "level" in the "tree" to see if it is a solution to the 8-puzzle.<br>
+                    A* with the Misplaced Tile Heuristic checks the amount of misplaced tiles the current puzzle has compared to the solution and chooses the leading to the least amount of misplaced tiles from the solution.<br>
+                    A* with the Manhattan Distance Heuristic adds up the distance from each of the tiles to it's solution's position and chooses the move leading to the least total distance from the solution.<br>
+                The quickest algorithm was A* with the Manhattan Distance Heuristic and the slowest was Uniform Cost Search.<br>
             </p>
--->
     </body>
 </html>
