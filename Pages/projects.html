@@ -56,11 +56,11 @@
         <h3>Intro to Artificial Intelligence Project (CS170 at UCR)</h3>
             <p style="margin-left:20px">
                 <u>Code Repo</u>: <a href="https://github.com/thienchaulol/CS170-AI-Search-Algorithms">AI Search Algorithms</a><br>
-                    In this project, I used search algorithms and C++ to create an 8-puzzle solver. I coded three algorithms: Uniform Cost Search, A* with the Misplaced Tile Heuristic, and A* with the Manhattan Distance Heuristic.<br>
-                    To start off, I stored the initial 8-puzzle in a struct named "node", in the node I stored the puzzle as a 2D vector of doubles. The node had node-pointers to it's children which were the possible moves for the puzzle. Depending on the search algorithm, one of the moves would be chosen, the current puzzle would be pushed onto a queue for future output, and the program would run on the new puzzle. This process is repeated until a solution is found.<br>
-                    Uniform Cost Search checks every move at every "level" in the "tree" to see if it is a solution to the 8-puzzle.<br>
-                    A* with the Misplaced Tile Heuristic checks the amount of misplaced tiles the current puzzle has compared to the solution and chooses the leading to the least amount of misplaced tiles from the solution.<br>
-                    A* with the Manhattan Distance Heuristic adds up the distance from each of the tiles to it's solution's position and chooses the move leading to the least total distance from the solution.<br>
+                In this project, I used search algorithms and C++ to create an 8-puzzle solver. I coded three algorithms: Uniform Cost Search, A* with the Misplaced Tile Heuristic, and A* with the Manhattan Distance Heuristic.<br>
+                To start off, I stored the initial 8-puzzle in a struct named "node", in the node I stored the puzzle as a 2D vector of doubles. The node had node-pointers to it's children which were the possible moves for the puzzle. Depending on the search algorithm, one of the moves would be chosen, the current puzzle would be pushed onto a queue for future output, and the program would run on the new puzzle. This process is repeated until a solution is found.<br>
+                <b><u>Uniform Cost Search</u></b>: checks every move at every "level" in the "tree" to see if it is a solution to the 8-puzzle.<br>
+                <b><u>A* with the Misplaced Tile Heuristic</u></b>: checks the amount of misplaced tiles the current puzzle has compared to the solution and chooses the leading to the least amount of misplaced tiles from the solution.<br>
+                <b><u>A* with the Manhattan Distance Heuristic</u></b>: adds up the distance from each of the tiles to it's solution's position and chooses the move leading to the least total distance from the solution.<br>
                 The quickest algorithm was A* with the Manhattan Distance Heuristic and the slowest was Uniform Cost Search.<br>
             </p>
     </body>
