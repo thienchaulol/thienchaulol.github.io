@@ -21,26 +21,21 @@
             </p>
         <!----------------------PUPPY PARTY CODE BEGIN------------------------------>
         <!--Moved this portion from the "index.html" file produced when "Building" a WebGL build from Unity 5.5-->
-        <!--Also moved the "Release" and "TemplateData" folder from the WebGL build-->
-            <div align="center" style="margin-left:20px" class="template-wrap clear">
-                <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="640px" width="360px"></canvas>
-                <br>
-            </div>
-            <script type='text/javascript'>
-                var Module = {
-                    TOTAL_MEMORY: 268435456,
-                    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-                    compatibilitycheck: null,
-                    backgroundColor: "#222C36",
-                    splashStyle: "Light",
-                    dataUrl: "../Release/PPWebBuild.data",
-                    codeUrl: "../Release/PPWebBuild.js",
-                    asmUrl: "../Release/PPWebBuild.asm.js",
-                    memUrl: "../Release/PPWebBuild.mem",
-                };
+        <!--Also moved the "Build" and "TemplateData" folder from the WebGL build into "Pages" folder in order to be referenced by <script></script>-->
+        <body>
+            <script src="TemplateData/UnityProgress.js"></script>  
+            <script src="Build/UnityLoader.js"></script>
+            <script>
+                var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebBuild.json", {onProgress: UnityProgress});
             </script>
-            <script src="../Release/UnityLoader.js"></script>
-        <!--Took this portion from the "index.html" file produced when Building a WebGL build from Unity 5.5-->
+            <div align="center" class="webgl-content">
+                <div id="gameContainer" style="width: 360px; height: 640px"></div>
+                <div class="footer">
+                    <div class="webgl-logo"></div>
+                    <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+                </div>
+            </div>
+        </body>
         <!----------------------PUPPY PARTY CODE END------------------------------>
         <h3>Intro to Embedded Systems Project (CS120B at UCR)</h3>
             <p style="margin-left:20px">
