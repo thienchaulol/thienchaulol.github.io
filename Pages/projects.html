@@ -44,22 +44,47 @@
                 LED Tower Defense was my final project for my CS120B Intro to Embedded Systems class. I coded my project using Atmel Studio 7(C++) and the Arduino IDE(C). The Atmel Studio code was uploaded to my ATMega1284 microcontroller and the Arduino IDE code was uploaded to my Arduino Uno.<br> 
                 The code on the ATMega1284 dealt with the game logic, LCD display, user input, cursor movement and communication with the Arduino Uno.<br>
                 The code on the Arduino Uno dealt with the LEDs on the 16x32 LED Matrix and communication with the ATmega1284.<br>
+            </p>
                 <div align="center">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/5lrYyHUJa3I" frameborder="0" allowfullscreen></iframe>
                 </div>
-            </p>
         <h3>Intro to Artificial Intelligence Project (CS170 at UCR)</h3>
             <p style="margin-left:20px">
                 <u>Code Repo</u>: <a href="https://github.com/thienchaulol/CS170-AI-Search-Algorithms">AI Search Algorithms</a><br>
                 In this project, I used search algorithms and C++ to create an 8-puzzle solver. I coded three algorithms: Uniform Cost Search, A* with the Misplaced Tile Heuristic, and A* with the Manhattan Distance Heuristic.<br>
-                To start off, I stored the initial 8-puzzle in a struct named "node", in the node I stored the puzzle as a 2D vector of doubles. The node had node-pointers to it's children which were the possible moves for the puzzle. Depending on the search algorithm, one of the moves would be chosen, the current puzzle would be pushed onto a queue for future output, and the program would run on the new puzzle. This process is repeated until a solution is found.<br>
-                <b><u>Uniform Cost Search</u></b>: checks every move at every "level" in the "tree" to see if it is a solution to the 8-puzzle.<br>
-                <b><u>A* with the Misplaced Tile Heuristic</u></b>: checks the amount of misplaced tiles the current puzzle has compared to the solution and chooses the leading to the least amount of misplaced tiles from the solution.<br>
-                <b><u>A* with the Manhattan Distance Heuristic</u></b>: adds up the distance from each of the tiles to it's solution's position and chooses the move leading to the least total distance from the solution.<br>
-                The quickest algorithm was A* with the Manhattan Distance Heuristic and the slowest was Uniform Cost Search.<br>
-                <br>
-                <!----GIFs of project demo--->
-            
+                To start off, I stored the initial 8-puzzle in a struct named "node", in the node I stored the puzzle as a 2D vector of doubles. The node has node-pointers to it's children which are previous moves of the puzzle. For every search algorithm, new nodes are created based on possible moves, the nodes are pushed onto a queue, and the program would evaluate possible moves on each node at the front of the queue. This process is repeated recursively until a solution is found.<br>
+                <b><u>Uniform Cost Search</u></b>: checks every move at every "level" in the "tree" to see if it is a solution to the 8-puzzle.
             </p>
+                <div class="row" style="margin-left:20px">
+                  <div class="column">
+                    <img src="https://i.imgur.com/nD9HCMv.png" alt="UCS_0" width="560" height="1920">
+                  </div>
+                  <div class="column">
+                    <img src="https://i.imgur.com/3zfy69p.png" alt="UCS_1" width="560" height="1920">
+                  </div>
+                </div>
+            <p style="margin-left:20px">
+                <b><u>A* with the Misplaced Tile Heuristic</u></b>: checks the amount of misplaced tiles the current puzzle has compared to the solution and enqueues the node leading to the least amount of misplaced tiles from the solution.
+            </p>
+                <div class="row" style="margin-left:20px">
+                  <div class="column">
+                    <img src="https://i.imgur.com/OM7ZhIC.png" alt="ASTARMIS_0" width="560" height="1920">
+                  </div>
+                  <div class="column">
+                    <img src="https://i.imgur.com/N7YihyL.png" alt="ASTARMIS_1" width="560" height="1920">
+                  </div>
+                </div>
+            <p style="margin-left:20px">
+                <b><u>A* with the Manhattan Distance Heuristic</u></b>: adds up the distance from each of the tiles to it's solution's position and enqueues the node leading to the least total distance from the solution.<br>
+                The quickest algorithm was A* with the Manhattan Distance Heuristic and the slowest was Uniform Cost Search.
+            </p>
+            <div class="row" style="margin-left:20px">
+                <div class="column">
+                    <img src="https://i.imgur.com/MfB3BCt.png" alt="ASTARMAN_0" width="560" height="1920">
+                </div>                
+                <div class="column">
+                    <img src="https://i.imgur.com/CQFzbXT.png" alt="ASTARMAN_1" width="560" height="1920">
+                </div>
+            </div>
     </body>
 </html>
