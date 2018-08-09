@@ -48,6 +48,14 @@
                 <div align="center">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/5lrYyHUJa3I" frameborder="0" allowfullscreen></iframe>
                 </div>
+        
+        <h3>Computer Networks Project (CS164 at UCR)</h3>
+            <p style="margin-left:20px">
+            <u>Code Repo</u>: <a href="https://github.com/thienchaulol/CS-164">Client-Server Model (Selective Repeat)</a><br>
+                In Computer Networks, we explored multiple data transfer protocols. One that I'd like to showcase is my version of a client-server model utilizing the Selective Repeat data transfer protocol.<br>
+                In this model, the client would interact with the server by sending "packets" of data that were strings. In each program, I created sockets for the two nodes to transfer data between and encapsulated packet checking, packet sending, and packet corruption instructions in an always true while loop. For packet checking, the client and server would each keep track of individual sequence numbers in the packets and I also attached a checksum to each packet for packet corruption checking. The packets were delivered using socket functions from the "socket" library in Python. The server could reject any sequence number packet and accept out-of-order sequence numbered packets and buffer them. The client individually retransmits unacknowledged packets that have timed out.<br>
+            </p>
+        
         <h3>Intro to Artificial Intelligence Project (CS170 at UCR)</h3>
             <p style="margin-left:20px">
                 <u>Code Repo</u>: <a href="https://github.com/thienchaulol/CS170-AI-Search-Algorithms">AI Search Algorithms</a><br>
