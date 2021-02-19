@@ -32,7 +32,17 @@
                                 
                                 <h2>Python Data Scraper for Daily Earnings (2020-present)</h2>
                                     <p style="margin-left:20px">
-                                    <br>A slew of Python scripts interacting with each other to produce an organized text file of companies releasing earnings. Uses Selenium library to scrape data. Uses multiprocessing library to expedite data gathering. Sorted on proprietary algorithm.<br>
+                                    <br>A slew of Python scripts interacting with each other to produce an organized text file of companies releasing earnings. Uses Selenium library to scrape data. Uses multiprocessing library to expedite data gathering. Sorted on average "earnings per share beat".<br>
+                                    <br>Example output: ['ITT', 'ITT Inc', 'Before Market Open', 0.11]<br>
+                                    <ul>
+                                        <li>'ITT' is the company acronym, </li>
+                                        <li>'ITT Inc' is the company name</li>
+                                        <li>'Before Market Open' is when the company will report (extracted from https://finance.yahoo.com/ and checked with https://robinhood.com/stocks/ITT).</li>
+                                        <li>0.11 is the average "earnings per share beat" from latest 4 quarters on https://finance.yahoo.com/.</li>
+                                    </ul>
+                                        <b><a href='dist.zip'>Link to Python Executable (Windows)</a></b>
+                                    <br>
+                                    <br>
                                     <div align="center" id="stock_earnings" class="container">
                                         <img src="../images/data_scrape_gif.gif" alt="Demo 1"  width=1000/>
                                     </div>
