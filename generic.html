@@ -1,177 +1,168 @@
 <!DOCTYPE HTML>
 <!--
-	Stellar by HTML5 UP
+	Editorial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>Projects</title>
+		<title>Generic - Editorial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Projects</h1>
-                        <p>
-                            <i>
-                                <a href="https://thienchaulol.github.io/">Home</a>
-                            </i>
-                        </p>
-						<!--<p>Ipsum dolor sit amet nullam</p>-->
-					</header>
-
 				<!-- Main -->
 					<div id="main">
+						<div class="inner">
 
-						<!-- Content -->
-							<section id="content" class="main">
-								<span class="image main"><img src="images/nighthawks_amongus.jpg" alt="" /></span>
-                                
-                                <h2>Peer to Peer Learning Platform (2020-present)</h2>
-                                    <p>The multiplatform mobile application is
-                                        developed in React Native. The platform will have tutor and student
-                                        interfaces that facilitate scheduling and communication between
-                                        parties. Firebase is used for backend user data, Stripe will be used for
-                                        payments, and Verint will be used for customer services experience.<p>
-                                    <div align="center">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/XcGqPZ0Tg0A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                
-                                    <p> </p>
-                                
-                                <h2>Python Data Scraper for Daily Earnings (2019-present)</h2>
-                                    <p>A slew of Python scripts interacting with each other to produce an organized text file of companies releasing earnings.
-                                         Uses BeautifulSoup 4 and Selenium library to scrape data. Uses multiprocessing library to expedite data gathering. 
-                                         Sorted on average "earnings per share beat".<p>
-                                    <p>Example output: ['ITT', 'ITT Inc', 'Before Market Open', 0.11]<p>
-                                    <ul>
-                                        <li>'ITT' is the company acronym, </li>
-                                        <li>'ITT Inc' is the company name</li>
-                                        <li>'Before Market Open' is when the company will report (extracted from https://finance.yahoo.com/ and checked with https://robinhood.com/stocks/ITT).</li>
-                                        <li>0.11 is the average "earnings per share beat" from latest 4 quarters on https://finance.yahoo.com/.</li>
-                                    </ul>
-                                        <b><a href='dist.zip'>Link to Python Executable (Windows)</a></b>
-                                    <br>
-                                    <br>
-                                    <div align="center" id="stock_earnings" class="container">
-                                        <img src="../images/data_scrape_gif.gif" alt="Demo 1"  width=1000/>
-                                    </div>
-                                
-                                    <p> </p>
-                                    
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
 
-                                    <h2>Selenium Website Interaction Script (2019-2020)</h2>
-                                    <p>Various Python scripts utilizing the Selenium library to interact with website components. The goal
-                                    of the program is to expedite asset purchases based on specific proprietary algorithms.
-                                    <p>
-                                    <div align="center" id="stock_earnings_automation" class="container">
-                                        <img src="../images/script.gif" alt="Demo 1"  width=1000/>
-                                    </div>
-                                
-                                    <p> </p>
-                                    
-                                
-                                <h2>Snobby Shores - Epic Scratch Game (2020)</h2>
-                                <p>Quick scratch game demoing sprite movement, game controls, and audio :)</p>
-                                <div align="center" id="scratch-games" class="container">
-                                    <iframe src="https://scratch.mit.edu/projects/323942530/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-                                </div>
-                                
-                                <p> </p>
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Generic</h1>
+									</header>
 
-								<h2>Puppy Party</h2>
-								<p>Puppy Party is a very small project that I had the pleasure to work on. It is a mobile clicker app for Android/iOS. I used Unity3D to create the game and coded the scripts for the game using C#.
-When the game starts, you can accumulate treats by clicking on the screen. When you have enough treats, you can upgrade your "treats per tap" or purchase a dog that accumulates treats every second. Once you have a dog, you can make your dog even cuter by purchasing accessories!</p>
-                                 <!----------------------PUPPY PARTY CODE BEGIN------------------------------>
-                                <!--Moved this portion from the "index.html" file produced when "Building" a WebGL build from Unity 5.5-->
-                                <!--Also moved the "Build" and "TemplateData" folder from the WebGL build into "Pages" folder in order to be referenced by <script></script>-->
-                                <body>
-                                    <script src="TemplateData/UnityProgress.js"></script>  
-                                    <script src="Build/UnityLoader.js"></script>
-                                    <script>
-                                        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebBuild.json", {onProgress: UnityProgress});
-                                    </script>
-                                    <div align="center" class="webgl-content">
-                                        <div id="gameContainer" style="width: 360px; height: 640px"></div>
-                                        <div class="footer">
-                                            <div class="webgl-logo"></div>
-                                            <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-                                        </div>
-                                    </div>
-                                </body>
-                                <!----------------------PUPPY PARTY CODE END------------------------------>
-                                <p> </p>
-								<h2>Intro to Embedded Systems Project (CS120B at UCR)</h2>
-								<p>LED Tower Defense was my final project for my CS120B Intro to Embedded Systems class. I coded my project using Atmel Studio 7(C++) and the Arduino IDE(C). The Atmel Studio code was uploaded to my ATMega1284 microcontroller and the Arduino IDE code was uploaded to my Arduino Uno.
-The code on the ATMega1284 dealt with the game logic, LCD display, user input, cursor movement and communication with the Arduino Uno.
-The code on the Arduino Uno dealt with the LEDs on the 16x32 LED Matrix and communication with the ATmega1284.</p>
-                                <div align="center">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/5lrYyHUJa3I" frameborder="0" allowfullscreen></iframe>
-                                </div>
-                                <p></p>
-                                <h2>Computer Networks Project (CS164 at UCR)
-</h2>
-                                <p>In Computer Networks, we explored multiple data transfer protocols. One that I'd like to showcase is my version of a client-server model utilizing the Selective Repeat data transfer protocol.
-In this model, the client would interact with the server by sending "packets" of data that were strings. In each program, I created sockets for the two nodes to transfer data between and encapsulated packet checking, packet sending, and packet corruption instructions in an always true while loop. For packet checking, the client and server would each keep track of individual sequence numbers in the packets and I also attached a checksum to each packet for packet corruption checking. The packets were delivered using socket functions from the "socket" library in Python. The server could reject any sequence number packet and accept out-of-order sequence numbered packets and buffer them. The client individually retransmits unacknowledged packets that have timed out.</p>
-                                <h2>Intro to Artificial Intelligence Project (CS170 at UCR)
-</h2>
-                                <p>In this project, I used search algorithms and C++ to create an 8-puzzle solver. I coded three algorithms: Uniform Cost Search, A* with the Misplaced Tile Heuristic, and A* with the Manhattan Distance Heuristic.
-To start off, I stored the initial 8-puzzle in a struct named "node", in the node I stored the puzzle as a 2D vector of doubles. The node has node-pointers to it's children which are previous moves of the puzzle. For every search algorithm, new nodes are created based on possible moves, the nodes are pushed onto a queue, and the program would evaluate possible moves on each node at the front of the queue. This process is repeated recursively until a solution is found.</p>
-                                <p>
-                                    <b><u>Uniform Cost Search</u></b>: checks every move at every "level" in the "tree" to see if it is a solution to the 8-puzzle. 
-                                        <a href="https://i.imgur.com/nD9HCMv.png">UCS_0</a>
-                                        <a href="https://i.imgur.com/3zfy69p.png">UCS_1</a>
-                                </p>
-                                <p>
-                                    <b><u>A* with the Misplaced Tile Heuristic</u></b>: checks the amount of misplaced tiles the current puzzle has compared to the solution and enqueues the node leading to the least amount of misplaced tiles from the solution.
-                                        <a href="https://i.imgur.com/OM7ZhIC.png">ASTARMIS_0</a>
-                                        <a href="https://i.imgur.com/N7YihyL.png">ASTARMIS_1</a>
-                                </p>
-                                <p>
-                                        <b><u>A* with the Manhattan Distance Heuristic</u></b>: adds up the distance from each of the tiles to it's solution's position and enqueues the node leading to the least total distance from the solution.<br>
-                                        The quickest algorithm was A* with the Manhattan Distance Heuristic and the slowest was Uniform Cost Search.
-                                        <a href="https://i.imgur.com/MfB3BCt.png">ASTARMAN_0</a>
-                                        <a href="https://i.imgur.com/CQFzbXT.png">ASTARMAN_1</a>
-                                </p>
-                                <p></p>
-							</section>
+									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
 
-                </div>
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Contact Info</h2>
-							<dl class="alt">
-								<dt>Email</dt>
-								<dd>thienchau010@gmail.com</dd>
-							</dl>
-							<ul class="icons">
-                                <!--
-								<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-                                -->
-								<li><a href="https://github.com/thienchaulol" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="https://www.linkedin.com/in/thienchau/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+
+									<hr class="major" />
+
+									<h2>Interdum sed dapibus</h2>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+
+									<hr class="major" />
+
+									<h2>Magna etiam veroeros</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+
+									<hr class="major" />
+
+									<h2>Lorem aliquam bibendum</h2>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="generic.html">Generic</a></li>
+										<li><a href="elements.html">Elements</a></li>
+										<li>
+											<span class="opener">Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Etiam Dolore</a></li>
+										<li><a href="#">Adipiscing</a></li>
+										<li>
+											<span class="opener">Another Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Maximus Erat</a></li>
+										<li><a href="#">Sapien Mauris</a></li>
+										<li><a href="#">Amet Lacinia</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Ante interdum</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+										<li class="icon solid fa-phone">(000) 000-0000</li>
+										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
 
 			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
