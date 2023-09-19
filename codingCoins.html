@@ -56,10 +56,23 @@
 							const rows = csv.split('\n');
 							const table = document.querySelector('table');
 
+							// Remove the header row (assuming it's the first row)
+							const headerRow = rows.shift();
+
+							// Sort the rows alphabetically based on the first column (adjust as needed)
+							rows.sort((a, b) => {
+								const aData = a.split(',')[0]; // Adjust this index based on your CSV structure
+								const bData = b.split(',')[0]; // Adjust this index based on your CSV structure
+								return aData.localeCompare(bData);
+							});
+
+							// Add the header row back to the sorted data
+							rows.unshift(headerRow);
+
 							for (let i = 1; i < rows.length; i++) {
 								const rowData = rows[i].split(',');
 								const row = document.createElement('tr');
-                				
+
 								row.style.fontSize = "18px";
 
 								for (const cellData of rowData) {
@@ -85,7 +98,7 @@
 					</script>
 					<!--CHATGPT-->
 
-<!--Chatgpt couldn't make this
+					<!--Chatgpt couldn't make this
 					<table style="width:100%">
 						<script>
 						</script>
