@@ -2,3 +2,7 @@ Student, Coding Coins
 Richard Gao, 5
 Colin O’Neil, 5
 Matthew Woodard, 10
+Courtney Hall, 2
+Thor Bittner, 1
+Frida Cruz, 2
+Clayton Voong, 2
