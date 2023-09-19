@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Coding Coin Ledger</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>Home</strong></a>
+					<ul class="icons">
+						<li><a href="#" class="icon solid fa-coins"> </a></li>
+						<li><a href="https://www.linkedin.com/in/thienchau/" class="icon brands fa-linkedin"><span
+									class="label">LinkedIn</span></a></li>
+					</ul>
+				</header>
+
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1 style="float: left;">Coding Coin Ledger</h1>
+					</header>
+					<p><br></p>
+					<p><br></p>
+					<p><br></p>
+					<p style="font-size:24px;">This is the public ledger of coding coins accumulated in class. Coding
+						coins can be used for specific rewards in class.</p>
+
+					<!--CHATGPT-->
+					<table style="width:100%">
+						<tr style="font-size:24px;">
+							<th>Student</th>
+							<th>Coding Coins</th>
+						</tr>
+					</table>
+					<script>
+						// Function to parse CSV data and create an HTML table
+						function parseCSV(csv) {
+							const rows = csv.split('\n');
+							const table = document.querySelector('table');
+
+							for (let i = 1; i < rows.length; i++) {
+								const rowData = rows[i].split(',');
+								const row = document.createElement('tr');
+                				
+								row.style.fontSize = "18px";
+
+								for (const cellData of rowData) {
+									const cell = document.createElement('td');
+									cell.textContent = cellData;
+									row.appendChild(cell);
+								}
+
+								table.appendChild(row);
+							}
+						}
+
+						// Load the specific CSV file from your local directory
+						fetch('ledger.txt')
+							.then(response => response.text())
+							.then(data => {
+								// Call the parseCSV function to create the table
+								parseCSV(data);
+							})
+							.catch(error => {
+								console.error('Error loading CSV file:', error);
+							});
+					</script>
+					<!--CHATGPT-->
+
+<!--Chatgpt couldn't make this
+					<table style="width:100%">
+						<script>
+						</script>
+						<tr style="font-size:24px;">
+							<th>Student</th>
+							<th>Coding Coins</th>
+						</tr>
+						<tr style="font-size:18px;">
+							<td>Colin O'Neil</td>
+							<td>5</td>
+						</tr>
+						<tr style="font-size:18px;">
+							<td>Richard Gao</td>
+							<td>5</td>
+						</tr>
+					</table>
+					-->
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
