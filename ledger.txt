@@ -1,6 +1,6 @@
 Student, Coding Coins, Achievements 🍬,⏰,🙋‍♂️
-Richard G.,5,⭐️
-Colin O.,5,⭐️
+Richard G.,6,⭐️
+Colin O.,6,⭐️
 Matthew W.,10
 Courtney H.,2
 Frida C.,4
