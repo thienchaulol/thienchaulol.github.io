@@ -10,7 +10,7 @@ Thor B.,4
 Ayden A.,3
 Liam D.,6
 Taylor J.,1
-Preston K.,3.5
+Preston K.,3.5,🪑
 Jared L.,1
 Terrance L.,3
 Andy D.,2
