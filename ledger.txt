@@ -9,12 +9,12 @@ Sebastian H.V.,4
 Thor B.,4
 Ayden A.,3
 Liam D.,6
-Taylor J.,1
-Preston K.,3.5,🪑
-Jared L.,1
-Terrance L.,3
-Andy D.,2
-Ethan S.,2
+Taylor J.,2
+Preston K.,6.5,🪑
+Jared L.,5
+Terrance L.,4
+Andy D.,5
+Ethan S.,3
 Malcolm O., 3
 Justin L., 1
 Evan M., 1
