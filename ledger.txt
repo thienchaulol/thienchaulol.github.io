@@ -10,7 +10,7 @@ Thor B.,4
 Ayden A.,3
 Liam D.,6
 Taylor J.,1
-Preston K.,3
+Preston K.,3.5
 Jared L.,1
 Terrance L.,3
 Andy D.,2
@@ -26,4 +26,5 @@ Henry H., 2
 Chris C., 1
 Nicholas M., 2, 🌟
 John L., 1
-GIUSSEPPE S., 1
+Giuseppe S., 1
+Calvin P., 0.5
