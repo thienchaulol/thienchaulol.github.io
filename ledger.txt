@@ -17,7 +17,7 @@ Andy D.,1,🔐
 Ethan S.,3
 Malcolm O., 3
 Justin L., 1
-Evan M., 2
+Evan M., 2.5
 Jeremy L., 3,💡
 Kevin N., 5,💡
 Justin S., 2
