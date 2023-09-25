@@ -15,7 +15,7 @@ Jared L.,0,🔐
 Terrance L.,4
 Andy D.,1,🔐
 Ethan S.,3
-Malcolm O., 4
+Malcolm O., 6
 Justin L., 1
 Evan M., 0.5,🍬
 Jeremy L., 3,💡
@@ -29,5 +29,4 @@ John L., 1
 Giuseppe S., 1
 Calvin P., 0.5
 Timothy J., 1
-Malcolm O., 2
 Samuel T., 1
