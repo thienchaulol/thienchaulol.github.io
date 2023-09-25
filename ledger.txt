@@ -17,10 +17,10 @@ Andy D.,1,🔐
 Ethan S.,3
 Malcolm O., 3
 Justin L., 1
-Evan M., 1
-Jeremy L., 1
-Kevin N., 2
-Justin S., 1
+Evan M., 2
+Jeremy L., 3,💡
+Kevin N., 5,💡
+Justin S., 2
 Benny M., 1
 Henry H., 2
 Chris C., 1
@@ -28,3 +28,6 @@ Nicholas M., 2, 🌟
 John L., 1
 Giuseppe S., 1
 Calvin P., 0.5
+Timothy J., 1
+Malcolm O., 2
+Samuel T., 1
