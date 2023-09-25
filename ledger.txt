@@ -15,12 +15,12 @@ Jared L.,0,🔐
 Terrance L.,4
 Andy D.,1,🔐
 Ethan S.,3
-Malcolm O., 3
+Malcolm O., 4
 Justin L., 1
-Evan M., 2.5
+Evan M., 0.5,🍬
 Jeremy L., 3,💡
 Kevin N., 5,💡
-Justin S., 2
+Justin S., 3
 Benny M., 1
 Henry H., 2
 Chris C., 1
