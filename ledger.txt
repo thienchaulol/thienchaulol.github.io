@@ -11,10 +11,10 @@ Ayden A.,4
 Liam D.,8,👨‍🏫
 Taylor J.,2
 Preston K.,1.5,🪑🔐
-Jared L.,0,🔐
+Jared L.,4,🔐
 Terrance L.,4
 Andy D.,1,🔐
-Ethan S.,3
+Ethan S.,5
 Malcolm O., 6
 Justin L., 1
 Evan M., 0.5,🍬
