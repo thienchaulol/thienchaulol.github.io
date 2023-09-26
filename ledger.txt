@@ -13,7 +13,7 @@ Taylor J.,2
 Preston K.,1.5,🪑🔐
 Jared L.,4,🔐👨‍🏫
 Terrance L.,4,🤫
-Andy D.,-1,🔐🤬
+Andy D.,0,🔐🤬🪑
 Ethan S.,5
 Malcolm O., 6
 Justin L., 1
