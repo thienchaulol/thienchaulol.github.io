@@ -1,14 +1,14 @@
 Student, Coding Coins, Achievements 🍬,⏰,🙋‍♂️
-Richard G.,6,
-Colin O.,6,
+Richard G.,7.5,
+Colin O.,7.5,
 Matthew W.,15,(🍬)🍬
 Courtney H.,10,👩‍🏫
-Frida C.,5
-Clayton V.,4
+Frida C.,0, (🍬)
+Clayton V.,5
 Sebastian H.V.,4
-Thor B.,4
-Ayden A.,3
-Liam D.,6,👨‍🏫
+Thor B.,1,🍬
+Ayden A.,4
+Liam D.,8,👨‍🏫
 Taylor J.,2
 Preston K.,1.5,🪑🔐
 Jared L.,0,🔐
@@ -19,14 +19,14 @@ Malcolm O., 6
 Justin L., 1
 Evan M., 0.5,🍬
 Jeremy L., 3,💡
-Kevin N., 5,💡
+Kevin N., 5,💡🍬
 Justin S., 3
 Benny M., 1
 Henry H., 2
 Chris C., 1
-Nicholas M., 2,🌟
+Nicholas M., 1,🌟
 John L., 1
-Giuseppe S., 1
+Giuseppe S., 1,🧽
 Calvin P., 0.5
 Timothy J., 1
 Samuel T., 1
@@ -40,3 +40,5 @@ Ross T., 1
 Michael L,. 1
 Henry H., 2
 Ryker F., 2
+Kate R., 1,
+Jonathan F., 1
