@@ -9,9 +9,9 @@ Sebastian H.V.,8
 Thor B.,11,🍬1️⃣
 Ayden A.,4
 Liam D.,15,👨‍🏫,1️⃣
-Taylor J.,2
-Preston K.,1.5,🪑🔐
-Jared L.,4,🔐👨‍🏫
+Taylor J.,3
+Preston K.,3.5,🪑🔐
+Jared L.,11,🔐👨‍🏫🤯
 Terrance L.,4,🤫
 Andy D.,0,🔐🤬🪑
 Ethan S.,5
