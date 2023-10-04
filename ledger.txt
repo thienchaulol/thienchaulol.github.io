@@ -14,13 +14,13 @@ Preston K.,3.5,🪑🔐
 Jared L.,11,🔐👨‍🏫🤯
 Terrance L.,4,🤫
 Andy D.,0,🔐🤬🪑
-Ethan S.,5
-Malcolm O., 8
-Justin L., 2
-Evan M., 2.5,🍬
-Jeremy L., 4,💡
-Kevin N., 7,💡🍬
-Justin S., 3
+Ethan S.,6
+Malcolm O., 15,🪑
+Justin L., 8
+Evan M., 5.5,🍬🍬🍬
+Jeremy L., 8,💡
+Kevin N., 16,💡🍬
+Justin S., 6,🍬
 Benny M., 2
 Henry H., 5
 Chris C., 3
@@ -28,8 +28,8 @@ Nicholas M., 5,🌟
 John L., 8,1️⃣1️⃣
 Giuseppe S., 1,🧽
 Calvin P., 0.5
-Timothy J., 2
-Samuel T., 2
+Timothy J., 4,🍬
+Samuel T., 6,🧽
 Luke S., 3, 🪑
 Diego F., 2
 Lachlan R., 4
@@ -41,7 +41,7 @@ Ryker F., 3
 Kate R., 1,
 Jonathan F., 6
 Reeves C., 3, 🧙
-Kyle T., 1
+Kyle T., 8
 Cabot D., 1
 Aaron T., 1
 Calista P., 9
