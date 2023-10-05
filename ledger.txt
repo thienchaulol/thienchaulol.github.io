@@ -1,5 +1,5 @@
 Student, Coding Coins, Achievements 🍬,⏰,🙋‍♂️
-Richard G.,8.5,
+Richard G.,8.5,🔢
 Colin O.,15.5,👨‍🏫🔂
 Matthew W.,16,(🍬)🍬
 Courtney H.,14,👩‍🏫
