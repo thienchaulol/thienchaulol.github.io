@@ -3,8 +3,8 @@ Richard G.,11.5,🔢
 Colin O.,16.5,👨‍🏫🔂
 Matthew W.,16,(🍬)🍬
 Courtney H.,14,👩‍🏫
-Frida C.,4, (🍬)
-Clayton V.,5
+Frida C.,5, (🍬)
+Clayton V.,6
 Sebastian H.V.,8
 Thor B.,11,🍬1️⃣
 Ayden A.,4
@@ -24,7 +24,7 @@ Justin S., 6,🍬
 Benny M., 2
 Henry H., 11
 Chris C., 3
-Nicholas M., 5,🌟
+Nicholas M., 6,🌟
 John L., 8,1️⃣1️⃣
 Giuseppe S., 1,🧽
 Calvin P., 0.5
@@ -38,10 +38,11 @@ Lloyd D., 5
 Ross T., 3
 Michael L,. 2
 Ryker F., 6
-Kate R., 1,
-Jonathan F., 6
+Kate R., 2,
+Jonathan F., 8
 Reeves C., 3, 🧙
 Kyle T., 8
 Cabot D., 5
 Aaron T., 6
-Calista P., 9
+Calista P., 10
+Gavin Z., 1
