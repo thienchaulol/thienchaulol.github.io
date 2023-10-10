@@ -15,11 +15,11 @@ Jared L.,11,🔐👨‍🏫🤯
 Terrance L.,4,🤫
 Andy D.,0,🔐🤬🪑
 Ethan S.,6
-Malcolm O., 15,🪑
+Malcolm O., 16,🪑
 Justin L., 8
-Evan M., 5.5,🍬🍬🍬
-Jeremy L., 8,💡
-Kevin N., 16,💡🍬
+Evan M., 6.5,🍬🍬🍬
+Jeremy L., 9,💡
+Kevin N., 18,💡🍬
 Justin S., 6,🍬
 Benny M., 2
 Henry H., 11
