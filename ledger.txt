@@ -10,8 +10,8 @@ Thor B.,12,🍬1️⃣
 Ayden A.,5
 Liam D.,15,👨‍🏫1️⃣
 Taylor J.,3
-Preston K.,3.5,🪑🔐
-Jared L.,11,🔐👨‍🏫🤯
+Preston K.,0.5,🪑🔐🍬
+Jared L.,8,🔐👨‍🏫🤯🍬
 Terrance L.,4,🤫
 Andy D.,0,🔐🤬🪑
 Ethan S.,6
@@ -40,7 +40,7 @@ Michael L,. 2
 Ryker F., 7
 Kate R., 3,
 Jonathan F., 11
-Reeves C., 3, 🧙
+Reeves C., 0, 🧙🍬
 Kyle T., 8
 Cabot D., 5
 Aaron T., 10
