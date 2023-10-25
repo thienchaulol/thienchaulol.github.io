@@ -14,12 +14,12 @@ Jared L.,11,🔐👨‍🏫🤯🍬
 Terrance L.,7,🤫
 Andy D.,2,🔐🤬🪑
 Ethan S.,7
-Malcolm O., 13,🪑🧠 📄
-Justin L., 8
-Evan M., 8.5,🍬🍬🍬
+Malcolm O., 23,🪑🧠 📄
+Justin L., 18
+Evan M., 24.5,🍬🍬🍬
 Jeremy L., 10,💡
-Kevin N., 21,💡🍬🧽
-Justin S., 6,🍬
+Kevin N., 37,💡🍬🧽
+Justin S., 16,🍬
 Benny M., 2
 Henry H., 8,🍬
 Chris C., 4
@@ -27,8 +27,8 @@ Nicholas M., 7,🌟
 John L., 19,1️⃣1️⃣💨
 Giuseppe S., 4,🧽(🪑+🎒)
 Calvin P., 0.5
-Timothy J., 4,🍬
-Samuel T., 8,🧽
+Timothy J., 20,🍬
+Samuel T., 18,🧽
 Luke S., 1, 🪑🍬
 Diego F., 4
 Lachlan R., 0,🍬🍬
@@ -40,7 +40,7 @@ Ryker F., 7
 Kate R., 5
 Jonathan F., 11
 Reeves C., 0, 🧙🍬
-Kyle T., 9
+Kyle T., 25
 Cabot D., 5
 Aaron T., 10
 Calista P., 11
