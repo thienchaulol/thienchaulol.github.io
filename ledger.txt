@@ -8,12 +8,12 @@ Sebastian H.V.,10, (🪑+🎒)
 Thor B.,21,🍬1️⃣(🪑+🎒)
 Ayden A.,13
 Liam D.,21,👨‍🏫1️⃣
-Taylor J.,4
-Preston K.,0.5,🪑🔐🍬
-Jared L.,11,🔐👨‍🏫🤯🍬
-Terrance L.,7,🤫
-Andy D.,2,🔐🤬🪑
-Ethan S.,8
+Taylor J.,6, 🔐
+Preston K.,6.5,🪑🔐🍬 🔐
+Jared L.,15,🔐👨‍🏫🤯🍬 🔐
+Terrance L.,17,🤫 🔐
+Andy D.,7,🔐🤬🪑 🔐
+Ethan S.,10, 🔐
 Malcolm O., 20,🪑🧠 📄🍬
 Justin L., 18
 Evan M., 0.5,🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬
@@ -39,9 +39,10 @@ Michael L., 3
 Ryker F., 7
 Kate R., 6
 Jonathan F., 14
-Reeves C., 0, 🧙🍬
+Reeves C., 9, 🧙🍬 🔐
 Kyle T., 25
 Cabot D., 5
 Aaron T., 11
 Calista P., 16
 Gavin Z., 10
+Annika C., 2, 🔐
