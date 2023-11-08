@@ -2,33 +2,33 @@ Student, Coding Coins, Achievements 🍬,⏰,🙋‍♂️
 Richard G.,14.5,🔢🔂👨‍🏫🍭
 Colin O.,33.5,👨‍🏫🔂
 Courtney H.,8,👩‍🏫
-Frida C.,8, (🍬)🍭
-Clayton V.,27,💨(🪑+🎒)🪑
-Sebastian H.V.,10, (🪑+🎒)
-Thor B.,25,🍬1️⃣(🪑+🎒)
-Ayden A.,16
-Liam D.,3,👨‍🏫1️⃣🍭🍭🍭🍭
+Frida C.,2, (🍬)🍭📄
+Clayton V.,28,💨(🪑+🎒)🪑
+Sebastian H.V.,12, (🪑+🎒)
+Thor B.,26,🍬1️⃣(🪑+🎒)
+Ayden A.,11,📄
+Liam D.,4,👨‍🏫1️⃣🍭🍭🍭🍭
 Taylor J.,2, 🔐📄
 Preston K.,7.25,🪑🔐🍬 🔐🥷
-Jared L.,18,🔐👨‍🏫🤯🍬 🔐
-Terrance L.,17,🤫 🔐
+Jared L.,14,🔐👨‍🏫🤯🍬 🔐🍭
+Terrance L.,25,🤫 🔐 🧙
 Andy D.,7,🔐🪑 🔐(🥷+🍗)*
 Ethan S.,11, 🔐
 Malcolm O., 15,🪑🧠 📄🍬🍭
 Justin L., 18
-Evan M., 0.5,🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬
+Evan M., 5,🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬
 Jeremy L., 14,💡(🪑+🎒)👨‍💻
-Kevin N., 40,💡🍬🧽(🪑+🎒)
-Justin S., 16,🍬
+Kevin N., 43,💡🍬🧽(🪑+🎒)
+Justin S., 17.5,🍬
 Benny M., 4
 Henry H., 7,🍬🍭🗣️
 Chris C., 11,🍬
-Nicholas M., 5,🌟🍭
-John L., 23,1️⃣1️⃣💨
-Giuseppe S., 6,🧽(🪑+🎒)
+Nicholas M., 1,🌟🍭🍭
+John L., 17,1️⃣1️⃣💨📄
+Giuseppe S., 8,🧽(🪑+🎒)
 Calvin P., 0.5
 Timothy J., 15,🍬🍭
-Samuel T., 12,🧽🍭🍭✈️
+Samuel T., 15,🧽🍭🍭✈️
 Luke S., 8, 🪑🍬
 Diego F., 6,🍬🍬
 Lachlan R., 4,🍬🍬
@@ -38,13 +38,13 @@ Ross T., 14,🍬
 Michael L., 7
 Ryker F., 15,🗣️
 Kate R., 12
-Jonathan F., 20
+Jonathan F., 22
 Reeves C., 9, 🧙🍬 🔐
-Kyle T., 16, (🍬)🍭
+Kyle T., 19, (🍬)🍭
 Cabot D., 18
 Aaron T., 11,🍭🍭
-Calista P., 16
-Gavin Z., 10
+Calista P., 11,📄
+Gavin Z., 11
 Annika C., 4, 🔐
 Joaquin V., -4, 🪑🍭
 Chloe T., 9, 🍭
