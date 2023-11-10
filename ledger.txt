@@ -1,13 +1,13 @@
 Student, Coding Coins, Achievements 🍬,⏰,🙋‍♂️
 Richard G.,14.5,🔢🔂👨‍🏫🍭
 Colin O.,33.5,👨‍🏫🔂
-Courtney H.,8,👩‍🏫
+Courtney H.,11,👩‍🏫
 Frida C.,2, (🍬)🍭📄
-Clayton V.,28,💨(🪑+🎒)🪑
-Sebastian H.V.,9, (🪑+🎒)🍬
-Thor B.,26,🍬1️⃣(🪑+🎒)
-Ayden A.,11,📄
-Liam D.,7,👨‍🏫1️⃣🍭🍭🍭🍭💪
+Clayton V.,5,💨(🪑+🎒)🪑
+Sebastian H.V.,11, (🪑+🎒)🍬
+Thor B.,29,🍬1️⃣(🪑+🎒)
+Ayden A.,12,📄
+Liam D.,11,👨‍🏫1️⃣🍭🍭🍭🍭💪
 Taylor J.,2, 🔐📄
 Preston K.,7.25,🪑🔐🍬 🔐🥷
 Jared L.,14,🔐👨‍🏫🤯🍬 🔐🍭
@@ -23,9 +23,9 @@ Justin S., 17.5,🍬
 Benny M., 4
 Henry H., 8,🍬🍭🗣️
 Chris C., 13,🍬
-Nicholas M., 1,🌟🍭🍭
+Nicholas M., 4,🌟🍭🍭
 John L., 17,1️⃣1️⃣💨📄
-Giuseppe S., 8,🧽(🪑+🎒)
+Giuseppe S., 10,🧽(🪑+🎒)
 Calvin P., 0.5
 Timothy J., 15,🍬🍭
 Samuel T., 15,🧽🍭🍭✈️
@@ -37,14 +37,14 @@ Lloyd D., 4,🍬🍬
 Ross T., 16,🍬
 Michael L., 7
 Ryker F., 15,🗣️
-Kate R., 12
-Jonathan F., 22
+Kate R., 13
+Jonathan F., 25
 Reeves C., 9, 🧙🍬 🔐
 Kyle T., 19, (🍬)🍭
 Cabot D., 18
 Aaron T., 11,🍭🍭
 Calista P., 11,📄
-Gavin Z., 11
+Gavin Z., 5,📄
 Annika C., 4, 🔐
 Joaquin V., -4, 🪑🍭
 Chloe T., 9, 🍭
