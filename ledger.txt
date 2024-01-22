@@ -2,17 +2,17 @@ Student, Coding Coins, Achievements 🍬,⏰,🙋‍♂️
 Richard G.,23.5,🔢🔂👨‍🏫🍭🍭🍭🍬
 Colin O.,44,👨‍🏫🔂🧠🍭🍬🍬
 Courtney H.,15,👩‍🏫
-Frida C.,6, (🍬)🍭📄
+Frida C.,9, (🍬)🍭📄🍬
 Clayton V.,35,💨(🪑+🎒)🪑
 Sebastian H.V.,16, (🪑+🎒)🍬
 Thor B.,34,🍬1️⃣(🪑+🎒)
 Ayden A.,13,📄
 Liam D.,37,👨‍🏫1️⃣🍭🍭🍭🍭💪(🪑+🎒)
-Taylor J.,9, 🔐📄
+Taylor J.,10, 🔐📄
 Preston K.,23.25,🪑🔐🍬 🔐🥷
-Jared L.,18,🔐👨‍🏫🤯🍬 🔐🍭
+Jared L.,19,🔐👨‍🏫🤯🍬 🔐🍭
 Terrance L.,32,🤫 🔐 🧙
-Andy D.,17,🔐🪑 🔐(🥷+🍗)*🧙 🧽
+Andy D.,18,🔐🪑 🔐(🥷+🍗)*🧙 🧽
 Ethan S.,12, 🔐
 Malcolm O., 17,🪑🧠 📄🍬🍭
 Justin L., 27
@@ -50,3 +50,11 @@ Joaquin V., -2, 🪑🍭
 Chloe T., 9, 🍭
 Matthew W., 10
 Russel Tang, 3, (💪+🪑)
+Alex C., 1
+Ryder H., 1
+Franchesqa L., 1
+Conner L., 1
+Kyle L., 1
+Julian R., 1
+Aoibhinn R., 1
+Ethan Y., 1
