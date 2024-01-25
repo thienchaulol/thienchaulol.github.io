@@ -1,5 +1,5 @@
 Student, Coding Coins, Achievements 🍬,⏰,🙋‍♂️
-Richard G.,23.5,🔢🔂👨‍🏫🍭🍭🍭🍬
+Richard G.,32.5,🔢🔂👨‍🏫🍭🍭🍭🍬📝
 Colin O.,44,👨‍🏫🔂🧠🍭🍬🍬
 Courtney H.,15,👩‍🏫
 Frida C.,9, (🍬)🍭📄🍬
@@ -54,7 +54,7 @@ Alex C., 3
 Ryder H., 2
 Franchesqa L., 5, 🧠
 Conner L., 2
-Kyle L., 2
+Kyle L., 3
 Julian R., 1
 Aoibhinn R., 3
 Ethan Y., 2
