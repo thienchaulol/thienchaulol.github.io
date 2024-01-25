@@ -50,11 +50,15 @@ Joaquin V., -2, 🪑🍭
 Chloe T., 9, 🍭
 Matthew W., 10
 Russel Tang, 3, (💪+🪑)
-Alex C., 2
-Ryder H., 1
-Franchesqa L., 1
-Conner L., 1
-Kyle L., 1
+Alex C., 3
+Ryder H., 2
+Franchesqa L., 5, 🧠
+Conner L., 2
+Kyle L., 2
 Julian R., 1
-Aoibhinn R., 2
-Ethan Y., 1
+Aoibhinn R., 3
+Ethan Y., 2
+Maya G., 2
+Henry P., 2
+Fia D., 2, 🙋‍♀️
+Sienna A., 1, 
