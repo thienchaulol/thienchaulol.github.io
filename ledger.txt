@@ -13,12 +13,12 @@ Preston K.,23.25,🪑🔐🍬 🔐🥷
 Jared L.,14,🔐👨‍🏫🤯🍬 🔐🍭
 Terrance L.,32,🤫 🔐 🧙
 Andy D.,18,🔐🪑 🔐(🥷+🍗)*🧙 🧽
-Ethan S.,12, 🔐
-Malcolm O., 18,🪑🧠 📄🍬🍭
-Justin L., 29
-Evan M., 9,🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬
+Ethan S.,14, 🔐
+Malcolm O., 22,🪑🧠 📄🍬🍭
+Justin L., 31
+Evan M., 11,🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬
 Jeremy L., 22,💡(🪑+🎒)👨‍💻
-Kevin N., 50,💡🍬🧽(🪑+🎒)
+Kevin N., 51,💡🍬🧽(🪑+🎒)
 Justin S., 29.5,🍬
 Benny M.,7
 Henry H., 5,🍬🍭🗣️⏰
@@ -27,7 +27,7 @@ Nicholas M., 0,🌟🍭🍭🍭🍬🍭
 John L., 26,1️⃣1️⃣💨📄
 Giuseppe S., 12,🧽(🪑+🎒)
 Calvin P., 0.5
-Timothy J., 21,🍬🍭
+Timothy J., 22,🍬🍭
 Samuel T., 23,🧽🍭🍭✈️
 Luke S., 12, 🪑🍬
 Diego F., 4,🍬🍬 🧙🍭🍭
@@ -40,7 +40,7 @@ Ryker F., 15,🗣️🍬🍬
 Kate R., 19,(🪑+🎒)
 Jonathan F., 29
 Reeves C., 9, 🧙🍬 🔐
-Kyle T., 24, (🍬)🍭
+Kyle T., 26, (🍬)🍭
 Cabot D., 18
 Aaron T., 20,🍭🍭
 Calista P., 26,📄🍬
@@ -51,14 +51,14 @@ Chloe T., 9, 🍭
 Matthew W., 10
 Russel Tang, 3, (💪+🪑)
 Alex C., 3
-Ryder H., 2
-Franchesqa L., 5, 🧠
-Conner L., 2
-Kyle L., 3
-Julian R., 1
-Aoibhinn R., 3
-Ethan Y., 2
+Ryder H., 3, (🪑+🎒)
+Franchesqa L., 6, 🧠
+Conner L., 3, (🪑+🎒)
+Kyle L., 7,(🪑+🎒)1️⃣
+Julian R., 1,
+Aoibhinn R., 5,(🪑+🎒)
+Ethan Y., 3,(🪑+🎒)
 Maya G., 2
-Henry P., 2
+Henry P., 3,(🪑+🎒)
 Fia D., 2, 🙋‍♀️
 Sienna A., 1, 
