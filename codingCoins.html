@@ -40,8 +40,9 @@
 					<p><br></p>
 					<p><br></p>
 					<p><br></p>
-					<p style="font-size:24px;">Coding coins are obtained from proper behavior. Coding Coins are used for class specific rewards
-					-- see 'Marketplace' next to phone hotel.</p>
+					<p style="font-size:24px;">Coding coins are obtained from proper behavior. Coding Coins are used for
+						class specific rewards
+						-- see 'Marketplace' next to phone hotel.</p>
 
 					<!--CHATGPT-->
 					<table style="width:100%">
@@ -60,12 +61,24 @@
 							// Remove the header row (assuming it's the first row)
 							const headerRow = rows.shift();
 
-							// Sort the rows alphabetically based on the first column (adjust as needed)
+							let maxIndex = -1;
+							let maxValue = -Infinity;
+
+							// Sort the rows alphabetically based on the first column (assuming it contains names)
 							rows.sort((a, b) => {
-								const aData = a.split(',')[0]; // Adjust this index based on your CSV structure
-								const bData = b.split(',')[0]; // Adjust this index based on your CSV structure
-								return aData.localeCompare(bData);
+								const aName = a.split(',')[0].trim(); // Adjust index based on your CSV structure
+								const bName = b.split(',')[0].trim(); // Adjust index based on your CSV structure
+								return aName.localeCompare(bName);
 							});
+
+							// Find the largest value and its index
+							for (let i = 0; i < rows.length; i++) {
+								const value = parseInt(rows[i].split(',')[1]); // Assuming the value is in the second column
+								if (value > maxValue) {
+									maxValue = value;
+									maxIndex = i;
+								}
+							}
 
 							// Add the header row back to the sorted data
 							rows.unshift(headerRow);
@@ -76,9 +89,13 @@
 
 								row.style.fontSize = "18px";
 
-								for (const cellData of rowData) {
+								for (let j = 0; j < rowData.length; j++) {
 									const cell = document.createElement('td');
-									cell.textContent = cellData;
+									if (i === maxIndex + 1 && j === 0) { // If this is the row containing the largest value
+										cell.textContent = rowData[j].trim() + " 👑"; // Add crown emoji next to the name
+									} else {
+										cell.textContent = rowData[j].trim();
+									}
 									row.appendChild(cell);
 								}
 
