@@ -1,20 +1,20 @@
 Student, Coding Coins, Achievements 🍬,⏰,🙋‍♂️
 Bella C., 1,
-Sabrina C., 1,
+Sabrina C., 2,🙋‍♂️
 Laney D., 1,
-Sofia H., 1,
-Lara J., 1,
+Sofia H., 3,🙋‍♂️
+Lara J., 2,🙋‍♂️
 Addison K., 1,
-Ingrid P., 1,
+Ingrid P., 2,🙋‍♂️
 Kathryn P., 1,
-Audrey R., 1,
+Audrey R., 2,🙋‍♂️
 Leighton S., 1,
 Vanessa S., 1,
-Juliet S., 1,
+Juliet S., 2,🙋‍♂️
 Halleluia T., 1,
 Kaely W., 1,
 Addy W., 1,
-Yosan Y., 1,
+Yosan Y., 2,🙋‍♂️
 Griffin A., 3, 🙋‍♂️
 Sabry Bowden, 5, 🙋‍♂️🙋‍♂️
 Adam Elsakkar, 4, ✅🙋‍♂️
@@ -50,7 +50,6 @@ Aaron T., 20,🍭🍭
 Annika C., 33, 🔐🍭🍭🧸🐳🐳🐳🐳
 Joaquin V., 0, 🪑🍭
 Chloe T., 9, 🍭
-Matthew W., 0, (🐳🐳->Evan)
 Russel Tang, 3, (💪+🪑)
 Alex C., 3
 Ryder H., 3, (🪑+🎒)
