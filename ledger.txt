@@ -1,4 +1,6 @@
 Student, Coding Coins, Achievements 🍬,⏰,🙋‍♂️
+Lillian M., 1,
+Daniel M., 1, 
 Bella C., 1,
 Sabrina C., 2,🙋‍♂️
 Laney D., 1,
@@ -30,7 +32,8 @@ Terrance L.,56,🤫 🔐 🧙🐳🐳🧸🧸🧸🧸🧸🐳
 Andy D.,29,🔐🪑 🔐(🥷+🍗)*🧙 🧽🐳🐳🐳🐳🐳🐳🐳🍬🧸🧸🧸
 Ethan S.,44, 🔐
 Justin S., 36.5,🍬
-Benny M.,7
+Benny M.,7,
+Henry W., 1,
 Henry H., 0,🍬🍭🗣️⏰🍬🍬🍬
 Chris C., 1,🍬1️⃣🍭🍭🍭🍭
 Calvin P., 0.5
@@ -41,7 +44,7 @@ Diego F., 4,🍬🍬 🧙🍭🍭
 Lachlan R., 0,🍬🍬🍭
 Noah T., 13
 Lloyd D., 2,🍬🍬🍬
-Ross T., 19,🍬🪑
+Ross T., 20,🍬🪑
 Michael L., 11,1️⃣1️⃣🍬
 Ryker F., 15,🗣️🍬🍬
 Reeves C., 9, 🧙🍬 🔐
