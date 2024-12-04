@@ -56,56 +56,90 @@
 						</tr>
 					</table>
 					<script>
-						// Function to parse CSV data and create an HTML table
+						// Function to parse CSV data and create an HTML table grouped by year
 						function parseCSV(csv) {
 							const rows = csv.split('\n');
 							const table = document.querySelector('table');
-
+					
 							// Remove the header row (assuming it's the first row)
 							const headerRow = rows.shift();
-
-							let maxIndex = -1;
-							let maxValue = -Infinity;
-
-							// Sort the rows alphabetically based on the first column (assuming it contains names)
-							rows.sort((a, b) => {
-								const aName = a.split(',')[0].trim(); // Adjust index based on your CSV structure
-								const bName = b.split(',')[0].trim(); // Adjust index based on your CSV structure
-								return aName.localeCompare(bName);
+					
+							// Parse the data into an array of objects
+							const data = rows.map(row => {
+								const columns = row.split(',').map(col => col.trim()); // Trim spaces
+								return {
+									year: columns[2]?.trim(),
+									student: columns[0]?.trim(),
+									coins: parseFloat(columns[1]?.trim()) || 0,
+									achievements: columns[3]?.trim() || ''
+								};
+							}).filter(entry => entry.year); // Filter out rows without a year
+					
+							// Group by year
+							const groupedByYear = {};
+							data.forEach(entry => {
+								if (!groupedByYear[entry.year]) {
+									groupedByYear[entry.year] = [];
+								}
+								groupedByYear[entry.year].push(entry);
 							});
-
-							// Find the largest value and its index
-							for (let i = 0; i < rows.length; i++) {
-								const value = parseInt(rows[i].split(',')[1]); // Assuming the value is in the second column
-								if (value > maxValue) {
-									maxValue = value;
-									maxIndex = i;
+					
+							// Determine the most recent year and the student with the most coins
+							const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a); // Descending year order
+							const mostRecentYear = sortedYears[0];
+							let topStudent = null;
+							let maxCoins = -Infinity;
+					
+							groupedByYear[mostRecentYear].forEach(student => {
+								if (student.coins > maxCoins) {
+									maxCoins = student.coins;
+									topStudent = student;
 								}
-							}
-
-							// Add the header row back to the sorted data
-							rows.unshift(headerRow);
-
-							for (let i = 1; i < rows.length; i++) {
-								const rowData = rows[i].split(',');
-								const row = document.createElement('tr');
-
-								row.style.fontSize = "18px";
-
-								for (let j = 0; j < rowData.length; j++) {
-									const cell = document.createElement('td');
-									if (i === maxIndex + 1 && j === 0) { // If this is the row containing the largest value
-										cell.textContent = rowData[j].trim() + " 👑"; // Add crown emoji next to the name
-									} else {
-										cell.textContent = rowData[j].trim();
+							});
+					
+							// Build the table
+							sortedYears.forEach(year => {
+								// Sort students alphabetically by name within the year
+								groupedByYear[year].sort((a, b) => a.student.localeCompare(b.student));
+					
+								// Add a row for the year separator
+								const yearRow = document.createElement('tr');
+								const yearCell = document.createElement('td');
+								yearCell.colSpan = 3;
+								yearCell.textContent = `${year}-----------------------------------------------------------------`;
+								yearCell.style.fontWeight = 'bold';
+								yearCell.style.fontSize = '20px';
+								yearRow.appendChild(yearCell);
+								table.appendChild(yearRow);
+					
+								// Add rows for students in that year
+								groupedByYear[year].forEach(entry => {
+									const row = document.createElement('tr');
+									row.style.fontSize = '18px';
+					
+									const studentCell = document.createElement('td');
+									studentCell.textContent = entry.student;
+					
+									// Add crown emoji to the top student in the most recent year
+									if (year === mostRecentYear && entry === topStudent) {
+										studentCell.textContent += " 👑";
 									}
-									row.appendChild(cell);
-								}
-
-								table.appendChild(row);
-							}
+					
+									row.appendChild(studentCell);
+					
+									const coinsCell = document.createElement('td');
+									coinsCell.textContent = entry.coins;
+									row.appendChild(coinsCell);
+					
+									const achievementsCell = document.createElement('td');
+									achievementsCell.textContent = entry.achievements;
+									row.appendChild(achievementsCell);
+					
+									table.appendChild(row);
+								});
+							});
 						}
-
+					
 						// Load the specific CSV file from your local directory
 						fetch('ledger.txt')
 							.then(response => response.text())
@@ -117,6 +151,7 @@
 								console.error('Error loading CSV file:', error);
 							});
 					</script>
+					
 					<!--CHATGPT-->
 
 					<!--Chatgpt couldn't make this
