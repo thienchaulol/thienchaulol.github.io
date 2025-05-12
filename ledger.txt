@@ -2,7 +2,7 @@ Student Name,Coding Coins,Year,Achievements
 Nina M., 6, 2025,
 Amy G., 3, 2025,
 Trinity J., 6, 2025,
-Leila S., 6, 2025,
+Leila S., 7, 2025,
 Jack W., 3, 2025,
 Samuel N., 5, 2025,
 Sophie F., 3, 2025,
