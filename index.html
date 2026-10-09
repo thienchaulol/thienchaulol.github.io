@@ -147,6 +147,16 @@ section{padding:88px 0;scroll-margin-top:76px}
 .nav-links a:hover{color:var(--accent)}
 .nav .btn{min-height:40px;padding:8px 20px;font-size:.94rem}
 @media (max-width:880px){ .nav-links{display:none} }
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-actions .btn{white-space:nowrap}
+.btn-outline{background:transparent;color:var(--accent-deep);border-color:var(--accent)}
+.btn-outline:hover{background:var(--accent-wash);color:var(--accent-deep);text-decoration:none;border-color:var(--accent)}
+.btn-outline[aria-current="page"]{background:var(--accent-wash)}
+@media (max-width:520px){
+  .nav-inner{gap:12px}
+  .nav-actions{gap:8px}
+  .nav .btn{padding:8px 12px;font-size:.86rem}
+}
 
 /* ---------- Hero ---------- */
 .hero{
@@ -363,6 +373,35 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
   .calendly-container{height:820px}
   .hero-cta .btn{width:100%}
 }
+
+/* ---------- AI in My Work card (About) ---------- */
+.ai-teaser{
+  display:flex;gap:20px;align-items:center;
+  margin:4px 0 28px;padding:18px 22px 18px 18px;
+  background:#EEF7F2;border:1px solid #CFE5D8;border-radius:var(--r-lg);
+  color:var(--ink-soft);text-decoration:none;
+  transition:border-color .2s, box-shadow .2s, transform .2s;
+}
+.ai-teaser:hover{text-decoration:none;color:var(--ink-soft);border-color:var(--accent);box-shadow:0 6px 18px rgba(31,111,92,.12)}
+.ai-teaser:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:no-preference){ .ai-teaser:hover{transform:translateY(-1px)} }
+.ai-teaser-map{flex:none;width:116px;height:auto;display:block}
+.ai-teaser-text{display:block;min-width:0}
+.ai-teaser-k{display:block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:4px}
+.ai-teaser-title{display:block;font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--ink);line-height:1.25}
+.ai-teaser-sub{display:block;font-size:.92rem;color:var(--muted);margin:4px 0 8px;line-height:1.5}
+.ai-teaser-cta{display:inline-block;font-weight:600;font-size:.92rem;color:var(--accent)}
+.ai-teaser:hover .ai-teaser-cta{color:var(--accent-deep)}
+@media (max-width:480px){
+  .ai-teaser{flex-direction:column;align-items:flex-start;gap:14px}
+  .ai-teaser-map{width:100px}
+}
+
+/* ---------- Page change: cream fades to mint (and back) ----------
+   Chrome, Edge, and Safari run it; other browsers just load the page. */
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.45s;animation-timing-function:ease}
+@media (prefers-reduced-motion:reduce){ @view-transition{navigation:none} }
 </style>
 </head>
 <body>
@@ -379,7 +418,10 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
       <li><a href="#process">How it works</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="#booking" class="btn btn-primary">Book a call</a>
+    <div class="nav-actions">
+      <a href="ai.html" class="btn btn-outline">AI in My Work</a>
+      <a href="#booking" class="btn btn-primary">Book a call</a>
+    </div>
   </div>
 </nav>
 
@@ -435,7 +477,39 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
         <h2>Hello, </h2>
         <p>Thien Chau on paper, but students have called me Mr. Chau for years. I teach high school math and computer science full time at an independent school in San Francisco, and I tutor a small number of students outside of that.</p>
         
-        <p>B.S. in Computer Science, M.A. in Instructional Design.</p>
+        <a class="ai-teaser" href="ai.html">
+          <svg class="ai-teaser-map" viewBox="0 0 120 84" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="#1F6F5C" stroke-opacity=".55" stroke-width="1.2" stroke-linecap="round">
+              <path d="M36 12 C41 12 41 6 46 6 L74 6 C79 6 79 12 84 12"/>
+              <path d="M84 31 C79 31 79 29 74 29"/>
+              <path d="M36 64 C41 64 41 55 46 55"/>
+              <path d="M74 55 C79 55 79 64 84 64"/>
+              <path d="M19 38 L19 46"/>
+            </g>
+            <g fill="#fff" stroke="#BFDCCB">
+              <rect x="2" y="2" width="34" height="36" rx="4"/>
+              <rect x="84" y="2" width="34" height="36" rx="4"/>
+              <rect x="2" y="46" width="34" height="36" rx="4"/>
+              <rect x="84" y="46" width="34" height="36" rx="4"/>
+            </g>
+            <g fill="#DCEFE4">
+              <rect x="7" y="9" width="24" height="5" rx="1.5"/><rect x="7" y="18" width="24" height="5" rx="1.5"/><rect x="7" y="27" width="24" height="5" rx="1.5"/>
+              <rect x="89" y="9" width="24" height="5" rx="1.5"/><rect x="89" y="18" width="24" height="5" rx="1.5"/><rect x="89" y="27" width="24" height="5" rx="1.5"/>
+              <rect x="7" y="53" width="24" height="5" rx="1.5"/><rect x="7" y="62" width="24" height="5" rx="1.5"/><rect x="7" y="71" width="24" height="5" rx="1.5"/>
+              <rect x="89" y="55" width="24" height="5" rx="1.5"/><rect x="89" y="65" width="24" height="5" rx="1.5"/>
+            </g>
+            <rect x="46" y="14" width="28" height="56" rx="5" fill="#DCEFE4" stroke="#1F6F5C" stroke-width="1.2"/>
+            <rect x="51" y="21" width="18" height="34" rx="2.5" fill="#fff"/>
+            <g fill="#BFDCCB"><rect x="54" y="26" width="12" height="2.5" rx="1"/><rect x="54" y="32" width="9" height="2.5" rx="1"/><rect x="54" y="38" width="11" height="2.5" rx="1"/><rect x="54" y="44" width="7" height="2.5" rx="1"/></g>
+            <g fill="#1F6F5C" fill-opacity=".55"><rect x="51" y="60" width="5" height="5" rx="1"/><rect x="57.5" y="60" width="5" height="5" rx="1"/><rect x="64" y="60" width="5" height="5" rx="1"/></g>
+          </svg>
+          <span class="ai-teaser-text">
+            <span class="ai-teaser-k">Behind the scenes</span>
+            <span class="ai-teaser-title">AI in My Work</span>
+            <span class="ai-teaser-sub">AI does the groundwork, so my time goes to students.</span>
+            <span class="ai-teaser-cta">See the map <span aria-hidden="true">&rarr;</span></span>
+          </span>
+        </a>
         <ul class="badges">
           <li>M.A. Instructional Design</li>
           <li>B.S. Computer Science</li>
