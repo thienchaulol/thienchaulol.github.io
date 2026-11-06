@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FBFAF8">
+  <meta name="description" content="Choose two areas and try 10 original SAT-style math questions, with step-by-step explanations. Independent practice, not official SAT content.">
+  <title>SAT Math Practice — Mr. Chau</title>
+  <style>
+    :root{
+      --ink:#1A1A18;
+      --ink-soft:#403D38;
+      --muted:#6B6862;
+      --paper:#FBFAF8;
+      --surface:#FFFFFF;
+      --surface-warm:#F4F1EB;
+      --rule:#E4E0D8;
+      --rule-soft:#F0EDE7;
+      --accent:#1F6F5C;
+      --accent-deep:#175447;
+      --accent-wash:#EAF2EF;
+      --measure:70ch;
+      --wrap:1120px;
+      --r:8px;
+      --r-lg:12px;
+      --shadow:0 1px 2px rgba(26,26,24,.05), 0 4px 12px rgba(26,26,24,.04);
+      --serif:ui-serif, Georgia, "Times New Roman", serif;
+      --sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      font-size:16px;
+      line-height:1.6;
+      color:var(--ink-soft);
+      background:var(--paper);
+      -webkit-font-smoothing:antialiased;
+    }
+    h1,h2,h3{
+      font-family:var(--serif);
+      color:var(--ink);
+      line-height:1.2;
+      letter-spacing:-.01em;
+      margin:0 0 16px;
+      font-weight:600;
+    }
+    h1{font-size:clamp(2.3rem,4.6vw,3.25rem)}
+    h2{font-size:clamp(1.6rem,3vw,2rem)}
+    h3{font-size:1.15rem}
+    p{margin:0 0 16px}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{color:var(--accent-deep);text-decoration:underline}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+    .skip{
+      position:absolute;left:16px;top:-60px;z-index:100;
+      background:var(--ink);color:#fff;padding:12px 20px;border-radius:var(--r);
+    }
+    .skip:focus{top:16px;color:#fff;text-decoration:none}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:48px;padding:12px 28px;border-radius:var(--r);
+      font-family:var(--sans);font-size:1rem;font-weight:600;
+      border:1px solid transparent;cursor:pointer;
+      transition:background-color .2s,border-color .2s,transform .2s;
+    }
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{background:var(--accent-deep);color:#fff;text-decoration:none}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+    .btn-ghost:hover{background:var(--surface-warm);color:var(--ink);text-decoration:none;border-color:#D4CFC4}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(251,250,248,.92);
+      border-bottom:1px solid var(--rule);
+      backdrop-filter:saturate(180%) blur(12px);
+    }
+    .nav-inner{
+      max-width:var(--wrap);margin:0 auto;padding:0 32px;
+      display:flex;align-items:center;gap:24px;min-height:64px;
+    }
+    .brand{
+      font-family:var(--serif);font-size:1.15rem;font-weight:600;
+      color:var(--ink);margin-right:auto;white-space:nowrap;
+    }
+    .brand:hover{color:var(--ink);text-decoration:none}
+    .nav-link{font-size:.94rem;font-weight:500}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .nav-actions .btn{white-space:nowrap}
+    .nav .btn{min-height:40px;padding:8px 20px;font-size:.94rem;line-height:inherit}
+    .btn-outline{background:transparent;color:var(--accent-deep);border-color:var(--accent)}
+    .btn-outline:hover{background:var(--accent-wash);color:var(--accent-deep);text-decoration:none;border-color:var(--accent)}
+    .eyebrow{
+      font-size:.75rem;font-weight:700;text-transform:uppercase;
+      letter-spacing:.14em;color:var(--accent);margin:0 0 16px;
+    }
+    main{min-height:calc(100vh - 180px);padding:56px 0 88px}
+    .intro,.practice,.results,.review{max-width:760px;margin:0 auto}
+    .intro{
+      padding:clamp(28px,6vw,64px);
+      background:var(--surface);border:1px solid var(--rule);
+      border-radius:var(--r-lg);box-shadow:var(--shadow);
+    }
+    .intro h1{margin-bottom:20px}
+    .lede{font-size:1.1rem;color:var(--muted);max-width:60ch}
+    .notice{
+      margin:24px 0 28px;padding:14px 18px;
+      border-left:3px solid var(--accent);
+      background:var(--accent-wash);color:var(--ink-soft);
+      font-size:.94rem;
+    }
+    .notice strong{color:var(--ink)}
+    .intro-meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 28px;padding:0;list-style:none;color:var(--muted);font-size:.9rem}
+    .intro-meta li::before{content:"•";color:var(--accent);margin-right:8px}
+    .category-picker{border:0;padding:0;margin:28px 0}
+    .category-picker legend{font-weight:700;color:var(--ink);margin-bottom:12px}
+    .category-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .category-option{
+      display:flex;align-items:flex-start;gap:12px;padding:14px;
+      border:1px solid var(--rule);border-radius:var(--r);background:var(--surface);
+      cursor:pointer;
+    }
+    .category-option:has(input:checked){border-color:var(--accent);background:var(--accent-wash)}
+    .category-option input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--accent);flex:none}
+    .category-name{display:block;color:var(--ink);font-weight:600;line-height:1.35}
+    .category-count{display:block;margin-top:4px;color:var(--muted);font-size:.82rem}
+    .selection-status{min-height:1.5em;margin:-16px 0 20px;color:var(--muted);font-size:.9rem}
+    .start-actions{display:flex;justify-content:flex-end}
+    .difficulty-label{display:inline-block;margin:0 0 12px 8px;padding:5px 11px;border:1px solid var(--rule);border-radius:99px;color:var(--muted);font-size:.78rem;font-weight:600}
+    .btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+    .practice{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-lg);padding:clamp(22px,5vw,44px);box-shadow:var(--shadow)}
+    .progress-row{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:.88rem;color:var(--muted);margin-bottom:10px}
+    .progress-track{height:8px;background:var(--rule-soft);border-radius:99px;overflow:hidden;margin-bottom:32px}
+    .progress-fill{height:100%;width:0;background:var(--accent);border-radius:inherit;transition:width .2s}
+    .skill-label{display:inline-block;margin-bottom:12px;padding:5px 11px;border-radius:99px;background:var(--accent-wash);color:var(--accent-deep);font-size:.78rem;font-weight:700}
+    .question-title{font-family:var(--sans);font-size:1.2rem;line-height:1.55;font-weight:650;margin-bottom:22px}
+    .choices{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .choice{
+      display:flex;align-items:flex-start;gap:14px;width:100%;min-height:52px;
+      padding:13px 16px;text-align:left;background:var(--surface);
+      color:var(--ink-soft);border:1px solid var(--rule);border-radius:var(--r);
+      font:inherit;cursor:pointer;
+    }
+    .choice:hover:not(:disabled){background:var(--surface-warm);border-color:#D4CFC4}
+    .choice:disabled{cursor:default}
+    .review-choice{cursor:default}
+    .choice-key{
+      display:inline-flex;align-items:center;justify-content:center;flex:none;
+      width:26px;height:26px;border-radius:50%;border:1px solid var(--rule);
+      color:var(--ink);font-size:.82rem;font-weight:700;
+    }
+    .choice.is-correct{border-color:var(--accent);background:var(--accent-wash);color:var(--ink)}
+    .choice.is-correct .choice-key{border-color:var(--accent);background:var(--accent);color:#fff}
+    .choice.is-incorrect{border-color:#A33E35;background:#FBF0EF}
+    .choice.is-incorrect .choice-key{border-color:#A33E35;background:#A33E35;color:#fff}
+    .feedback{margin-top:28px;padding:22px;border:1px solid var(--rule);border-radius:var(--r);background:#fff}
+    .feedback.is-correct{border-left:4px solid var(--accent)}
+    .feedback.is-incorrect{border-left:4px solid #A33E35}
+    .feedback h3{font-family:var(--sans);font-size:1.05rem;margin-bottom:12px}
+    .feedback h4{font-size:.95rem;color:var(--ink);margin:20px 0 8px}
+    .feedback ol,.feedback ul{padding-left:22px;margin:0}
+    .feedback li{padding:3px 0}
+    .feedback li+li{margin-top:4px}
+    .next-row{display:flex;justify-content:flex-end;margin-top:24px}
+    .review-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-bottom:20px}
+    .review-bar .btn{min-height:44px;padding:9px 16px;font-size:.92rem}
+    .review-nav{margin-top:24px;margin-bottom:0}
+    .result-score{display:flex;align-items:baseline;gap:10px;margin:0 0 28px}
+    .result-score strong{font-family:var(--serif);font-size:2.7rem;line-height:1;color:var(--ink)}
+    .result-score span{color:var(--muted)}
+    .breakdown{width:100%;border-collapse:collapse;margin:22px 0 32px}
+    .breakdown th,.breakdown td{padding:13px 12px;border-bottom:1px solid var(--rule);text-align:left}
+    .breakdown th{color:var(--ink);font-size:.86rem}
+    .breakdown td:last-child,.breakdown th:last-child{text-align:right}
+    .result-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .callout{margin:32px 0 0;padding:20px 22px;background:var(--surface-warm);border-radius:var(--r-lg)}
+    .callout p{margin:0}
+    .callout a{font-weight:700}
+    .empty-review{padding:22px;background:var(--accent-wash);border-radius:var(--r);color:var(--ink)}
+    [hidden]{display:none!important}
+    footer{background:var(--ink);color:rgba(255,255,255,.72);padding:25px 0;text-align:center;font-size:.86rem}
+    footer p{margin:0}
+    footer a{color:#fff}
+    @media (max-width:700px){
+      .wrap,.nav-inner{padding:0 20px}
+      main{padding:32px 0 56px}
+      .nav-inner{gap:14px}
+      .category-options{grid-template-columns:1fr}
+      .result-actions{flex-direction:column}
+      .result-actions .btn{width:100%}
+    }
+    @media(max-width:520px){.nav-inner{gap:12px}.nav-actions{gap:8px}.nav .btn{padding:8px 8px;font-size:.78rem}}
+    @media (prefers-reduced-motion:no-preference){
+      .btn-primary:hover{transform:translateY(-1px)}
+      html{scroll-behavior:smooth}
+    }
+    @view-transition{navigation:auto}
+    ::view-transition-old(root),::view-transition-new(root){animation-duration:.45s;animation-timing-function:ease}
+    @media(prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="sat-practice.html" class="brand">Mr.&nbsp;Chau</a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline"><span aria-hidden="true">&larr;</span>&nbsp;Main site</a>
+        <a href="index.html#booking" class="btn btn-primary">Book a call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="wrap">
+    <section id="start-screen" class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Independent practice</p>
+      <h1 id="page-title">SAT Math practice</h1>
+      <!--<p class="lede">Choose two areas to focus on. Each set randomly selects five of the original questions in each category and shuffles their order. You’ll get an explanation after every answer.</p>-->
+      <p class="notice"><strong>Independent practice, not official SAT content.</strong> These original questions are not affiliated with or endorsed by the College Board.</p>
+      <!--<ul class="intro-meta">
+        <li>10 questions per practice set</li>
+        <li>4 choices each</li>
+        <li>Random question order</li>
+        <li>No timer</li>
+      </ul>-->
+      <fieldset class="category-picker">
+        <legend>Choose exactly two categories</legend>
+        <div id="category-options" class="category-options"></div>
+      </fieldset>
+      <p id="selection-status" class="selection-status" aria-live="polite">Choose two categories to begin.</p>
+      <div class="start-actions">
+        <button id="start-button" class="btn btn-primary" type="button" disabled>Start practice</button>
+      </div>
+    </section>
+
+    <section id="question-screen" class="practice" aria-labelledby="question-title" hidden>
+      <div class="progress-row">
+        <span id="question-count"></span>
+        <span id="question-skill"></span>
+      </div>
+      <div id="progress-track" class="progress-track" role="progressbar" aria-label="Practice progress" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <span id="skill-label" class="skill-label"></span>
+      <span id="difficulty-label" class="difficulty-label"></span>
+      <h2 id="question-title" class="question-title" tabindex="-1"></h2>
+      <ol id="choices" class="choices" aria-label="Answer choices"></ol>
+      <div id="feedback" aria-live="polite"></div>
+      <div id="question-actions" class="next-row" hidden>
+        <button id="next-button" class="btn btn-primary" type="button">Next question</button>
+      </div>
+    </section>
+
+    <section id="results-screen" class="practice" aria-labelledby="results-title" hidden>
+      <p class="eyebrow">Practice complete</p>
+      <h2 id="results-title" tabindex="-1">Your results</h2>
+      <p id="score" class="result-score"></p>
+      <p id="result-summary"></p>
+      <h3>Breakdown by category</h3>
+      <table class="breakdown">
+        <thead><tr><th scope="col">Category</th><th scope="col">Correct</th></tr></thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
+      <div class="result-actions">
+        <button id="review-button" class="btn btn-ghost" type="button">Review missed questions</button>
+        <button id="restart-button" class="btn btn-primary" type="button">Try again</button>
+      </div>
+      <aside class="callout">
+        <p>Want to talk through a study plan? <a href="https://calendly.com/your-booking-link">Book a free 15-minute call</a>. No pressure—just a chance to see if I can help.</p>
+      </aside>
+    </section>
+
+    <section id="review-screen" class="practice" aria-labelledby="review-title" hidden>
+      <p class="eyebrow">Answer review</p>
+      <h2 id="review-title" tabindex="-1">Questions to revisit</h2>
+      <div class="review-bar">
+        <button id="back-results-button" class="btn btn-ghost" type="button">Back to results</button>
+        <span id="review-count" aria-live="polite"></span>
+      </div>
+      <span id="review-skill" class="skill-label"></span>
+      <p id="review-question" class="question-title" tabindex="-1"></p>
+      <ol id="review-choices" class="choices" aria-label="Answer choices"></ol>
+      <div id="review-explanation"></div>
+      <div class="review-bar review-nav">
+        <button id="previous-review-button" class="btn btn-ghost" type="button">Previous missed</button>
+        <button id="next-review-button" class="btn btn-primary" type="button">Next missed</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><p>Original, independent SAT-style practice by Mr. Chau. Not official SAT content.</p></div>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        skill: "Algebra",
+        difficulty: "Easy",
+        question: "Solve for x: 3x + 5 = 2x + 17.",
+        choices: ["x = 10", "x = 12", "x = 22", "x = -12"],
+        answerIndex: 1,
+        explanation: [
+          "Subtract 2x from both sides: x + 5 = 17.",
+          "Subtract 5 from both sides: x = 12.",
+          "Check: 3(12) + 5 and 2(12) + 17 both equal 41."
+        ],
+        distractorNotes: [
+          "A subtraction slip when evaluating 17 - 5 can lead here; substituting 10 gives 35 on the left and 37 on the right.",
+          "",
+          "This is the result of adding 5 and 17 instead of isolating x.",
+          "This has the right magnitude but reverses the sign when moving terms; x = -12 does not satisfy the equation."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Medium",
+        question: "At a school event, adult tickets cost $12 and student tickets cost $8. A total of 19 tickets brought in $188. How many adult tickets were sold?",
+        choices: ["8", "9", "10", "11"],
+        answerIndex: 1,
+        explanation: [
+          "Let a be adult tickets and s be student tickets. The total-count equation is a + s = 19.",
+          "If all 19 were student tickets, the total would be 19 × 8 = $152. Each adult ticket adds $4 more than a student ticket.",
+          "The extra revenue is $188 - $152 = $36, so 36 ÷ 4 = 9 adult tickets."
+        ],
+        distractorNotes: [
+          "Eight adults would bring in $184; it is close, but $4 short.",
+          "",
+          "Ten adults would bring in $192, which is $4 too much.",
+          "Eleven adults would bring in $200, so this overcounts the adult tickets."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Medium",
+        question: "Which solution set satisfies -2(3x - 1) > 10?",
+        choices: ["x < -4/3", "x > -4/3", "x < -2", "x > 2"],
+        answerIndex: 0,
+        explanation: [
+          "Distribute -2: -6x + 2 > 10.",
+          "Subtract 2: -6x > 8.",
+          "Divide by -6 and reverse the inequality: x < -8/6, or x < -4/3."
+        ],
+        distractorNotes: [
+          "",
+          "This forgets to reverse the inequality sign when dividing by a negative number.",
+          "This may come from rounding or simplifying -8/6 incorrectly; the exact boundary is -4/3.",
+          "This uses a positive boundary and the wrong direction; values above 2 do not make the original inequality true."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Easy",
+        question: "A line passes through (2, 7) and (6, 15). Which equation represents the line?",
+        choices: ["y = 2x + 3", "y = 2x - 3", "y = 4x - 1", "y = x + 5"],
+        answerIndex: 0,
+        explanation: [
+          "Find the slope: (15 - 7) / (6 - 2) = 8 / 4 = 2.",
+          "Use y = mx + b with (2, 7): 7 = 2(2) + b, so b = 3.",
+          "The equation is y = 2x + 3. It gives 7 when x = 2 and 15 when x = 6."
+        ],
+        distractorNotes: [
+          "",
+          "This gets the slope right but uses the wrong y-intercept; at x = 2 it gives 1, not 7.",
+          "This can come from dividing the change in y by the change in x incorrectly; its slope is 4, not 2.",
+          "This uses the wrong slope; the y-values increase by 8 when x increases by 4."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Hard",
+        question: "If 2x + y = 11 and x - y = 1, what is x + y?",
+        choices: ["5", "6", "7", "8"],
+        answerIndex: 2,
+        explanation: [
+          "Add the equations to eliminate y: (2x + y) + (x - y) = 11 + 1.",
+          "This gives 3x = 12, so x = 4.",
+          "Substitute into x - y = 1: 4 - y = 1, so y = 3. Therefore x + y = 7."
+        ],
+        distractorNotes: [
+          "This can result from using x = 3 after elimination; that value does not satisfy both equations.",
+          "This is x + y if y is mistakenly found as 2 instead of 3.",
+          "",
+          "This is a common result of adding x and y values before correctly solving the system."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Easy",
+        question: "The function f(x) = x² - 5x + 6 has which zeros?",
+        choices: ["-2 and -3", "2 and 3", "-2 and 3", "1 and 6"],
+        answerIndex: 1,
+        explanation: [
+          "Factor the quadratic: x² - 5x + 6 = (x - 2)(x - 3).",
+          "Set each factor equal to zero: x - 2 = 0 or x - 3 = 0.",
+          "The zeros are 2 and 3."
+        ],
+        distractorNotes: [
+          "These values would come from x² + 5x + 6; the middle term here is -5x.",
+          "",
+          "This gets one factor's sign wrong; substituting -2 does not make the function zero.",
+          "These are the constant and a possible factor pair, but neither makes the quadratic zero."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "A parabola is given by y = (x - 4)² - 9. What are its x-intercepts?",
+        choices: ["x = -5 and x = 13", "x = 1 and x = 7", "x = -1 and x = 9", "x = 4 and x = 9"],
+        answerIndex: 1,
+        explanation: [
+          "At an x-intercept, y = 0, so (x - 4)² - 9 = 0.",
+          "Add 9 and take square roots: (x - 4)² = 9, so x - 4 = 3 or x - 4 = -3.",
+          "Therefore x = 7 or x = 1."
+        ],
+        distractorNotes: [
+          "These values can come from expanding the square incorrectly; the vertex form shows roots only 3 units from x = 4.",
+          "",
+          "These use a center of 4 but a distance of 5 instead of 3.",
+          "This mistakes the vertex's x-coordinate and the vertical shift for roots."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "A savings balance starts at $250 and grows by 8% each year. About how much is in the account after 2 years, assuming the growth is compounded yearly?",
+        choices: ["$292", "$290", "$270", "$250"],
+        answerIndex: 0,
+        explanation: [
+          "Use yearly growth: balance = 250(1.08)².",
+          "After one year: $250 × 1.08 = $270. After the second: $270 × 1.08 = $291.60.",
+          "Rounded to the nearest dollar, the balance is about $292."
+        ],
+        distractorNotes: [
+          "",
+          "This is a close estimate, but rounding $291.60 to the nearest dollar gives $292.",
+          "This adds roughly $10 twice rather than applying 8% growth to the increasing balance.",
+          "This is the starting balance and ignores the two years of growth."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Hard",
+        question: "For x ≠ 2, solve (x + 1) / (x - 2) = 3.",
+        choices: ["x = 3.5", "x = 1.5", "x = 4", "x = 2"],
+        answerIndex: 0,
+        explanation: [
+          "Multiply both sides by x - 2 (which is nonzero): x + 1 = 3(x - 2).",
+          "Expand and collect terms: x + 1 = 3x - 6, so 7 = 2x.",
+          "Divide by 2: x = 3.5. This is allowed because it is not 2."
+        ],
+        distractorNotes: [
+          "",
+          "This can come from changing the sign while moving the constant; substituting it does not yield 3.",
+          "This can result from distributing 3 to x but not correctly handling the -2.",
+          "This value makes the denominator zero, so the expression is undefined."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Easy",
+        question: "Let f(x) = x² and g(x) = 2x - 1. What is f(g(3))?",
+        choices: ["5", "25", "35", "36"],
+        answerIndex: 1,
+        explanation: [
+          "First evaluate the inside function: g(3) = 2(3) - 1 = 5.",
+          "Then apply f to that result: f(5) = 5².",
+          "Therefore f(g(3)) = 25."
+        ],
+        distractorNotes: [
+          "This is the intermediate value g(3), before applying f.",
+          "",
+          "This can come from mixing the two function rules rather than applying them in order.",
+          "This squares 6, which would come from forgetting to subtract 1 in g(3)."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Easy",
+        question: "What is the median of the data set 4, 7, 7, 10, 12?",
+        choices: ["7", "8", "8.5", "10"],
+        answerIndex: 0,
+        explanation: [
+          "The values are already in order.",
+          "There are five values, so the median is the one in the middle: the third value.",
+          "The third value is 7."
+        ],
+        distractorNotes: [
+          "",
+          "This is the mean (40 ÷ 5), not the median.",
+          "This averages the two middle values as if there were an even number of data points.",
+          "This is the fourth value, not the middle value."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Medium",
+        question: "In a survey, 18 out of 30 students said they usually bring lunch from home. If the same proportion applies to a school of 300 students, about how many students usually bring lunch from home?",
+        choices: ["120", "150", "180", "210"],
+        answerIndex: 2,
+        explanation: [
+          "Find the surveyed proportion: 18 / 30 = 0.6.",
+          "Apply the proportion to 300 students: 0.6 × 300 = 180.",
+          "The estimate is 180 students."
+        ],
+        distractorNotes: [
+          "This uses 40% of 300, possibly from reversing the number who bring lunch and those who do not.",
+          "This assumes half the school brings lunch, but the survey proportion is 60%.",
+          "",
+          "This uses 70% rather than the observed 60% proportion."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Medium",
+        question: "A jacket costs $80. Its price is reduced by 25%, then 10% sales tax is added to the reduced price. What is the final price?",
+        choices: ["$60", "$65", "$66", "$88"],
+        answerIndex: 2,
+        explanation: [
+          "A 25% discount means paying 75% of $80: 0.75 × 80 = $60.",
+          "Add 10% tax to the discounted price: 1.10 × 60 = $66.",
+          "The final price is $66."
+        ],
+        distractorNotes: [
+          "This is the discounted price before tax.",
+          "This adds $5 rather than calculating 10% of the discounted $60.",
+          "",
+          "This applies 10% tax to the original $80 instead of the discounted price."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Hard",
+        question: "A student’s average after 4 tests is 82. What score on a fifth test would raise the average to 84?",
+        choices: ["86", "90", "92", "94"],
+        answerIndex: 2,
+        explanation: [
+          "The total for the first 4 tests is 4 × 82 = 328.",
+          "To average 84 over 5 tests, the total must be 5 × 84 = 420.",
+          "The fifth score must be 420 - 328 = 92."
+        ],
+        distractorNotes: [
+          "This adds only 4 points to the average without accounting for the new five-test total.",
+          "This is above the current average but is not enough to bring the five-test average to 84.",
+          "",
+          "This overestimates the needed score by using an incorrect total for the first four tests."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Hard",
+        question: "A bag contains 5 red, 3 blue, and 2 green marbles. One marble is drawn at random and not replaced, then a second is drawn. What is the probability of drawing blue first and red second?",
+        choices: ["1/6", "1/5", "1/3", "5/18"],
+        answerIndex: 0,
+        explanation: [
+          "There are 10 marbles total, so the probability of blue first is 3/10.",
+          "After a blue marble is removed, 9 remain, including 5 red. The probability of red second is 5/9.",
+          "Multiply: (3/10)(5/9) = 15/90 = 1/6."
+        ],
+        distractorNotes: [
+          "",
+          "This can come from treating the two draw probabilities as if the numbers of favorable marbles were unchanged.",
+          "This can come from considering only the chance of drawing blue and not accounting for the required red second draw.",
+          "This uses the red probability as 5/6 after the first draw, overlooking that 9 marbles remain."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Easy",
+        question: "A rectangle has a width of x units and a length of (x + 2) units. If its area is 48 square units and x is positive, what is its width?",
+        choices: ["4", "6", "8", "10"],
+        answerIndex: 1,
+        explanation: [
+          "Write the area equation: x(x + 2) = 48.",
+          "Expand and set the equation equal to zero: x² + 2x - 48 = 0.",
+          "Factor: (x + 8)(x - 6) = 0, so x = -8 or x = 6. Since a width is positive, x = 6."
+        ],
+        distractorNotes: [
+          "A width of 4 gives a length of 6 and an area of only 24.",
+          "",
+          "This can result from taking the other dimension, x + 2, as the width after finding x = 6.",
+          "This does not satisfy x(x + 2) = 48; it may come from adding instead of solving the area equation."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Easy",
+        question: "The three angles of a triangle are in the ratio 2:3:4. What is the measure of the largest angle?",
+        choices: ["40°", "60°", "80°", "100°"],
+        answerIndex: 2,
+        explanation: [
+          "The angles of a triangle add to 180°, and the ratio has 2 + 3 + 4 = 9 total parts.",
+          "Each part is 180° ÷ 9 = 20°.",
+          "The largest angle is 4 parts, or 4 × 20° = 80°."
+        ],
+        distractorNotes: [
+          "This is 2 parts, the smallest angle.",
+          "This is 3 parts, the middle angle.",
+          "",
+          "This can come from assigning 5 parts to the largest angle instead of 4."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Medium",
+        question: "A circle has a radius of 5 units. What is its circumference?",
+        choices: ["5π units", "10π units", "20π units", "25π units"],
+        answerIndex: 1,
+        explanation: [
+          "Circumference is given by C = 2πr.",
+          "Substitute r = 5: C = 2π(5).",
+          "The circumference is 10π units."
+        ],
+        distractorNotes: [
+          "This is πr, which is half the circumference formula.",
+          "",
+          "This doubles the correct circumference, possibly by using a radius of 10.",
+          "This is the area πr², not the circumference."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Medium",
+        question: "A right triangle has legs of lengths 9 and 12. What is the length of its hypotenuse?",
+        choices: ["13", "14", "15", "21"],
+        answerIndex: 2,
+        explanation: [
+          "Apply the Pythagorean theorem: c² = 9² + 12².",
+          "Calculate: c² = 81 + 144 = 225.",
+          "The positive square root is c = 15."
+        ],
+        distractorNotes: [
+          "This is one unit too short; its square is not 9² + 12².",
+          "This is close to the answer, but 14² = 196, not 225.",
+          "",
+          "This adds the two legs directly, but the hypotenuse is found using the Pythagorean theorem."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Hard",
+        question: "In a right triangle, an acute angle θ has sin θ = 3/5. What is cos θ?",
+        choices: ["2/5", "3/4", "4/5", "5/4"],
+        answerIndex: 2,
+        explanation: [
+          "Since sin θ = opposite/hypotenuse, the opposite side and hypotenuse can be 3 and 5.",
+          "Use the Pythagorean theorem to find the adjacent side: 5² - 3² = 25 - 9 = 16, so the adjacent side is 4.",
+          "Cosine is adjacent/hypotenuse, so cos θ = 4/5."
+        ],
+        distractorNotes: [
+          "This subtracts the side lengths 5 - 3 instead of using the Pythagorean theorem.",
+          "This uses the correct side lengths but forms the ratio adjacent/opposite instead of adjacent/hypotenuse.",
+          "",
+          "This reverses the cosine ratio; for an acute angle in a right triangle, cosine is less than 1."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Easy",
+        question: "Solve for x: 5x - 7 = 3x + 9.",
+        choices: ["x = 6", "x = 7", "x = 8", "x = 9"],
+        answerIndex: 2,
+        explanation: [
+          "Subtract 3x from both sides: 2x - 7 = 9.",
+          "Add 7 to both sides: 2x = 16.",
+          "Divide by 2: x = 8."
+        ],
+        distractorNotes: [
+          "This can result from subtracting 3 instead of 7 when moving the constant.",
+          "This is one less than the value from 16 ÷ 2.",
+          "",
+          "This can result from adding 9 and 7 but then dividing by an incorrect coefficient."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Easy",
+        question: "Solve for x: 4(x - 2) = 2x + 10.",
+        choices: ["x = 7", "x = 8", "x = 9", "x = 10"],
+        answerIndex: 2,
+        explanation: [
+          "Distribute 4: 4x - 8 = 2x + 10.",
+          "Subtract 2x and add 8 to both sides: 2x = 18.",
+          "Divide by 2 to get x = 9."
+        ],
+        distractorNotes: [
+          "This can come from adding 10 and 8 but dividing by 3 instead of 2.",
+          "This can result from forgetting to distribute the 4 to both terms inside the parentheses.",
+          "",
+          "This is close, but substituting 10 gives 32 on the left and 30 on the right."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Medium",
+        question: "The line 2x + 3y = 12 crosses the y-axis at what value?",
+        choices: ["2", "3", "4", "6"],
+        answerIndex: 2,
+        explanation: [
+          "At the y-axis, x = 0.",
+          "Substitute x = 0: 2(0) + 3y = 12, so 3y = 12.",
+          "Divide by 3: y = 4."
+        ],
+        distractorNotes: [
+          "This is the x-intercept, found by setting y = 0 instead.",
+          "This is the coefficient of y, not the y-intercept.",
+          "",
+          "This can come from dividing 12 by the coefficient of x rather than the coefficient of y."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Medium",
+        question: "If 2x + y = 13 and x - y = 2, what is x?",
+        choices: ["3", "4", "5", "6"],
+        answerIndex: 2,
+        explanation: [
+          "Add the equations to eliminate y: 3x = 15.",
+          "Divide by 3 to get x = 5.",
+          "Check: when x = 5, the equations give y = 3, which satisfies both."
+        ],
+        distractorNotes: [
+          "This does not satisfy the sum of the two equations, which requires 3x = 15.",
+          "This is one less than 15 ÷ 3.",
+          "",
+          "This may result from dividing 15 by the wrong value."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Hard",
+        question: "The lines 2x + ky = 7 and 4x + 6y = 13 are parallel and distinct. What is k?",
+        choices: ["2", "3", "6", "7"],
+        answerIndex: 1,
+        explanation: [
+          "Rewrite each line in slope-intercept form. Their slopes are -2/k and -4/6 = -2/3.",
+          "Parallel lines have equal slopes, so -2/k = -2/3.",
+          "Therefore k = 3. The intercepts are different, so the lines are distinct."
+        ],
+        distractorNotes: [
+          "This confuses the coefficient of x with the coefficient needed to match the slopes.",
+          "",
+          "This matches the y-coefficient in the second equation without comparing slopes.",
+          "This uses the constant term from the first equation instead of the slope condition."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Easy",
+        question: "If x² = 49, which values can x equal?",
+        choices: ["7 only", "-7 only", "-7 or 7", "-49 or 49"],
+        answerIndex: 2,
+        explanation: [
+          "Take the square root of both sides.",
+          "Both 7² and (-7)² equal 49.",
+          "Therefore x can be -7 or 7."
+        ],
+        distractorNotes: [
+          "This includes the positive root but forgets that a negative number squared is also positive.",
+          "This includes the negative root but omits the positive root.",
+          "",
+          "These are not the square roots of 49; squaring either gives a much larger value."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Easy",
+        question: "If 2ˣ = 16, what is x?",
+        choices: ["2", "3", "4", "8"],
+        answerIndex: 2,
+        explanation: [
+          "Write 16 as a power of 2: 16 = 2⁴.",
+          "Then 2ˣ = 2⁴.",
+          "Equal powers with the same base have equal exponents, so x = 4."
+        ],
+        distractorNotes: [
+          "This is too small: 2² = 4, not 16.",
+          "This gives 2³ = 8.",
+          "",
+          "This confuses the exponent with the value 2⁴."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "If f(x) = 3x² - 2x + 1, what is f(-2)?",
+        choices: ["9", "13", "17", "21"],
+        answerIndex: 2,
+        explanation: [
+          "Substitute -2 for every x: f(-2) = 3(-2)² - 2(-2) + 1.",
+          "Evaluate the exponent and products: 3(4) + 4 + 1.",
+          "Add to get f(-2) = 17."
+        ],
+        distractorNotes: [
+          "This can result from mishandling the negative input in the squared term.",
+          "This can come from evaluating -2(-2) as -4 instead of 4.",
+          "",
+          "This is an arithmetic overcount after substitution."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "The equation x² - 7x + 10 = 0 has which solutions?",
+        choices: ["-2 and -5", "2 and 5", "-2 and 5", "1 and 10"],
+        answerIndex: 1,
+        explanation: [
+          "Find two numbers with product 10 and sum 7: 2 and 5.",
+          "Factor the quadratic: (x - 2)(x - 5) = 0.",
+          "Set each factor equal to zero: x = 2 or x = 5."
+        ],
+        distractorNotes: [
+          "These roots would give a positive 7x term when the factors are expanded.",
+          "",
+          "This has one root with the wrong sign; substituting -2 does not make the equation zero.",
+          "These are a factor pair of 10, but they do not have a sum of 7."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Hard",
+        question: "A quantity is modeled by P(t) = 100(1/2)ᵗ. At what value of t does P(t) equal 12.5?",
+        choices: ["2", "2.5", "3", "4"],
+        answerIndex: 2,
+        explanation: [
+          "Set 100(1/2)ᵗ = 12.5 and divide both sides by 100: (1/2)ᵗ = 0.125.",
+          "Write 0.125 as a fraction: 0.125 = 1/8 = (1/2)³.",
+          "Therefore t = 3."
+        ],
+        distractorNotes: [
+          "At t = 2, the quantity is 25, which is still above 12.5.",
+          "This treats the exponent as changing continuously but does not satisfy (1/2)ᵗ = 1/8.",
+          "",
+          "At t = 4, the quantity is 6.25, which is below 12.5."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Easy",
+        question: "What is the mean of 6, 8, 9, and 11?",
+        choices: ["8", "8.5", "9", "34"],
+        answerIndex: 1,
+        explanation: [
+          "Add the values: 6 + 8 + 9 + 11 = 34.",
+          "There are 4 values, so divide the sum by 4.",
+          "The mean is 34 ÷ 4 = 8.5."
+        ],
+        distractorNotes: [
+          "This is close to the mean but is not the result of 34 ÷ 4.",
+          "",
+          "This rounds the mean to the nearest whole number rather than giving the exact value.",
+          "This is the sum, not the mean."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Easy",
+        question: "In a survey, 15 of 40 students prefer biking to school. If the same proportion applies to 240 students, how many would be expected to prefer biking?",
+        choices: ["72", "84", "90", "96"],
+        answerIndex: 2,
+        explanation: [
+          "The surveyed proportion is 15/40 = 3/8.",
+          "Apply the proportion to 240 students: (3/8) × 240.",
+          "Since 240 ÷ 8 = 30, the estimate is 3 × 30 = 90 students."
+        ],
+        distractorNotes: [
+          "This uses 30% rather than the surveyed proportion of 37.5%.",
+          "This is close but does not result from multiplying 240 by 3/8.",
+          "",
+          "This treats 40% of students as preferring biking."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Medium",
+        question: "A cyclist travels 210 miles in 3.5 hours at a constant speed. What is the cyclist’s average speed?",
+        choices: ["55 miles per hour", "60 miles per hour", "65 miles per hour", "73.5 miles per hour"],
+        answerIndex: 1,
+        explanation: [
+          "Average speed equals distance divided by time.",
+          "Compute 210 ÷ 3.5. Multiplying both values by 10 gives 2,100 ÷ 35.",
+          "Since 35 × 60 = 2,100, the average speed is 60 miles per hour."
+        ],
+        distractorNotes: [
+          "This is slightly low; multiplying 3.5 by 55 gives 192.5 miles.",
+          "",
+          "This is slightly high; multiplying 3.5 by 65 gives 227.5 miles.",
+          "This multiplies distance by time instead of dividing."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Medium",
+        question: "A data set is 12, 15, 15, 17, 21. What is its range?",
+        choices: ["6", "8", "9", "21"],
+        answerIndex: 2,
+        explanation: [
+          "The range is the greatest value minus the least value.",
+          "The greatest value is 21 and the least is 12.",
+          "The range is 21 - 12 = 9."
+        ],
+        distractorNotes: [
+          "This can result from subtracting a middle value from the maximum instead of the minimum.",
+          "This may come from using 13 as the minimum after overlooking the 12.",
+          "",
+          "This is the maximum value, not the difference between the maximum and minimum."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Hard",
+        question: "On a particular day, the probability that a bus arrives on time is 0.7 and the probability that a train arrives on time is 0.6. If these events are independent, what is the probability that at least one arrives on time?",
+        choices: ["0.12", "0.42", "0.70", "0.88"],
+        answerIndex: 3,
+        explanation: [
+          "It is easier to find the probability that neither arrives on time, then subtract from 1.",
+          "The probabilities of being late are 1 - 0.7 = 0.3 for the bus and 1 - 0.6 = 0.4 for the train.",
+          "By independence, both are late with probability 0.3 × 0.4 = 0.12, so at least one is on time with probability 1 - 0.12 = 0.88."
+        ],
+        distractorNotes: [
+          "This is the probability both are late, the complement of the event asked for.",
+          "This is the probability both are on time, not the probability at least one is on time.",
+          "This is only the bus’s on-time probability and ignores the train.",
+          ""
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Easy",
+        question: "A square has side length 7 units. What is its perimeter?",
+        choices: ["14 units", "21 units", "28 units", "49 units"],
+        answerIndex: 2,
+        explanation: [
+          "A square has four equal sides.",
+          "Perimeter is the sum of the side lengths: 4 × 7.",
+          "The perimeter is 28 units."
+        ],
+        distractorNotes: [
+          "This counts only two sides.",
+          "This counts only three sides.",
+          "",
+          "This is the area, 7², rather than the perimeter."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Easy",
+        question: "Two angles form a straight line. If one angle is 68°, what is the measure of the other angle?",
+        choices: ["22°", "68°", "112°", "122°"],
+        answerIndex: 2,
+        explanation: [
+          "Angles on a straight line are supplementary and sum to 180°.",
+          "Subtract the known angle: 180° - 68°.",
+          "The other angle measures 112°."
+        ],
+        distractorNotes: [
+          "This is the difference between 90° and 68°, not the supplement.",
+          "This repeats the given angle instead of finding its supplement.",
+          "",
+          "This can result from subtracting 58° from 180° rather than 68°."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Medium",
+        question: "What is the area of a circle with radius 3 units?",
+        choices: ["3π square units", "6π square units", "9π square units", "18π square units"],
+        answerIndex: 2,
+        explanation: [
+          "The area of a circle is A = πr².",
+          "Substitute r = 3: A = π(3²).",
+          "The area is 9π square units."
+        ],
+        distractorNotes: [
+          "This uses πr instead of πr².",
+          "This is the circumference, 2πr, not the area.",
+          "",
+          "This doubles the correct area, possibly by confusing radius and diameter."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Medium",
+        question: "Triangle A has side lengths 3, 4, and 5. A similar triangle has a shortest side of 9. What is the length of its longest side?",
+        choices: ["12", "15", "18", "20"],
+        answerIndex: 1,
+        explanation: [
+          "The shortest side 3 in the original triangle corresponds to 9, so the scale factor is 9 ÷ 3 = 3.",
+          "The longest original side is 5.",
+          "Scale it by 3: 5 × 3 = 15."
+        ],
+        distractorNotes: [
+          "This scales the side of length 4 rather than the longest side of length 5.",
+          "",
+          "This doubles the scaled longest side.",
+          "This uses a scale factor of 4 instead of 3."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Hard",
+        question: "In a right triangle, tan θ = 5/12 for an acute angle θ. What is sin θ?",
+        choices: ["5/12", "12/13", "5/13", "13/12"],
+        answerIndex: 2,
+        explanation: [
+          "Since tan θ = opposite/adjacent, the legs can be 5 and 12.",
+          "The hypotenuse is √(5² + 12²) = √169 = 13.",
+          "Sine is opposite/hypotenuse, so sin θ = 5/13."
+        ],
+        distractorNotes: [
+          "This is the tangent ratio, not the sine ratio.",
+          "This uses adjacent/hypotenuse, which is cosine.",
+          "",
+          "This reverses the sine ratio and gives a value greater than 1."
+        ]
+      }
+    ];
+
+    const skillNames = ["Algebra", "Advanced Math", "Problem-Solving and Data Analysis", "Geometry and Trigonometry"];
+    const startScreen = document.getElementById("start-screen");
+    const questionScreen = document.getElementById("question-screen");
+    const resultsScreen = document.getElementById("results-screen");
+    const reviewScreen = document.getElementById("review-screen");
+    const categoryOptions = document.getElementById("category-options");
+    const categoryInputs = [];
+    const difficultyRank = { Easy: 0, Medium: 1, Hard: 2 };
+    if (questions.length > 100) throw new Error("The SAT Math practice bank cannot contain more than 100 questions.");
+    questions.forEach((question) => {
+      if (!skillNames.includes(question.skill) || !Object.prototype.hasOwnProperty.call(difficultyRank, question.difficulty)) {
+        throw new Error(`Question has an unsupported skill or difficulty: ${question.question}`);
+      }
+      if (
+        question.choices.length !== 4 ||
+        question.distractorNotes.length !== 4 ||
+        question.answerIndex < 0 ||
+        question.answerIndex > 3 ||
+        !question.explanation.length ||
+        question.distractorNotes.some((note, index) => index !== question.answerIndex && !note.trim())
+      ) {
+        throw new Error(`Question must have four choices, four notes, and one valid answer: ${question.question}`);
+      }
+    });
+    skillNames.forEach((skill) => {
+      if (questions.filter((question) => question.skill === skill).length < 5) {
+        throw new Error(`Each category needs at least five questions: ${skill}`);
+      }
+    });
+    let practiceQuestions = [];
+    let answerByQuestion = [];
+    let selectedSkills = [];
+    let questionIndex = 0;
+    let missedQuestionIndices = [];
+    let reviewIndex = 0;
+
+    function showScreen(screen) {
+      [startScreen, questionScreen, resultsScreen, reviewScreen].forEach((item) => {
+        item.hidden = item !== screen;
+      });
+    }
+
+    function focusHeading(id) {
+      document.getElementById(id).focus();
+    }
+
+    function shuffle(items) {
+      const shuffled = [...items];
+      for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+      }
+      return shuffled;
+    }
+
+    function renderCategoryPicker() {
+      skillNames.forEach((skill) => {
+        const available = questions.filter((question) => question.skill === skill).length;
+        const label = document.createElement("label");
+        label.className = "category-option";
+        const input = document.createElement("input");
+        input.type = "checkbox";
+        input.name = "practice-category";
+        input.value = skill;
+        input.disabled = available < 5;
+        input.addEventListener("change", updateCategorySelection);
+        const text = document.createElement("span");
+        const name = document.createElement("span");
+        name.className = "category-name";
+        name.textContent = skill;
+        const count = document.createElement("span");
+        count.className = "category-count";
+        count.textContent = `${available} in bank · 5 per set`;
+        text.append(name, count);
+        label.append(input, text);
+        categoryOptions.append(label);
+        categoryInputs.push(input);
+      });
+    }
+
+    function updateCategorySelection(event) {
+      const selected = categoryInputs.filter((input) => input.checked);
+      if (selected.length > 2) {
+        event.target.checked = false;
+        document.getElementById("selection-status").textContent = "You already chose two. Uncheck one before choosing another.";
+        return;
+      }
+      const startButton = document.getElementById("start-button");
+      startButton.disabled = selected.length !== 2;
+      document.getElementById("selection-status").textContent = selected.length === 2
+        ? "Five questions from each selected category will be included."
+        : `Choose ${2 - selected.length} more ${selected.length === 1 ? "category" : "categories"} to begin.`;
+    }
+
+    function createPracticeSet(skills) {
+      const selectedQuestions = skills.flatMap((skill) => {
+        const categoryQuestions = shuffle(questions.filter((question) => question.skill === skill)).slice(0, 5);
+        return categoryQuestions.map((question) => {
+          const options = shuffle(question.choices.map((choice, originalIndex) => ({
+            choice,
+            note: question.distractorNotes[originalIndex],
+            isAnswer: originalIndex === question.answerIndex
+          })));
+          return {
+            ...question,
+            choices: options.map((option) => option.choice),
+            distractorNotes: options.map((option) => option.note),
+            answerIndex: options.findIndex((option) => option.isAnswer)
+          };
+        });
+      });
+      return shuffle(selectedQuestions);
+    }
+
+    function renderQuestion() {
+      const question = practiceQuestions[questionIndex];
+      document.getElementById("question-count").textContent = `Question ${questionIndex + 1} of ${practiceQuestions.length}`;
+      document.getElementById("question-skill").textContent = question.skill;
+      document.getElementById("skill-label").textContent = question.skill;
+      document.getElementById("difficulty-label").textContent = question.difficulty;
+      document.getElementById("question-title").textContent = question.question;
+      const progress = document.getElementById("progress-track");
+      progress.setAttribute("aria-valuemax", String(practiceQuestions.length));
+      progress.setAttribute("aria-valuenow", String(questionIndex + 1));
+      document.getElementById("progress-fill").style.width = `${((questionIndex + 1) / practiceQuestions.length) * 100}%`;
+      const choices = document.getElementById("choices");
+      choices.replaceChildren();
+      const selectedIndex = answerByQuestion[questionIndex];
+
+      question.choices.forEach((choice, index) => {
+        const item = document.createElement("li");
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "choice";
+        button.disabled = selectedIndex !== null;
+        if (selectedIndex === index) button.setAttribute("aria-pressed", "true");
+        if (selectedIndex !== null && index === question.answerIndex) button.classList.add("is-correct");
+        if (selectedIndex === index && selectedIndex !== question.answerIndex) button.classList.add("is-incorrect");
+        const key = document.createElement("span");
+        key.className = "choice-key";
+        key.setAttribute("aria-hidden", "true");
+        key.textContent = String.fromCharCode(65 + index);
+        const text = document.createElement("span");
+        text.textContent = choice;
+        button.append(key, text);
+        button.addEventListener("click", () => selectAnswer(index));
+        item.append(button);
+        choices.append(item);
+      });
+
+      document.getElementById("feedback").replaceChildren();
+      const actions = document.getElementById("question-actions");
+      actions.hidden = selectedIndex === null;
+      if (selectedIndex !== null) renderFeedback(question, selectedIndex, document.getElementById("feedback"));
+      document.getElementById("next-button").textContent = questionIndex === practiceQuestions.length - 1 ? "See results" : "Next question";
+      showScreen(questionScreen);
+    }
+
+    function renderFeedback(question, selectedIndex, container) {
+      const isCorrect = selectedIndex === question.answerIndex;
+      const panel = document.createElement("section");
+      panel.className = `feedback ${isCorrect ? "is-correct" : "is-incorrect"}`;
+      const title = document.createElement("h3");
+      title.textContent = isCorrect ? "Correct!" : "Not quite. Here’s how to solve it.";
+      panel.append(title);
+      if (!isCorrect) {
+        const answer = document.createElement("p");
+        answer.textContent = `The correct answer is ${String.fromCharCode(65 + question.answerIndex)}: ${question.choices[question.answerIndex]}.`;
+        panel.append(answer);
+      }
+      const stepsTitle = document.createElement("h4");
+      stepsTitle.textContent = "Step-by-step";
+      panel.append(stepsTitle);
+      const steps = document.createElement("ol");
+      question.explanation.forEach((step) => {
+        const item = document.createElement("li");
+        item.textContent = step;
+        steps.append(item);
+      });
+      panel.append(steps);
+      const distractorTitle = document.createElement("h4");
+      distractorTitle.textContent = "Why the other choices can be tempting";
+      panel.append(distractorTitle);
+      const distractors = document.createElement("ul");
+      question.distractorNotes.forEach((note, index) => {
+        if (index === question.answerIndex) return;
+        const item = document.createElement("li");
+        item.textContent = `${String.fromCharCode(65 + index)}. ${note}`;
+        distractors.append(item);
+      });
+      panel.append(distractors);
+      container.append(panel);
+    }
+
+    function selectAnswer(selectedIndex) {
+      if (answerByQuestion[questionIndex] !== null) return;
+      answerByQuestion[questionIndex] = selectedIndex;
+      renderQuestion();
+      focusHeading("question-title");
+    }
+
+    function showResults() {
+      const totalCorrect = answerByQuestion.reduce((sum, answer, index) => sum + (answer === practiceQuestions[index].answerIndex ? 1 : 0), 0);
+      missedQuestionIndices = practiceQuestions.reduce((indices, question, index) => {
+        if (answerByQuestion[index] !== question.answerIndex) indices.push(index);
+        return indices;
+      }, []);
+      document.getElementById("score").replaceChildren();
+      const scoreStrong = document.createElement("strong");
+      scoreStrong.textContent = `${totalCorrect}/${practiceQuestions.length}`;
+      const scoreText = document.createElement("span");
+      scoreText.textContent = "correct";
+      document.getElementById("score").append(scoreStrong, scoreText);
+      document.getElementById("result-summary").textContent = totalCorrect === practiceQuestions.length
+        ? "Excellent work—you got every question right."
+        : "Nice work sticking with it. Review any missed questions to see the reasoning and common traps.";
+      const breakdownBody = document.getElementById("breakdown-body");
+      breakdownBody.replaceChildren();
+      selectedSkills.forEach((skill) => {
+        const skillQuestions = practiceQuestions.map((question, index) => ({ question, index })).filter((item) => item.question.skill === skill);
+        const correct = skillQuestions.filter(({ question, index }) => answerByQuestion[index] === question.answerIndex).length;
+        const row = document.createElement("tr");
+        const name = document.createElement("th");
+        name.scope = "row";
+        name.textContent = skill;
+        const result = document.createElement("td");
+        result.textContent = `${correct} of ${skillQuestions.length}`;
+        row.append(name, result);
+        breakdownBody.append(row);
+      });
+      const reviewButton = document.getElementById("review-button");
+      reviewButton.disabled = missedQuestionIndices.length === 0;
+      reviewButton.textContent = missedQuestionIndices.length === 0 ? "No missed questions to review" : `Review missed questions (${missedQuestionIndices.length})`;
+      reviewButton.classList.toggle("btn-ghost", missedQuestionIndices.length > 0);
+      reviewButton.classList.toggle("btn-primary", missedQuestionIndices.length === 0);
+      showScreen(resultsScreen);
+      focusHeading("results-title");
+    }
+
+    function renderReview() {
+      const questionIndexToReview = missedQuestionIndices[reviewIndex];
+      const question = practiceQuestions[questionIndexToReview];
+      document.getElementById("review-count").textContent = `Missed question ${reviewIndex + 1} of ${missedQuestionIndices.length}`;
+      document.getElementById("review-skill").textContent = question.skill;
+      document.getElementById("review-question").textContent = question.question;
+      const choices = document.getElementById("review-choices");
+      choices.replaceChildren();
+      question.choices.forEach((choice, index) => {
+        const item = document.createElement("li");
+        const answer = document.createElement("div");
+        answer.className = "choice review-choice";
+        if (index === question.answerIndex) answer.classList.add("is-correct");
+        if (index === answerByQuestion[questionIndexToReview] && index !== question.answerIndex) answer.classList.add("is-incorrect");
+        const key = document.createElement("span");
+        key.className = "choice-key";
+        key.setAttribute("aria-hidden", "true");
+        key.textContent = String.fromCharCode(65 + index);
+        const text = document.createElement("span");
+        text.textContent = choice;
+        const status = document.createElement("span");
+        if (index === question.answerIndex) status.textContent = " — Correct answer";
+        else if (index === answerByQuestion[questionIndexToReview]) status.textContent = " — Your answer";
+        answer.append(key, text, status);
+        item.append(answer);
+        choices.append(item);
+      });
+      const explanation = document.getElementById("review-explanation");
+      explanation.replaceChildren();
+      renderFeedback(question, answerByQuestion[questionIndexToReview], explanation);
+      document.getElementById("previous-review-button").disabled = reviewIndex === 0;
+      document.getElementById("next-review-button").disabled = reviewIndex === missedQuestionIndices.length - 1;
+    }
+
+    document.getElementById("start-button").addEventListener("click", () => {
+      selectedSkills = categoryInputs.filter((input) => input.checked).map((input) => input.value);
+      if (selectedSkills.length !== 2) return;
+      practiceQuestions = createPracticeSet(selectedSkills);
+      answerByQuestion = Array(practiceQuestions.length).fill(null);
+      questionIndex = 0;
+      renderQuestion();
+      focusHeading("question-title");
+    });
+    document.getElementById("next-button").addEventListener("click", () => {
+      if (questionIndex < practiceQuestions.length - 1) {
+        questionIndex += 1;
+        renderQuestion();
+        focusHeading("question-title");
+      } else {
+        showResults();
+      }
+    });
+    document.getElementById("review-button").addEventListener("click", () => {
+      if (missedQuestionIndices.length === 0) return;
+      reviewIndex = 0;
+      renderReview();
+      showScreen(reviewScreen);
+      focusHeading("review-question");
+    });
+    document.getElementById("back-results-button").addEventListener("click", () => {
+      showScreen(resultsScreen);
+      focusHeading("results-title");
+    });
+    document.getElementById("previous-review-button").addEventListener("click", () => {
+      if (reviewIndex > 0) {
+        reviewIndex -= 1;
+        renderReview();
+        focusHeading("review-question");
+      }
+    });
+    document.getElementById("next-review-button").addEventListener("click", () => {
+      if (reviewIndex < missedQuestionIndices.length - 1) {
+        reviewIndex += 1;
+        renderReview();
+        focusHeading("review-question");
+      }
+    });
+    document.getElementById("restart-button").addEventListener("click", () => {
+      practiceQuestions = createPracticeSet(selectedSkills);
+      answerByQuestion = Array(practiceQuestions.length).fill(null);
+      questionIndex = 0;
+      renderQuestion();
+      focusHeading("question-title");
+    });
+
+    renderCategoryPicker();
+  </script>
+</body>
+</html>

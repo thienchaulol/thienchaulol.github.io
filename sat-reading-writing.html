@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FBFAF8">
+  <meta name="description" content="Choose two Reading and Writing categories and practice with original SAT-style questions, shuffled choices, and clear explanations.">
+  <title>SAT Reading and Writing Practice — Mr. Chau</title>
+  <style>
+    :root{
+      --ink:#1A1A18;--ink-soft:#403D38;--muted:#6B6862;
+      --paper:#FBFAF8;--surface:#FFFFFF;--surface-warm:#F4F1EB;
+      --rule:#E4E0D8;--rule-soft:#F0EDE7;
+      --accent:#1F6F5C;--accent-deep:#175447;--accent-wash:#EAF2EF;
+      --wrap:1120px;--r:8px;--r-lg:12px;
+      --shadow:0 1px 2px rgba(26,26,24,.05),0 4px 12px rgba(26,26,24,.04);
+      --serif:ui-serif,Georgia,"Times New Roman",serif;
+      --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;font:16px/1.6 var(--sans);color:var(--ink-soft);background:var(--paper);-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.2;letter-spacing:-.01em;margin:0 0 16px;font-weight:600}
+    h1{font-size:clamp(2.3rem,4.6vw,3.25rem)}
+    h2{font-size:clamp(1.6rem,3vw,2rem)}
+    h3{font-size:1.15rem}
+    p{margin:0 0 16px}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{color:var(--accent-deep);text-decoration:underline}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+    .skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:12px 20px;border-radius:var(--r)}
+    .skip:focus{top:16px;color:#fff;text-decoration:none}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 28px;border-radius:var(--r);font:600 1rem var(--sans);border:1px solid transparent;cursor:pointer;transition:background-color .2s,border-color .2s,transform .2s}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{background:var(--accent-deep);color:#fff;text-decoration:none}
+    .btn-ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+    .btn-ghost:hover{background:var(--surface-warm);color:var(--ink);text-decoration:none;border-color:#D4CFC4}
+    .btn-outline{background:transparent;color:var(--accent-deep);border-color:var(--accent)}
+    .btn-outline:hover{background:var(--accent-wash);color:var(--accent-deep);text-decoration:none;border-color:var(--accent)}
+    .btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(251,250,248,.92);border-bottom:1px solid var(--rule);backdrop-filter:saturate(180%) blur(12px)}
+    .nav-inner{max-width:var(--wrap);margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px;min-height:64px}
+    .brand{font:600 1.15rem var(--serif);color:var(--ink);margin-right:auto;white-space:nowrap}
+    .brand:hover{color:var(--ink);text-decoration:none}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .nav-actions .btn{white-space:nowrap}
+    .nav .btn{min-height:40px;padding:8px 20px;font-size:.94rem;line-height:inherit}
+    main{min-height:calc(100vh - 180px);padding:56px 0 88px}
+    .intro,.practice{max-width:760px;margin:0 auto}
+    .intro{padding:clamp(28px,6vw,64px);background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-lg);box-shadow:var(--shadow)}
+    .eyebrow{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin:0 0 16px}
+    .lede{font-size:1.1rem;color:var(--muted);max-width:60ch}
+    .notice{margin:24px 0 28px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--accent-wash);font-size:.94rem}
+    .notice strong{color:var(--ink)}
+    .intro-meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 28px;padding:0;list-style:none;color:var(--muted);font-size:.9rem}
+    .intro-meta li::before{content:"•";color:var(--accent);margin-right:8px}
+    .category-picker{border:0;padding:0;margin:28px 0}
+    .category-picker legend{font-weight:700;color:var(--ink);margin-bottom:12px}
+    .category-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .category-option{display:flex;align-items:flex-start;gap:12px;padding:14px;border:1px solid var(--rule);border-radius:var(--r);background:var(--surface);cursor:pointer}
+    .category-option:has(input:checked){border-color:var(--accent);background:var(--accent-wash)}
+    .category-option input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--accent);flex:none}
+    .category-name{display:block;color:var(--ink);font-weight:600;line-height:1.35}
+    .category-count{display:block;margin-top:4px;color:var(--muted);font-size:.82rem}
+    .selection-status{min-height:1.5em;margin:-16px 0 20px;color:var(--muted);font-size:.9rem}
+    .start-actions{display:flex;justify-content:flex-end}
+    .practice{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-lg);padding:clamp(22px,5vw,44px);box-shadow:var(--shadow)}
+    .progress-row{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:.88rem;color:var(--muted);margin-bottom:10px}
+    .progress-track{height:8px;background:var(--rule-soft);border-radius:99px;overflow:hidden;margin-bottom:32px}
+    .progress-fill{height:100%;width:0;background:var(--accent);border-radius:inherit;transition:width .2s}
+    .skill-label{display:inline-block;margin-bottom:12px;padding:5px 11px;border-radius:99px;background:var(--accent-wash);color:var(--accent-deep);font-size:.78rem;font-weight:700}
+    .difficulty-label{display:inline-block;margin:0 0 12px 8px;padding:5px 11px;border:1px solid var(--rule);border-radius:99px;color:var(--muted);font-size:.78rem;font-weight:600}
+    .question-title{font-family:var(--sans);font-size:1.08rem;line-height:1.65;font-weight:600;margin-bottom:22px;white-space:pre-line}
+    .choices{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .choice{display:flex;align-items:flex-start;gap:14px;width:100%;min-height:52px;padding:13px 16px;text-align:left;background:var(--surface);color:var(--ink-soft);border:1px solid var(--rule);border-radius:var(--r);font:inherit;cursor:pointer}
+    .choice:hover:not(:disabled){background:var(--surface-warm);border-color:#D4CFC4}
+    .choice:disabled{cursor:default}
+    .review-choice{cursor:default}
+    .choice-key{display:inline-flex;align-items:center;justify-content:center;flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--rule);color:var(--ink);font-size:.82rem;font-weight:700}
+    .choice.is-correct{border-color:var(--accent);background:var(--accent-wash);color:var(--ink)}
+    .choice.is-correct .choice-key{border-color:var(--accent);background:var(--accent);color:#fff}
+    .choice.is-incorrect{border-color:#A33E35;background:#FBF0EF}
+    .choice.is-incorrect .choice-key{border-color:#A33E35;background:#A33E35;color:#fff}
+    .feedback{margin-top:28px;padding:22px;border:1px solid var(--rule);border-radius:var(--r);background:#fff}
+    .feedback.is-correct{border-left:4px solid var(--accent)}
+    .feedback.is-incorrect{border-left:4px solid #A33E35}
+    .feedback h3{font-family:var(--sans);font-size:1.05rem;margin-bottom:12px}
+    .feedback h4{font-size:.95rem;color:var(--ink);margin:20px 0 8px}
+    .feedback ol,.feedback ul{padding-left:22px;margin:0}
+    .feedback li{padding:3px 0}
+    .feedback li+li{margin-top:4px}
+    .next-row{display:flex;justify-content:flex-end;margin-top:24px}
+    .review-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-bottom:20px}
+    .review-bar .btn{min-height:44px;padding:9px 16px;font-size:.92rem}
+    .review-nav{margin-top:24px;margin-bottom:0}
+    .result-score{display:flex;align-items:baseline;gap:10px;margin:0 0 28px}
+    .result-score strong{font:2.7rem/1 var(--serif);color:var(--ink)}
+    .result-score span{color:var(--muted)}
+    .breakdown{width:100%;border-collapse:collapse;margin:22px 0 32px}
+    .breakdown th,.breakdown td{padding:13px 12px;border-bottom:1px solid var(--rule);text-align:left}
+    .breakdown th{color:var(--ink);font-size:.86rem}
+    .breakdown td:last-child,.breakdown th:last-child{text-align:right}
+    .result-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .callout{margin:32px 0 0;padding:20px 22px;background:var(--surface-warm);border-radius:var(--r-lg)}
+    .callout p{margin:0}
+    .callout a{font-weight:700}
+    [hidden]{display:none!important}
+    footer{background:var(--ink);color:rgba(255,255,255,.72);padding:25px 0;text-align:center;font-size:.86rem}
+    footer p{margin:0}
+    footer a{color:#fff}
+    @media(max-width:700px){.wrap,.nav-inner{padding:0 20px}main{padding:32px 0 56px}.nav-inner{gap:14px}.category-options{grid-template-columns:1fr}.result-actions{flex-direction:column}.result-actions .btn{width:100%}}
+    @media(max-width:520px){.nav-inner{gap:12px}.nav-actions{gap:8px}.nav .btn{padding:8px 8px;font-size:.78rem}}
+    @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}.btn-primary:hover{transform:translateY(-1px)}}
+    @view-transition{navigation:auto}
+    ::view-transition-old(root),::view-transition-new(root){animation-duration:.45s;animation-timing-function:ease}
+    @media(prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="sat-practice.html" class="brand">Mr.&nbsp;Chau</a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline"><span aria-hidden="true">&larr;</span>&nbsp;Main site</a>
+        <a href="index.html#booking" class="btn btn-primary">Book a call</a>
+      </div>
+    </div>
+  </nav>
+  <main id="main" class="wrap">
+    <section id="start-screen" class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Independent practice</p>
+      <h1 id="page-title">SAT Reading and Writing practice</h1>
+      <!--<p class="lede">Choose two areas to focus on. Each set randomly selects five original questions in each category and shuffles their order. Read a short passage or prompt, choose an answer, and learn from the explanation.</p>-->
+      <p class="notice"><strong>Independent practice, not official SAT content.</strong> These original questions are not affiliated with or endorsed by the College Board.</p>
+      <!--<ul class="intro-meta">
+        <li>10 questions per practice set</li>
+        <li>4 choices each</li>
+        <li>Random question order</li>
+        <li>No timer</li>
+      </ul>-->
+      <fieldset class="category-picker">
+        <legend>Choose exactly two categories</legend>
+        <div id="category-options" class="category-options"></div>
+      </fieldset>
+      <p id="selection-status" class="selection-status" aria-live="polite">Choose two categories to begin.</p>
+      <div class="start-actions">
+        <button id="start-button" class="btn btn-primary" type="button" disabled>Start practice</button>
+      </div>
+    </section>
+
+    <section id="question-screen" class="practice" aria-labelledby="question-title" hidden>
+      <div class="progress-row"><span id="question-count"></span><span id="question-skill"></span></div>
+      <div id="progress-track" class="progress-track" role="progressbar" aria-label="Practice progress" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><div id="progress-fill" class="progress-fill"></div></div>
+      <span id="skill-label" class="skill-label"></span><span id="difficulty-label" class="difficulty-label"></span>
+      <h2 id="question-title" class="question-title" tabindex="-1"></h2>
+      <ol id="choices" class="choices" aria-label="Answer choices"></ol>
+      <div id="feedback" aria-live="polite"></div>
+      <div id="question-actions" class="next-row" hidden><button id="next-button" class="btn btn-primary" type="button">Next question</button></div>
+    </section>
+
+    <section id="results-screen" class="practice" aria-labelledby="results-title" hidden>
+      <p class="eyebrow">Practice complete</p>
+      <h2 id="results-title" tabindex="-1">Your results</h2>
+      <p id="score" class="result-score"></p>
+      <p id="result-summary"></p>
+      <h3>Breakdown by category</h3>
+      <table class="breakdown"><thead><tr><th scope="col">Category</th><th scope="col">Correct</th></tr></thead><tbody id="breakdown-body"></tbody></table>
+      <div class="result-actions">
+        <button id="review-button" class="btn btn-ghost" type="button">Review missed questions</button>
+        <button id="restart-button" class="btn btn-primary" type="button">Try again</button>
+      </div>
+      <aside class="callout"><p>Want to talk through a study plan? <a href="https://calendly.com/your-booking-link">Book a free 15-minute call</a>. No pressure—just a chance to see if I can help.</p></aside>
+    </section>
+
+    <section id="review-screen" class="practice" aria-labelledby="review-title" hidden>
+      <p class="eyebrow">Answer review</p>
+      <h2 id="review-title" tabindex="-1">Questions to revisit</h2>
+      <div class="review-bar"><button id="back-results-button" class="btn btn-ghost" type="button">Back to results</button><span id="review-count" aria-live="polite"></span></div>
+      <span id="review-skill" class="skill-label"></span><p id="review-question" class="question-title" tabindex="-1"></p>
+      <ol id="review-choices" class="choices" aria-label="Answer choices"></ol>
+      <div id="review-explanation"></div>
+      <div class="review-bar review-nav"><button id="previous-review-button" class="btn btn-ghost" type="button">Previous missed</button><button id="next-review-button" class="btn btn-primary" type="button">Next missed</button></div>
+    </section>
+  </main>
+  <footer><div class="wrap"><p>Original, independent SAT-style practice by Mr. Chau. Not official SAT content.</p></div></footer>
+
+  <script>
+    const questions = [
+      {
+        skill: "Information and Ideas", difficulty: "Easy",
+        question: "Passage: A neighborhood library began lending small gardening kits alongside books. Six months later, librarians noticed that many borrowers returned to share photos of their first harvests. The library now hosts a monthly seed exchange.\n\nWhich choice best states the main idea of the passage?",
+        choices: ["The library’s gardening program encouraged borrowers to return and share what they grew.", "Most library borrowers already knew how to grow vegetables.", "The library replaced its book collection with gardening supplies.", "The seed exchange was the library’s most popular service before the kits were introduced."],
+        answerIndex: 0,
+        explanation: ["The passage describes a new gardening-kit service and what happened afterward.", "Borrowers returned with harvest photos, and the library added a seed exchange.", "Together, these details show that the program helped create an ongoing community activity."],
+        distractorNotes: ["", "The passage says nothing about borrowers’ gardening experience before the program.", "The kits were lent alongside books; the collection was not replaced.", "The seed exchange began after the kits, so it could not have been popular before them."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Easy",
+        question: "Passage: To estimate how much shade a new tree-planting plan might provide, a city analyst compared aerial photographs taken in summer. The analyst marked the canopy area of each tree planted along three streets during the previous decade. The study did not measure air temperature.\n\nWhich conclusion is best supported by the passage?",
+        choices: ["The city’s tree-planting plan has lowered summer temperatures on every street.", "The analyst used past tree growth to estimate future canopy coverage.", "New trees always grow at the same rate regardless of location.", "The study found that tree shade is more effective than building shade."],
+        answerIndex: 1,
+        explanation: ["The analyst measured canopy area for trees planted during the previous decade.", "That historical information was used to estimate the shade a new plan might provide.", "The passage supports an estimate of future canopy, not a measured temperature effect."],
+        distractorNotes: ["The study did not measure air temperature.", "", "The passage gives no claim that trees grow at identical rates.", "No comparison with building shade is described."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: Researchers once assumed that a certain coastal bird nested only on open beaches. After placing motion-activated cameras near nearby dunes, they recorded several nests beneath low shrubs. The team now plans to survey more dune sites before estimating the bird’s total population.\n\nWhat is the most reasonable inference from the passage?",
+        choices: ["The bird has stopped nesting on open beaches.", "Low shrubs are the only habitat where the bird can nest.", "Earlier population estimates may have missed some nests.", "The camera study has already established the bird’s total population."],
+        answerIndex: 2,
+        explanation: ["The cameras revealed nests in dunes, a place researchers had not expected to find them.", "If earlier surveys focused on open beaches, some nests may have gone uncounted.", "The team’s plan to survey more sites shows that the total population is not yet established."],
+        distractorNotes: ["The new recordings add a nesting location; they do not show that beach nesting stopped.", "The passage reports nests under shrubs, not exclusive use of shrubs.", "", "The team still plans additional surveys before estimating the population."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: A school tested two ways of reminding students to return borrowed equipment. During the first month, staff sent one reminder the day before an item was due; 72% of items were returned on time. During the next month, staff sent reminders both three days and one day before the due date; 84% were returned on time. The school used the same checkout rules in both months.\n\nWhich choice best describes what the results suggest?",
+        choices: ["Using two reminders was associated with a higher on-time return rate in this test.", "The first reminder caused every student to return equipment late.", "Changing checkout rules had no effect on returns.", "Two reminders will improve on-time returns at every school."],
+        answerIndex: 0,
+        explanation: ["The on-time rate was 72% with one reminder and 84% with two reminders.", "The checkout rules stayed the same, so the results suggest an association between the reminder schedule and the higher rate.", "This small test does not prove that reminders alone caused the change or that the outcome will occur everywhere."],
+        distractorNotes: ["", "The first month still had a 72% on-time return rate.", "The rules were held constant; the test does not measure their effect.", "The result comes from one school and does not guarantee the same outcome at every school."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: In a survey of 200 commuters, 120 said they used a bus at least once a week. Of those 120 bus riders, 78 also said they rode a bicycle at least once a week.\n\nWhich statement is supported by the survey?",
+        choices: ["Exactly 78 commuters rode a bicycle at least once a week.", "More than half of the surveyed bus riders also rode a bicycle weekly.", "Every commuter who rode a bicycle also used the bus.", "Exactly 120 commuters rode a bus and a bicycle weekly."],
+        answerIndex: 1,
+        explanation: ["The survey reports that 78 of 120 weekly bus riders also rode a bicycle weekly.", "Half of 120 is 60, and 78 is greater than 60.", "The survey does not describe bicycle riders who did not use a bus, nor does it say all bus riders rode bicycles."],
+        distractorNotes: ["The 78 are bus riders who also bike; other bicycle riders may not use a bus.", "", "The survey gives no information about all bicycle riders.", "The 120 is the number who rode a bus weekly, not the number who rode both."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Hard",
+        question: "Passage: A museum compared visitor counts on days when its courtyard was open and days when it was closed for maintenance. Open-courtyard days had 18% more visitors on average. However, the courtyard was usually open on weekends, when the museum also offered family programs.\n\nWhy should the 18% difference be interpreted cautiously?",
+        choices: ["Visitor counts cannot be averaged across different days.", "The courtyard was closed on every weekend.", "Family programs may also have contributed to higher weekend attendance.", "The museum did not record any visitor counts."],
+        answerIndex: 2,
+        explanation: ["The courtyard’s availability and family programs tended to occur together on weekends.", "Because both factors changed together, the comparison cannot isolate the courtyard’s effect.", "The 18% difference is an observed association, not proof that the courtyard alone caused the increase."],
+        distractorNotes: ["The passage reports average visitor counts, so the comparison can be averaged.", "The courtyard was usually open on weekends, not closed.", "", "The reported difference depends on recorded visitor counts."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Hard",
+        question: "Passage: Botanist Lena Ortiz argues that restoring a narrow strip of native plants along a creek can help insects move between larger habitats. In a recent project, several insect species appeared in the restored strip within two years. Ortiz cautions that the project did not include an untreated comparison site.\n\nWhich choice best describes Ortiz’s position?",
+        choices: ["The project proves that native plants always increase every insect population.", "The project is promising, but it does not by itself establish that the restoration caused the observed arrivals.", "The restored strip failed because it did not include a comparison site.", "Insects can move only through narrow strips of native plants."],
+        answerIndex: 1,
+        explanation: ["Ortiz’s argument is that native strips can help connect habitats, and the project recorded several species.", "She also notes a limitation: there was no untreated site for comparison.", "Her view is cautiously positive, not a claim of definitive proof or failure."],
+        distractorNotes: ["She explicitly identifies a limitation and does not claim a universal effect.", "", "The project recorded species; the missing comparison limits causal conclusions but does not mean it failed.", "The passage says strips can help insects move, not that they are the only route."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Hard",
+        question: "Passage: A study of a new after-school tutoring program found that participating students’ average math scores rose by 6 points over a semester. The study compared those students’ scores before and after the program but did not compare them with scores from students who did not participate.\n\nWhich choice best evaluates the study’s evidence?",
+        choices: ["It shows that scores rose among participants, but it cannot establish that tutoring caused the increase.", "It proves that tutoring is ineffective because the study had no comparison group.", "It shows that every participant’s score rose by exactly 6 points.", "It establishes that students who did not participate had lower scores."],
+        answerIndex: 0,
+        explanation: ["The average score for participants increased by 6 points from before to after the program.", "Without a comparison group, other changes over the semester could have contributed to that increase.", "The evidence describes an average change, not identical changes for every student."],
+        distractorNotes: ["", "The missing comparison group weakens a causal claim; it does not prove tutoring was ineffective.", "An average increase does not mean each individual gained the same number of points.", "No scores for nonparticipants are reported."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Easy",
+        question: "Passage: The school’s greenhouse produced 48 kilograms of tomatoes in May and 60 kilograms in June. The number of growing beds remained the same in both months.\n\nHow much greater was the greenhouse’s tomato production in June than in May?",
+        choices: ["12 kilograms", "20 kilograms", "25 kilograms", "108 kilograms"],
+        answerIndex: 0,
+        explanation: ["Compare the two monthly amounts by subtracting May’s production from June’s.", "60 - 48 = 12.", "June production was 12 kilograms greater."],
+        distractorNotes: ["", "This is the percentage increase, not the difference in kilograms.", "This treats the increase as a percentage of the June total.", "This adds the two monthly totals instead of finding how much greater June was."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: An ecologist studying a restored wetland counted 32 bird species in spring and 41 in fall. The ecologist noted that different species migrate through the region at different times of year.\n\nWhich conclusion is best supported?",
+        choices: ["The wetland permanently gained exactly nine resident bird species.", "The wetland had more bird species recorded in fall than in spring.", "Every bird species prefers the wetland in fall.", "The wetland’s habitat restoration caused the seasonal difference."],
+        answerIndex: 1,
+        explanation: ["The counts are 32 species in spring and 41 in fall.", "The fall count is larger by nine, so the supported conclusion is that more species were recorded then.", "Migration timing is a possible explanation, but the passage does not establish a permanent gain or a cause."],
+        distractorNotes: ["The passage gives seasonal counts, not a permanent change in resident species.", "", "The passage does not describe every species’ preference.", "The passage gives no comparison that isolates the effect of restoration."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Easy",
+        question: "Passage: The new bicycle map is not exhaustive: it shows only routes that city engineers have inspected during the past year. Still, for a visitor planning a ride downtown, it offers a useful starting point.\n\nAs used in the passage, what does “exhaustive” most nearly mean?",
+        choices: ["Thorough and complete", "Difficult to understand", "Designed for visitors", "Recently printed"],
+        answerIndex: 0,
+        explanation: ["The sentence says the map shows only routes engineers inspected, rather than every possible route.", "The contrast with “Still” explains that, although the map is not complete, it remains useful.", "Here, “exhaustive” means thorough and complete."],
+        distractorNotes: ["", "The passage describes the map as useful, not confusing.", "The map can help a visitor, but that is not the meaning of “exhaustive.”", "The map’s inspection date is separate from whether it covers all routes."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Easy",
+        question: "Passage: The first draft of the garden plan placed every bench in the sun. After observing the courtyard at noon, designer Mei Lin shifted several benches beneath the trees.\n\nWhat is the main purpose of the second sentence?",
+        choices: ["To explain why Lin changed part of the original plan", "To show that the courtyard has no sunny areas", "To argue that benches should never be placed in sunlight", "To describe how the trees were planted"],
+        answerIndex: 0,
+        explanation: ["The first sentence describes the original arrangement.", "The second explains that Lin observed the courtyard at noon and moved some benches under trees.", "It gives the reason for revising the plan, without making a general claim about all benches."],
+        distractorNotes: ["", "The passage says the first plan put benches in the sun, so sunny areas exist.", "Lin moved several benches; the passage does not say all sunny placements are wrong.", "The trees are already in the courtyard; their planting is not described."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Medium",
+        question: "Passage: The committee’s first proposal was ambitious: it called for replacing every streetlight in the district within one year. The final plan was more measured, beginning with a pilot on two blocks and expanding only if residents approved the results.\n\nAs used in the passage, what does “measured” most nearly mean?",
+        choices: ["Taken with careful restraint", "Calculated with a ruler", "Made longer than expected", "Based only on numerical data"],
+        answerIndex: 0,
+        explanation: ["The passage contrasts an ambitious citywide replacement with a limited pilot.", "The final plan expands only after results and resident approval, showing caution.", "In this context, “measured” means careful and restrained."],
+        distractorNotes: ["", "No physical measurement with a ruler is described.", "The final plan starts on only two blocks, rather than becoming longer.", "Resident approval is part of the plan, so it is not based only on numbers."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Medium",
+        question: "Passage: A historian describes how a town’s old rail station was first converted into a market, then a workshop, and finally a public archive. Rather than treating these changes as a loss of the station’s original purpose, she argues that each new use kept the building central to community life.\n\nHow does the passage develop its central idea?",
+        choices: ["By listing changes in the building’s use and interpreting them as continuity in its community role", "By arguing that the building should be returned to its original use", "By comparing the station with other buildings in the region", "By explaining why the town closed its rail service"],
+        answerIndex: 0,
+        explanation: ["The passage names three successive uses of the station.", "The historian interprets all of them as ways the building remained important to the community.", "The sequence of examples supports an idea of continuity rather than loss."],
+        distractorNotes: ["", "The historian says each new use kept the building useful; she does not call for restoring rail service.", "No other buildings are discussed.", "The reason rail service closed is not given."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Medium",
+        question: "Passage: In one experiment, architect Nia Das found that a classroom with movable desks allowed students to form groups more quickly than a classroom with fixed rows. Her report does not claim that movable desks improve every kind of learning.\n\nWhy does the passage mention what Das’s report does not claim?",
+        choices: ["To limit the scope of the finding to the outcome actually tested", "To show that the experiment produced no useful results", "To suggest that fixed rows always improve learning", "To argue that students should choose their own classrooms"],
+        answerIndex: 0,
+        explanation: ["The experiment measured how quickly students could form groups.", "The passage clarifies that this result should not be expanded into a claim about every kind of learning.", "The limitation keeps the finding focused on the tested outcome."],
+        distractorNotes: ["", "A specific result was found; noting its scope does not erase it.", "The passage makes no claim that fixed rows improve learning.", "No student choice about classrooms is mentioned."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Hard",
+        question: "Text 1: “The town should preserve the old bridge because its hand-cut stonework is a rare example of local craftsmanship.”\n\nText 2: “The bridge’s history is worth remembering, but its narrow deck cannot safely carry modern traffic. A nearby walking path could preserve public access while the bridge is retired.”\n\nHow would the author of Text 2 most likely respond to Text 1?",
+        choices: ["The bridge’s craftsmanship is valuable, but preserving it need not mean keeping it open to traffic.", "The bridge has no historical or artistic value.", "The town should widen the bridge so that more cars can cross.", "Local craftsmanship is more important than pedestrian safety."],
+        answerIndex: 0,
+        explanation: ["Text 2 acknowledges that the bridge’s history is worth remembering.", "It then argues that the structure is unsafe for modern traffic and proposes a walking path instead.", "The author would likely separate preserving the bridge’s value from continuing to use it for vehicles."],
+        distractorNotes: ["", "Text 2 explicitly recognizes the bridge’s history.", "Text 2 proposes retiring the bridge from traffic, not widening it.", "Text 2 offers a way to preserve access while addressing safety."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Hard",
+        question: "Passage: After the archive digitized its collection of handwritten letters, the curator called the project a “doorway,” not a destination. The online catalog lets researchers discover materials, she explained, but close study still requires examining the originals’ paper, ink, and annotations.\n\nWhat does the curator mean by calling the catalog a “doorway”?",
+        choices: ["It helps people find and begin exploring the letters, but does not replace studying the originals.", "It allows the public to enter the archive building at any time.", "It contains every physical feature of each letter.", "It makes the original letters unnecessary for researchers."],
+        answerIndex: 0,
+        explanation: ["A doorway provides access to a place but is not the place itself.", "The curator says the catalog helps researchers discover materials, while close study still involves originals.", "The metaphor distinguishes access through the catalog from examination of the letters."],
+        distractorNotes: ["", "The passage uses “doorway” figuratively, not as an entrance to the building.", "The online catalog cannot show all physical details of paper and ink.", "The curator says the originals are still needed for close study."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Easy",
+        question: "Passage: When the old clock stopped, caretaker Jo Neri did not replace it immediately. She first asked residents which chime they remembered most clearly; many described hearing it from the market square on Saturday mornings.\n\nWhy does the passage include residents’ memories?",
+        choices: ["To show that the clock had meaning beyond keeping time", "To prove that every resident visited the market each week", "To explain how Neri repaired the clock", "To show that the clock was inaccurate"],
+        answerIndex: 0,
+        explanation: ["Neri asks about the chime rather than the clock’s mechanical performance.", "The residents connect the sound to a shared place and routine, suggesting the clock had community significance."],
+        distractorNotes: ["", "Some residents remember hearing the chime; the passage does not say everyone visited the market.", "No repair process is described.", "The clock stopped, but no evidence about its earlier accuracy is given."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Medium",
+        question: "Passage: The ceramic vessel appears plain from a distance. Up close, however, faint blue lines trace the path of a river that no longer runs through the valley.\n\nWhat is the effect of the phrase “Up close, however”?",
+        choices: ["It shifts from the vessel’s simple overall appearance to a detail that reveals its significance.", "It shows that the vessel becomes physically larger when viewed nearby.", "It introduces evidence that the vessel is made of glass.", "It indicates that the river still flows through the valley."],
+        answerIndex: 0,
+        explanation: ["The first sentence describes what a viewer sees from far away.", "The phrase signals a contrast: closer inspection reveals the river design and its meaning."],
+        distractorNotes: ["", "The viewer’s distance changes, not the vessel’s size.", "The passage identifies no material other than ceramic.", "The river is described as no longer running through the valley."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Hard",
+        question: "Text 1: Researcher Eli Park argues that community gardens increase access to fresh produce because gardeners can share harvests with nearby households.\n\nText 2: Researcher Mina Shah agrees that gardens can supply produce but notes that many projects depend on volunteers and seasonal donations, making their output unpredictable.\n\nWhat is the main difference between the texts?",
+        choices: ["Text 1 emphasizes a benefit of shared harvests, while Text 2 emphasizes limits on how reliably gardens can provide food.", "Text 1 argues that gardens are costly, while Text 2 argues they are free.", "Text 1 focuses on school gardens, while Text 2 focuses on farms.", "Text 1 rejects community gardens, while Text 2 supports them without reservation."],
+        answerIndex: 0,
+        explanation: ["Park focuses on how sharing harvests can improve access.", "Shah accepts that gardens can provide produce but points out that volunteer and donation support can make supply unpredictable.", "The texts differ in emphasis, not in whether gardens can produce food."],
+        distractorNotes: ["", "Neither text discusses costs or claims gardens are free.", "Neither text mentions school gardens or farms.", "Park is positive and Shah is qualified, but Shah does not offer unreserved support."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Easy",
+        question: "A student wants to connect two ideas: a small city park has limited space, and it can still support wildlife. Which transition best completes the sentence?\n\nThe park covers less than one acre. ______, its native flower beds attract several species of bees.",
+        choices: ["Nevertheless", "For example", "Similarly", "As a result"],
+        answerIndex: 0,
+        explanation: ["The first sentence presents a limitation: the park is small.", "The second describes a benefit despite that limitation.", "“Nevertheless” appropriately signals contrast."],
+        distractorNotes: ["", "The bee attraction is not an example of the park’s size.", "The sentences do not describe similar ideas.", "The passage does not establish that the park’s small size caused the bee attraction."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Easy",
+        question: "Notes:\n• The city opened a public repair workshop in 2022.\n• Residents can borrow tools there.\n• Volunteers teach basic repairs on Saturday mornings.\n• The workshop recorded 430 tool loans in its first year.\n\nA student wants to emphasize the workshop’s first-year use. Which choice best uses the notes?",
+        choices: ["In its first year, the workshop recorded 430 tool loans.", "The workshop opened in 2022 and is located in the city.", "Volunteers teach repairs on Saturday mornings.", "Residents can borrow many kinds of tools from the workshop."],
+        answerIndex: 0,
+        explanation: ["The goal is to emphasize first-year use.", "The note about 430 tool loans directly measures how residents used the workshop during that year."],
+        distractorNotes: ["", "This gives when it opened, not a measure of use.", "This describes instruction, not first-year tool use.", "This mentions borrowing but does not include the first-year figure."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Medium",
+        question: "A student wants to combine two facts about a telescope: it was built by a local engineering team, and it can detect planets orbiting distant stars. Which choice most effectively combines the facts?",
+        choices: ["Built by a local engineering team, the telescope can detect planets orbiting distant stars.", "The telescope can detect distant planets, and a local engineering team built a telescope.", "A local engineering team built the telescope. It can detect planets, which orbit stars.", "The telescope, which a local team built, has distant stars orbiting planets it can detect."],
+        answerIndex: 0,
+        explanation: ["The sentence should communicate both who built the telescope and what it can detect.", "Choice A combines both facts in one clear sentence and keeps the relationships between ideas accurate."],
+        distractorNotes: ["", "This repeats “telescope” and makes the combined sentence less direct.", "This is grammatical but repeats the facts in separate, less concise sentences.", "This reverses the relationship: planets orbit stars, not the other way around."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Medium",
+        question: "Notes:\n• Architect Ren Ito designed a bus shelter with a translucent roof.\n• The roof allows daylight through.\n• A narrow overhang directs rain away from the bench.\n• The shelter won a regional design award in 2024.\n\nA student wants to describe a practical feature of Ito’s design. Which choice best uses the notes?",
+        choices: ["The shelter’s overhang directs rain away from the bench.", "Ren Ito’s shelter won a regional award in 2024.", "The shelter has a translucent roof.", "The design award was regional."],
+        answerIndex: 0,
+        explanation: ["The goal is to describe a practical feature.", "The overhang has a specific function: directing rain away from the bench."],
+        distractorNotes: ["", "The award is an honor, not a practical design feature.", "The roof is a design feature, but this choice does not state its practical effect.", "This detail describes the award rather than the shelter."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Medium",
+        question: "A student wants to show that a change in a museum’s schedule followed a visitor survey. Which transition best completes the sentence?\n\nVisitors said evening hours would help them attend. ______, the museum began staying open late on Thursdays.",
+        choices: ["Accordingly", "Meanwhile", "For instance", "Instead"],
+        answerIndex: 0,
+        explanation: ["The survey reported that visitors wanted evening hours.", "The museum then added late Thursday hours in response.", "“Accordingly” signals that the schedule change followed from the survey."],
+        distractorNotes: ["", "“Meanwhile” suggests events happening at the same time, not a response.", "The schedule change is a response, not an example of visitor feedback.", "“Instead” suggests a replacement or alternative that is not described."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Hard",
+        question: "A student wants to state both the result and a limitation of a trial of reusable food containers. Which choice best uses the notes?\n\nNotes:\n• A cafeteria tested reusable containers for one month.\n• Container waste fell by 40% during the trial.\n• The trial took place at one school.\n• Staff did not measure the program’s long-term costs.",
+        choices: ["During a one-month trial at one school, reusable containers reduced container waste by 40%, though the program’s long-term costs were not measured.", "Reusable containers reduced waste by 40%, so every school should use them.", "The cafeteria tested containers for one month and did not measure every kind of waste.", "Long-term costs were not measured, but container waste fell by 40% at all schools."],
+        answerIndex: 0,
+        explanation: ["The goal asks for both the trial result and one limitation.", "Choice A reports the 40% reduction and notes that the test was limited to one school and did not measure long-term costs."],
+        distractorNotes: ["", "The notes do not show that the result applies to every school.", "This mentions duration and missing cost data but omits the measured waste reduction and misstates what was not measured.", "The result came from one school; it cannot be generalized to all schools."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Easy",
+        question: "A student wants to introduce an example of how a town reduced water use. Which transition best completes the sentence?\n\nThe town encouraged residents to conserve water in several ways. ______, it offered free kits that help households find leaks.",
+        choices: ["For example", "Nevertheless", "In contrast", "Consequently"],
+        answerIndex: 0,
+        explanation: ["The first sentence introduces several conservation efforts.", "The second gives one specific effort: offering leak-detection kits.", "“For example” correctly introduces that instance."],
+        distractorNotes: ["", "The sentences do not contrast; the kit offer supports the first statement.", "No opposing idea is introduced.", "The kit offer is an example of a program, not a stated consequence of another action."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Medium",
+        question: "Notes:\n• Engineer Omar Bell designed a lightweight footbridge.\n• The bridge uses recycled aluminum.\n• It spans a 12-meter section of a park trail.\n• Construction finished in April.\n\nA student wants to emphasize the bridge’s environmental feature. Which choice best uses the notes?",
+        choices: ["The footbridge uses recycled aluminum.", "Omar Bell designed the footbridge.", "The bridge spans 12 meters of trail.", "Construction finished in April."],
+        answerIndex: 0,
+        explanation: ["The goal is to emphasize an environmental feature.", "Using recycled aluminum directly describes a material choice that reduces reliance on new material."],
+        distractorNotes: ["", "This identifies the designer but not an environmental feature.", "This gives the bridge’s size, not its material.", "This gives the completion date, not the environmental feature."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Hard",
+        question: "A student wants to compare two approaches to teaching local history. Which choice best uses the notes?\n\nNotes:\n• Class A studied digitized newspaper archives.\n• Class B interviewed longtime residents.\n• Both classes created exhibits for the town library.\n• Students in both classes reported learning new details about the town.",
+        choices: ["While Class A used newspaper archives and Class B interviewed residents, both classes created library exhibits and reported learning new details about the town.", "Class A interviewed residents, while Class B studied digitized newspaper archives.", "Both classes created exhibits, so they used the same research method.", "The town library taught students new details by creating exhibits."],
+        answerIndex: 0,
+        explanation: ["The goal is to compare the research approaches while also noting a shared outcome.", "Choice A correctly distinguishes the methods and then identifies the exhibit and learning outcomes common to both classes."],
+        distractorNotes: ["", "This reverses the two classes’ methods.", "The classes shared an exhibit format, not a research method.", "The students created the exhibits; the notes do not say the library taught them."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Easy",
+        question: "Which choice completes the sentence with the most logical transition?\n\nThe first set of soil samples came from the hillside. ______, researchers collected a second set from the valley floor.",
+        choices: ["Next", "However", "For example", "Instead"],
+        answerIndex: 0,
+        explanation: ["The sentences describe two steps in the same collection process.", "The second sample location follows the first one in sequence.", "“Next” clearly signals the next step."],
+        distractorNotes: ["", "No disagreement or contrast appears between the locations.", "The valley sample is another step, not an example of the hillside sample.", "The second sample supplements the first rather than replacing it."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Easy",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe collection of maps ___ in a climate-controlled room.",
+        choices: ["are stored", "is stored", "were stored", "have been stored"],
+        answerIndex: 1,
+        explanation: ["The subject is “collection,” a singular noun.", "The phrase “of maps” describes the collection but does not change the subject’s number.", "The singular verb “is stored” agrees with “collection.”"],
+        distractorNotes: ["These plural verbs incorrectly agree with the plural noun “maps” inside the modifying phrase.", "", "This plural verb also fails to agree with the singular subject.", "This plural helping verb does not agree with “collection.”"]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Easy",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nAfter the final bell ___ the robotics team met in the laboratory.",
+        choices: ["rang, the", "rang; the", "rang the", "rang: the"],
+        answerIndex: 0,
+        explanation: ["“After the final bell rang” is an introductory dependent clause.", "A comma separates that introductory clause from the main clause, “the robotics team met in the laboratory.”"],
+        distractorNotes: ["", "A semicolon cannot separate an introductory dependent clause from its main clause.", "Without punctuation, the two clauses run together.", "A colon is not used to separate an introductory dependent clause from the main clause."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Medium",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe musicians tuned their instruments ___ the audience found its seats.",
+        choices: ["while", "; while", ", while", ": while"],
+        answerIndex: 0,
+        explanation: ["The sentence contains two actions happening at the same time.", "“While” joins the two clauses and correctly expresses that relationship.", "No punctuation is needed before this subordinating conjunction in the sentence."],
+        distractorNotes: ["", "A semicolon before “while” incorrectly separates the clauses in this construction.", "The comma incorrectly separates the clauses before the conjunction.", "A colon is not used before this dependent clause."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Medium",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe research team ___ its results at the conference yesterday.",
+        choices: ["present", "presents", "presented", "will present"],
+        answerIndex: 2,
+        explanation: ["The word “yesterday” places the action in the past.", "The past-tense verb “presented” agrees with that time marker.", "The sentence describes a completed action."],
+        distractorNotes: ["This present-tense form conflicts with “yesterday.”", "This present-tense form conflicts with “yesterday.”", "", "This future-tense form conflicts with “yesterday.”"]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Easy",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe hikers packed ___ water bottles before leaving camp.",
+        choices: ["there", "they’re", "their", "its"],
+        answerIndex: 2,
+        explanation: ["The blank calls for a possessive word describing whose water bottles were packed.", "“Their” is the plural possessive pronoun that refers to the hikers."],
+        distractorNotes: ["“There” refers to a place or introduces a statement, not possession.", "“They’re” means “they are,” which does not fit before “water bottles.”", "", "“Its” is singular and would refer to a thing, not the hikers."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Medium",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe garden’s most reliable pollinators ___ native bees.",
+        choices: ["is", "was", "are", "has been"],
+        answerIndex: 2,
+        explanation: ["The subject is “pollinators,” a plural noun.", "The phrase “garden’s most reliable” modifies the subject but does not make it singular.", "The plural verb “are” correctly agrees with “pollinators.”"],
+        distractorNotes: ["This singular verb does not agree with the plural subject.", "This singular past-tense verb does not agree with the plural subject.", "", "This singular helping verb does not agree with the plural subject."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Hard",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe editor reviewed the essay ___ she corrected its citations.",
+        choices: ["; then", ", then", ": then", "then;"],
+        answerIndex: 0,
+        explanation: ["The sentence has two independent clauses: “The editor reviewed the essay” and “she corrected its citations.”", "A semicolon can join two closely related independent clauses.", "“Then” appropriately signals the sequence of actions after the semicolon."],
+        distractorNotes: ["", "A comma alone creates a comma splice between two independent clauses.", "A colon is not the appropriate punctuation for joining these sequential independent clauses.", "The semicolon must go between the clauses, not after “then.”"]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Easy",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nBy the time the doors opened, the volunteers ___ the display.",
+        choices: ["finish", "have finished", "had finished", "will finish"],
+        answerIndex: 2,
+        explanation: ["The volunteers completed the display before another past event: the doors opening.", "The past perfect “had finished” shows that the work was completed before that past event."],
+        distractorNotes: ["This present-tense verb does not match the past-time sequence.", "This present perfect form does not clearly place completion before the past event.", "", "This future-tense verb conflicts with the past-time sequence."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Medium",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe award-winning architect, ___ designed the library’s reading room, returned for its opening.",
+        choices: ["who", "whom", "which", "whose"],
+        answerIndex: 0,
+        explanation: ["The blank is the subject of the verb “designed.”", "“Who” is the subject form used for a person performing an action.", "The architect designed the room, so “who” is correct."],
+        distractorNotes: ["", "“Whom” is an object form and cannot serve as the subject of “designed.”", "“Which” generally refers to things, not a person.", "“Whose” indicates possession and would need a noun after it."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Hard",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe students displayed three projects ___ a model bridge, a solar oven, and a water filter.",
+        choices: ["; a model bridge", ": a model bridge", ", a model bridge", "— and a model bridge"],
+        answerIndex: 1,
+        explanation: ["The words before the blank form a complete sentence that introduces a list.", "A colon can follow an independent clause to introduce examples or items in a list.", "The three projects are listed after the colon."],
+        distractorNotes: ["A semicolon joins independent clauses; the phrase after it is not an independent clause.", "", "A comma alone does not correctly introduce this list after a complete clause.", "The dash and conjunction combination is awkward and does not directly introduce the list."]
+      }
+    ];
+
+    const categoryNames = ["Information and Ideas", "Craft and Structure", "Expression of Ideas", "Standard English Conventions"];
+    const startScreen = document.getElementById("start-screen");
+    const questionScreen = document.getElementById("question-screen");
+    const resultsScreen = document.getElementById("results-screen");
+    const reviewScreen = document.getElementById("review-screen");
+    const categoryOptions = document.getElementById("category-options");
+    const categoryInputs = [];
+    const difficultyRank = { Easy: 0, Medium: 1, Hard: 2 };
+    if (questions.length > 100) throw new Error("The Reading and Writing practice bank cannot contain more than 100 questions.");
+    questions.forEach((question) => {
+      if (!categoryNames.includes(question.skill) || !Object.prototype.hasOwnProperty.call(difficultyRank, question.difficulty)) {
+        throw new Error(`Question has an unsupported category or difficulty: ${question.question}`);
+      }
+      if (
+        question.choices.length !== 4 ||
+        question.distractorNotes.length !== 4 ||
+        question.answerIndex < 0 ||
+        question.answerIndex > 3 ||
+        !question.explanation.length ||
+        question.distractorNotes.some((note, index) => index !== question.answerIndex && !note.trim())
+      ) {
+        throw new Error(`Question must have four choices, four notes, and one valid answer: ${question.question}`);
+      }
+    });
+    categoryNames.forEach((category) => {
+      if (questions.filter((question) => question.skill === category).length < 5) {
+        throw new Error(`Each category needs at least five questions: ${category}`);
+      }
+    });
+    let practiceQuestions = [];
+    let answerByQuestion = [];
+    let selectedCategories = [];
+    let questionIndex = 0;
+    let missedQuestionIndices = [];
+    let reviewIndex = 0;
+
+    function showScreen(screen) {
+      [startScreen, questionScreen, resultsScreen, reviewScreen].forEach((item) => { item.hidden = item !== screen; });
+    }
+
+    function focusElement(id) {
+      document.getElementById(id).focus();
+    }
+
+    function shuffle(items) {
+      const shuffled = [...items];
+      for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+      }
+      return shuffled;
+    }
+
+    function renderCategoryPicker() {
+      categoryNames.forEach((category) => {
+        const available = questions.filter((question) => question.skill === category).length;
+        const label = document.createElement("label");
+        label.className = "category-option";
+        const input = document.createElement("input");
+        input.type = "checkbox";
+        input.name = "practice-category";
+        input.value = category;
+        input.disabled = available < 5;
+        input.addEventListener("change", updateCategorySelection);
+        const text = document.createElement("span");
+        const name = document.createElement("span");
+        name.className = "category-name";
+        name.textContent = category;
+        const count = document.createElement("span");
+        count.className = "category-count";
+        count.textContent = `${available} in bank · 5 per set`;
+        text.append(name, count);
+        label.append(input, text);
+        categoryOptions.append(label);
+        categoryInputs.push(input);
+      });
+    }
+
+    function updateCategorySelection(event) {
+      const selected = categoryInputs.filter((input) => input.checked);
+      if (selected.length > 2) {
+        event.target.checked = false;
+        document.getElementById("selection-status").textContent = "You already chose two. Uncheck one before choosing another.";
+        return;
+      }
+      document.getElementById("start-button").disabled = selected.length !== 2;
+      document.getElementById("selection-status").textContent = selected.length === 2
+        ? "Five questions from each selected category will be included."
+        : `Choose ${2 - selected.length} more ${selected.length === 1 ? "category" : "categories"} to begin.`;
+    }
+
+    function createPracticeSet(categories) {
+      const selectedQuestions = categories.flatMap((category) => {
+        const categoryQuestions = shuffle(questions.filter((question) => question.skill === category)).slice(0, 5);
+        return categoryQuestions.map((question) => {
+          const options = shuffle(question.choices.map((choice, originalIndex) => ({
+            choice,
+            note: question.distractorNotes[originalIndex],
+            isAnswer: originalIndex === question.answerIndex
+          })));
+          return {
+            ...question,
+            choices: options.map((option) => option.choice),
+            distractorNotes: options.map((option) => option.note),
+            answerIndex: options.findIndex((option) => option.isAnswer)
+          };
+        });
+      });
+      return shuffle(selectedQuestions);
+    }
+
+    function renderQuestion() {
+      const question = practiceQuestions[questionIndex];
+      document.getElementById("question-count").textContent = `Question ${questionIndex + 1} of ${practiceQuestions.length}`;
+      document.getElementById("question-skill").textContent = question.skill;
+      document.getElementById("skill-label").textContent = question.skill;
+      document.getElementById("difficulty-label").textContent = question.difficulty;
+      document.getElementById("question-title").textContent = question.question;
+      const progress = document.getElementById("progress-track");
+      progress.setAttribute("aria-valuemax", String(practiceQuestions.length));
+      progress.setAttribute("aria-valuenow", String(questionIndex + 1));
+      document.getElementById("progress-fill").style.width = `${((questionIndex + 1) / practiceQuestions.length) * 100}%`;
+      const choices = document.getElementById("choices");
+      choices.replaceChildren();
+      const selectedIndex = answerByQuestion[questionIndex];
+      question.choices.forEach((choice, index) => {
+        const item = document.createElement("li");
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "choice";
+        button.disabled = selectedIndex !== null;
+        if (selectedIndex === index) button.setAttribute("aria-pressed", "true");
+        if (selectedIndex !== null && index === question.answerIndex) button.classList.add("is-correct");
+        if (selectedIndex === index && selectedIndex !== question.answerIndex) button.classList.add("is-incorrect");
+        const key = document.createElement("span");
+        key.className = "choice-key";
+        key.setAttribute("aria-hidden", "true");
+        key.textContent = String.fromCharCode(65 + index);
+        const text = document.createElement("span");
+        text.textContent = choice;
+        button.append(key, text);
+        button.addEventListener("click", () => selectAnswer(index));
+        item.append(button);
+        choices.append(item);
+      });
+      document.getElementById("feedback").replaceChildren();
+      document.getElementById("question-actions").hidden = selectedIndex === null;
+      if (selectedIndex !== null) renderFeedback(question, selectedIndex, document.getElementById("feedback"));
+      document.getElementById("next-button").textContent = questionIndex === practiceQuestions.length - 1 ? "See results" : "Next question";
+      showScreen(questionScreen);
+    }
+
+    function renderFeedback(question, selectedIndex, container) {
+      const isCorrect = selectedIndex === question.answerIndex;
+      const panel = document.createElement("section");
+      panel.className = `feedback ${isCorrect ? "is-correct" : "is-incorrect"}`;
+      const title = document.createElement("h3");
+      title.textContent = isCorrect ? "Correct!" : "Not quite. Here’s how to solve it.";
+      panel.append(title);
+      if (!isCorrect) {
+        const answer = document.createElement("p");
+        answer.textContent = `The correct answer is ${String.fromCharCode(65 + question.answerIndex)}: ${question.choices[question.answerIndex]}.`;
+        panel.append(answer);
+      }
+      const stepsTitle = document.createElement("h4");
+      stepsTitle.textContent = "Step-by-step";
+      panel.append(stepsTitle);
+      const steps = document.createElement("ol");
+      question.explanation.forEach((step) => {
+        const item = document.createElement("li");
+        item.textContent = step;
+        steps.append(item);
+      });
+      panel.append(steps);
+      const distractorTitle = document.createElement("h4");
+      distractorTitle.textContent = "Why the other choices can be tempting";
+      panel.append(distractorTitle);
+      const distractors = document.createElement("ul");
+      question.distractorNotes.forEach((note, index) => {
+        if (index === question.answerIndex) return;
+        const item = document.createElement("li");
+        item.textContent = `${String.fromCharCode(65 + index)}. ${note}`;
+        distractors.append(item);
+      });
+      panel.append(distractors);
+      container.append(panel);
+    }
+
+    function selectAnswer(selectedIndex) {
+      if (answerByQuestion[questionIndex] !== null) return;
+      answerByQuestion[questionIndex] = selectedIndex;
+      renderQuestion();
+      focusElement("question-title");
+    }
+
+    function showResults() {
+      const totalCorrect = answerByQuestion.reduce((sum, answer, index) => sum + (answer === practiceQuestions[index].answerIndex ? 1 : 0), 0);
+      missedQuestionIndices = practiceQuestions.reduce((indices, question, index) => {
+        if (answerByQuestion[index] !== question.answerIndex) indices.push(index);
+        return indices;
+      }, []);
+      document.getElementById("score").replaceChildren();
+      const score = document.createElement("strong");
+      score.textContent = `${totalCorrect}/${practiceQuestions.length}`;
+      const label = document.createElement("span");
+      label.textContent = "correct";
+      document.getElementById("score").append(score, label);
+      document.getElementById("result-summary").textContent = totalCorrect === practiceQuestions.length
+        ? "Excellent work—you got every question right."
+        : "Nice work sticking with it. Review any missed questions to see the reasoning and common traps.";
+      const breakdownBody = document.getElementById("breakdown-body");
+      breakdownBody.replaceChildren();
+      selectedCategories.forEach((category) => {
+        const categoryQuestions = practiceQuestions.map((question, index) => ({ question, index })).filter((item) => item.question.skill === category);
+        const correct = categoryQuestions.filter(({ question, index }) => answerByQuestion[index] === question.answerIndex).length;
+        const row = document.createElement("tr");
+        const name = document.createElement("th");
+        name.scope = "row";
+        name.textContent = category;
+        const result = document.createElement("td");
+        result.textContent = `${correct} of ${categoryQuestions.length}`;
+        row.append(name, result);
+        breakdownBody.append(row);
+      });
+      const reviewButton = document.getElementById("review-button");
+      reviewButton.disabled = missedQuestionIndices.length === 0;
+      reviewButton.textContent = missedQuestionIndices.length === 0 ? "No missed questions to review" : `Review missed questions (${missedQuestionIndices.length})`;
+      reviewButton.classList.toggle("btn-ghost", missedQuestionIndices.length > 0);
+      reviewButton.classList.toggle("btn-primary", missedQuestionIndices.length === 0);
+      showScreen(resultsScreen);
+      focusElement("results-title");
+    }
+
+    function renderReview() {
+      const index = missedQuestionIndices[reviewIndex];
+      const question = practiceQuestions[index];
+      document.getElementById("review-count").textContent = `Missed question ${reviewIndex + 1} of ${missedQuestionIndices.length}`;
+      document.getElementById("review-skill").textContent = question.skill;
+      document.getElementById("review-question").textContent = question.question;
+      const choices = document.getElementById("review-choices");
+      choices.replaceChildren();
+      question.choices.forEach((choice, choiceIndex) => {
+        const item = document.createElement("li");
+        const answer = document.createElement("div");
+        answer.className = "choice review-choice";
+        if (choiceIndex === question.answerIndex) answer.classList.add("is-correct");
+        if (choiceIndex === answerByQuestion[index] && choiceIndex !== question.answerIndex) answer.classList.add("is-incorrect");
+        const key = document.createElement("span");
+        key.className = "choice-key";
+        key.setAttribute("aria-hidden", "true");
+        key.textContent = String.fromCharCode(65 + choiceIndex);
+        const text = document.createElement("span");
+        text.textContent = choice;
+        const status = document.createElement("span");
+        if (choiceIndex === question.answerIndex) status.textContent = " — Correct answer";
+        else if (choiceIndex === answerByQuestion[index]) status.textContent = " — Your answer";
+        answer.append(key, text, status);
+        item.append(answer);
+        choices.append(item);
+      });
+      const explanation = document.getElementById("review-explanation");
+      explanation.replaceChildren();
+      renderFeedback(question, answerByQuestion[index], explanation);
+      document.getElementById("previous-review-button").disabled = reviewIndex === 0;
+      document.getElementById("next-review-button").disabled = reviewIndex === missedQuestionIndices.length - 1;
+    }
+
+    document.getElementById("start-button").addEventListener("click", () => {
+      selectedCategories = categoryInputs.filter((input) => input.checked).map((input) => input.value);
+      if (selectedCategories.length !== 2) return;
+      practiceQuestions = createPracticeSet(selectedCategories);
+      answerByQuestion = Array(practiceQuestions.length).fill(null);
+      questionIndex = 0;
+      renderQuestion();
+      focusElement("question-title");
+    });
+    document.getElementById("next-button").addEventListener("click", () => {
+      if (questionIndex < practiceQuestions.length - 1) {
+        questionIndex += 1;
+        renderQuestion();
+        focusElement("question-title");
+      } else {
+        showResults();
+      }
+    });
+    document.getElementById("review-button").addEventListener("click", () => {
+      if (missedQuestionIndices.length === 0) return;
+      reviewIndex = 0;
+      renderReview();
+      showScreen(reviewScreen);
+      focusElement("review-question");
+    });
+    document.getElementById("back-results-button").addEventListener("click", () => {
+      showScreen(resultsScreen);
+      focusElement("results-title");
+    });
+    document.getElementById("previous-review-button").addEventListener("click", () => {
+      if (reviewIndex > 0) {
+        reviewIndex -= 1;
+        renderReview();
+        focusElement("review-question");
+      }
+    });
+    document.getElementById("next-review-button").addEventListener("click", () => {
+      if (reviewIndex < missedQuestionIndices.length - 1) {
+        reviewIndex += 1;
+        renderReview();
+        focusElement("review-question");
+      }
+    });
+    document.getElementById("restart-button").addEventListener("click", () => {
+      practiceQuestions = createPracticeSet(selectedCategories);
+      answerByQuestion = Array(practiceQuestions.length).fill(null);
+      questionIndex = 0;
+      renderQuestion();
+      focusElement("question-title");
+    });
+    renderCategoryPicker();
+  </script>
+</body>
+</html>
