@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#FBFAF8">
-  <meta name="description" content="Choose two areas and try 10 original SAT-style math questions, with step-by-step explanations. Independent practice, not official SAT content.">
+  <meta name="description" content="Choose one to four math categories for a randomized set of 10 original SAT-style questions, with step-by-step explanations. Independent practice, not official SAT content.">
   <title>SAT Math Practice — Mr. Chau</title>
   <style>
     :root{
@@ -217,19 +217,19 @@
     <section id="start-screen" class="intro" aria-labelledby="page-title">
       <p class="eyebrow">Independent practice</p>
       <h1 id="page-title">SAT Math practice</h1>
-      <!--<p class="lede">Choose two areas to focus on. Each set randomly selects five of the original questions in each category and shuffles their order. You’ll get an explanation after every answer.</p>-->
+      <!--<p class="lede">Choose one to four categories for a quick 10-question set. Questions are sampled randomly from your selected categories, and the question order and answer choices are shuffled.</p>-->
       <p class="notice"><strong>Independent practice, not official SAT content.</strong> These original questions are not affiliated with or endorsed by the College Board.</p>
       <!--<ul class="intro-meta">
-        <li>10 questions per practice set</li>
+        <li>10 questions per set</li>
         <li>4 choices each</li>
-        <li>Random question order</li>
+        <li>Choose 1–4 categories</li>
         <li>No timer</li>
       </ul>-->
       <fieldset class="category-picker">
-        <legend>Choose exactly two categories</legend>
+        <legend>Choose one to four categories</legend>
         <div id="category-options" class="category-options"></div>
       </fieldset>
-      <p id="selection-status" class="selection-status" aria-live="polite">Choose two categories to begin.</p>
+      <p id="selection-status" class="selection-status" aria-live="polite">Choose at least one category to begin.</p>
       <div class="start-actions">
         <button id="start-button" class="btn btn-primary" type="button" disabled>Start practice</button>
       </div>
@@ -1043,8 +1043,8 @@
       }
     });
     skillNames.forEach((skill) => {
-      if (questions.filter((question) => question.skill === skill).length < 5) {
-        throw new Error(`Each category needs at least five questions: ${skill}`);
+      if (questions.filter((question) => question.skill === skill).length < 2) {
+        throw new Error(`Each category needs at least two questions: ${skill}`);
       }
     });
     let practiceQuestions = [];
@@ -1082,7 +1082,7 @@
         input.type = "checkbox";
         input.name = "practice-category";
         input.value = skill;
-        input.disabled = available < 5;
+        input.disabled = available < 2;
         input.addEventListener("change", updateCategorySelection);
         const text = document.createElement("span");
         const name = document.createElement("span");
@@ -1090,7 +1090,7 @@
         name.textContent = skill;
         const count = document.createElement("span");
         count.className = "category-count";
-        count.textContent = `${available} in bank · 5 per set`;
+        count.textContent = `${available} questions in bank`;
         text.append(name, count);
         label.append(input, text);
         categoryOptions.append(label);
@@ -1100,36 +1100,56 @@
 
     function updateCategorySelection(event) {
       const selected = categoryInputs.filter((input) => input.checked);
-      if (selected.length > 2) {
+      if (selected.length > 4) {
         event.target.checked = false;
-        document.getElementById("selection-status").textContent = "You already chose two. Uncheck one before choosing another.";
+        document.getElementById("selection-status").textContent = "You already chose four. Uncheck one before choosing another.";
         return;
       }
+      const basePerCategory = selected.length ? Math.floor(10 / selected.length) : 0;
+      const remaining = selected.length ? 10 % selected.length : 0;
+      const selectedQuestionCount = questions.filter((question) => selected.some((input) => input.value === question.skill)).length;
+      const hasEnoughQuestions = selected.length > 0 &&
+        selectedQuestionCount >= 10 &&
+        selected.every((input) => questions.filter((question) => question.skill === input.value).length >= basePerCategory);
       const startButton = document.getElementById("start-button");
-      startButton.disabled = selected.length !== 2;
-      document.getElementById("selection-status").textContent = selected.length === 2
-        ? "Five questions from each selected category will be included."
-        : `Choose ${2 - selected.length} more ${selected.length === 1 ? "category" : "categories"} to begin.`;
+      startButton.disabled = !hasEnoughQuestions;
+      const status = document.getElementById("selection-status");
+      if (!selected.length) {
+        status.textContent = "Choose at least one category to begin.";
+      } else if (!hasEnoughQuestions) {
+        status.textContent = "There are not enough questions in the selected categories for a 10-question set.";
+      } else if (selected.length === 1) {
+        status.textContent = "All 10 questions will come from your selected category.";
+      } else {
+        status.textContent = `${basePerCategory} questions from each selected category${remaining ? `, plus ${remaining} random ${remaining === 1 ? "question" : "questions"} from those categories` : ""}.`;
+      }
     }
 
     function createPracticeSet(skills) {
-      const selectedQuestions = skills.flatMap((skill) => {
-        const categoryQuestions = shuffle(questions.filter((question) => question.skill === skill)).slice(0, 5);
-        return categoryQuestions.map((question) => {
-          const options = shuffle(question.choices.map((choice, originalIndex) => ({
-            choice,
-            note: question.distractorNotes[originalIndex],
-            isAnswer: originalIndex === question.answerIndex
-          })));
-          return {
-            ...question,
-            choices: options.map((option) => option.choice),
-            distractorNotes: options.map((option) => option.note),
-            answerIndex: options.findIndex((option) => option.isAnswer)
-          };
-        });
+      const basePerCategory = Math.floor(10 / skills.length);
+      const selectedQuestions = skills.flatMap((skill) =>
+        shuffle(questions.filter((question) => question.skill === skill)).slice(0, basePerCategory)
+      );
+      const remainingCount = 10 - selectedQuestions.length;
+      const selectedQuestionSet = new Set(selectedQuestions);
+      const remainingPool = questions.filter((question) =>
+        skills.includes(question.skill) && !selectedQuestionSet.has(question)
+      );
+      selectedQuestions.push(...shuffle(remainingPool).slice(0, remainingCount));
+      const shuffledQuestions = shuffle(selectedQuestions);
+      return shuffledQuestions.map((question) => {
+        const options = shuffle(question.choices.map((choice, originalIndex) => ({
+          choice,
+          note: question.distractorNotes[originalIndex],
+          isAnswer: originalIndex === question.answerIndex
+        })));
+        return {
+          ...question,
+          choices: options.map((option) => option.choice),
+          distractorNotes: options.map((option) => option.note),
+          answerIndex: options.findIndex((option) => option.isAnswer)
+        };
       });
-      return shuffle(selectedQuestions);
     }
 
     function renderQuestion() {
@@ -1293,7 +1313,7 @@
 
     document.getElementById("start-button").addEventListener("click", () => {
       selectedSkills = categoryInputs.filter((input) => input.checked).map((input) => input.value);
-      if (selectedSkills.length !== 2) return;
+      if (!selectedSkills.length || selectedSkills.length > 4) return;
       practiceQuestions = createPracticeSet(selectedSkills);
       answerByQuestion = Array(practiceQuestions.length).fill(null);
       questionIndex = 0;
