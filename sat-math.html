@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#FBFAF8">
-  <meta name="description" content="Choose one to four math categories for a randomized set of 10 original SAT-style questions, with step-by-step explanations. Independent practice, not official SAT content.">
+  <meta name="description" content="Choose one to four math categories and the number of original SAT-style questions to practice, with step-by-step explanations. Independent practice, not official SAT content.">
   <title>SAT Math Practice — Mr. Chau</title>
   <style>
     :root{
@@ -125,8 +125,10 @@
     .category-option:has(input:checked){border-color:var(--accent);background:var(--accent-wash)}
     .category-option input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--accent);flex:none}
     .category-name{display:block;color:var(--ink);font-weight:600;line-height:1.35}
-    .category-count{display:block;margin-top:4px;color:var(--muted);font-size:.82rem}
     .selection-status{min-height:1.5em;margin:-16px 0 20px;color:var(--muted);font-size:.9rem}
+    .question-count-picker{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 24px}
+    .question-count-picker label{font-weight:700;color:var(--ink)}
+    .question-count-picker input{width:88px;min-height:44px;padding:8px 10px;border:1px solid var(--rule);border-radius:var(--r);font:inherit;color:var(--ink);background:var(--surface)}
     .start-actions{display:flex;justify-content:flex-end}
     .difficulty-label{display:inline-block;margin:0 0 12px 8px;padding:5px 11px;border:1px solid var(--rule);border-radius:99px;color:var(--muted);font-size:.78rem;font-weight:600}
     .btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
@@ -229,6 +231,10 @@
         <legend>Choose one to four categories</legend>
         <div id="category-options" class="category-options"></div>
       </fieldset>
+      <div class="question-count-picker">
+        <label for="question-limit">Number of questions</label>
+        <input id="question-limit" type="number" min="1" max="40" step="1" value="10" inputmode="numeric" aria-describedby="selection-status">
+      </div>
       <p id="selection-status" class="selection-status" aria-live="polite">Choose at least one category to begin.</p>
       <div class="start-actions">
         <button id="start-button" class="btn btn-primary" type="button" disabled>Start practice</button>
@@ -1015,6 +1021,1086 @@
           "",
           "This reverses the sine ratio and gives a value greater than 1."
         ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Medium",
+        question: "A movie service charges $8 per month plus $3 for each rental. If a customer's bill is $29, how many movies did the customer rent?",
+        choices: ["5", "6", "7", "9"],
+        answerIndex: 2,
+        explanation: [
+          "Let r be the number of rentals. The total cost is 8 + 3r = 29.",
+          "Subtract 8 from both sides to get 3r = 21.",
+          "Divide by 3: the customer rented 7 movies."
+        ],
+        distractorNotes: [
+          "Five rentals would cost $8 + 3($5) = $23.",
+          "This subtracts the monthly fee but then divides incorrectly: 21 ÷ 3 = 7.",
+          "",
+          "Nine rentals would cost $35, which is more than the bill."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "What are the solutions to x² - 6x + 5 = 0?",
+        choices: ["x = -1 and x = -5", "x = 1 and x = 5", "x = -1 and x = 5", "x = 1 and x = -5"],
+        answerIndex: 1,
+        explanation: [
+          "Factor the quadratic: x² - 6x + 5 = (x - 1)(x - 5).",
+          "Set each factor equal to zero: x - 1 = 0 or x - 5 = 0.",
+          "The solutions are x = 1 and x = 5."
+        ],
+        distractorNotes: [
+          "Both signs are reversed; substituting either negative value does not make the equation zero.",
+          "",
+          "Only the sign for the first root is incorrect.",
+          "Only the sign for the second root is incorrect."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Easy",
+        question: "A bicycle shop sold 8 bikes on Monday, 12 on Tuesday, 10 on Wednesday, 14 on Thursday, and 16 on Friday. What was the mean number of bikes sold per day?",
+        choices: ["10", "11", "12", "14"],
+        answerIndex: 2,
+        explanation: [
+          "Add the five daily totals: 8 + 12 + 10 + 14 + 16 = 60.",
+          "Divide the total by the five days: 60 ÷ 5 = 12.",
+          "The mean number of bikes sold per day was 12."
+        ],
+        distractorNotes: [
+          "This is the smallest daily total, not the mean.",
+          "The sum is 60, and dividing by 5 gives 12 rather than 11.",
+          "",
+          "This is close to the largest daily total, not the average."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Easy",
+        question: "A circle has a radius of 6 inches. What is the length of an arc whose central angle measures 90°?",
+        choices: ["3π inches", "6π inches", "9π inches", "12π inches"],
+        answerIndex: 0,
+        explanation: [
+          "A 90° angle is one quarter of a full 360° turn.",
+          "The circle's circumference is 2π(6) = 12π inches.",
+          "One quarter of 12π is 3π inches."
+        ],
+        distractorNotes: [
+          "",
+          "This is half the circumference, corresponding to a 180° arc.",
+          "This does not represent one quarter of the circumference.",
+          "This is the full circumference, corresponding to a 360° arc."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Easy",
+        question: "Solve for x: 7x - 9 = 4x + 12.",
+        choices: ["x = 5", "x = 7", "x = 9", "x = 21"],
+        answerIndex: 1,
+        explanation: [
+          "Subtract 4x from both sides to get 3x - 9 = 12.",
+          "Add 9 to both sides: 3x = 21.",
+          "Divide by 3 to get x = 7."
+        ],
+        distractorNotes: [
+          "This does not satisfy the equation; substituting 5 gives 26 on the left and 32 on the right.",
+          "",
+          "This can result from adding 9 but then dividing 21 by an incorrect coefficient.",
+          "This is the value of 3x before dividing by 3."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Easy",
+        question: "Three consecutive even integers have a sum of 42. What is the middle integer?",
+        choices: ["12", "13", "14", "16"],
+        answerIndex: 2,
+        explanation: [
+          "Let the middle integer be n; the integers are n - 2, n, and n + 2.",
+          "Their sum is 3n, so 3n = 42.",
+          "Divide by 3: the middle integer is 14."
+        ],
+        distractorNotes: [
+          "These would be 10, 12, and 14, whose sum is 36.",
+          "The middle integer must be even, and these three even integers would not sum to 42.",
+          "",
+          "These would be 14, 16, and 18, whose sum is 48."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Easy",
+        question: "A parking garage charges a $18 entry fee plus $6 per hour. If the total charge is $60, how many hours was the car parked?",
+        choices: ["6", "7", "8", "9"],
+        answerIndex: 1,
+        explanation: [
+          "Let h be the number of hours. The total charge is 18 + 6h = 60.",
+          "Subtract 18: 6h = 42.",
+          "Divide by 6: h = 7 hours."
+        ],
+        distractorNotes: [
+          "Six hours would cost $18 + $36 = $54.",
+          "",
+          "This may result from subtracting the fee incorrectly; eight hours would cost $66.",
+          "Nine hours would cost $72, which is more than the total charge."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Medium",
+        question: "Solve for x: 5(x - 2) = 3x + 14.",
+        choices: ["x = 8", "x = 10", "x = 12", "x = 14"],
+        answerIndex: 2,
+        explanation: [
+          "Distribute 5: 5x - 10 = 3x + 14.",
+          "Subtract 3x and add 10 to get 2x = 24.",
+          "Divide by 2: x = 12."
+        ],
+        distractorNotes: [
+          "Substitution gives 30 on the left and 38 on the right, so 8 is not a solution.",
+          "This can come from dividing 24 by an incorrect coefficient.",
+          "",
+          "This can result from combining the constants but not isolating 2x correctly."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Medium",
+        question: "A line has slope -3 and passes through (2, 1). Which equation represents the line?",
+        choices: ["y = -3x + 7", "y = -3x - 5", "y = 3x - 5", "y = -2x + 5"],
+        answerIndex: 0,
+        explanation: [
+          "Use y = mx + b with m = -3 and the point (2, 1).",
+          "Substitute the point: 1 = -3(2) + b, so b = 7.",
+          "The equation is y = -3x + 7."
+        ],
+        distractorNotes: [
+          "",
+          "This uses the correct slope but an intercept that does not make the line pass through (2, 1).",
+          "This changes the slope's sign; the line must decrease as x increases.",
+          "This uses neither the given slope nor an intercept consistent with the point."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Medium",
+        question: "Which solution set satisfies 5 - 2x > 13?",
+        choices: ["x > -4", "x < -4", "x > 4", "x < 4"],
+        answerIndex: 1,
+        explanation: [
+          "Subtract 5 from both sides: -2x > 8.",
+          "Divide by -2 and reverse the inequality sign.",
+          "The solution is x < -4."
+        ],
+        distractorNotes: [
+          "This fails to reverse the inequality when dividing by a negative number.",
+          "",
+          "This has the wrong boundary sign and direction.",
+          "This has a positive boundary; values such as x = 0 do not satisfy the original inequality."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Medium",
+        question: "If x + y = 11 and 2x - y = 7, what is y?",
+        choices: ["3", "4", "5", "6"],
+        answerIndex: 2,
+        explanation: [
+          "Add the equations to eliminate y: 3x = 18, so x = 6.",
+          "Substitute x = 6 into x + y = 11.",
+          "Then y = 11 - 6 = 5."
+        ],
+        distractorNotes: [
+          "This does not satisfy both equations; it would make x = 8 from the first equation.",
+          "This can result from subtracting 7 from 11 without first solving for x.",
+          "",
+          "This can come from incorrectly solving 3x = 18 as x = 5 and then mixing the variables."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Medium",
+        question: "Solve for x: 0.4x + 2 = 6.",
+        choices: ["x = 8", "x = 9", "x = 10", "x = 12"],
+        answerIndex: 2,
+        explanation: [
+          "Subtract 2 from both sides: 0.4x = 4.",
+          "Divide both sides by 0.4.",
+          "Since 4 ÷ 0.4 = 10, x = 10."
+        ],
+        distractorNotes: [
+          "This can result from treating 0.4 as 1/2 instead of 2/5.",
+          "This is close, but 0.4(9) + 2 = 5.6 rather than 6.",
+          "",
+          "This may come from multiplying by 0.4 instead of dividing by it."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Hard",
+        question: "If x + y = 7 and 2x + 3y = 17, what is x?",
+        choices: ["2", "3", "4", "5"],
+        answerIndex: 2,
+        explanation: [
+          "Double the first equation: 2x + 2y = 14.",
+          "Subtract this from 2x + 3y = 17 to get y = 3.",
+          "Then x = 7 - 3 = 4."
+        ],
+        distractorNotes: [
+          "This pair would sum to 7 only if y were 5, but then the second equation would not hold.",
+          "This is the value of y, not x.",
+          "",
+          "This pair does not satisfy both equations simultaneously."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Hard",
+        question: "The lines y = 2x + 3 and y = kx - 5 intersect when x = 4. What is k?",
+        choices: ["2", "3", "4", "5"],
+        answerIndex: 2,
+        explanation: [
+          "At x = 4, the first line has y = 2(4) + 3 = 11.",
+          "The second line must also have y = 11, so 4k - 5 = 11.",
+          "Solve 4k = 16 to get k = 4."
+        ],
+        distractorNotes: [
+          "This is the slope of the first line, but the second line must also pass through (4, 11).",
+          "Substituting k = 3 gives y = 7 on the second line, not 11.",
+          "",
+          "Substituting k = 5 gives y = 15 on the second line, not 11."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Hard",
+        question: "Solve for x: x/3 + x/4 = 14.",
+        choices: ["x = 18", "x = 21", "x = 24", "x = 28"],
+        answerIndex: 2,
+        explanation: [
+          "Multiply both sides by 12, the least common denominator: 4x + 3x = 168.",
+          "Combine like terms: 7x = 168.",
+          "Divide by 7 to get x = 24."
+        ],
+        distractorNotes: [
+          "This does not make x/3 + x/4 equal 14.",
+          "This can result from adding the denominators incorrectly when combining the fractions.",
+          "",
+          "This may come from using 7 as the denominator rather than the coefficient after clearing denominators."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Hard",
+        question: "A mobile plan costs $25 plus $0.10 per text. Another plan costs $13 plus $0.16 per text. At how many texts do the plans cost the same?",
+        choices: ["150", "180", "200", "240"],
+        answerIndex: 2,
+        explanation: [
+          "Let n be the number of texts and set the costs equal: 25 + 0.10n = 13 + 0.16n.",
+          "Subtract 13 and 0.10n to get 12 = 0.06n.",
+          "Divide by 0.06: n = 200 texts."
+        ],
+        distractorNotes: [
+          "At 150 texts, the plans cost $40 and $37, so they are not equal.",
+          "At 180 texts, the costs are $43 and $41.80.",
+          "",
+          "At 240 texts, the costs are $49 and $51.40."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Hard",
+        question: "Which values of x satisfy |2x - 3| = 7?",
+        choices: ["x = -2 or x = 5", "x = 2 or x = 5", "x = -5 or x = 2", "x = -2 or x = 7"],
+        answerIndex: 0,
+        explanation: [
+          "An absolute value of 7 means 2x - 3 = 7 or 2x - 3 = -7.",
+          "The first equation gives x = 5; the second gives x = -2.",
+          "The solutions are x = -2 and x = 5."
+        ],
+        distractorNotes: [
+          "",
+          "This omits the negative solution and includes a value that does not satisfy either equation.",
+          "Neither value satisfies the corresponding equations 2x - 3 = 7 or -7.",
+          "The value x = 7 gives |2x - 3| = 11, not 7."
+        ]
+      },
+      {
+        skill: "Algebra",
+        difficulty: "Hard",
+        question: "A linear function is f(x) = (k - 2)x + 5. If f(3) = 20, what is k?",
+        choices: ["5", "6", "7", "8"],
+        answerIndex: 2,
+        explanation: [
+          "Substitute x = 3 and f(3) = 20: 3(k - 2) + 5 = 20.",
+          "Subtract 5 and divide by 3: k - 2 = 5.",
+          "Therefore k = 7."
+        ],
+        distractorNotes: [
+          "This can result from forgetting to add 2 after finding k - 2 = 5.",
+          "This can come from mishandling the 3 when isolating k - 2.",
+          "",
+          "This adds 3 instead of 2 after solving for k - 2."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Easy",
+        question: "Which are the solutions to x² - 11x + 24 = 0?",
+        choices: ["x = 3 and x = 8", "x = -3 and x = -8", "x = 4 and x = 6", "x = -4 and x = 6"],
+        answerIndex: 0,
+        explanation: [
+          "Find two numbers with product 24 and sum 11: 3 and 8.",
+          "Factor the expression as (x - 3)(x - 8) = 0.",
+          "The solutions are x = 3 and x = 8."
+        ],
+        distractorNotes: [
+          "",
+          "These roots have the wrong signs; their sum is -11.",
+          "These multiply to 24 but add to 10, not 11.",
+          "These values do not have product 24 and sum 11."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Easy",
+        question: "If f(x) = x² - 1, what is f(4)?",
+        choices: ["7", "15", "16", "17"],
+        answerIndex: 1,
+        explanation: [
+          "Substitute 4 for x: f(4) = 4² - 1.",
+          "Square first: 4² = 16.",
+          "Subtract 1 to get f(4) = 15."
+        ],
+        distractorNotes: [
+          "This can result from calculating 4 + 4 - 1 instead of squaring.",
+          "",
+          "This is 4² before subtracting 1.",
+          "This may result from adding 1 instead of subtracting it."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Easy",
+        question: "If 3^(x + 1) = 81, what is x?",
+        choices: ["2", "3", "4", "5"],
+        answerIndex: 1,
+        explanation: [
+          "Write 81 as a power of 3: 81 = 3⁴.",
+          "Equal bases imply x + 1 = 4.",
+          "Subtract 1 to get x = 3."
+        ],
+        distractorNotes: [
+          "This is one less than the exponent 3⁴ but does not account for x + 1 = 3.",
+          "",
+          "This confuses the exponent x + 1 with x.",
+          "This adds 1 rather than subtracting it when solving x + 1 = 4."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "A parabola is given by y = (x + 2)² - 16. What are its x-intercepts?",
+        choices: ["x = -6 and x = 2", "x = -4 and x = 4", "x = -2 and x = 16", "x = -8 and x = 4"],
+        answerIndex: 0,
+        explanation: [
+          "Set y = 0: (x + 2)² - 16 = 0, so (x + 2)² = 16.",
+          "Take both square roots: x + 2 = 4 or x + 2 = -4.",
+          "Thus x = 2 or x = -6."
+        ],
+        distractorNotes: [
+          "",
+          "These values are not 4 units from the vertex's x-coordinate, -2.",
+          "This mistakes the vertex coordinate and vertical shift for roots.",
+          "These values do not satisfy (x + 2)² = 16."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "Let f(x) = x² and g(x) = x + 4. What is f(g(-1))?",
+        choices: ["3", "9", "15", "25"],
+        answerIndex: 1,
+        explanation: [
+          "Evaluate the inside function first: g(-1) = -1 + 4 = 3.",
+          "Then evaluate f(3) = 3².",
+          "Therefore f(g(-1)) = 9."
+        ],
+        distractorNotes: [
+          "This is the intermediate value g(-1), before applying f.",
+          "",
+          "This may result from adding the intermediate value to its square.",
+          "This uses 5 as the input to f, rather than g(-1) = 3."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "The function f(x) = -2(x - 3)² + 18 has what maximum value?",
+        choices: ["-2", "3", "16", "18"],
+        answerIndex: 3,
+        explanation: [
+          "The expression is in vertex form, with vertex (3, 18).",
+          "Because the coefficient of the squared term is negative, the parabola opens downward.",
+          "Its greatest y-value, and thus its maximum value, is 18."
+        ],
+        distractorNotes: [
+          "This is the coefficient of the squared term, not the maximum function value.",
+          "This is the x-coordinate of the vertex, not its y-coordinate.",
+          "This can come from subtracting 2 from 18 without considering that the squared term can be zero.",
+          ""
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "Which values solve x² = 6x?",
+        choices: ["x = 0 only", "x = 6 only", "x = 0 or x = 6", "x = -6 or x = 0"],
+        answerIndex: 2,
+        explanation: [
+          "Subtract 6x from both sides: x² - 6x = 0.",
+          "Factor: x(x - 6) = 0.",
+          "The zero-product property gives x = 0 or x = 6."
+        ],
+        distractorNotes: [
+          "This omits the second solution x = 6.",
+          "This omits the solution x = 0.",
+          "",
+          "This includes -6, which does not satisfy the equation."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Hard",
+        question: "A quantity is modeled by Q(t) = 500(1/5)^t. At what value of t does Q(t) equal 4?",
+        choices: ["2", "3", "4", "5"],
+        answerIndex: 1,
+        explanation: [
+          "Set 500(1/5)^t = 4 and divide by 500: (1/5)^t = 4/500 = 1/125.",
+          "Since 125 = 5³, 1/125 = (1/5)³.",
+          "Therefore t = 3."
+        ],
+        distractorNotes: [
+          "At t = 2, Q(t) = 20, not 4.",
+          "",
+          "At t = 4, Q(t) = 0.8, which is less than 4.",
+          "At t = 5, Q(t) = 0.16."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Hard",
+        question: "For x ≠ -2, solve (x - 1)/(x + 2) = 2.",
+        choices: ["x = -5", "x = -3", "x = 1", "x = 5"],
+        answerIndex: 0,
+        explanation: [
+          "Multiply both sides by x + 2, which is nonzero: x - 1 = 2(x + 2).",
+          "Expand and solve: x - 1 = 2x + 4, so -5 = x.",
+          "The solution x = -5 is allowed because it is not -2."
+        ],
+        distractorNotes: [
+          "",
+          "Substituting -3 gives 4/(-1) = -4, not 2.",
+          "This value makes the left side 0, not 2.",
+          "This may result from changing the sign while moving terms; substitution does not satisfy the equation."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Hard",
+        question: "The quadratic equation x² + 4x + 1 = 0 has which solutions?",
+        choices: ["x = -2 ± √3", "x = 2 ± √3", "x = -4 ± √3", "x = -2 ± 3"],
+        answerIndex: 0,
+        explanation: [
+          "Apply the quadratic formula with a = 1, b = 4, and c = 1.",
+          "x = (-4 ± √(16 - 4))/2 = (-4 ± √12)/2.",
+          "Since √12 = 2√3, the solutions simplify to x = -2 ± √3."
+        ],
+        distractorNotes: [
+          "",
+          "This has the wrong sign for -b in the quadratic formula.",
+          "This does not divide the numerator by 2 correctly.",
+          "This uses √12 = 3 instead of simplifying it to 2√3."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "A population is modeled by P(t) = 120(1.5)^t. What is P(2)?",
+        choices: ["180", "240", "270", "300"],
+        answerIndex: 2,
+        explanation: [
+          "Substitute t = 2: P(2) = 120(1.5)².",
+          "Calculate (1.5)² = 2.25.",
+          "Then 120 × 2.25 = 270."
+        ],
+        distractorNotes: [
+          "This applies the growth factor only once.",
+          "This doubles the initial population rather than using the two-year factor of 2.25.",
+          "",
+          "This does not result from multiplying 120 by (1.5)²."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Hard",
+        question: "If 2^(2x) = 32, what is x?",
+        choices: ["2", "2.5", "3", "5"],
+        answerIndex: 1,
+        explanation: [
+          "Write 32 as a power of 2: 32 = 2⁵.",
+          "Equate exponents: 2x = 5.",
+          "Divide by 2 to get x = 2.5."
+        ],
+        distractorNotes: [
+          "This would give 2^(2x) = 2⁴ = 16.",
+          "",
+          "This would give 2⁶ = 64.",
+          "This confuses the exponent 2x with x and the value of 32."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Medium",
+        question: "If f(x) = 2x² + 3, what is f(-3)?",
+        choices: ["9", "15", "21", "27"],
+        answerIndex: 2,
+        explanation: [
+          "Substitute -3 for x: f(-3) = 2(-3)² + 3.",
+          "Evaluate the exponent first: (-3)² = 9, so f(-3) = 2(9) + 3.",
+          "Calculate 18 + 3 = 21."
+        ],
+        distractorNotes: [
+          "This omits the coefficient 2 and the added 3.",
+          "This can result from evaluating 2(-3) as -6 and then mishandling the square.",
+          "",
+          "This can result from adding 9 and 18 incorrectly."
+        ]
+      },
+      {
+        skill: "Advanced Math",
+        difficulty: "Hard",
+        question: "The function f(x) = x² - 4x + 1 is rewritten as f(x) = (x - h)² + k. What is the value of k?",
+        choices: ["-5", "-4", "-3", "1"],
+        answerIndex: 2,
+        explanation: [
+          "Complete the square: x² - 4x + 1 = (x² - 4x + 4) - 4 + 1.",
+          "Rewrite the perfect-square trinomial: f(x) = (x - 2)² - 3.",
+          "Therefore, k = -3."
+        ],
+        distractorNotes: [
+          "This comes from subtracting 5 when completing the square; the expression equals (x - 2)² - 3.",
+          "This is the constant needed to complete the square before combining with the original +1.",
+          "",
+          "This is the original constant term, not the constant after completing the square."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Easy",
+        question: "What is the mean of 14, 18, 20, and 24?",
+        choices: ["18", "19", "20", "76"],
+        answerIndex: 1,
+        explanation: [
+          "Add the four values: 14 + 18 + 20 + 24 = 76.",
+          "Divide the sum by the number of values: 76 ÷ 4.",
+          "The mean is 19."
+        ],
+        distractorNotes: [
+          "This is below the result of 76 ÷ 4.",
+          "",
+          "This is the median of the middle two values, not the mean.",
+          "This is the sum, not the average."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Easy",
+        question: "A town's population increased from 240 to 300. What was the percent increase?",
+        choices: ["20%", "25%", "60%", "125%"],
+        answerIndex: 1,
+        explanation: [
+          "The increase is 300 - 240 = 60 people.",
+          "Divide the increase by the original population: 60/240 = 0.25.",
+          "Convert 0.25 to a percent: the increase was 25%."
+        ],
+        distractorNotes: [
+          "This divides the increase by the new population rather than the original population.",
+          "",
+          "This reports the numerical increase, not the percent increase.",
+          "This compares the new population with the original but does not subtract the original amount."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Easy",
+        question: "A train travels 168 miles in 3 hours at a constant speed. What is its speed?",
+        choices: ["48 miles per hour", "54 miles per hour", "56 miles per hour", "63 miles per hour"],
+        answerIndex: 2,
+        explanation: [
+          "Speed equals distance divided by time.",
+          "Compute 168 ÷ 3 = 56.",
+          "The train's speed is 56 miles per hour."
+        ],
+        distractorNotes: [
+          "This would cover 144 miles in 3 hours, not 168.",
+          "This is a little low; 54 × 3 = 162.",
+          "",
+          "This is a little high; 63 × 3 = 189."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Medium",
+        question: "A bag contains 4 yellow and 6 purple counters. One counter is selected, replaced, and then a second counter is selected. What is the probability that both selections are yellow?",
+        choices: ["4/25", "2/5", "4/10", "16/25"],
+        answerIndex: 0,
+        explanation: [
+          "The probability of yellow on each selection is 4/10 = 2/5.",
+          "Because the counter is replaced, the selections are independent.",
+          "Multiply: (2/5)(2/5) = 4/25."
+        ],
+        distractorNotes: [
+          "",
+          "This is the probability of yellow on one selection only.",
+          "This is another way to write the one-selection probability 4/10.",
+          "This squares the probability of purple, 6/10, instead of yellow."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Medium",
+        question: "The median of the ordered data set 3, 5, 8, 11, 14, 19 is the average of its two middle values. What is the median?",
+        choices: ["8", "9.5", "11", "10"],
+        answerIndex: 1,
+        explanation: [
+          "There are six values, so the two middle values are the third and fourth: 8 and 11.",
+          "Find their average: (8 + 11)/2 = 19/2.",
+          "The median is 9.5."
+        ],
+        distractorNotes: [
+          "This is the lower of the two middle values, not their average.",
+          "",
+          "This is the upper of the two middle values, not their average.",
+          "This results from averaging 8 and 12 rather than the actual middle values 8 and 11."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Medium",
+        question: "A drink mix uses concentrate and water in a ratio of 2:5. If 21 cups of drink are made using the same ratio, how many cups are concentrate?",
+        choices: ["5", "6", "7", "15"],
+        answerIndex: 1,
+        explanation: [
+          "The ratio has 2 + 5 = 7 total parts.",
+          "Each part is 21 ÷ 7 = 3 cups.",
+          "Concentrate is 2 parts, so 2 × 3 = 6 cups."
+        ],
+        distractorNotes: [
+          "This does not represent 2 of the 7 equal parts of the mixture.",
+          "",
+          "This is the number of cups in one ratio part, not the concentrate amount.",
+          "This is the water amount: 5 parts × 3 cups per part."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Medium",
+        question: "A store buys an item for $40 and sells it for $50. What is the percent increase from the purchase price to the selling price?",
+        choices: ["10%", "20%", "25%", "125%"],
+        answerIndex: 2,
+        explanation: [
+          "The increase is $50 - $40 = $10.",
+          "Compare the increase with the original price: 10/40 = 0.25.",
+          "Therefore, the percent increase is 25%."
+        ],
+        distractorNotes: [
+          "This uses the $10 difference without dividing by the original price.",
+          "This divides by the selling price: 10/50 = 20%, rather than by the original price.",
+          "",
+          "This is the selling price as a percent of the purchase price, not the percent increase."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Hard",
+        question: "A group of 5 numbers has a mean of 12. When one more number is added, the mean of all 6 numbers is 13. What number was added?",
+        choices: ["13", "16", "18", "20"],
+        answerIndex: 2,
+        explanation: [
+          "The original sum is 5 × 12 = 60.",
+          "The new sum is 6 × 13 = 78.",
+          "The added number is 78 - 60 = 18."
+        ],
+        distractorNotes: [
+          "This is the new mean, not the value needed to raise the total to 78.",
+          "This would make the new sum 76 and the mean 12 2/3.",
+          "",
+          "This would make the new sum 80 and the mean 13 1/3."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Hard",
+        question: "A laboratory sample contains 30% salt by mass. If the sample has a mass of 250 grams, how many grams of salt does it contain?",
+        choices: ["60", "75", "80", "175"],
+        answerIndex: 1,
+        explanation: [
+          "Convert 30% to a decimal: 0.30.",
+          "Multiply the sample mass by this proportion: 0.30 × 250 = 75.",
+          "The sample contains 75 grams of salt."
+        ],
+        distractorNotes: [
+          "This corresponds to 24% of 250 grams.",
+          "",
+          "This may come from using 32% instead of the stated 30%.",
+          "This is 70% of the sample mass, the portion that is not salt."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Hard",
+        question: "In a survey, 48 of 80 students chose science as their favorite subject. If 400 students are surveyed with the same proportion, how many would be expected to choose science?",
+        choices: ["200", "220", "240", "320"],
+        answerIndex: 2,
+        explanation: [
+          "The surveyed proportion is 48/80 = 0.6.",
+          "Apply that proportion to 400 students: 0.6 × 400.",
+          "The expected number is 240 students."
+        ],
+        distractorNotes: [
+          "This assumes half of the students choose science rather than 60%.",
+          "This uses a proportion of 55%, not the observed 60%.",
+          "",
+          "This uses 80% rather than the surveyed proportion of 60%."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Hard",
+        question: "The probability that a customer buys a drink is 0.4, and the probability that the customer buys a snack is 0.3. If these events are independent, what is the probability that the customer buys neither?",
+        choices: ["0.12", "0.30", "0.42", "0.60"],
+        answerIndex: 2,
+        explanation: [
+          "The probability of not buying a drink is 1 - 0.4 = 0.6.",
+          "The probability of not buying a snack is 1 - 0.3 = 0.7.",
+          "By independence, the probability of neither is 0.6 × 0.7 = 0.42."
+        ],
+        distractorNotes: [
+          "This multiplies the probabilities of buying both items instead of neither.",
+          "This is only the probability of not buying a drink.",
+          "",
+          "This is only the probability of not buying a snack."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Medium",
+        question: "A data set has a mean of 18. If 5 is added to every value in the data set, what is the new mean?",
+        choices: ["18", "20", "23", "90"],
+        answerIndex: 2,
+        explanation: [
+          "Adding the same amount to every data value increases the mean by that amount.",
+          "The mean therefore increases from 18 by 5.",
+          "The new mean is 23."
+        ],
+        distractorNotes: [
+          "This ignores the 5 added to every data value.",
+          "This increases the mean by only 2 rather than 5.",
+          "",
+          "This multiplies the original mean by 5 instead of adding 5."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Hard",
+        question: "A product's price is reduced by 20% and then the reduced price is increased by 20%. If the original price was $100, what is the final price?",
+        choices: ["$96", "$100", "$104", "$120"],
+        answerIndex: 0,
+        explanation: [
+          "After a 20% reduction, the price is 0.80 × $100 = $80.",
+          "Increase the reduced price by 20%: 1.20 × $80 = $96.",
+          "The final price is $96, not the original $100, because the two percentages apply to different amounts."
+        ],
+        distractorNotes: [
+          "",
+          "This assumes the 20% decrease and increase cancel, even though the increase is applied to $80.",
+          "This adds 20% of the original price to the reduced price.",
+          "This adds $20 to the reduced price instead of taking 20% of $80."
+        ]
+      },
+      {
+        skill: "Problem-Solving and Data Analysis",
+        difficulty: "Hard",
+        question: "A machine produces 18 defective parts out of 600 parts. At the same rate, how many defective parts would be expected in a batch of 2,000?",
+        choices: ["45", "54", "60", "72"],
+        answerIndex: 2,
+        explanation: [
+          "The defective proportion is 18/600 = 0.03, or 3%.",
+          "Apply the rate to the larger batch: 0.03 × 2,000.",
+          "The expected number of defective parts is 60."
+        ],
+        distractorNotes: [
+          "This uses a rate of 2.25%, which is below the observed 3%.",
+          "This uses a rate of 2.7%, rather than 3%.",
+          "",
+          "This uses a rate of 3.6%, rather than the observed 3%."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Easy",
+        question: "A triangle has a base of 14 units and a height of 9 units. What is its area?",
+        choices: ["23 square units", "46 square units", "63 square units", "126 square units"],
+        answerIndex: 2,
+        explanation: [
+          "The area of a triangle is one-half the product of its base and height.",
+          "Substitute the measurements: A = (1/2)(14)(9).",
+          "The area is 63 square units."
+        ],
+        distractorNotes: [
+          "This adds the base and height instead of using the triangle area formula.",
+          "This is the product of the base and height without taking one-half.",
+          "",
+          "This is twice the triangle's area; it is the area of a rectangle with the same base and height."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Easy",
+        question: "A circle has a diameter of 14 centimeters. What is its circumference?",
+        choices: ["7π centimeters", "14π centimeters", "28π centimeters", "196π centimeters"],
+        answerIndex: 1,
+        explanation: [
+          "Circumference can be calculated as C = πd.",
+          "Substitute the diameter d = 14.",
+          "The circumference is 14π centimeters."
+        ],
+        distractorNotes: [
+          "This uses the radius as if it were the diameter.",
+          "",
+          "This doubles the circumference, possibly by using 28 as the diameter.",
+          "This squares the diameter, which is not part of the circumference formula."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Easy",
+        question: "Two parallel lines are cut by a transversal. If one of the corresponding angles measures 68°, what is the measure of the other corresponding angle?",
+        choices: ["22°", "68°", "112°", "136°"],
+        answerIndex: 1,
+        explanation: [
+          "When parallel lines are cut by a transversal, corresponding angles are congruent.",
+          "Therefore, the corresponding angle has the same measure.",
+          "Its measure is 68°."
+        ],
+        distractorNotes: [
+          "This is the complement of 68°, but corresponding angles are equal, not complementary.",
+          "",
+          "This is supplementary to 68° and could describe an adjacent angle instead.",
+          "This doubles the given angle instead of using the corresponding-angle relationship."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Easy",
+        question: "A rectangle has a perimeter of 34 units and a length of 10 units. What is its width?",
+        choices: ["7 units", "12 units", "14 units", "24 units"],
+        answerIndex: 0,
+        explanation: [
+          "Use the perimeter formula 2L + 2W = 34.",
+          "Substitute L = 10: 20 + 2W = 34, so 2W = 14.",
+          "The width is 7 units."
+        ],
+        distractorNotes: [
+          "",
+          "This may come from subtracting the length once from the perimeter and then dividing by 2 incorrectly.",
+          "This is the value of 2W, not the width W.",
+          "This subtracts the length from the perimeter without accounting for both lengths and widths."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Medium",
+        question: "A right triangle has legs of lengths 8 and 15. What is the length of its hypotenuse?",
+        choices: ["16", "17", "18", "23"],
+        answerIndex: 1,
+        explanation: [
+          "Use the Pythagorean theorem: c² = 8² + 15².",
+          "Calculate c² = 64 + 225 = 289.",
+          "The positive square root is c = 17."
+        ],
+        distractorNotes: [
+          "This is one unit too short; 16² is 256, not 289.",
+          "",
+          "This is too long; 18² = 324.",
+          "This adds the two legs instead of using the Pythagorean theorem."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Medium",
+        question: "A cylinder has a radius of 3 units and a height of 5 units. What is its volume?",
+        choices: ["15π cubic units", "30π cubic units", "45π cubic units", "90π cubic units"],
+        answerIndex: 2,
+        explanation: [
+          "The volume of a cylinder is V = πr²h.",
+          "Substitute r = 3 and h = 5: V = π(3²)(5).",
+          "The volume is 45π cubic units."
+        ],
+        distractorNotes: [
+          "This multiplies radius by height but omits squaring the radius and multiplying by π.",
+          "This uses 2r instead of r² in the volume calculation.",
+          "",
+          "This doubles the correct volume, possibly by using the diameter as the radius."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Medium",
+        question: "Two similar triangles have corresponding side lengths 4 and 10. If another side of the smaller triangle is 6, what is the corresponding side of the larger triangle?",
+        choices: ["12", "14", "15", "16"],
+        answerIndex: 2,
+        explanation: [
+          "The scale factor from the smaller triangle to the larger one is 10/4 = 2.5.",
+          "Multiply the corresponding smaller side by this scale factor: 6 × 2.5.",
+          "The side of the larger triangle is 15."
+        ],
+        distractorNotes: [
+          "This doubles the side rather than multiplying by the scale factor 2.5.",
+          "This does not use the exact scale factor of 10/4.",
+          "",
+          "This uses a scale factor of 8/3 instead of 10/4."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Medium",
+        question: "A point is located at (-2, 3) on the coordinate plane. What is its distance from the origin?",
+        choices: ["√5 units", "5 units", "√13 units", "13 units"],
+        answerIndex: 2,
+        explanation: [
+          "Use the distance formula from (0, 0): d = √((-2)² + 3²).",
+          "Compute d = √(4 + 9) = √13.",
+          "The distance is √13 units."
+        ],
+        distractorNotes: [
+          "This omits one of the squared coordinate values.",
+          "This results from incorrectly evaluating √13 as 5.",
+          "",
+          "This is the squared distance, not the distance."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Hard",
+        question: "For an acute angle θ in a right triangle, cos θ = 12/13. What is tan θ?",
+        choices: ["5/13", "12/5", "5/12", "13/5"],
+        answerIndex: 2,
+        explanation: [
+          "Cosine is adjacent over hypotenuse, so the adjacent side and hypotenuse can be 12 and 13.",
+          "The opposite side is √(13² - 12²) = √25 = 5.",
+          "Tangent is opposite over adjacent, so tan θ = 5/12."
+        ],
+        distractorNotes: [
+          "This is the sine ratio, not the tangent ratio.",
+          "This reverses the tangent ratio.",
+          "",
+          "This uses hypotenuse over opposite instead of opposite over adjacent."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Hard",
+        question: "A square has an area of 81 square units. What is its perimeter?",
+        choices: ["18 units", "27 units", "36 units", "81 units"],
+        answerIndex: 2,
+        explanation: [
+          "For a square with side length s, the area is s².",
+          "Solve s² = 81 to get the positive side length s = 9.",
+          "The perimeter is 4s = 4(9) = 36 units."
+        ],
+        distractorNotes: [
+          "This is twice the side length, not four times the side length.",
+          "This does not equal four times the square root of the area.",
+          "",
+          "This repeats the area value rather than finding the perimeter."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Hard",
+        question: "A triangle has two interior angles measuring 47° and 63°. What is the measure of its third interior angle?",
+        choices: ["60°", "70°", "80°", "110°"],
+        answerIndex: 1,
+        explanation: [
+          "The interior angles of a triangle sum to 180°.",
+          "Add the given angles: 47° + 63° = 110°.",
+          "Subtract from 180°: the third angle is 70°."
+        ],
+        distractorNotes: [
+          "This would make the three angles sum to 170°.",
+          "",
+          "This can result from subtracting 100° rather than 110° from 180°.",
+          "This is the sum of the two given angles, not the third angle."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Hard",
+        question: "A rectangle has a diagonal of 13 units and a width of 5 units. What is its length?",
+        choices: ["8 units", "10 units", "12 units", "18 units"],
+        answerIndex: 2,
+        explanation: [
+          "The diagonal and two side lengths form a right triangle.",
+          "Use the Pythagorean theorem: L² + 5² = 13², so L² = 169 - 25 = 144.",
+          "The positive square root gives a length of 12 units."
+        ],
+        distractorNotes: [
+          "This is not the positive square root of 144.",
+          "This is close, but 10² + 5² = 125, not 169.",
+          "",
+          "This adds the diagonal and width instead of using the Pythagorean theorem."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Medium",
+        question: "An equilateral triangle has a perimeter of 36 units. What is the measure of each interior angle?",
+        choices: ["45°", "60°", "90°", "120°"],
+        answerIndex: 1,
+        explanation: [
+          "An equilateral triangle has three equal sides and three equal interior angles.",
+          "The interior angles of every triangle sum to 180°.",
+          "Each angle is 180° ÷ 3 = 60°."
+        ],
+        distractorNotes: [
+          "Three angles of 45° would sum to only 135°.",
+          "",
+          "Three right angles cannot fit in a triangle, whose angles sum to 180°.",
+          "This is an exterior angle for an equilateral triangle, not an interior angle."
+        ]
+      },
+      {
+        skill: "Geometry and Trigonometry",
+        difficulty: "Hard",
+        question: "A circular sector has a radius of 8 units and a central angle of 45°. What is its area?",
+        choices: ["4π square units", "8π square units", "16π square units", "32π square units"],
+        answerIndex: 1,
+        explanation: [
+          "The full circle's area is π(8²) = 64π square units.",
+          "A 45° sector is 45/360 = 1/8 of the circle.",
+          "Its area is (1/8)(64π) = 8π square units."
+        ],
+        distractorNotes: [
+          "This is half the correct sector area.",
+          "",
+          "This is one-quarter of the circle rather than one-eighth.",
+          "This is half of the full circle's area, not one-eighth."
+        ]
       }
     ];
 
@@ -1024,6 +2110,8 @@
     const resultsScreen = document.getElementById("results-screen");
     const reviewScreen = document.getElementById("review-screen");
     const categoryOptions = document.getElementById("category-options");
+    const questionCountInput = document.getElementById("question-limit");
+    const maxPracticeQuestions = 40;
     const categoryInputs = [];
     const difficultyRank = { Easy: 0, Medium: 1, Hard: 2 };
     if (questions.length > 100) throw new Error("The SAT Math practice bank cannot contain more than 100 questions.");
@@ -1088,10 +2176,7 @@
         const name = document.createElement("span");
         name.className = "category-name";
         name.textContent = skill;
-        const count = document.createElement("span");
-        count.className = "category-count";
-        count.textContent = `${available} questions in bank`;
-        text.append(name, count);
+        text.append(name);
         label.append(input, text);
         categoryOptions.append(label);
         categoryInputs.push(input);
@@ -1101,41 +2186,45 @@
     function updateCategorySelection(event) {
       const selected = categoryInputs.filter((input) => input.checked);
       if (selected.length > 4) {
-        event.target.checked = false;
+        if (event) event.target.checked = false;
         document.getElementById("selection-status").textContent = "You already chose four. Uncheck one before choosing another.";
         return;
       }
-      const basePerCategory = selected.length ? Math.floor(10 / selected.length) : 0;
-      const remaining = selected.length ? 10 % selected.length : 0;
       const selectedQuestionCount = questions.filter((question) => selected.some((input) => input.value === question.skill)).length;
-      const hasEnoughQuestions = selected.length > 0 &&
-        selectedQuestionCount >= 10 &&
-        selected.every((input) => questions.filter((question) => question.skill === input.value).length >= basePerCategory);
+      const questionCount = Number(questionCountInput.value);
+      const availableQuestionLimit = Math.min(maxPracticeQuestions, selected.length ? selectedQuestionCount : questions.length);
+      questionCountInput.max = String(availableQuestionLimit);
+      const hasValidQuestionCount = Number.isInteger(questionCount) && questionCount >= 1 && questionCount <= availableQuestionLimit;
+      const hasEnoughQuestions = selected.length > 0 && hasValidQuestionCount;
       const startButton = document.getElementById("start-button");
       startButton.disabled = !hasEnoughQuestions;
       const status = document.getElementById("selection-status");
       if (!selected.length) {
         status.textContent = "Choose at least one category to begin.";
+      } else if (!Number.isInteger(questionCount) || questionCount < 1) {
+        status.textContent = "Enter a whole number of questions greater than zero.";
       } else if (!hasEnoughQuestions) {
-        status.textContent = "There are not enough questions in the selected categories for a 10-question set.";
+        status.textContent = `Choose between 1 and ${availableQuestionLimit} questions for the selected categories.`;
       } else if (selected.length === 1) {
-        status.textContent = "All 10 questions will come from your selected category.";
+        status.textContent = `All ${questionCount} questions will come from your selected category.`;
       } else {
-        status.textContent = `${basePerCategory} questions from each selected category${remaining ? `, plus ${remaining} random ${remaining === 1 ? "question" : "questions"} from those categories` : ""}.`;
+        status.textContent = `Your ${questionCount}-question set will be balanced across the selected categories.`;
       }
     }
 
-    function createPracticeSet(skills) {
-      const basePerCategory = Math.floor(10 / skills.length);
-      const selectedQuestions = skills.flatMap((skill) =>
-        shuffle(questions.filter((question) => question.skill === skill)).slice(0, basePerCategory)
-      );
-      const remainingCount = 10 - selectedQuestions.length;
-      const selectedQuestionSet = new Set(selectedQuestions);
-      const remainingPool = questions.filter((question) =>
-        skills.includes(question.skill) && !selectedQuestionSet.has(question)
-      );
-      selectedQuestions.push(...shuffle(remainingPool).slice(0, remainingCount));
+    function createPracticeSet(skills, questionCount) {
+      const questionPools = skills.map((skill) => shuffle(questions.filter((question) => question.skill === skill)));
+      const availableQuestions = questionPools.reduce((total, pool) => total + pool.length, 0);
+      if (!Number.isInteger(questionCount) || questionCount < 1 || questionCount > Math.min(maxPracticeQuestions, availableQuestions)) {
+        throw new Error("Cannot create a practice set with the requested question count.");
+      }
+      const selectedQuestions = [];
+      while (selectedQuestions.length < questionCount) {
+        for (const pool of shuffle(questionPools)) {
+          if (pool.length) selectedQuestions.push(pool.pop());
+          if (selectedQuestions.length === questionCount) break;
+        }
+      }
       const shuffledQuestions = shuffle(selectedQuestions);
       return shuffledQuestions.map((question) => {
         const options = shuffle(question.choices.map((choice, originalIndex) => ({
@@ -1313,8 +2402,8 @@
 
     document.getElementById("start-button").addEventListener("click", () => {
       selectedSkills = categoryInputs.filter((input) => input.checked).map((input) => input.value);
-      if (!selectedSkills.length || selectedSkills.length > 4) return;
-      practiceQuestions = createPracticeSet(selectedSkills);
+      if (!selectedSkills.length || selectedSkills.length > 4 || !questionCountInput.validity.valid) return;
+      practiceQuestions = createPracticeSet(selectedSkills, Number(questionCountInput.value));
       answerByQuestion = Array(practiceQuestions.length).fill(null);
       questionIndex = 0;
       renderQuestion();
@@ -1355,14 +2444,16 @@
       }
     });
     document.getElementById("restart-button").addEventListener("click", () => {
-      practiceQuestions = createPracticeSet(selectedSkills);
+      practiceQuestions = createPracticeSet(selectedSkills, Number(questionCountInput.value));
       answerByQuestion = Array(practiceQuestions.length).fill(null);
       questionIndex = 0;
       renderQuestion();
       focusHeading("question-title");
     });
 
+    questionCountInput.addEventListener("input", () => updateCategorySelection());
     renderCategoryPicker();
+    updateCategorySelection();
   </script>
 </body>
 </html>

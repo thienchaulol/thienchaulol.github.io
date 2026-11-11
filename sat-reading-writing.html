@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#FBFAF8">
-  <meta name="description" content="Choose one to four Reading and Writing categories for a randomized set of 10 original SAT-style questions, shuffled choices, and clear explanations.">
+  <meta name="description" content="Choose one to four Reading and Writing categories and the number of original SAT-style questions to practice, with shuffled choices and clear explanations.">
   <title>SAT Reading and Writing Practice — Mr. Chau</title>
   <style>
     :root{
@@ -62,8 +62,10 @@
     .category-option:has(input:checked){border-color:var(--accent);background:var(--accent-wash)}
     .category-option input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--accent);flex:none}
     .category-name{display:block;color:var(--ink);font-weight:600;line-height:1.35}
-    .category-count{display:block;margin-top:4px;color:var(--muted);font-size:.82rem}
     .selection-status{min-height:1.5em;margin:-16px 0 20px;color:var(--muted);font-size:.9rem}
+    .question-count-picker{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 24px}
+    .question-count-picker label{font-weight:700;color:var(--ink)}
+    .question-count-picker input{width:88px;min-height:44px;padding:8px 10px;border:1px solid var(--rule);border-radius:var(--r);font:inherit;color:var(--ink);background:var(--surface)}
     .start-actions{display:flex;justify-content:flex-end}
     .practice{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-lg);padding:clamp(22px,5vw,44px);box-shadow:var(--shadow)}
     .progress-row{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:.88rem;color:var(--muted);margin-bottom:10px}
@@ -144,6 +146,10 @@
         <legend>Choose one to four categories</legend>
         <div id="category-options" class="category-options"></div>
       </fieldset>
+      <div class="question-count-picker">
+        <label for="question-limit">Number of questions</label>
+        <input id="question-limit" type="number" min="1" max="40" step="1" value="10" inputmode="numeric" aria-describedby="selection-status">
+      </div>
       <p id="selection-status" class="selection-status" aria-live="polite">Choose at least one category to begin.</p>
       <div class="start-actions">
         <button id="start-button" class="btn btn-primary" type="button" disabled>Start practice</button>
@@ -206,7 +212,7 @@
       },
       {
         skill: "Information and Ideas", difficulty: "Medium",
-        question: "Passage: Researchers once assumed that a certain coastal bird nested only on open beaches. After placing motion-activated cameras near nearby dunes, they recorded several nests beneath low shrubs. The team now plans to survey more dune sites before estimating the bird’s total population.\n\nWhat is the most reasonable inference from the passage?",
+        question: "Passage: Researchers once assumed that a certain coastal bird nested only on open beaches. After placing motion-activated cameras in nearby dunes, they recorded several nests beneath low shrubs. The team now plans to survey more dune sites before estimating the bird’s total population.\n\nWhat is the most reasonable inference from the passage?",
         choices: ["The bird has stopped nesting on open beaches.", "Low shrubs are the only habitat where the bird can nest.", "Earlier population estimates may have missed some nests.", "The camera study has already established the bird’s total population."],
         answerIndex: 2,
         explanation: ["The cameras revealed nests in dunes, a place researchers had not expected to find them.", "If earlier surveys focused on open beaches, some nests may have gone uncounted.", "The team’s plan to survey more sites shows that the total population is not yet established."],
@@ -502,11 +508,491 @@
       },
       {
         skill: "Standard English Conventions", difficulty: "Hard",
-        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe students displayed three projects ___ a model bridge, a solar oven, and a water filter.",
-        choices: ["; a model bridge", ": a model bridge", ", a model bridge", "— and a model bridge"],
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe students displayed three projects, ___ a model bridge, a solar oven, and a water filter.",
+        choices: ["including", "included", "includes", "include"],
+        answerIndex: 0,
+        explanation: ["The sentence introduces examples of the three projects.", "The participle “including” correctly adds those examples to the sentence.", "The other choices are verb forms that do not fit this construction."],
+        distractorNotes: ["", "“Included” does not grammatically connect the list to the sentence.", "“Includes” does not agree with the plural subject and does not fit after the comma.", "“Include” does not fit the participial phrase needed to introduce the examples."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: A science teacher divided 60 students into two groups by randomly assigning them to review vocabulary in different ways. One group reread a word list; the other used flash cards to recall each word before checking its definition. On a quiz the next day, the flash-card group had a higher average score.\n\nWhich conclusion is best supported by the passage?",
+        choices: ["Every student learned more from flash cards than from rereading.", "The flash-card group had a higher average quiz score in this study.", "Rereading vocabulary lists cannot help students learn.", "Flash cards will produce higher scores in every class."],
         answerIndex: 1,
-        explanation: ["The words before the blank form a complete sentence that introduces a list.", "A colon can follow an independent clause to introduce examples or items in a list.", "The three projects are listed after the colon."],
-        distractorNotes: ["A semicolon joins independent clauses; the phrase after it is not an independent clause.", "", "A comma alone does not correctly introduce this list after a complete clause.", "The dash and conjunction combination is awkward and does not directly introduce the list."]
+        explanation: ["The passage compares group averages, not the result for every individual student.", "It explicitly reports that the flash-card group had a higher average score on the next-day quiz.", "The study compared two methods but does not show that rereading is never useful.", "One study does not establish that the same result will occur in every class."],
+        distractorNotes: ["A group average does not establish that each student had the same outcome.", "", "The passage does not claim that rereading is ineffective in all situations.", "The result is limited to the students and conditions described."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Easy",
+        question: "Passage: The first map in the archive offers only a coarse view of the coastline: it marks major bays and inlets but leaves smaller coves unshown.\n\nAs used in the passage, what does \"coarse\" most nearly mean?",
+        choices: ["Rough or lacking fine detail", "Made from an unusually durable material", "Designed to show events in sequence", "Accurate in every small measurement"],
+        answerIndex: 0,
+        explanation: ["The sentence contrasts major coastal features with smaller coves that are omitted.", "In this context, \"coarse\" describes the map's level of detail.", "A coarse map is a broad, less-detailed representation."],
+        distractorNotes: ["", "The passage says nothing about the map's material.", "The map depicts a coastline rather than a sequence of events.", "The omitted coves show that the map does not include every small detail."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Medium",
+        question: "A student has taken the following notes:\n• A town planted 40 shade trees along three streets in 2022.\n• By 2025, the trees shaded about 600 square meters of sidewalk.\n• The town plans to plant 30 more trees next year.\n\nThe student wants to emphasize the measured result of the 2022 planting. Which choice most effectively uses relevant information from the notes?",
+        choices: ["The town plans to plant 30 trees next year, after planting 40 trees in 2022.", "In 2025, trees planted in 2022 shaded about 600 square meters of sidewalk.", "Three streets in the town will receive shade trees next year.", "The town planted trees in 2022 and intends to plant more trees."],
+        answerIndex: 1,
+        explanation: ["The question asks for the measured outcome of the earlier planting.", "This choice directly connects the 2022 trees to the measured 2025 sidewalk coverage.", "This choice introduces a future plan that is not the measured result.", "This choice mentions both plantings but omits the measured area."],
+        distractorNotes: ["This focuses on the future plan rather than the measured result.", "", "The notes do not say that the future trees will be planted on three streets.", "This general summary leaves out the key measurement."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Easy",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe set of field notes ___ in the archive's climate-controlled room.",
+        choices: ["are stored", "were stored", "is stored", "have been stored"],
+        answerIndex: 2,
+        explanation: ["The subject is \"set,\" a singular noun.", "The phrase \"of field notes\" modifies \"set\" but does not make the subject plural.", "The singular verb \"is stored\" agrees with \"set.\""],
+        distractorNotes: ["This plural verb does not agree with the singular subject \"set.\"", "This plural verb does not agree with the singular subject \"set.\"", "", "This plural helping verb does not agree with the singular subject."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Easy",
+        question: "Passage: A neighborhood group placed a public map near the entrance to a walking trail. Hikers can mark sections where fallen branches block the path, and volunteers use the reports to plan cleanup days.\n\nWhich choice best states the main idea of the passage?",
+        choices: ["A shared map helps hikers report trail problems so volunteers can organize repairs.", "The group built a new walking trail beside the neighborhood.", "Volunteers remove every fallen branch as soon as it is reported.", "Hikers use the map to measure how far they walk."],
+        answerIndex: 0,
+        explanation: ["The map lets hikers mark blocked sections.", "Volunteers then use those reports to plan cleanup, linking public information to repair work.", "The passage describes a way to coordinate maintenance, not guaranteed immediate removal."],
+        distractorNotes: ["", "The trail already exists; the group added a map.", "The reports help plan cleanup days, but the passage does not promise immediate action.", "The map records blockages, not walking distances."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: A researcher counted frogs at a marsh during three spring visits and three late-summer visits. The spring counts were consistently higher. Because the visits occurred at different times of year, the researcher plans to repeat the counts in both seasons next year.\n\nWhich conclusion is best supported by the passage?",
+        choices: ["The marsh has permanently lost frogs by late summer.", "More frogs were counted during the spring visits than during the late-summer visits.", "The marsh's frog population is larger in every spring than in every summer.", "Seasonal temperature changes caused the difference in counts."],
+        answerIndex: 1,
+        explanation: ["The reported observations show higher counts on the three spring visits.", "That supports a comparison of the counts, but not a claim about a permanent population change or its cause.", "The researcher plans another year's counts, indicating that the explanation is not yet established."],
+        distractorNotes: ["The passage compares counts at two times, not a permanent loss.", "", "The observations cover one year and do not establish a pattern for every year.", "No temperature data or causal test is described."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Hard",
+        question: "Passage: In a survey, 45 of 75 museum visitors said they had used the museum's audio guide. Among those 45 visitors, 36 said the guide helped them notice details they might otherwise have missed.\n\nWhich statement is supported by the survey?",
+        choices: ["More than three-quarters of the audio-guide users surveyed said it helped them notice details.", "Exactly 36 of all museum visitors said they used the audio guide.", "Every visitor who noticed a detail used the audio guide.", "The audio guide caused 36 visitors to spend more time at the museum."],
+        answerIndex: 0,
+        explanation: ["The relevant group is the 45 visitors who used the guide.", "Thirty-six of 45 is four-fifths, which is greater than three-quarters.", "The survey reports users' responses but not whether nonusers noticed details or how long anyone stayed."],
+        distractorNotes: ["", "Thirty-six is the number of users who reported noticing details, not the number of all visitors who used the guide.", "The survey gives no information about detail noticing among nonusers.", "Neither time spent nor a causal effect was measured."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: A county planted native grasses along two sections of a stream and left a third section unchanged. After heavy rain, researchers found less soil washed from the planted sections than from the unchanged section. The researchers did not measure water quality.\n\nWhich conclusion is best supported?",
+        choices: ["The planted sections experienced less soil loss in the observed rain event than the unchanged section did.", "Native grasses improved every measure of stream health.", "The unchanged section lost no soil during the rain.", "Planting grasses will prevent erosion along all streams."],
+        answerIndex: 0,
+        explanation: ["The researchers directly compared soil washed from the two planted sections with soil from the unchanged section.", "The result supports a limited comparison about soil loss in the observed event.", "Water quality was not measured, and the passage does not establish a universal effect."],
+        distractorNotes: ["", "Only soil loss was measured; other measures of stream health were not.", "The passage says less soil washed from the planted sections, not that none washed from the unchanged section.", "A small comparison at one stream cannot establish what will happen along all streams."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Easy",
+        question: "Passage: A city library recorded 240 visitors on Saturday and 180 on Sunday during a weekend book fair.\n\nHow many more visitors came on Saturday than on Sunday?",
+        choices: ["60", "120", "180", "420"],
+        answerIndex: 0,
+        explanation: ["Subtract Sunday's 180 visitors from Saturday's 240.", "240 − 180 = 60, so Saturday had 60 more visitors."],
+        distractorNotes: ["", "This is twice the difference.", "This repeats Sunday's count rather than finding the difference.", "This adds the two counts rather than comparing them."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Hard",
+        question: "Passage: A school compared the average completion times for two versions of a science assignment. Students using Version A took 34 minutes; students using Version B took 29 minutes. The versions were assigned to different classes, and the classes had not been randomly formed.\n\nWhich choice best evaluates the comparison?",
+        choices: ["The classes using Version B finished faster on average, but differences between the classes could also help explain the result.", "Version B caused every student to finish exactly five minutes sooner.", "Version A is more effective because students spent longer on it.", "The comparison proves that the two versions are equally difficult."],
+        answerIndex: 0,
+        explanation: ["The reported averages differ by five minutes, with Version B associated with the shorter time.", "Because different, nonrandomly formed classes used the versions, other class differences could contribute to the averages.", "The passage reports time, not individual results or a direct measure of difficulty."],
+        distractorNotes: ["", "A difference between averages does not describe every student or establish causation.", "Longer completion time alone does not establish greater effectiveness.", "The observed times differ, and the comparison does not prove equal difficulty."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: In a report about a community orchestra, the director notes that attendance grew after the orchestra began offering free student tickets. The report also says that the orchestra added two weekend performances during the same period.\n\nWhy can the report not establish that free student tickets alone caused attendance to grow?",
+        choices: ["Another change—the addition of weekend performances—occurred during the same period.", "The report does not say whether the orchestra played music.", "Free tickets cannot affect attendance at cultural events.", "Attendance growth is impossible to measure."],
+        answerIndex: 0,
+        explanation: ["Attendance rose while two changes were introduced: free student tickets and weekend performances.", "Because both occurred during the same period, the report does not isolate the effect of the tickets.", "The other choices either introduce unsupported claims or misstate the information provided."],
+        distractorNotes: ["", "The orchestra's performances are not in question; the competing schedule change is relevant.", "The report does not show that tickets have no effect.", "The report explicitly describes attendance growth."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Hard",
+        question: "Text 1: “Our survey found that most residents who attended the Saturday market arrived on foot or by bicycle, suggesting that the market serves nearby households.”\n\nText 2: “The survey asked only people who were already at the market how they traveled. It cannot tell us whether residents who live farther away chose not to attend.”\n\nHow does Text 2 qualify the conclusion in Text 1?",
+        choices: ["It points out that the survey cannot describe residents who did not attend the market.", "It argues that most market visitors arrived by car.", "It disputes that the survey asked visitors about transportation.", "It concludes that nearby households do not use the market."],
+        answerIndex: 0,
+        explanation: ["Text 1 uses the travel patterns of attendees to suggest the market serves nearby households.", "Text 2 notes that the survey excluded people who did not attend, limiting what it can say about the broader community.", "It does not contradict the reported attendee responses; it identifies a limit on the inference."],
+        distractorNotes: ["", "Text 2 gives no information about how visitors traveled.", "Text 2 accepts that the survey asked attendees how they traveled.", "The limitation does not establish that nearby households avoid the market."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Easy",
+        question: "Passage: A greenhouse harvested 15 kilograms of basil in April and 21 kilograms in May. The number of planting trays was unchanged.\n\nBy what percentage did the basil harvest increase from April to May?",
+        choices: ["6%", "28.6%", "40%", "140%"],
+        answerIndex: 2,
+        explanation: ["The increase was 21 − 15 = 6 kilograms.", "Divide the increase by the April amount: 6 ÷ 15 = 0.40.", "Converting 0.40 to a percentage gives a 40% increase."],
+        distractorNotes: ["This gives the increase in kilograms, not the percentage increase.", "This uses the May amount as the denominator rather than the April amount.", "", "This is the May harvest as a percentage of April's harvest, not the percentage increase."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: A conservation team placed nesting boxes in a park and monitored them for one season. Several boxes were occupied by birds. The team plans to compare the boxes with similar sites that do not have boxes before recommending a larger installation.\n\nWhich conclusion is best supported?",
+        choices: ["Some birds occupied the boxes during the season, but the team has not yet determined whether the boxes increased nesting.", "The boxes caused the park's bird population to grow.", "Every box was occupied by a different bird species.", "The team has decided that nesting boxes should never be installed elsewhere."],
+        answerIndex: 0,
+        explanation: ["The monitoring confirmed that some birds used the boxes.", "A comparison site is needed to evaluate whether boxes increased nesting relative to what would otherwise have happened.", "The passage reports neither population growth nor occupancy of every box."],
+        distractorNotes: ["", "The team has not compared sites, so it cannot attribute population growth to the boxes.", "The passage gives no count of species or claim that each box held a different one.", "The team is considering a larger installation after further comparison."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Hard",
+        question: "Passage: A botanist tracked the flowering dates of one plant species at a low-elevation site for 12 years. In years with warmer March temperatures, the plants generally flowered earlier. The botanist cautions that observations from one site cannot show whether the pattern holds across the species' full range.\n\nWhich choice best summarizes the evidence?",
+        choices: ["At the studied site, warmer Marches were generally associated with earlier flowering, but the pattern may not apply throughout the species' range.", "Warmer March temperatures always cause every plant in the species to flower early.", "The species flowers earlier at higher elevations than at lower elevations.", "The botanist proved that March temperatures have no effect on flowering."],
+        answerIndex: 0,
+        explanation: ["The observations show an association over 12 years at one site.", "The botanist explicitly cautions against extending that local pattern to the full range, and the observational design does not establish causation."],
+        distractorNotes: ["", "The passage reports a general association at one site, not a universal causal rule.", "Only a low-elevation site was studied.", "The reported association is inconsistent with this claim."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: A transit agency found that buses on Route 8 were delayed most often between 4:00 and 6:00 p.m. It changed the schedule by adding five minutes to trips during that period. In the following month, the share of buses arriving within five minutes of schedule increased from 62% to 74%.\n\nWhich conclusion is best supported?",
+        choices: ["The share of Route 8 buses arriving close to schedule was higher in the month after the schedule change.", "Adding five minutes eliminated all delays on Route 8.", "The schedule change caused the entire increase, regardless of other factors.", "Buses on every route became more punctual."],
+        answerIndex: 0,
+        explanation: ["The reported on-time share rose from 62% to 74% in the following month.", "That directly supports a before-and-after comparison for Route 8.", "The passage does not establish that the schedule change was the only cause or that other routes changed."],
+        distractorNotes: ["", "A 74% close-to-schedule rate means delays were not eliminated.", "The passage reports a temporal association, not a controlled causal test.", "Only Route 8 is discussed."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Hard",
+        question: "Passage: An urban planner argues that converting one traffic lane to a protected bicycle lane can make a street safer. To support the claim, she cites a nearby avenue where recorded bicycle crashes declined after a protected lane was installed. During that same year, the city also lowered the speed limit there.\n\nWhich choice best identifies a limitation of the evidence?",
+        choices: ["The speed-limit change may also have contributed to the decline in crashes.", "The planner provides no information about whether a bicycle lane was installed.", "A decline in crashes proves that the avenue became less safe.", "The evidence shows that protected lanes increase crashes on every street."],
+        answerIndex: 0,
+        explanation: ["The evidence describes two safety-related changes made during the same period.", "Because both the protected lane and lower speed limit were introduced, the crash decline cannot be attributed to the lane alone from this evidence."],
+        distractorNotes: ["", "The passage explicitly says a protected lane was installed.", "A decline in recorded crashes does not indicate reduced safety.", "The passage reports a decline on one avenue, not an increase across streets."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Easy",
+        question: "Passage: The museum's new exhibit is modest in size: it occupies a single room and displays twelve objects. Yet its careful labels connect each object to a different family that lived in the neighborhood.\n\nAs used in the passage, what does “modest” most nearly mean?",
+        choices: ["Limited in scale", "Unusually expensive", "Lacking historical value", "Difficult to enter"],
+        answerIndex: 0,
+        explanation: ["The passage explains that the exhibit occupies one room and contains twelve objects.", "Those details indicate that “modest” refers to its limited size or scale."],
+        distractorNotes: ["", "No cost information is provided.", "The labels connect objects to neighborhood families, giving them historical context.", "The passage says nothing about access to the exhibit."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Medium",
+        question: "Passage: At first, the engineer treated each leak report as an isolated problem. After plotting the reports on a map, she noticed that many clustered near one aging valve. The map did not repair the pipes, but it changed where the crew began its inspection.\n\nWhat is the main purpose of the final sentence?",
+        choices: ["To clarify how the map helped the crew without overstating what it accomplished", "To show that the map repaired the pipes directly", "To explain why the valve was installed", "To argue that leak reports are usually inaccurate"],
+        answerIndex: 0,
+        explanation: ["The sentence distinguishes the map's analytical value from a physical repair.", "It says the map redirected the crew's inspection, avoiding the claim that the map itself fixed anything."],
+        distractorNotes: ["", "The sentence explicitly says the map did not repair the pipes.", "The valve's installation is not discussed.", "The reports led to a useful pattern; their accuracy is not challenged."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Hard",
+        question: "Text 1: “The observatory should remain open to visitors because public access can inspire students to pursue astronomy.”\n\nText 2: “The observatory's instruments are sensitive to vibration, so visits should be limited to scheduled open days when researchers are not collecting data.”\n\nHow would the author of Text 2 most likely respond to Text 1?",
+        choices: ["Public visits may be valuable, but they should be scheduled to avoid disrupting research.", "Students should never be allowed to learn about astronomy.", "The observatory should replace its instruments with less sensitive ones.", "The observatory already has no visitors."],
+        answerIndex: 0,
+        explanation: ["Text 1 supports public access for educational reasons.", "Text 2 does not reject visitors; it proposes limiting them to times that protect research activity."],
+        distractorNotes: ["", "Text 2 discusses scheduling visits, not barring students from astronomy.", "No replacement of instruments is proposed.", "Text 2 describes a policy recommendation, not current visitor numbers."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Medium",
+        question: "Passage: The city called the restored fountain a “living record” of the plaza. Its stone basin had been repaired, but the small marks carved by generations of visitors were left untouched.\n\nWhat does the phrase “living record” most nearly suggest?",
+        choices: ["The fountain preserves traces of the plaza's past while remaining part of its present.", "The fountain contains a written list of every visitor.", "The fountain is still being built from newly quarried stone.", "The fountain changes its location over time."],
+        answerIndex: 0,
+        explanation: ["The basin was repaired while visitor-made marks were preserved.", "The metaphor suggests that the fountain carries evidence of the plaza's history and continues to exist in the present."],
+        distractorNotes: ["", "No written visitor list is mentioned; the record is the marks on the stone.", "The passage says the basin was repaired, not newly built.", "The fountain's location does not change."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Easy",
+        question: "Passage: The first paragraph describes how a community garden was established. The second explains how gardeners now share harvests with a nearby food pantry.\n\nHow is the passage organized?",
+        choices: ["It moves from the garden's beginnings to a current use of its harvest.", "It presents two opposing arguments about gardening.", "It lists the tools gardeners use in chronological order.", "It describes a problem and concludes that the garden should close."],
+        answerIndex: 0,
+        explanation: ["The first paragraph focuses on establishing the garden.", "The second shifts to what gardeners currently do with the harvest, creating a past-to-present progression."],
+        distractorNotes: ["", "No opposing arguments appear.", "The passage is organized around history and current purpose, not a list of tools.", "The second paragraph describes sharing food, not closing the garden."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Hard",
+        question: "Passage: Historian Amara Bell calls the town's new history display “selective.” The exhibit includes detailed accounts from factory workers but gives little space to the merchants who financed the factory.\n\nAs used in the passage, what does “selective” most nearly mean?",
+        choices: ["Including some perspectives while leaving others underrepresented", "Arranged in the order that events occurred", "Based entirely on invented stories", "Designed to be viewed by only one person"],
+        answerIndex: 0,
+        explanation: ["The passage contrasts substantial attention to workers with little attention to merchants.", "That imbalance shows that the exhibit includes some perspectives more fully than others."],
+        distractorNotes: ["", "The passage does not describe chronological order.", "Nothing suggests the accounts are invented.", "The passage discusses whose perspectives appear, not who may view the display."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Medium",
+        question: "Passage: The report first describes a sharp rise in the number of cyclists using the river path. It then notes that the city had extended the path by two miles shortly before the count was taken.\n\nWhat is the function of the second sentence?",
+        choices: ["It provides context that may help explain the increase in cyclists.", "It proves that every new cyclist used the extension.", "It introduces an unrelated dispute about city spending.", "It shows that the cyclist count was not recorded."],
+        answerIndex: 0,
+        explanation: ["The extension occurred shortly before the higher count was observed.", "That timing makes the new path a relevant possible explanation, though it does not prove that every cyclist used it."],
+        distractorNotes: ["", "The report does not track each cyclist's route.", "No spending dispute appears.", "The count is explicitly described."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Hard",
+        question: "Text 1: “The town should replace its aging wooden sign with a digital display that can be updated instantly.”\n\nText 2: “A digital display would be easier to update, but the wooden sign is maintained by local volunteers and has become a recognizable landmark. The town should first consider repairing it.”\n\nWhat is the main difference between the texts?",
+        choices: ["Text 1 prioritizes ease of updating, whereas Text 2 weighs that benefit against the sign's community value and repairability.", "Text 1 argues that the sign should be repaired, while Text 2 demands its replacement.", "Text 1 focuses on volunteer labor, while Text 2 focuses on digital technology.", "Both texts reject any changes to the sign."],
+        answerIndex: 0,
+        explanation: ["Text 1 recommends replacement because a digital display can be updated quickly.", "Text 2 recognizes that benefit but also considers the sign's local importance and suggests repair first."],
+        distractorNotes: ["", "The recommendations are reversed in this choice.", "The texts focus on those topics in the opposite pattern.", "Text 1 supports replacement, so the texts do not both reject change."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Easy",
+        question: "Passage: The new footbridge looks delicate, but its steel frame was tested to support twice the weight expected during ordinary use.\n\nAs used in the passage, what does “delicate” most nearly mean?",
+        choices: ["Appearing light or fragile", "Being unsafe under any load", "Having a complicated history", "Being made entirely of glass"],
+        answerIndex: 0,
+        explanation: ["The contrast introduced by “but” separates the bridge's appearance from its tested strength.", "Here, “delicate” describes how the bridge looks, not how much weight it can bear."],
+        distractorNotes: ["", "The passage says the frame was tested to support twice the expected weight.", "No history is mentioned.", "The frame is steel, not glass."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Medium",
+        question: "Passage: In describing a restored theater, the author writes, “The new seats are comfortable, but the old brass aisle lamps still cast the same warm pools of light.”\n\nWhat is the effect of the contrast in this sentence?",
+        choices: ["It highlights a modernization that preserves a familiar feature.", "It suggests that the seats and lamps were both removed.", "It shows that the lamps make the new seats uncomfortable.", "It argues that the theater should not have been restored."],
+        answerIndex: 0,
+        explanation: ["The new seats signal a change, while the lamps preserve a recognizable part of the theater.", "The contrast emphasizes how a modern update can coexist with a familiar detail."],
+        distractorNotes: ["", "The sentence says the lamps remain.", "No connection between the lamps and seat comfort is stated.", "The author describes the restoration without opposing it."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Hard",
+        question: "Passage: A critic writes that poet Imani Cole's early poems use short, direct sentences, whereas her later poems contain longer lines and more layered images. The critic argues that the later work is not less clear; instead, it invites readers to make connections across several images.\n\nHow does the critic characterize Cole's later poems?",
+        choices: ["They are more layered than the early poems and ask readers to connect ideas.", "They abandon imagery in favor of simple statements.", "They are unclear because their lines are longer.", "They repeat the structure of the early poems without change."],
+        answerIndex: 0,
+        explanation: ["The critic contrasts the later poems' longer lines and layered images with the earlier poems' direct sentences.", "The critic explicitly says the later work is not less clear and describes active connections among images."],
+        distractorNotes: ["", "The later poems contain more layered images, not less imagery.", "The critic rejects the claim that the poems are less clear.", "The critic describes a change in style, not an unchanged structure."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Easy",
+        question: "Passage: At the start of the article, the author describes an empty lot filled with discarded lumber. The final paragraph describes the same lot after neighbors have turned it into a small playground.\n\nWhat is the effect of describing the lot at both the beginning and the end?",
+        choices: ["It emphasizes how the neighbors transformed the space.", "It proves that the lumber was used to build every playground feature.", "It introduces two unrelated locations.", "It shows that the lot returned to its original condition."],
+        answerIndex: 0,
+        explanation: ["The opening and ending present the same location in contrasting conditions.", "That frame highlights the change from an unused lot to a community playground."],
+        distractorNotes: ["", "The passage does not say the lumber became the playground equipment.", "Both descriptions refer to the same lot.", "The final condition differs from the opening one."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Easy",
+        question: "A student wants to show that a second observation supports the first. Which transition best completes the sentence?\n\nThe first test found that the new lamps used less electricity than the old ones. ______, a second test recorded a similar reduction.",
+        choices: ["Similarly", "Nevertheless", "Instead", "For example"],
+        answerIndex: 0,
+        explanation: ["The first test found reduced electricity use.", "The second test produced a comparable result, so “Similarly” signals agreement between findings."],
+        distractorNotes: ["", "No contrast is introduced.", "The second test adds evidence rather than replacing the first.", "The sentence presents a second result, not an example of the first test."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Medium",
+        question: "A student wants to present a result while acknowledging that the evidence is limited. Which choice best uses the notes?\n\nNotes:\n• A local bakery replaced plastic pastry boxes with paper ones for two weeks.\n• Plastic packaging use fell by 70% during the trial.\n• The bakery did not track whether customers reused the paper boxes.",
+        choices: ["During a two-week trial, a bakery's switch to paper boxes coincided with a 70% drop in plastic packaging use, though the bakery did not track whether customers reused the boxes.", "Paper boxes reduced plastic packaging by 70% at every bakery and were reused by most customers.", "A bakery tested paper boxes for two weeks, but plastic packaging use did not change.", "Customers reused paper boxes, which reduced plastic packaging use by 70%."],
+        answerIndex: 0,
+        explanation: ["The goal is to report the measured result and a limitation.", "Choice A states the local trial's measured drop and notes that reuse was not tracked, without extending the finding beyond the evidence."],
+        distractorNotes: ["", "The notes concern one bakery and do not report customer reuse.", "This contradicts the reported 70% decrease.", "The bakery did not track whether customers reused the boxes."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Hard",
+        question: "A student wants to emphasize the contrast between a predicted outcome and what happened. Which transition best completes the sentence?\n\nForecasters expected the reservoir to refill by early June. ______, unusually low rainfall kept its water level below the seasonal average.",
+        choices: ["Instead", "Consequently", "For instance", "Likewise"],
+        answerIndex: 0,
+        explanation: ["The forecast predicted one outcome: the reservoir would refill.", "The second sentence describes a different outcome, so “Instead” signals the contrast."],
+        distractorNotes: ["", "“Consequently” would present the second idea as a result of the forecast, which is not logical.", "The second sentence contrasts with rather than illustrates the forecast.", "The two outcomes are not similar."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Easy",
+        question: "A student wants to combine the notes into a sentence about the observatory's public program.\n\nNotes:\n• The observatory opened in 1988.\n• On Friday evenings, volunteers guide visitors through the night sky.\n• The observatory has a small gift shop.\n\nWhich choice best emphasizes the public program?",
+        choices: ["On Friday evenings, observatory volunteers guide visitors through the night sky.", "The observatory opened in 1988 and has a gift shop.", "A small gift shop is located at the observatory.", "The observatory, which opened in 1988, has several features."],
+        answerIndex: 0,
+        explanation: ["The goal is to emphasize the public program.", "Choice A directly describes the recurring guided experience for visitors."],
+        distractorNotes: ["", "This mentions the opening date and shop but omits the program.", "This focuses on the gift shop, not the program.", "This is vague and does not identify the program."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Medium",
+        question: "A student wants to introduce a consequence of a power outage. Which transition best completes the sentence?\n\nA storm damaged a transformer near the station. ______, trains on the line were delayed for nearly an hour.",
+        choices: ["As a result", "For example", "Similarly", "On the other hand"],
+        answerIndex: 0,
+        explanation: ["The damaged transformer is the event described first.", "The train delays followed from that event, so “As a result” signals cause and effect."],
+        distractorNotes: ["", "The delay is a consequence, not an example of a transformer.", "The sentences do not describe similar events.", "No contrasting point is presented."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Hard",
+        question: "A student wants to compare two approaches and identify their shared result. Which choice best uses the notes?\n\nNotes:\n• One neighborhood tested compost pickup at individual homes.\n• Another set up shared compost bins at two parks.\n• Both neighborhoods diverted food scraps from trash.\n• The notes do not compare program costs.",
+        choices: ["One neighborhood collected compost at homes and another used shared park bins; both diverted food scraps from trash, though the notes do not compare costs.", "Both neighborhoods used home pickup, so their programs had identical costs.", "Shared bins diverted food scraps, whereas home pickup sent scraps to the trash.", "The two programs cost the same because both diverted food scraps."],
+        answerIndex: 0,
+        explanation: ["The goal is to distinguish the approaches and state their shared outcome.", "Choice A accurately reports each method, their common result, and the absence of cost information."],
+        distractorNotes: ["", "The methods differed, and costs were not compared.", "Both programs diverted food scraps from trash.", "The notes provide no evidence about program costs."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Easy",
+        question: "Which transition best completes the sentence?\n\nThe lab calibrated its scale before weighing the samples. ______, the measurements were recorded in a shared spreadsheet.",
+        choices: ["Afterward", "However", "For instance", "Nevertheless"],
+        answerIndex: 0,
+        explanation: ["The lab calibrated the scale first.", "The measurements were recorded later, so “Afterward” signals the sequence of steps."],
+        distractorNotes: ["", "The second step does not contrast with calibration.", "Recording measurements is the next step, not an example of calibration.", "The passage gives no unexpected outcome that requires “Nevertheless.”"]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Medium",
+        question: "A student wants to describe a specific environmental benefit of a building design. Which choice best uses the notes?\n\nNotes:\n• The library has a roof garden.\n• The garden absorbs some rainwater.\n• The library opened in 2023.\n• The building contains six study rooms.",
+        choices: ["The library's roof garden absorbs some rainwater.", "The library opened in 2023 with six study rooms.", "The roof garden is located on the library.", "The library has several rooms for studying."],
+        answerIndex: 0,
+        explanation: ["The goal is to describe an environmental benefit.", "The garden's absorption of rainwater is the note that directly identifies such a benefit."],
+        distractorNotes: ["", "This gives the opening date and room count, not the environmental benefit.", "This identifies the garden's location but omits its function.", "This describes study space rather than an environmental feature."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Hard",
+        question: "A student wants to explain why a research team changed its method while preserving the original goal. Which choice best uses the notes?\n\nNotes:\n• The team wanted to estimate how many seals used a rocky cove.\n• Aerial photographs were often obscured by fog.\n• Researchers began using shore-based cameras instead.\n• The team continued counting seals at the cove.",
+        choices: ["Because fog often obscured aerial photographs, the team switched to shore-based cameras while continuing to count seals at the cove.", "The team abandoned its seal count when the aerial photographs became foggy.", "Shore-based cameras proved that fog increases the number of seals in the cove.", "The team changed its goal from counting seals to measuring fog."],
+        answerIndex: 0,
+        explanation: ["The notes state the original goal, the obstacle, and the revised method.", "Choice A connects the method change to fog while making clear that the seal-counting goal continued."],
+        distractorNotes: ["", "The team continued counting seals, using a different method.", "The notes do not describe any effect of fog on seal numbers.", "The goal remained estimating the number of seals."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Medium",
+        question: "Which transition best completes the sentence to show that the second detail narrows the scope of the first?\n\nThe exhibit includes maps from several regions. ______, its final section focuses only on maps made by local surveyors.",
+        choices: ["More specifically", "As a result", "In contrast", "At the same time"],
+        answerIndex: 0,
+        explanation: ["The first sentence gives a broad description of the exhibit.", "The second specifies a narrower section within it, so “More specifically” introduces that detail."],
+        distractorNotes: ["", "The focus of the final section is not presented as a consequence of including regional maps.", "The second sentence narrows rather than opposes the first.", "The relationship is one of clarification, not merely simultaneous events."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Hard",
+        question: "A student wants to state a finding without claiming that a short trial proves long-term success. Which choice best uses the notes?\n\nNotes:\n• A clinic tested text-message appointment reminders for six weeks.\n• Missed appointments declined from 18% to 12% during the test.\n• The clinic did not follow patients after the trial ended.",
+        choices: ["During a six-week test, missed appointments at the clinic declined from 18% to 12%, though the clinic did not determine whether the change lasted after the trial.", "Text-message reminders permanently reduced missed appointments at clinics from 18% to 12%.", "The clinic's six-week trial showed no change in missed appointments.", "Patients continued receiving reminders after the study, so the improvement lasted."],
+        answerIndex: 0,
+        explanation: ["The notes give a short-term before-and-during comparison and a limitation in follow-up.", "Choice A states both accurately and does not assert persistence beyond the test."],
+        distractorNotes: ["", "The trial lasted six weeks at one clinic, and no post-trial follow-up was done.", "The missed-appointment rate declined by six percentage points.", "The notes do not say reminders continued or that the change lasted."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Easy",
+        question: "A student wants to give an example of a tool used to study weather. Which transition best completes the sentence?\n\nMeteorologists use several instruments to monitor conditions. ______, a barometer measures air pressure.",
+        choices: ["For instance", "Even so", "Therefore", "Meanwhile"],
+        answerIndex: 0,
+        explanation: ["The first sentence introduces a broad category of instruments.", "The barometer is one specific instrument, so “For instance” appropriately introduces an example."],
+        distractorNotes: ["", "The barometer detail does not contrast with the first sentence.", "The second sentence gives an example, not a consequence.", "The sentences do not describe events occurring at the same time."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Easy",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nNeither the curator nor the assistants ___ available to answer questions.",
+        choices: ["is", "was", "are", "has been"],
+        answerIndex: 2,
+        explanation: ["With “neither … nor,” the verb agrees with the subject closer to it.", "“Assistants” is plural, so the present-tense verb “are” is correct."],
+        distractorNotes: ["This singular verb does not agree with the nearer plural subject.", "This singular verb also fails to agree with “assistants.”", "", "This singular helping verb does not agree with the nearer plural subject."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Medium",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe field team packed its notebooks, ___ the portable recorder, and two spare batteries.",
+        choices: ["a camera,", "a camera;", "a camera:", "a camera—"],
+        answerIndex: 0,
+        explanation: ["The sentence presents four items in a series: notebooks, a camera, the portable recorder, and two spare batteries.", "The comma after “camera” separates it from the next item in the series."],
+        distractorNotes: ["", "A semicolon is not used to separate simple items in a series.", "A colon is unnecessary within this list and would interrupt its parallel structure.", "A dash is not the appropriate separator for items in this series."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Hard",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nWalking through the greenhouse, ___.",
+        choices: ["the labels helped Maya identify each plant", "Maya identified each plant by reading its label", "each plant's label was read by Maya", "the plants were identified by their labels"],
+        answerIndex: 1,
+        explanation: ["The introductory phrase “Walking through the greenhouse” describes the person doing the walking.", "Choice B places Maya—the person walking—immediately after the introductory phrase, avoiding a dangling modifier."],
+        distractorNotes: ["The labels are not walking through the greenhouse.", "", "The label is not the person walking through the greenhouse.", "The plants are not walking through the greenhouse."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Medium",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe path was muddy ___ the hikers continued toward the lookout.",
+        choices: [", but", "; but", ": but", "but;"],
+        answerIndex: 0,
+        explanation: ["The sentence joins two independent clauses with the coordinating conjunction “but.”", "A comma belongs before “but” when it joins these clauses."],
+        distractorNotes: ["", "A semicolon before a coordinating conjunction is not the standard way to join these clauses.", "A colon does not appropriately introduce the second clause here.", "The semicolon is misplaced after the conjunction."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Hard",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe two researchers compared ___ notes before presenting their findings.",
+        choices: ["each other's", "each others'", "each others", "each other's'"],
+        answerIndex: 0,
+        explanation: ["The sentence refers to notes belonging to each researcher in relation to the other.", "The reciprocal pronoun “each other” takes the possessive form “each other's” before the noun “notes.”"],
+        distractorNotes: ["", "The plural possessive “others'” is not the correct form of the reciprocal pronoun.", "A possessive form is needed before “notes.”", "This form adds an unnecessary second apostrophe."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Easy",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe volunteers ___ the mural before the festival began.",
+        choices: ["finish", "finishes", "had finished", "has finished"],
+        answerIndex: 2,
+        explanation: ["The mural was completed before another past event: the festival's beginning.", "The past perfect “had finished” clearly places the completion before that later past event."],
+        distractorNotes: ["This present-tense verb does not fit the past-time sequence.", "This present-tense verb also does not fit the past-time sequence.", "", "This singular helping verb does not agree with the plural subject and does not fit the sequence."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Medium",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe instruments ___ the orchestra borrowed were returned to the school.",
+        choices: ["who", "whom", "that", "whose"],
+        answerIndex: 2,
+        explanation: ["The blank refers to instruments, not people.", "The relative pronoun “that” correctly introduces the clause identifying which instruments the orchestra borrowed."],
+        distractorNotes: ["“Who” refers to people, not instruments.", "“Whom” is an object form used for people.", "", "“Whose” indicates possession and would require a noun after it."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Hard",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe committee reviewed the proposal ___ the budget, timeline, and staffing plan.",
+        choices: ["including", "included", "includes", "include"],
+        answerIndex: 0,
+        explanation: ["The phrase after the blank gives examples of what the proposal covered.", "The participle “including” correctly introduces those parts of the proposal."],
+        distractorNotes: ["", "“Included” does not form a grammatical connection between “proposal” and the examples.", "“Includes” would require a different sentence structure and does not fit after the blank.", "“Include” lacks a subject and does not fit this construction."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Medium",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe canyon trail is steep ___ its final stretch is well marked.",
+        choices: [", and", "; and", ": and", "and;"],
+        answerIndex: 0,
+        explanation: ["Both parts are independent clauses, and “and” joins them.", "A comma before the coordinating conjunction correctly separates the clauses."],
+        distractorNotes: ["", "A semicolon is not used before a coordinating conjunction in this construction.", "A colon does not appropriately introduce the second independent clause.", "The punctuation belongs before “and,” not after it."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Hard",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe archive acquired ___ journals, which had been stored in a cedar chest.",
+        choices: ["the historian's", "the historians", "the historians'", "the historian"],
+        answerIndex: 0,
+        explanation: ["The sentence identifies journals belonging to one historian.", "A singular possessive noun is formed with an apostrophe and s: “historian's.”"],
+        distractorNotes: ["", "Without an apostrophe, “historians” is plural rather than possessive.", "This plural possessive would indicate journals belonging to multiple historians.", "This singular noun is not possessive and does not modify “journals.”"]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Easy",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nEach of the laboratory's microscopes ___ a protective cover.",
+        choices: ["have", "has", "are having", "were having"],
+        answerIndex: 1,
+        explanation: ["The subject is “each,” which is singular.", "The singular verb “has” agrees with “each”; the plural noun “microscopes” is part of a prepositional phrase."],
+        distractorNotes: ["This plural verb does not agree with the singular subject “each.”", "", "This plural construction does not agree with “each” and is not the appropriate simple statement.", "This plural past-progressive construction does not agree with “each.”"]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Medium",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe documentary was informative ___ its final chapter was especially engaging.",
+        choices: [", and", "; and", ": and", "and;"],
+        answerIndex: 0,
+        explanation: ["The sentence joins two independent clauses with the coordinating conjunction “and.”", "A comma before “and” correctly separates the clauses."],
+        distractorNotes: ["", "The semicolon is not used before the coordinating conjunction in this construction.", "The colon is not appropriate before “and” here.", "The punctuation is misplaced after the conjunction."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Hard",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe guide described the sculpture ___ stood near the entrance.",
+        choices: ["who", "whom", "that", "whose"],
+        answerIndex: 2,
+        explanation: ["The relative pronoun refers to a sculpture, a thing.", "“That” correctly introduces the clause “stood near the entrance,” which identifies the sculpture."],
+        distractorNotes: ["“Who” refers to people, not a sculpture.", "“Whom” is an object form used for people, and the blank is the subject of “stood.”", "", "“Whose” indicates possession and would require a noun after it."]
+      },
+      {
+        skill: "Standard English Conventions", difficulty: "Medium",
+        question: "Which choice completes the sentence so that it follows the conventions of Standard English?\n\nThe curator placed the vase on a padded stand ___ the oldest object in the collection.",
+        choices: ["protecting", "to protect", "protected", "protects"],
+        answerIndex: 1,
+        explanation: ["The sentence explains the purpose of placing the vase on a padded stand.", "The infinitive phrase “to protect the oldest object in the collection” correctly expresses that purpose."],
+        distractorNotes: ["This participle would suggest that the stand is protecting something, not clearly state the purpose of placing the vase.", "", "This past-tense verb does not connect grammatically to the sentence.", "This present-tense verb creates an incomplete and illogical construction."]
+      },
+      {
+        skill: "Information and Ideas", difficulty: "Medium",
+        question: "Passage: A marine biologist hypothesized that young crabs use seagrass beds as shelter. To test the idea, a team will compare juvenile-crab counts in dense seagrass with counts in nearby sandy areas. The team will not track individual crabs over time.\n\nWhich finding would most directly support the biologist's hypothesis?",
+        choices: ["Juvenile crabs were more numerous in dense seagrass than in nearby sandy areas.", "Adult crabs were observed on a rocky shore several kilometers away.", "The seagrass beds had grown taller during the previous year.", "The team visited the study area during low tide."],
+        answerIndex: 0,
+        explanation: ["The hypothesis is that young crabs use seagrass beds as shelter.", "A higher count of juveniles in seagrass than in nearby sand directly supports that proposed relationship, although it does not show how long the crabs stayed."],
+        distractorNotes: ["", "This observation concerns adult crabs in a different habitat.", "The passage does not connect grass height to juvenile crab shelter.", "The time of the visit does not compare crab abundance between habitats."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Medium",
+        question: "Passage: The designer called the new playground “adaptable.” Its climbing panels can be rearranged each season, allowing the same structure to offer different routes.\n\nAs used in the passage, what does “adaptable” most nearly mean?",
+        choices: ["Able to be changed for different uses", "Built to withstand very cold weather", "Difficult for children to understand", "Designed to remain exactly as it is"],
+        answerIndex: 0,
+        explanation: ["The passage explains that the panels can be rearranged.", "Because rearranging them creates different routes, “adaptable” means capable of being changed to serve different uses."],
+        distractorNotes: ["", "No information about weather resistance is provided.", "The passage describes changing routes, not children's understanding.", "The structure's panels are specifically designed to change."]
+      },
+      {
+        skill: "Craft and Structure", difficulty: "Hard",
+        question: "Passage: In the opening scene of the novel, a character carefully labels jars of seeds but leaves an empty jar on the highest shelf. Later, after the character moves away, a neighbor finds the jar and fills it with seeds from her own garden.\n\nWhat is the most likely function of the empty jar in the opening scene?",
+        choices: ["It foreshadows the later exchange between the character and the neighbor.", "It proves that the character never intended to plant anything.", "It explains why the neighbor moved into the house.", "It shows that the jars were too fragile to use."],
+        answerIndex: 0,
+        explanation: ["The empty jar appears before the neighbor later fills it with seeds.", "Its early placement prepares readers for that later connection, making it a foreshadowing detail."],
+        distractorNotes: ["", "The character labels other jars of seeds, so the passage does not support this conclusion.", "The neighbor's move is not discussed.", "No information about the jars' durability is given."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Medium",
+        question: "A student wants to distinguish between two results of a school garden project. Which choice best uses the notes?\n\nNotes:\n• Students planted lettuce in raised beds.\n• The beds produced 18 kilograms of lettuce in May.\n• The class donated some of the harvest to a food pantry.\n• The notes do not state how much was donated.",
+        choices: ["The raised beds produced 18 kilograms of lettuce in May, and the class donated some of the harvest to a food pantry.", "The class donated 18 kilograms of lettuce to the food pantry in May.", "The food pantry provided the raised beds with lettuce seeds.", "Students planted lettuce, and the entire harvest went to the food pantry."],
+        answerIndex: 0,
+        explanation: ["The goal is to report both the measured harvest and the donation without assigning an unsupported amount.", "Choice A states the 18-kilogram production figure and separately notes that some lettuce was donated."],
+        distractorNotes: ["", "The notes give total production, not the amount donated.", "The notes do not say who provided seeds.", "The notes say some of the harvest was donated, not all of it."]
+      },
+      {
+        skill: "Expression of Ideas", difficulty: "Hard",
+        question: "A student wants to show that a planning decision was based on a community survey. Which transition best completes the sentence?\n\nSurvey respondents identified the east entrance as the least accessible part of the park. ______, the renovation plan gives priority to rebuilding that entrance.",
+        choices: ["For this reason", "In contrast", "For example", "At the same time"],
+        answerIndex: 0,
+        explanation: ["The survey identified a specific accessibility concern.", "The plan responds by prioritizing that entrance, so “For this reason” clearly signals the connection."],
+        distractorNotes: ["", "The plan does not oppose the survey finding; it responds to it.", "The renovation priority is a consequence of the finding, not an example of a survey response.", "The sentences express a reason and a resulting decision, not merely simultaneous events."]
       }
     ];
 
@@ -516,6 +1002,8 @@
     const resultsScreen = document.getElementById("results-screen");
     const reviewScreen = document.getElementById("review-screen");
     const categoryOptions = document.getElementById("category-options");
+    const questionCountInput = document.getElementById("question-limit");
+    const maxPracticeQuestions = 40;
     const categoryInputs = [];
     const difficultyRank = { Easy: 0, Medium: 1, Hard: 2 };
     if (questions.length > 100) throw new Error("The Reading and Writing practice bank cannot contain more than 100 questions.");
@@ -578,10 +1066,7 @@
         const name = document.createElement("span");
         name.className = "category-name";
         name.textContent = category;
-        const count = document.createElement("span");
-        count.className = "category-count";
-        count.textContent = `${available} questions in bank`;
-        text.append(name, count);
+        text.append(name);
         label.append(input, text);
         categoryOptions.append(label);
         categoryInputs.push(input);
@@ -591,40 +1076,44 @@
     function updateCategorySelection(event) {
       const selected = categoryInputs.filter((input) => input.checked);
       if (selected.length > 4) {
-        event.target.checked = false;
+        if (event) event.target.checked = false;
         document.getElementById("selection-status").textContent = "You already chose four. Uncheck one before choosing another.";
         return;
       }
-      const basePerCategory = selected.length ? Math.floor(10 / selected.length) : 0;
-      const remaining = selected.length ? 10 % selected.length : 0;
       const selectedQuestionCount = questions.filter((question) => selected.some((input) => input.value === question.skill)).length;
-      const hasEnoughQuestions = selected.length > 0 &&
-        selectedQuestionCount >= 10 &&
-        selected.every((input) => questions.filter((question) => question.skill === input.value).length >= basePerCategory);
+      const questionCount = Number(questionCountInput.value);
+      const availableQuestionLimit = Math.min(maxPracticeQuestions, selected.length ? selectedQuestionCount : questions.length);
+      questionCountInput.max = String(availableQuestionLimit);
+      const hasValidQuestionCount = Number.isInteger(questionCount) && questionCount >= 1 && questionCount <= availableQuestionLimit;
+      const hasEnoughQuestions = selected.length > 0 && hasValidQuestionCount;
       document.getElementById("start-button").disabled = !hasEnoughQuestions;
       const status = document.getElementById("selection-status");
       if (!selected.length) {
         status.textContent = "Choose at least one category to begin.";
+      } else if (!Number.isInteger(questionCount) || questionCount < 1) {
+        status.textContent = "Enter a whole number of questions greater than zero.";
       } else if (!hasEnoughQuestions) {
-        status.textContent = "There are not enough questions in the selected categories for a 10-question set.";
+        status.textContent = `Choose between 1 and ${availableQuestionLimit} questions for the selected categories.`;
       } else if (selected.length === 1) {
-        status.textContent = "All 10 questions will come from your selected category.";
+        status.textContent = `All ${questionCount} questions will come from your selected category.`;
       } else {
-        status.textContent = `${basePerCategory} questions from each selected category${remaining ? `, plus ${remaining} random ${remaining === 1 ? "question" : "questions"} from those categories` : ""}.`;
+        status.textContent = `Your ${questionCount}-question set will be balanced across the selected categories.`;
       }
     }
 
-    function createPracticeSet(categories) {
-      const basePerCategory = Math.floor(10 / categories.length);
-      const selectedQuestions = categories.flatMap((category) =>
-        shuffle(questions.filter((question) => question.skill === category)).slice(0, basePerCategory)
-      );
-      const remainingCount = 10 - selectedQuestions.length;
-      const selectedQuestionSet = new Set(selectedQuestions);
-      const remainingPool = questions.filter((question) =>
-        categories.includes(question.skill) && !selectedQuestionSet.has(question)
-      );
-      selectedQuestions.push(...shuffle(remainingPool).slice(0, remainingCount));
+    function createPracticeSet(categories, questionCount) {
+      const questionPools = categories.map((category) => shuffle(questions.filter((question) => question.skill === category)));
+      const availableQuestions = questionPools.reduce((total, pool) => total + pool.length, 0);
+      if (!Number.isInteger(questionCount) || questionCount < 1 || questionCount > Math.min(maxPracticeQuestions, availableQuestions)) {
+        throw new Error("Cannot create a practice set with the requested question count.");
+      }
+      const selectedQuestions = [];
+      while (selectedQuestions.length < questionCount) {
+        for (const pool of shuffle(questionPools)) {
+          if (pool.length) selectedQuestions.push(pool.pop());
+          if (selectedQuestions.length === questionCount) break;
+        }
+      }
       return shuffle(selectedQuestions).map((question) => {
         const options = shuffle(question.choices.map((choice, originalIndex) => ({
           choice,
@@ -798,8 +1287,8 @@
 
     document.getElementById("start-button").addEventListener("click", () => {
       selectedCategories = categoryInputs.filter((input) => input.checked).map((input) => input.value);
-      if (!selectedCategories.length || selectedCategories.length > 4) return;
-      practiceQuestions = createPracticeSet(selectedCategories);
+      if (!selectedCategories.length || selectedCategories.length > 4 || !questionCountInput.validity.valid) return;
+      practiceQuestions = createPracticeSet(selectedCategories, Number(questionCountInput.value));
       answerByQuestion = Array(practiceQuestions.length).fill(null);
       questionIndex = 0;
       renderQuestion();
@@ -840,13 +1329,15 @@
       }
     });
     document.getElementById("restart-button").addEventListener("click", () => {
-      practiceQuestions = createPracticeSet(selectedCategories);
+      practiceQuestions = createPracticeSet(selectedCategories, Number(questionCountInput.value));
       answerByQuestion = Array(practiceQuestions.length).fill(null);
       questionIndex = 0;
       renderQuestion();
       focusElement("question-title");
     });
+    questionCountInput.addEventListener("input", () => updateCategorySelection());
     renderCategoryPicker();
+    updateCategorySelection();
   </script>
 </body>
 </html>
