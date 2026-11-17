@@ -6,6 +6,14 @@
   <meta name="theme-color" content="#FBFAF8">
   <meta name="description" content="Choose one to four Reading and Writing categories and the number of original SAT-style questions to practice, with shuffled choices and clear explanations.">
   <title>SAT Reading and Writing Practice — Mr. Chau</title>
+  <link rel="canonical" href="https://chaututor.com/sat-reading-writing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ChauTutor">
+  <meta property="og:title" content="SAT Reading and Writing Practice — Mr. Chau">
+  <meta property="og:description" content="Original SAT-style Reading and Writing questions by category, with clear explanations. Independent practice, not official SAT content.">
+  <meta property="og:url" content="https://chaututor.com/sat-reading-writing.html">
+  <meta property="og:image" content="https://chaututor.com/images/social-card.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
     :root{
       --ink:#1A1A18;--ink-soft:#403D38;--muted:#6B6862;
@@ -117,6 +125,35 @@
     @view-transition{navigation:auto}
     ::view-transition-old(root),::view-transition-new(root){animation-duration:.45s;animation-timing-function:ease}
     @media(prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+    /* ---------- Saved progress, difficulty, timer, results actions ---------- */
+    .progress-panel{margin:0 0 28px;padding:20px 22px;background:var(--surface-warm);border-radius:var(--r-lg)}
+    .progress-panel h2{font-family:var(--sans);font-size:1.05rem;font-weight:700;margin-bottom:6px}
+    .progress-summary{margin:0;color:var(--muted);font-size:.94rem}
+    .progress-table{margin:12px 0 16px;font-size:.92rem}
+    .progress-table th,.progress-table td{padding:9px 8px}
+    .progress-table tbody th{font-weight:600}
+    .progress-table td,.progress-table thead th+th{text-align:right}
+    .progress-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px}
+    .progress-actions .btn{min-height:44px;padding:9px 18px;font-size:.94rem}
+    .link-button{background:none;border:0;padding:0;font:inherit;font-size:.9rem;color:var(--muted);text-decoration:underline;cursor:pointer}
+    .link-button:hover{color:var(--ink)}
+    .fine-print{margin:12px 0 0;font-size:.82rem;color:var(--muted)}
+    .difficulty-options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .timed-option{display:flex;align-items:flex-start;gap:12px;margin:0 0 24px;padding:14px;border:1px solid var(--rule);border-radius:var(--r);cursor:pointer}
+    .timed-option:has(input:checked){border-color:var(--accent);background:var(--accent-wash)}
+    .timed-option input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--accent);flex:none}
+    .option-hint{display:block;color:var(--muted);font-size:.9rem}
+    .timer{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+    .timer.is-low{color:#A33E35}
+    .time-summary{color:var(--muted)}
+    .callout-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+    .callout .fine-print{margin-top:12px}
+    .callout .fine-print a{font-weight:600}
+    @media (max-width:700px){
+      .difficulty-options{grid-template-columns:1fr}
+      .callout-actions{flex-direction:column}
+      .callout-actions .btn{width:100%}
+    }
   </style>
 </head>
 <body>
@@ -133,7 +170,7 @@
   <main id="main" class="wrap">
     <section id="start-screen" class="intro" aria-labelledby="page-title">
       <p class="eyebrow">Independent practice</p>
-      <h1 id="page-title">SAT Reading and Writing practice</h1>
+      <h1 id="page-title" tabindex="-1">SAT Reading and Writing practice</h1>
       <!--<p class="lede">Choose one to four categories for a quick 10-question set. Questions are sampled randomly from your selected categories, and the question order and answer choices are shuffled.</p>-->
       <p class="notice"><strong>Independent practice, not official SAT content.</strong> These original questions are not affiliated with or endorsed by the College Board.</p>
       <!--<ul class="intro-meta">
@@ -142,10 +179,31 @@
         <li>Choose 1–4 categories</li>
         <li>No timer</li>
       </ul>-->
+      <section id="progress-panel" class="progress-panel" aria-labelledby="progress-title" hidden>
+        <h2 id="progress-title">Your progress</h2>
+        <p id="progress-summary" class="progress-summary"></p>
+        <table class="breakdown progress-table">
+          <thead><tr><th scope="col">Category</th><th scope="col">Answered</th><th scope="col">Correct</th></tr></thead>
+          <tbody id="progress-body"></tbody>
+        </table>
+        <div class="progress-actions">
+          <button id="retry-missed-button" class="btn btn-outline" type="button">Retry missed questions</button>
+          <button id="clear-progress-button" class="link-button" type="button">Clear saved progress</button>
+        </div>
+        <p class="fine-print">Saved in this browser only. Nothing is sent anywhere.</p>
+      </section>
       <fieldset class="category-picker">
         <legend>Choose one to four categories</legend>
         <div id="category-options" class="category-options"></div>
       </fieldset>
+      <fieldset class="category-picker">
+        <legend>Difficulty</legend>
+        <div id="difficulty-options" class="difficulty-options"></div>
+      </fieldset>
+      <label class="timed-option">
+        <input id="timed-toggle" type="checkbox">
+        <span><span class="category-name">Timed practice</span><span id="timed-hint" class="option-hint"></span></span>
+      </label>
       <div class="question-count-picker">
         <label for="question-limit">Number of questions</label>
         <input id="question-limit" type="number" min="1" max="40" step="1" value="10" inputmode="numeric" aria-describedby="selection-status">
@@ -157,13 +215,22 @@
     </section>
 
     <section id="question-screen" class="practice" aria-labelledby="question-title" hidden>
-      <div class="progress-row"><span id="question-count"></span><span id="question-skill"></span></div>
-      <div id="progress-track" class="progress-track" role="progressbar" aria-label="Practice progress" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><div id="progress-fill" class="progress-fill"></div></div>
-      <span id="skill-label" class="skill-label"></span><span id="difficulty-label" class="difficulty-label"></span>
+      <div class="progress-row">
+        <span id="question-count"></span>
+        <span id="timer" class="timer" role="timer" hidden></span>
+        <span id="question-skill"></span>
+      </div>
+      <div id="progress-track" class="progress-track" role="progressbar" aria-label="Practice progress" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <span id="skill-label" class="skill-label"></span>
+      <span id="difficulty-label" class="difficulty-label"></span>
       <h2 id="question-title" class="question-title" tabindex="-1"></h2>
       <ol id="choices" class="choices" aria-label="Answer choices"></ol>
       <div id="feedback" aria-live="polite"></div>
-      <div id="question-actions" class="next-row" hidden><button id="next-button" class="btn btn-primary" type="button">Next question</button></div>
+      <div id="question-actions" class="next-row" hidden>
+        <button id="next-button" class="btn btn-primary" type="button">Next question</button>
+      </div>
     </section>
 
     <section id="results-screen" class="practice" aria-labelledby="results-title" hidden>
@@ -171,23 +238,42 @@
       <h2 id="results-title" tabindex="-1">Your results</h2>
       <p id="score" class="result-score"></p>
       <p id="result-summary"></p>
+      <p id="time-summary" class="time-summary" hidden></p>
       <h3>Breakdown by category</h3>
-      <table class="breakdown"><thead><tr><th scope="col">Category</th><th scope="col">Correct</th></tr></thead><tbody id="breakdown-body"></tbody></table>
+      <table class="breakdown">
+        <thead><tr><th scope="col">Category</th><th scope="col">Correct</th></tr></thead>
+        <tbody id="breakdown-body"></tbody>
+      </table>
       <div class="result-actions">
         <button id="review-button" class="btn btn-ghost" type="button">Review missed questions</button>
         <button id="restart-button" class="btn btn-primary" type="button">Try again</button>
+        <button id="new-set-button" class="btn btn-ghost" type="button">Change settings</button>
       </div>
-      <aside class="callout"><p>Want to talk through a study plan? <a href="https://calendly.com/your-booking-link">Book a free 15-minute call</a>. No pressure—just a chance to see if I can help.</p></aside>
+      <aside class="callout">
+        <p id="callout-text"></p>
+        <div class="callout-actions">
+          <a class="btn btn-primary" href="index.html#booking">Book a free 15-minute call</a>
+          <a id="email-tutor-link" class="btn btn-ghost" href="index.html#booking">Email these results to Mr. Chau</a>
+        </div>
+        <p class="fine-print"><a id="email-self-link" href="index.html#booking">Or email them to yourself or a parent</a>. Both open a draft in your own email app; nothing is sent automatically.</p>
+      </aside>
     </section>
 
     <section id="review-screen" class="practice" aria-labelledby="review-title" hidden>
       <p class="eyebrow">Answer review</p>
       <h2 id="review-title" tabindex="-1">Questions to revisit</h2>
-      <div class="review-bar"><button id="back-results-button" class="btn btn-ghost" type="button">Back to results</button><span id="review-count" aria-live="polite"></span></div>
-      <span id="review-skill" class="skill-label"></span><p id="review-question" class="question-title" tabindex="-1"></p>
+      <div class="review-bar">
+        <button id="back-results-button" class="btn btn-ghost" type="button">Back to results</button>
+        <span id="review-count" aria-live="polite"></span>
+      </div>
+      <span id="review-skill" class="skill-label"></span>
+      <p id="review-question" class="question-title" tabindex="-1"></p>
       <ol id="review-choices" class="choices" aria-label="Answer choices"></ol>
       <div id="review-explanation"></div>
-      <div class="review-bar review-nav"><button id="previous-review-button" class="btn btn-ghost" type="button">Previous missed</button><button id="next-review-button" class="btn btn-primary" type="button">Next missed</button></div>
+      <div class="review-bar review-nav">
+        <button id="previous-review-button" class="btn btn-ghost" type="button">Previous missed</button>
+        <button id="next-review-button" class="btn btn-primary" type="button">Next missed</button>
+      </div>
     </section>
   </main>
   <footer><div class="wrap"><p>Original, independent SAT-style practice by Mr. Chau. Not official SAT content.</p></div></footer>
@@ -996,19 +1082,26 @@
       }
     ];
 
-    const categoryNames = ["Information and Ideas", "Craft and Structure", "Expression of Ideas", "Standard English Conventions"];
+    const config = { section: "Reading and Writing", storageKey: "chaututor.sat.rw.v1", secondsPerQuestion: 71, tutorEmail: "thienchau010@gmail.com", skillNames: ["Information and Ideas", "Craft and Structure", "Expression of Ideas", "Standard English Conventions"] };
+    const skillNames = config.skillNames;
+    const difficultyNames = ["Easy", "Medium", "Hard"];
+    const maxPracticeQuestions = 40;
+    const maxSavedSets = 20;
     const startScreen = document.getElementById("start-screen");
     const questionScreen = document.getElementById("question-screen");
     const resultsScreen = document.getElementById("results-screen");
     const reviewScreen = document.getElementById("review-screen");
     const categoryOptions = document.getElementById("category-options");
+    const difficultyOptions = document.getElementById("difficulty-options");
     const questionCountInput = document.getElementById("question-limit");
-    const maxPracticeQuestions = 40;
+    const timedToggle = document.getElementById("timed-toggle");
+    const timerDisplay = document.getElementById("timer");
     const categoryInputs = [];
-    const difficultyRank = { Easy: 0, Medium: 1, Hard: 2 };
-    if (questions.length > 100) throw new Error("The Reading and Writing practice bank cannot contain more than 100 questions.");
+    const difficultyInputs = [];
+
+    if (questions.length > 100) throw new Error(`The SAT ${config.section} practice bank cannot contain more than 100 questions.`);
     questions.forEach((question) => {
-      if (!categoryNames.includes(question.skill) || !Object.prototype.hasOwnProperty.call(difficultyRank, question.difficulty)) {
+      if (!skillNames.includes(question.skill) || !difficultyNames.includes(question.difficulty)) {
         throw new Error(`Question has an unsupported category or difficulty: ${question.question}`);
       }
       if (
@@ -1021,25 +1114,131 @@
       ) {
         throw new Error(`Question must have four choices, four notes, and one valid answer: ${question.question}`);
       }
+      // Stable id so saved progress survives reordering the bank.
+      question.id = hashText(question.question);
     });
-    categoryNames.forEach((category) => {
-      if (questions.filter((question) => question.skill === category).length < 2) {
-        throw new Error(`Each category needs at least two questions: ${category}`);
+    skillNames.forEach((skill) => {
+      if (questions.filter((question) => question.skill === skill).length < 2) {
+        throw new Error(`Each category needs at least two questions: ${skill}`);
       }
     });
+
     let practiceQuestions = [];
     let answerByQuestion = [];
-    let selectedCategories = [];
+    let selectedSkills = [];
     let questionIndex = 0;
     let missedQuestionIndices = [];
     let reviewIndex = 0;
+    let lastSpec = null;
+    let timed = false;
+    let timeBudget = 0;
+    let secondsLeft = 0;
+    let timerId = null;
+    let timeExpired = false;
 
-    function showScreen(screen) {
-      [startScreen, questionScreen, resultsScreen, reviewScreen].forEach((item) => { item.hidden = item !== screen; });
+    function hashText(text) {
+      let hash = 5381;
+      for (let index = 0; index < text.length; index += 1) {
+        hash = ((hash << 5) + hash + text.charCodeAt(index)) | 0;
+      }
+      return (hash >>> 0).toString(36);
     }
 
-    function focusElement(id) {
+    function formatTime(totalSeconds) {
+      const seconds = Math.max(0, totalSeconds);
+      return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
+    }
+
+    /* ---------- Saved progress (this browser only) ---------- */
+    function loadProgress() {
+      try {
+        const data = JSON.parse(localStorage.getItem(config.storageKey));
+        if (data && data.v === 1 && data.skills && Array.isArray(data.sets) && Array.isArray(data.missed)) return data;
+      } catch (error) { /* storage blocked or unreadable: start fresh */ }
+      return { v: 1, skills: {}, sets: [], missed: [] };
+    }
+
+    function saveProgress(data) {
+      try {
+        localStorage.setItem(config.storageKey, JSON.stringify(data));
+      } catch (error) { /* storage blocked: practice still works, nothing is saved */ }
+    }
+
+    function recordAnswer(question, isCorrect) {
+      const data = loadProgress();
+      const entry = data.skills[question.skill] || { c: 0, n: 0 };
+      entry.n += 1;
+      if (isCorrect) entry.c += 1;
+      data.skills[question.skill] = entry;
+      data.missed = data.missed.filter((id) => id !== question.id);
+      if (!isCorrect) data.missed.push(question.id);
+      saveProgress(data);
+    }
+
+    function recordSet(correct, total) {
+      const data = loadProgress();
+      data.sets.push({ t: Date.now(), c: correct, n: total });
+      data.sets = data.sets.slice(-maxSavedSets);
+      saveProgress(data);
+    }
+
+    function savedMissedQuestions() {
+      const ids = new Set(loadProgress().missed);
+      return questions.filter((question) => ids.has(question.id));
+    }
+
+    function renderProgress() {
+      const data = loadProgress();
+      const totals = skillNames.reduce((sum, skill) => {
+        const entry = data.skills[skill] || { c: 0, n: 0 };
+        return { c: sum.c + entry.c, n: sum.n + entry.n };
+      }, { c: 0, n: 0 });
+      const panel = document.getElementById("progress-panel");
+      panel.hidden = totals.n === 0;
+      if (totals.n === 0) return;
+      let summary = `${totals.n} ${totals.n === 1 ? "question" : "questions"} answered, ${Math.round((totals.c / totals.n) * 100)}% correct.`;
+      if (data.sets.length) {
+        summary += ` Recent sets: ${data.sets.slice(-5).map((set) => `${set.c}/${set.n}`).join(", ")}.`;
+      }
+      document.getElementById("progress-summary").textContent = summary;
+      const body = document.getElementById("progress-body");
+      body.replaceChildren();
+      skillNames.forEach((skill) => {
+        const entry = data.skills[skill] || { c: 0, n: 0 };
+        const row = document.createElement("tr");
+        const name = document.createElement("th");
+        name.scope = "row";
+        name.textContent = skill;
+        const answered = document.createElement("td");
+        answered.textContent = String(entry.n);
+        const correct = document.createElement("td");
+        correct.textContent = entry.n ? `${Math.round((entry.c / entry.n) * 100)}%` : "—";
+        row.append(name, answered, correct);
+        body.append(row);
+      });
+      const missedCount = savedMissedQuestions().length;
+      const retryButton = document.getElementById("retry-missed-button");
+      retryButton.disabled = missedCount === 0;
+      retryButton.textContent = missedCount === 0 ? "No missed questions to retry" : `Retry missed questions (${Math.min(missedCount, maxPracticeQuestions)})`;
+    }
+
+    /* ---------- Screens ---------- */
+    function showScreen(screen) {
+      [startScreen, questionScreen, resultsScreen, reviewScreen].forEach((item) => {
+        item.hidden = item !== screen;
+      });
+    }
+
+    function focusHeading(id) {
       document.getElementById(id).focus();
+    }
+
+    function showStart() {
+      stopTimer();
+      renderProgress();
+      updateSelection();
+      showScreen(startScreen);
+      focusHeading("page-title");
     }
 
     function shuffle(items) {
@@ -1051,70 +1250,66 @@
       return shuffled;
     }
 
-    function renderCategoryPicker() {
-      categoryNames.forEach((category) => {
-        const available = questions.filter((question) => question.skill === category).length;
-        const label = document.createElement("label");
-        label.className = "category-option";
-        const input = document.createElement("input");
-        input.type = "checkbox";
-        input.name = "practice-category";
-        input.value = category;
-        input.disabled = available < 2;
-        input.addEventListener("change", updateCategorySelection);
-        const text = document.createElement("span");
-        const name = document.createElement("span");
-        name.className = "category-name";
-        name.textContent = category;
-        text.append(name);
-        label.append(input, text);
-        categoryOptions.append(label);
-        categoryInputs.push(input);
-      });
+    /* ---------- Start screen ---------- */
+    function renderOption(container, inputs, value, checked) {
+      const label = document.createElement("label");
+      label.className = "category-option";
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.value = value;
+      input.checked = checked;
+      input.addEventListener("change", updateSelection);
+      const text = document.createElement("span");
+      const name = document.createElement("span");
+      name.className = "category-name";
+      name.textContent = value;
+      text.append(name);
+      label.append(input, text);
+      container.append(label);
+      inputs.push(input);
     }
 
-    function updateCategorySelection(event) {
-      const selected = categoryInputs.filter((input) => input.checked);
-      if (selected.length > 4) {
-        if (event) event.target.checked = false;
-        document.getElementById("selection-status").textContent = "You already chose four. Uncheck one before choosing another.";
-        return;
-      }
-      const selectedQuestionCount = questions.filter((question) => selected.some((input) => input.value === question.skill)).length;
+    function checkedValues(inputs) {
+      return inputs.filter((input) => input.checked).map((input) => input.value);
+    }
+
+    function matchingQuestions(skills, difficulties) {
+      return questions.filter((question) => skills.includes(question.skill) && difficulties.includes(question.difficulty));
+    }
+
+    function updateSelection() {
+      const skills = checkedValues(categoryInputs);
+      const difficulties = checkedValues(difficultyInputs);
+      const matchCount = matchingQuestions(skills, difficulties).length;
       const questionCount = Number(questionCountInput.value);
-      const availableQuestionLimit = Math.min(maxPracticeQuestions, selected.length ? selectedQuestionCount : questions.length);
-      questionCountInput.max = String(availableQuestionLimit);
-      const hasValidQuestionCount = Number.isInteger(questionCount) && questionCount >= 1 && questionCount <= availableQuestionLimit;
-      const hasEnoughQuestions = selected.length > 0 && hasValidQuestionCount;
-      document.getElementById("start-button").disabled = !hasEnoughQuestions;
+      const limit = Math.min(maxPracticeQuestions, matchCount);
+      questionCountInput.max = String(Math.max(1, limit || maxPracticeQuestions));
+      const hasValidCount = Number.isInteger(questionCount) && questionCount >= 1;
+      const canStart = skills.length > 0 && difficulties.length > 0 && hasValidCount && questionCount <= limit;
+      document.getElementById("start-button").disabled = !canStart;
       const status = document.getElementById("selection-status");
-      if (!selected.length) {
+      if (!skills.length) {
         status.textContent = "Choose at least one category to begin.";
-      } else if (!Number.isInteger(questionCount) || questionCount < 1) {
+      } else if (!difficulties.length) {
+        status.textContent = "Choose at least one difficulty.";
+      } else if (!hasValidCount) {
         status.textContent = "Enter a whole number of questions greater than zero.";
-      } else if (!hasEnoughQuestions) {
-        status.textContent = `Choose between 1 and ${availableQuestionLimit} questions for the selected categories.`;
-      } else if (selected.length === 1) {
-        status.textContent = `All ${questionCount} questions will come from your selected category.`;
+      } else if (!canStart) {
+        status.textContent = `${limit} ${limit === 1 ? "question matches" : "questions match"} those choices. Choose between 1 and ${limit}.`;
       } else {
-        status.textContent = `Your ${questionCount}-question set will be balanced across the selected categories.`;
+        const source = skills.length === 1
+          ? `All ${questionCount} questions will come from your selected category.`
+          : `Your ${questionCount}-question set will be balanced across the selected categories.`;
+        status.textContent = timedToggle.checked
+          ? `${source} Time limit: ${formatTime(questionCount * config.secondsPerQuestion)}.`
+          : source;
       }
+      return canStart;
     }
 
-    function createPracticeSet(categories, questionCount) {
-      const questionPools = categories.map((category) => shuffle(questions.filter((question) => question.skill === category)));
-      const availableQuestions = questionPools.reduce((total, pool) => total + pool.length, 0);
-      if (!Number.isInteger(questionCount) || questionCount < 1 || questionCount > Math.min(maxPracticeQuestions, availableQuestions)) {
-        throw new Error("Cannot create a practice set with the requested question count.");
-      }
-      const selectedQuestions = [];
-      while (selectedQuestions.length < questionCount) {
-        for (const pool of shuffle(questionPools)) {
-          if (pool.length) selectedQuestions.push(pool.pop());
-          if (selectedQuestions.length === questionCount) break;
-        }
-      }
-      return shuffle(selectedQuestions).map((question) => {
+    /* ---------- Building a set ---------- */
+    function prepareQuestions(list) {
+      return shuffle(list).map((question) => {
         const options = shuffle(question.choices.map((choice, originalIndex) => ({
           choice,
           note: question.distractorNotes[originalIndex],
@@ -1129,6 +1324,79 @@
       });
     }
 
+    function createPracticeSet(skills, difficulties, questionCount) {
+      const questionPools = skills
+        .map((skill) => shuffle(matchingQuestions([skill], difficulties)))
+        .filter((pool) => pool.length);
+      const availableQuestions = questionPools.reduce((total, pool) => total + pool.length, 0);
+      if (!Number.isInteger(questionCount) || questionCount < 1 || questionCount > Math.min(maxPracticeQuestions, availableQuestions)) {
+        throw new Error("Cannot create a practice set with the requested question count.");
+      }
+      const selectedQuestions = [];
+      while (selectedQuestions.length < questionCount) {
+        for (const pool of shuffle(questionPools)) {
+          if (pool.length) selectedQuestions.push(pool.pop());
+          if (selectedQuestions.length === questionCount) break;
+        }
+      }
+      return prepareQuestions(selectedQuestions);
+    }
+
+    function startSet(spec) {
+      let set;
+      if (spec.kind === "missed") {
+        const missed = savedMissedQuestions();
+        if (!missed.length) {
+          showStart();
+          return;
+        }
+        set = prepareQuestions(shuffle(missed).slice(0, maxPracticeQuestions));
+      } else {
+        set = createPracticeSet(spec.skills, spec.difficulties, spec.count);
+      }
+      lastSpec = spec;
+      practiceQuestions = set;
+      answerByQuestion = Array(set.length).fill(null);
+      selectedSkills = skillNames.filter((skill) => set.some((question) => question.skill === skill));
+      questionIndex = 0;
+      stopTimer();
+      timed = spec.timed;
+      timeExpired = false;
+      timeBudget = timed ? set.length * config.secondsPerQuestion : 0;
+      secondsLeft = timeBudget;
+      renderQuestion();
+      focusHeading("question-title");
+    }
+
+    /* ---------- Timer: runs only while a question is unanswered ---------- */
+    function updateTimerDisplay() {
+      timerDisplay.hidden = !timed;
+      if (!timed) return;
+      timerDisplay.textContent = `Time left ${formatTime(secondsLeft)}`;
+      timerDisplay.classList.toggle("is-low", secondsLeft <= 30);
+    }
+
+    function stopTimer() {
+      if (timerId !== null) {
+        clearInterval(timerId);
+        timerId = null;
+      }
+    }
+
+    function startTimer() {
+      stopTimer();
+      if (!timed) return;
+      timerId = setInterval(() => {
+        secondsLeft -= 1;
+        updateTimerDisplay();
+        if (secondsLeft <= 0) {
+          timeExpired = true;
+          showResults();
+        }
+      }, 1000);
+    }
+
+    /* ---------- Question screen ---------- */
     function renderQuestion() {
       const question = practiceQuestions[questionIndex];
       document.getElementById("question-count").textContent = `Question ${questionIndex + 1} of ${practiceQuestions.length}`;
@@ -1143,6 +1411,7 @@
       const choices = document.getElementById("choices");
       choices.replaceChildren();
       const selectedIndex = answerByQuestion[questionIndex];
+
       question.choices.forEach((choice, index) => {
         const item = document.createElement("li");
         const button = document.createElement("button");
@@ -1163,10 +1432,15 @@
         item.append(button);
         choices.append(item);
       });
+
       document.getElementById("feedback").replaceChildren();
-      document.getElementById("question-actions").hidden = selectedIndex === null;
+      const actions = document.getElementById("question-actions");
+      actions.hidden = selectedIndex === null;
       if (selectedIndex !== null) renderFeedback(question, selectedIndex, document.getElementById("feedback"));
       document.getElementById("next-button").textContent = questionIndex === practiceQuestions.length - 1 ? "See results" : "Next question";
+      if (selectedIndex === null) startTimer();
+      else stopTimer();
+      updateTimerDisplay();
       showScreen(questionScreen);
     }
 
@@ -1209,96 +1483,172 @@
     function selectAnswer(selectedIndex) {
       if (answerByQuestion[questionIndex] !== null) return;
       answerByQuestion[questionIndex] = selectedIndex;
+      const question = practiceQuestions[questionIndex];
+      recordAnswer(question, selectedIndex === question.answerIndex);
       renderQuestion();
-      focusElement("question-title");
+      focusHeading("question-title");
     }
 
+    /* ---------- Results ---------- */
     function showResults() {
+      stopTimer();
+      const total = practiceQuestions.length;
       const totalCorrect = answerByQuestion.reduce((sum, answer, index) => sum + (answer === practiceQuestions[index].answerIndex ? 1 : 0), 0);
+      const unanswered = answerByQuestion.filter((answer) => answer === null).length;
       missedQuestionIndices = practiceQuestions.reduce((indices, question, index) => {
-        if (answerByQuestion[index] !== question.answerIndex) indices.push(index);
+        if (answerByQuestion[index] !== null && answerByQuestion[index] !== question.answerIndex) indices.push(index);
         return indices;
       }, []);
+      if (unanswered < total) recordSet(totalCorrect, total);
+
       document.getElementById("score").replaceChildren();
-      const score = document.createElement("strong");
-      score.textContent = `${totalCorrect}/${practiceQuestions.length}`;
-      const label = document.createElement("span");
-      label.textContent = "correct";
-      document.getElementById("score").append(score, label);
-      document.getElementById("result-summary").textContent = totalCorrect === practiceQuestions.length
-        ? "Excellent work—you got every question right."
-        : "Nice work sticking with it. Review any missed questions to see the reasoning and common traps.";
+      const scoreStrong = document.createElement("strong");
+      scoreStrong.textContent = `${totalCorrect}/${total}`;
+      const scoreText = document.createElement("span");
+      scoreText.textContent = "correct";
+      document.getElementById("score").append(scoreStrong, scoreText);
+
+      const ratio = totalCorrect / total;
+      let summary;
+      if (ratio === 1) summary = "Excellent work—you got every question right.";
+      else if (ratio >= 0.8) summary = "Strong set. Review the few you missed to see the reasoning and common traps.";
+      else if (ratio >= 0.5) summary = "A solid base to build on. The missed questions show exactly where the points are.";
+      else summary = "This set was a tough one, and that is useful to know. Go through the missed questions—the explanations show the reasoning step by step.";
+      if (timeExpired && unanswered > 0) summary = "Time ran out before you reached every question. Unanswered questions count against the score here, as they would on test day.";
+      document.getElementById("result-summary").textContent = summary;
+
+      let timeLine = "";
+      if (timed) {
+        timeLine = timeExpired
+          ? `Time ran out with ${unanswered} ${unanswered === 1 ? "question" : "questions"} unanswered.`
+          : `Finished with ${formatTime(secondsLeft)} left of ${formatTime(timeBudget)}.`;
+      }
+      const timeSummary = document.getElementById("time-summary");
+      timeSummary.hidden = !timed;
+      timeSummary.textContent = timeLine;
+
       const breakdownBody = document.getElementById("breakdown-body");
       breakdownBody.replaceChildren();
-      selectedCategories.forEach((category) => {
-        const categoryQuestions = practiceQuestions.map((question, index) => ({ question, index })).filter((item) => item.question.skill === category);
-        const correct = categoryQuestions.filter(({ question, index }) => answerByQuestion[index] === question.answerIndex).length;
+      const breakdown = selectedSkills.map((skill) => {
+        const skillQuestions = practiceQuestions.map((question, index) => ({ question, index })).filter((item) => item.question.skill === skill);
+        const correct = skillQuestions.filter(({ question, index }) => answerByQuestion[index] === question.answerIndex).length;
+        return { skill, correct, count: skillQuestions.length };
+      });
+      breakdown.forEach(({ skill, correct, count }) => {
         const row = document.createElement("tr");
         const name = document.createElement("th");
         name.scope = "row";
-        name.textContent = category;
+        name.textContent = skill;
         const result = document.createElement("td");
-        result.textContent = `${correct} of ${categoryQuestions.length}`;
+        result.textContent = `${correct} of ${count}`;
         row.append(name, result);
         breakdownBody.append(row);
       });
+
+      // Lowest category: worst ratio, then most questions missed.
+      const weakest = breakdown
+        .filter((item) => item.correct < item.count)
+        .sort((a, b) => (a.correct / a.count) - (b.correct / b.count) || (b.count - b.correct) - (a.count - a.correct))[0];
+      const calloutText = document.getElementById("callout-text");
+      calloutText.replaceChildren();
+      if (weakest) {
+        const name = document.createElement("strong");
+        name.textContent = weakest.skill;
+        calloutText.append(name, ` was your lowest category this set (${weakest.correct} of ${weakest.count}). That’s where a first session would start.`);
+      } else {
+        calloutText.textContent = "A clean set. If you want harder material or a plan for test day, let’s talk.";
+      }
+
+      const resultLines = [
+        `Score: ${totalCorrect}/${total}`,
+        `Mode: ${timed ? `Timed. ${timeLine}` : "Untimed"}`,
+        `Set: ${lastSpec.kind === "missed" ? "Retry of previously missed questions" : `${lastSpec.difficulties.join(", ")} difficulty`}`,
+        "",
+        "By category:",
+        ...breakdown.map(({ skill, correct, count }) => `- ${skill}: ${correct} of ${count}`)
+      ];
+      if (weakest) resultLines.push("", `Lowest category: ${weakest.skill}`);
+      const subject = encodeURIComponent(`SAT ${config.section} practice results`);
+      const tutorBody = [
+        "Hi Mr. Chau,",
+        "",
+        `I just finished an SAT ${config.section} practice set on chaututor.com.`,
+        "",
+        ...resultLines,
+        "",
+        "Student name, grade, and test date:",
+        ""
+      ].join("\n");
+      const selfBody = [`SAT ${config.section} practice results from chaututor.com`, "", ...resultLines].join("\n");
+      document.getElementById("email-tutor-link").href = `mailto:${config.tutorEmail}?subject=${subject}&body=${encodeURIComponent(tutorBody)}`;
+      document.getElementById("email-self-link").href = `mailto:?subject=${subject}&body=${encodeURIComponent(selfBody)}`;
+
       const reviewButton = document.getElementById("review-button");
       reviewButton.disabled = missedQuestionIndices.length === 0;
       reviewButton.textContent = missedQuestionIndices.length === 0 ? "No missed questions to review" : `Review missed questions (${missedQuestionIndices.length})`;
-      reviewButton.classList.toggle("btn-ghost", missedQuestionIndices.length > 0);
-      reviewButton.classList.toggle("btn-primary", missedQuestionIndices.length === 0);
       showScreen(resultsScreen);
-      focusElement("results-title");
+      focusHeading("results-title");
     }
 
+    /* ---------- Review ---------- */
     function renderReview() {
-      const index = missedQuestionIndices[reviewIndex];
-      const question = practiceQuestions[index];
+      const questionIndexToReview = missedQuestionIndices[reviewIndex];
+      const question = practiceQuestions[questionIndexToReview];
       document.getElementById("review-count").textContent = `Missed question ${reviewIndex + 1} of ${missedQuestionIndices.length}`;
       document.getElementById("review-skill").textContent = question.skill;
       document.getElementById("review-question").textContent = question.question;
       const choices = document.getElementById("review-choices");
       choices.replaceChildren();
-      question.choices.forEach((choice, choiceIndex) => {
+      question.choices.forEach((choice, index) => {
         const item = document.createElement("li");
         const answer = document.createElement("div");
         answer.className = "choice review-choice";
-        if (choiceIndex === question.answerIndex) answer.classList.add("is-correct");
-        if (choiceIndex === answerByQuestion[index] && choiceIndex !== question.answerIndex) answer.classList.add("is-incorrect");
+        if (index === question.answerIndex) answer.classList.add("is-correct");
+        if (index === answerByQuestion[questionIndexToReview] && index !== question.answerIndex) answer.classList.add("is-incorrect");
         const key = document.createElement("span");
         key.className = "choice-key";
         key.setAttribute("aria-hidden", "true");
-        key.textContent = String.fromCharCode(65 + choiceIndex);
+        key.textContent = String.fromCharCode(65 + index);
         const text = document.createElement("span");
         text.textContent = choice;
         const status = document.createElement("span");
-        if (choiceIndex === question.answerIndex) status.textContent = " — Correct answer";
-        else if (choiceIndex === answerByQuestion[index]) status.textContent = " — Your answer";
+        if (index === question.answerIndex) status.textContent = " — Correct answer";
+        else if (index === answerByQuestion[questionIndexToReview]) status.textContent = " — Your answer";
         answer.append(key, text, status);
         item.append(answer);
         choices.append(item);
       });
       const explanation = document.getElementById("review-explanation");
       explanation.replaceChildren();
-      renderFeedback(question, answerByQuestion[index], explanation);
+      renderFeedback(question, answerByQuestion[questionIndexToReview], explanation);
       document.getElementById("previous-review-button").disabled = reviewIndex === 0;
       document.getElementById("next-review-button").disabled = reviewIndex === missedQuestionIndices.length - 1;
     }
 
+    /* ---------- Events ---------- */
     document.getElementById("start-button").addEventListener("click", () => {
-      selectedCategories = categoryInputs.filter((input) => input.checked).map((input) => input.value);
-      if (!selectedCategories.length || selectedCategories.length > 4 || !questionCountInput.validity.valid) return;
-      practiceQuestions = createPracticeSet(selectedCategories, Number(questionCountInput.value));
-      answerByQuestion = Array(practiceQuestions.length).fill(null);
-      questionIndex = 0;
-      renderQuestion();
-      focusElement("question-title");
+      if (!updateSelection()) return;
+      startSet({
+        kind: "new",
+        skills: checkedValues(categoryInputs),
+        difficulties: checkedValues(difficultyInputs),
+        count: Number(questionCountInput.value),
+        timed: timedToggle.checked
+      });
+    });
+    document.getElementById("retry-missed-button").addEventListener("click", () => {
+      startSet({ kind: "missed", timed: timedToggle.checked });
+    });
+    document.getElementById("clear-progress-button").addEventListener("click", () => {
+      if (!window.confirm("Clear your saved progress and missed questions on this browser?")) return;
+      try { localStorage.removeItem(config.storageKey); } catch (error) { /* nothing saved */ }
+      renderProgress();
     });
     document.getElementById("next-button").addEventListener("click", () => {
       if (questionIndex < practiceQuestions.length - 1) {
         questionIndex += 1;
         renderQuestion();
-        focusElement("question-title");
+        focusHeading("question-title");
       } else {
         showResults();
       }
@@ -1308,36 +1658,36 @@
       reviewIndex = 0;
       renderReview();
       showScreen(reviewScreen);
-      focusElement("review-question");
+      focusHeading("review-question");
     });
     document.getElementById("back-results-button").addEventListener("click", () => {
       showScreen(resultsScreen);
-      focusElement("results-title");
+      focusHeading("results-title");
     });
     document.getElementById("previous-review-button").addEventListener("click", () => {
       if (reviewIndex > 0) {
         reviewIndex -= 1;
         renderReview();
-        focusElement("review-question");
+        focusHeading("review-question");
       }
     });
     document.getElementById("next-review-button").addEventListener("click", () => {
       if (reviewIndex < missedQuestionIndices.length - 1) {
         reviewIndex += 1;
         renderReview();
-        focusElement("review-question");
+        focusHeading("review-question");
       }
     });
-    document.getElementById("restart-button").addEventListener("click", () => {
-      practiceQuestions = createPracticeSet(selectedCategories, Number(questionCountInput.value));
-      answerByQuestion = Array(practiceQuestions.length).fill(null);
-      questionIndex = 0;
-      renderQuestion();
-      focusElement("question-title");
-    });
-    questionCountInput.addEventListener("input", () => updateCategorySelection());
-    renderCategoryPicker();
-    updateCategorySelection();
+    document.getElementById("restart-button").addEventListener("click", () => startSet(lastSpec));
+    document.getElementById("new-set-button").addEventListener("click", showStart);
+
+    questionCountInput.addEventListener("input", updateSelection);
+    timedToggle.addEventListener("change", updateSelection);
+    document.getElementById("timed-hint").textContent = `About ${config.secondsPerQuestion} seconds per question, like the real test. The clock pauses while you read each explanation.`;
+    skillNames.forEach((skill) => renderOption(categoryOptions, categoryInputs, skill, false));
+    difficultyNames.forEach((difficulty) => renderOption(difficultyOptions, difficultyInputs, difficulty, true));
+    renderProgress();
+    updateSelection();
   </script>
 </body>
 </html>

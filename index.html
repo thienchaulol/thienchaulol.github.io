@@ -146,7 +146,22 @@ section{padding:88px 0;scroll-margin-top:76px}
 }
 .nav-links a:hover{color:var(--accent)}
 .nav .btn{min-height:40px;padding:8px 20px;font-size:.94rem}
-@media (max-width:880px){ .nav-links{display:none} }
+.nav-toggle{display:none}
+@media (max-width:880px){
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;padding:8px 32px 16px;
+    background:var(--paper);border-bottom:1px solid var(--rule);box-shadow:var(--shadow);
+  }
+  .nav-links.open{display:flex}
+  .nav-links li+li{border-top:1px solid var(--rule-soft)}
+  .nav-links a{display:block;padding:12px 0;font-size:1rem}
+  .nav-toggle{
+    display:inline-flex;align-items:center;justify-content:center;flex:none;
+    width:40px;height:40px;padding:0;background:transparent;color:var(--ink);
+    border:1px solid var(--rule);border-radius:var(--r);cursor:pointer;
+  }
+}
 .nav-actions{display:flex;align-items:center;gap:10px}
 .nav-actions .btn{white-space:nowrap}
 .btn-outline{background:transparent;color:var(--accent-deep);border-color:var(--accent)}
@@ -363,6 +378,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
   section{padding:64px 0}
   .hero{padding:64px 0 56px}
   .wrap,.nav-inner{padding:0 20px}
+  .nav-links{padding-left:20px;padding-right:20px}
   .instructor-grid{grid-template-columns:1fr;gap:32px}
   .portrait-frame{max-width:300px}
   .portrait-frame::after{inset:12px -12px -12px 12px}
@@ -412,7 +428,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a href="#top" class="brand">Mr.&nbsp;Chau</a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#approach">Approach</a></li>
       <li><a href="#instructor">About</a></li>
       <li><a href="#subjects">Subjects</a></li>
@@ -423,6 +439,9 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
       <!--<a href="ai.html" class="btn btn-outline nav-ai">AI in My Work</a>-->
       <a href="sat-practice.html" class="btn btn-outline nav-practice">Practice SAT</a>
       <a href="#booking" class="btn btn-primary">Book a call</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14"/></svg>
+      </button>
     </div>
   </div>
 </nav>
@@ -436,7 +455,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
         <div>
           <p class="eyebrow">Active high&nbsp;school teacher &middot; San Francisco Bay Area</p>
           <h1>Math and CS tutoring from someone who teaches it daily.</h1>
-          <p class="lede"></p>
+          <p class="lede">One-on-one help with AP Computer Science A, IB Computer Science, AP Calculus, and the math that leads up to them. Online or in person.</p>
           <div class="hero-cta">
             <a href="#booking" class="btn btn-primary">Schedule a free consultation</a>
             <a href="#process" class="btn btn-ghost">How it works</a>
@@ -476,7 +495,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
       </div>
       <div>
         <p class="eyebrow">Meet your instructor</p>
-        <h2>Hello, </h2>
+        <h2>Hello, I&rsquo;m Mr.&nbsp;Chau.</h2>
         <p>Thien Chau on paper, but students have called me Mr. Chau for years. I teach high school math and computer science full time at an independent school in San Francisco, and I tutor a small number of students outside of that.</p>
         <!--
         <a class="ai-teaser" href="ai.html">
@@ -511,8 +530,8 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
             <span class="ai-teaser-sub">AI does the groundwork, so my time goes to students.</span>
             <span class="ai-teaser-cta">See the map <span aria-hidden="true">&rarr;</span></span>
           </span>
-          -->
         </a>
+        -->
         <ul class="badges">
           <li>M.A. Instructional Design</li>
           <li>B.S. Computer Science</li>
@@ -629,7 +648,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
         <div class="share-copy">
           <p>If your student and I worked together, I&rsquo;d be grateful for a couple of sentences. I read everything before it goes on this page, and I credit you however you ask &mdash; usually something like &ldquo;Parent of a junior.&rdquo; Student names are never published.</p>
         </div>
-        <a class="btn btn-primary" href="https://forms.gle/4vQSSAKNcNwjoRWF9">Share your experience</a>
+        <a class="btn btn-primary" href="https://forms.gle/4vQSSAKNcNwjoRWF9" rel="noopener" target="_blank">Share your experience</a>
       </div>
     </div>
   </section>
@@ -701,6 +720,18 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
+<script>
+/* Mobile menu: toggle the section links below 880px */
+(function(){
+  var t=document.querySelector('.nav-toggle'),m=document.getElementById('nav-links');
+  if(!t||!m)return;
+  function set(open){m.classList.toggle('open',open);t.setAttribute('aria-expanded',open)}
+  t.addEventListener('click',function(){set(!m.classList.contains('open'))});
+  m.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+})();
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -708,6 +739,8 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
   "name": "ChauTutor",
   "alternateName": "Mr. Chau Tutoring",
   "url": "https://chaututor.com/",
+  "image": "https://chaututor.com/images/social-card.jpg",
+  "sameAs": ["https://www.linkedin.com/in/thienchau/"],
   "description": "One-on-one math and computer science tutoring from an active Bay Area high school teacher.",
   "areaServed": { "@type": "Place", "name": "San Francisco Bay Area, California" },
   "availableLanguage": "English",
