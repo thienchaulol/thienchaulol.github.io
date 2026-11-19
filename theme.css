@@ -1,0 +1,88 @@
+/* ============================================================
+   Light / dark theme, shared by every page.
+   Light is each page's own :root. Dark follows the device setting
+   unless the visitor picks a theme with the nav toggle, which
+   theme.js stores and applies as <html data-theme="light|dark">.
+   A page can override any dark token in its own <style> (ai.html does).
+   ============================================================ */
+:root{
+  --on-accent:#FFFFFF;
+  --nav-bg:rgba(251,250,248,.88);
+  --hover-border:#D4CFC4;
+  --danger:#A33E35;
+  --danger-wash:#FBF0EF;
+  --footer-bg:#1A1A18;
+  --footer-rule:transparent;
+  color-scheme:light;
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#ECE9E3;
+    --ink-soft:#CBC6BD;
+    --muted:#9D988F;
+    --paper:#141413;
+    --surface:#1C1C1A;
+    --surface-warm:#242320;
+    --rule:#34322E;
+    --rule-soft:#292825;
+    --accent:#5FBE9F;
+    --accent-deep:#86D3BA;
+    --accent-wash:#1A2C26;
+    --on-accent:#0C1914;
+    --nav-bg:rgba(20,20,19,.85);
+    --hover-border:#4A4741;
+    --danger:#E58378;
+    --danger-wash:#2D1B19;
+    --footer-bg:#0C0C0B;
+    --footer-rule:#2A2926;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 4px 12px rgba(0,0,0,.25);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#ECE9E3;
+  --ink-soft:#CBC6BD;
+  --muted:#9D988F;
+  --paper:#141413;
+  --surface:#1C1C1A;
+  --surface-warm:#242320;
+  --rule:#34322E;
+  --rule-soft:#292825;
+  --accent:#5FBE9F;
+  --accent-deep:#86D3BA;
+  --accent-wash:#1A2C26;
+  --on-accent:#0C1914;
+  --nav-bg:rgba(20,20,19,.85);
+  --hover-border:#4A4741;
+  --danger:#E58378;
+  --danger-wash:#2D1B19;
+  --footer-bg:#0C0C0B;
+  --footer-rule:#2A2926;
+  --shadow:0 1px 2px rgba(0,0,0,.35), 0 4px 12px rgba(0,0,0,.25);
+  color-scheme:dark;
+}
+
+footer{border-top:1px solid var(--footer-rule)}
+
+/* ---------- Toggle button ---------- */
+.theme-toggle{
+  display:inline-flex;align-items:center;justify-content:center;flex:none;
+  width:40px;height:40px;padding:0;
+  background:transparent;color:var(--ink);
+  border:1px solid var(--rule);border-radius:var(--r,8px);cursor:pointer;
+  transition:background-color .2s, border-color .2s;
+}
+.theme-toggle:hover{background:var(--surface-warm);border-color:var(--hover-border)}
+.theme-toggle svg{display:block}
+/* Show the moon in light mode (go dark) and the sun in dark mode (go light). */
+.theme-toggle .icon-sun{display:none}
+:root[data-theme="dark"] .theme-toggle .icon-sun{display:block}
+:root[data-theme="dark"] .theme-toggle .icon-moon{display:none}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun{display:block}
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon{display:none}
+}
+@media (max-width:520px){
+  .theme-toggle{width:36px;height:36px}
+}

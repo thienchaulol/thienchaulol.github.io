@@ -27,6 +27,8 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F6F5C'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='20' fill='%23FBFAF8' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
 
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script>
 <style>
 /* ============================================================
    Design tokens — same as index.html, with a mint paper so this
@@ -57,7 +59,27 @@
   /* page-specific */
   --wire:#C2BBAE;
   --accent-line:#BBD3CA;
+
+  /* light values for tokens this page hard-coded */
+  --nav-bg:rgba(238,247,242,.9);
+  --hover-border:#B9D9C6;
+  --ai-resume-hover:#CDE8D8;
+  --ai-box-hover:#AFD3BE;
+  --ai-mock-ink:#DCD6CB;
+  --ai-mock-bar:#E6E1D8;
+  --ai-mock-warn:#EED9B5;
+  --ai-mock-soft:#EFEBE4;
+  --ai-flag-ink:#8A5A0B;
+  --ai-flag-bg:#F7E8CC;
+  --ai-progress:#D3E3DD;
+  --ai-todo-border:#D9A441;
+  --ai-todo-bg:#FFF8E8;
+  --ai-todo-ink:#7A5A12;
 }
+/* Dark mode: mint-tinted night version of this page's palette (shared tokens come from theme.css) */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#101915;--surface:#16211C;--surface-warm:#1C2A23;--rule:#2A3B33;--rule-soft:#21302A;--accent-wash:#183128;--nav-bg:rgba(16,25,21,.85);--hover-border:#3C5A4C;--wire:#5C6A63;--accent-line:#2F5446;--ai-resume-hover:#1F3D32;--ai-box-hover:#3C5A4C;--ai-mock-ink:#3A3F3C;--ai-mock-bar:#2C322F;--ai-mock-warn:#5A4626;--ai-mock-soft:#262B28;--ai-flag-ink:#F0C67A;--ai-flag-bg:#4A3815;--ai-progress:#2A3B33;--ai-todo-border:#B98A2E;--ai-todo-bg:#2A2312;--ai-todo-ink:#EBCB85}}
+:root[data-theme="dark"]{--paper:#101915;--surface:#16211C;--surface-warm:#1C2A23;--rule:#2A3B33;--rule-soft:#21302A;--accent-wash:#183128;--nav-bg:rgba(16,25,21,.85);--hover-border:#3C5A4C;--wire:#5C6A63;--accent-line:#2F5446;--ai-resume-hover:#1F3D32;--ai-box-hover:#3C5A4C;--ai-mock-ink:#3A3F3C;--ai-mock-bar:#2C322F;--ai-mock-warn:#5A4626;--ai-mock-soft:#262B28;--ai-flag-ink:#F0C67A;--ai-flag-bg:#4A3815;--ai-progress:#2A3B33;--ai-todo-border:#B98A2E;--ai-todo-bg:#2A2312;--ai-todo-ink:#EBCB85}
+
 
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -102,10 +124,10 @@ section{padding:88px 0;scroll-margin-top:76px}
 
 .skip{
   position:absolute;left:16px;top:-60px;z-index:100;
-  background:var(--ink);color:#fff;padding:12px 20px;border-radius:var(--r);
+  background:var(--ink);color:var(--paper);padding:12px 20px;border-radius:var(--r);
   transition:top .15s;
 }
-.skip:focus{top:16px;color:#fff;text-decoration:none}
+.skip:focus{top:16px;color:var(--paper);text-decoration:none}
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
@@ -114,10 +136,10 @@ section{padding:88px 0;scroll-margin-top:76px}
   border:1px solid transparent;cursor:pointer;
   transition:background-color .2s, border-color .2s, transform .2s, opacity .2s;
 }
-.btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{background:var(--accent-deep);color:#fff;text-decoration:none}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-deep);color:var(--on-accent);text-decoration:none}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
-.btn-ghost:hover{background:var(--surface-warm);color:var(--ink);text-decoration:none;border-color:#B9D9C6}
+.btn-ghost:hover{background:var(--surface-warm);color:var(--ink);text-decoration:none;border-color:var(--hover-border)}
 .btn[disabled]{opacity:.38;cursor:default;pointer-events:none}
 @media (prefers-reduced-motion:no-preference){
   .btn-primary:hover{transform:translateY(-1px)}
@@ -126,7 +148,7 @@ section{padding:88px 0;scroll-margin-top:76px}
 /* ---------- Sticky nav (same as index.html) ---------- */
 .nav{
   position:sticky;top:0;z-index:50;
-  background:rgba(238,247,242,.9);
+  background:var(--nav-bg);
   backdrop-filter:saturate(180%) blur(12px);
   -webkit-backdrop-filter:saturate(180%) blur(12px);
   border-bottom:1px solid var(--rule);
@@ -211,7 +233,7 @@ section{padding:88px 0;scroll-margin-top:76px}
   background:var(--accent-wash);color:var(--accent-deep);
   border:1px solid var(--accent-line);
 }
-.ai-resume:hover{background:#CDE8D8;color:var(--accent-deep)}
+.ai-resume:hover{background:var(--ai-resume-hover);color:var(--accent-deep)}
 .ai-resume[hidden]{display:none}
 
 .ai-map{
@@ -270,7 +292,7 @@ section{padding:88px 0;scroll-margin-top:76px}
   scroll-margin-top:96px;
   transition:border-color .2s, box-shadow .2s, opacity .25s, background-color .2s;
 }
-.ai-box:hover{border-color:#AFD3BE;box-shadow:var(--shadow)}
+.ai-box:hover{border-color:var(--ai-box-hover);box-shadow:var(--shadow)}
 .ai-box-title{display:block;font-weight:700;color:var(--ink);font-size:.97rem;line-height:1.3}
 .ai-box-tag{display:block;font-size:.84rem;color:var(--muted);margin-top:3px;line-height:1.4}
 .ai-box.is-active{
@@ -309,8 +331,8 @@ section{padding:88px 0;scroll-margin-top:76px}
   border-radius:var(--r);padding:12px 14px 14px;
 }
 .ai-mock-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}
-.ai-mock-dot{width:16px;height:16px;border-radius:50%;background:#DCD6CB;flex:none}
-.ai-mock-name{height:8px;width:46%;border-radius:4px;background:#DCD6CB}
+.ai-mock-dot{width:16px;height:16px;border-radius:50%;background:var(--ai-mock-ink);flex:none}
+.ai-mock-name{height:8px;width:46%;border-radius:4px;background:var(--ai-mock-ink)}
 .ai-mock-pill{
   margin-left:auto;font-size:.6rem;font-weight:700;letter-spacing:.1em;
   text-transform:uppercase;color:var(--muted);
@@ -321,13 +343,13 @@ section{padding:88px 0;scroll-margin-top:76px}
   text-transform:uppercase;color:var(--muted);margin:10px 0 5px;
 }
 .ai-mock-row{display:flex;align-items:center;gap:8px;margin-bottom:5px}
-.ai-mock-bar{display:block;height:7px;width:var(--w,60%);border-radius:4px;background:#E6E1D8}
-.ai-mock-bar--warn{background:#EED9B5}
-.ai-mock-bar--soft{background:#EFEBE4}
+.ai-mock-bar{display:block;height:7px;width:var(--w,60%);border-radius:4px;background:var(--ai-mock-bar)}
+.ai-mock-bar--warn{background:var(--ai-mock-warn)}
+.ai-mock-bar--soft{background:var(--ai-mock-soft)}
 .ai-mock-ok{margin-left:auto;font-size:.72rem;font-weight:700;color:var(--accent);line-height:1}
 .ai-mock-flag{
   margin-left:auto;font-size:.62rem;font-weight:800;line-height:1;
-  color:#8A5A0B;background:#F7E8CC;border-radius:50%;
+  color:var(--ai-flag-ink);background:var(--ai-flag-bg);border-radius:50%;
   width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;
 }
 .ai-mock-files{display:flex;gap:6px}
@@ -368,7 +390,7 @@ section{padding:88px 0;scroll-margin-top:76px}
 .ai-loop-label:hover{border-color:var(--accent)}
 .ai-tip{
   position:absolute;z-index:6;left:0;top:0;width:250px;
-  background:var(--ink);color:#fff;
+  background:var(--footer-bg);color:#fff;
   font-size:.84rem;line-height:1.45;
   padding:10px 12px;border-radius:var(--r);
   box-shadow:0 8px 24px rgba(26,26,24,.18);
@@ -435,7 +457,7 @@ section{padding:88px 0;scroll-margin-top:76px}
   color:var(--accent);margin:0 0 6px;
 }
 .ai-d-line{margin:0;color:var(--ink);font-family:var(--serif);font-size:1.08rem;line-height:1.4}
-.ai-d-progress{display:block;height:3px;background:#D3E3DD;border-radius:2px;margin-top:12px;overflow:hidden}
+.ai-d-progress{display:block;height:3px;background:var(--ai-progress);border-radius:2px;margin-top:12px;overflow:hidden}
 .ai-d-progress span{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
 #ai-d-title{font-size:1.55rem;margin:0 0 4px;outline:none}
 .ai-d-tag{font-family:var(--serif);font-style:italic;color:var(--muted);margin:0 0 16px;font-size:1.02rem}
@@ -449,7 +471,7 @@ section{padding:88px 0;scroll-margin-top:76px}
 .ai-d-row dd{margin:0;font-size:.95rem;color:var(--ink-soft);line-height:1.55}
 .ai-d-row--guard dd{border-left:3px solid var(--accent);padding-left:12px;color:var(--ink)}
 .ai-todo{
-  border:1px dashed #D9A441;background:#FFF8E8;color:#7A5A12;
+  border:1px dashed var(--ai-todo-border);background:var(--ai-todo-bg);color:var(--ai-todo-ink);
   padding:8px 10px;border-radius:6px;
 }
 .ai-d-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
@@ -465,7 +487,7 @@ section{padding:88px 0;scroll-margin-top:76px}
 .ai-d-hint{flex-basis:100%;margin:2px 0 0;font-size:.78rem;color:var(--muted)}
 
 /* ---------- Footer (same as index.html) ---------- */
-footer{background:var(--ink);color:#fff;padding:64px 0 32px;text-align:center}
+footer{background:var(--footer-bg);color:#fff;padding:64px 0 32px;text-align:center}
 footer h2{color:#fff;font-size:1.5rem;margin-bottom:8px}
 footer p{color:rgba(255,255,255,.72);font-size:.94rem}
 .footer-links{margin:28px 0;display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
@@ -531,7 +553,8 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
     <a href="index.html" class="brand">Mr.&nbsp;Chau</a>
     <div class="nav-actions">
       <a href="index.html" class="btn btn-outline"><span aria-hidden="true">&larr;</span>&nbsp;Main site</a>
-      <a href="mailto:thienchau010@gmail.com" class="btn btn-primary">Get in touch</a>
+      <a href="index.html#booking" class="btn btn-primary">Book a call</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode"><svg class="icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.2 10.6A6.6 6.6 0 0 1 7.4 2.8a6.6 6.6 0 1 0 7.8 7.8z"/></svg><svg class="icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M9 1.6v1.6M9 14.8v1.6M1.6 9h1.6M14.8 9h1.6M3.8 3.8l1.1 1.1M13.1 13.1l1.1 1.1M3.8 14.2l1.1-1.1M13.1 4.9l1.1-1.1"/></svg></button>
     </div>
   </div>
 </nav>
@@ -586,10 +609,10 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
         <svg class="ai-wires" id="ai-wires" aria-hidden="true" focusable="false">
           <defs>
             <marker id="ai-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">
-              <path d="M0,0 L10,5 L0,10 z" fill="#C2BBAE"/>
+              <path d="M0,0 L10,5 L0,10 z" style="fill:var(--wire)"/>
             </marker>
             <marker id="ai-arrow-lit" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
-              <path d="M0,0 L10,5 L0,10 z" fill="#1F6F5C"/>
+              <path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/>
             </marker>
           </defs>
           <path id="c-out" class="ai-conn"/>
@@ -722,7 +745,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
     <h2>Mr. Chau</h2>
     <p>Mathematics &amp; Computer Science &middot; San Francisco Bay Area</p>
     <div class="footer-links">
-      <a href="mailto:thienchau010@gmail.com">Email</a>
+      <a href="index.html#booking">Book a call</a>
       <a href="https://www.linkedin.com/in/thienchau/" rel="noopener" target="_blank">LinkedIn</a>
       <a href="index.html">Main site</a>
     </div>

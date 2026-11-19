@@ -14,6 +14,12 @@
   <meta property="og:url" content="https://chaututor.com/sat-reading-writing.html">
   <meta property="og:image" content="https://chaututor.com/images/social-card.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SAT Reading and Writing Practice — Mr. Chau">
+  <meta name="twitter:description" content="Original SAT-style Reading and Writing questions by category, with clear explanations. Independent practice, not official SAT content.">
+  <meta name="twitter:image" content="https://chaututor.com/images/social-card.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F6F5C'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='20' fill='%23FBFAF8' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script>
   <style>
     :root{
       --ink:#1A1A18;--ink-soft:#403D38;--muted:#6B6862;
@@ -37,17 +43,17 @@
     a:hover{color:var(--accent-deep);text-decoration:underline}
     :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
     .wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
-    .skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:12px 20px;border-radius:var(--r)}
-    .skip:focus{top:16px;color:#fff;text-decoration:none}
+    .skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--ink);color:var(--paper);padding:12px 20px;border-radius:var(--r)}
+    .skip:focus{top:16px;color:var(--paper);text-decoration:none}
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 28px;border-radius:var(--r);font:600 1rem var(--sans);border:1px solid transparent;cursor:pointer;transition:background-color .2s,border-color .2s,transform .2s}
-    .btn-primary{background:var(--accent);color:#fff}
-    .btn-primary:hover{background:var(--accent-deep);color:#fff;text-decoration:none}
+    .btn-primary{background:var(--accent);color:var(--on-accent)}
+    .btn-primary:hover{background:var(--accent-deep);color:var(--on-accent);text-decoration:none}
     .btn-ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
-    .btn-ghost:hover{background:var(--surface-warm);color:var(--ink);text-decoration:none;border-color:#D4CFC4}
+    .btn-ghost:hover{background:var(--surface-warm);color:var(--ink);text-decoration:none;border-color:var(--hover-border)}
     .btn-outline{background:transparent;color:var(--accent-deep);border-color:var(--accent)}
     .btn-outline:hover{background:var(--accent-wash);color:var(--accent-deep);text-decoration:none;border-color:var(--accent)}
     .btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
-    .nav{position:sticky;top:0;z-index:50;background:rgba(251,250,248,.92);border-bottom:1px solid var(--rule);backdrop-filter:saturate(180%) blur(12px)}
+    .nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);border-bottom:1px solid var(--rule);backdrop-filter:saturate(180%) blur(12px)}
     .nav-inner{max-width:var(--wrap);margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:24px;min-height:64px}
     .brand{font:600 1.15rem var(--serif);color:var(--ink);margin-right:auto;white-space:nowrap}
     .brand:hover{color:var(--ink);text-decoration:none}
@@ -84,17 +90,17 @@
     .question-title{font-family:var(--sans);font-size:1.08rem;line-height:1.65;font-weight:600;margin-bottom:22px;white-space:pre-line}
     .choices{display:grid;gap:10px;margin:0;padding:0;list-style:none}
     .choice{display:flex;align-items:flex-start;gap:14px;width:100%;min-height:52px;padding:13px 16px;text-align:left;background:var(--surface);color:var(--ink-soft);border:1px solid var(--rule);border-radius:var(--r);font:inherit;cursor:pointer}
-    .choice:hover:not(:disabled){background:var(--surface-warm);border-color:#D4CFC4}
+    .choice:hover:not(:disabled){background:var(--surface-warm);border-color:var(--hover-border)}
     .choice:disabled{cursor:default}
     .review-choice{cursor:default}
     .choice-key{display:inline-flex;align-items:center;justify-content:center;flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--rule);color:var(--ink);font-size:.82rem;font-weight:700}
     .choice.is-correct{border-color:var(--accent);background:var(--accent-wash);color:var(--ink)}
-    .choice.is-correct .choice-key{border-color:var(--accent);background:var(--accent);color:#fff}
-    .choice.is-incorrect{border-color:#A33E35;background:#FBF0EF}
-    .choice.is-incorrect .choice-key{border-color:#A33E35;background:#A33E35;color:#fff}
-    .feedback{margin-top:28px;padding:22px;border:1px solid var(--rule);border-radius:var(--r);background:#fff}
+    .choice.is-correct .choice-key{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+    .choice.is-incorrect{border-color:var(--danger);background:var(--danger-wash)}
+    .choice.is-incorrect .choice-key{border-color:var(--danger);background:var(--danger);color:var(--on-accent)}
+    .feedback{margin-top:28px;padding:22px;border:1px solid var(--rule);border-radius:var(--r);background:var(--surface)}
     .feedback.is-correct{border-left:4px solid var(--accent)}
-    .feedback.is-incorrect{border-left:4px solid #A33E35}
+    .feedback.is-incorrect{border-left:4px solid var(--danger)}
     .feedback h3{font-family:var(--sans);font-size:1.05rem;margin-bottom:12px}
     .feedback h4{font-size:.95rem;color:var(--ink);margin:20px 0 8px}
     .feedback ol,.feedback ul{padding-left:22px;margin:0}
@@ -116,7 +122,7 @@
     .callout p{margin:0}
     .callout a{font-weight:700}
     [hidden]{display:none!important}
-    footer{background:var(--ink);color:rgba(255,255,255,.72);padding:25px 0;text-align:center;font-size:.86rem}
+    footer{background:var(--footer-bg);color:rgba(255,255,255,.72);padding:25px 0;text-align:center;font-size:.86rem}
     footer p{margin:0}
     footer a{color:#fff}
     @media(max-width:700px){.wrap,.nav-inner{padding:0 20px}main{padding:32px 0 56px}.nav-inner{gap:14px}.category-options{grid-template-columns:1fr}.result-actions{flex-direction:column}.result-actions .btn{width:100%}}
@@ -144,7 +150,7 @@
     .timed-option input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--accent);flex:none}
     .option-hint{display:block;color:var(--muted);font-size:.9rem}
     .timer{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
-    .timer.is-low{color:#A33E35}
+    .timer.is-low{color:var(--danger)}
     .time-summary{color:var(--muted)}
     .callout-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
     .callout .fine-print{margin-top:12px}
@@ -164,6 +170,7 @@
       <div class="nav-actions">
         <a href="index.html" class="btn btn-outline"><span aria-hidden="true">&larr;</span>&nbsp;Main site</a>
         <a href="index.html#booking" class="btn btn-primary">Book a call</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode"><svg class="icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.2 10.6A6.6 6.6 0 0 1 7.4 2.8a6.6 6.6 0 1 0 7.8 7.8z"/></svg><svg class="icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M9 1.6v1.6M9 14.8v1.6M1.6 9h1.6M14.8 9h1.6M3.8 3.8l1.1 1.1M13.1 13.1l1.1 1.1M3.8 14.2l1.1-1.1M13.1 4.9l1.1-1.1"/></svg></button>
       </div>
     </div>
   </nav>
