@@ -1,0 +1,2582 @@
+[
+  {
+    "name": "Harvard University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?166027-Harvard-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 740,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 780,
+        "sat_25": 1460,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0501,
+        "undergraduate_enrollment": 6099,
+        "applicants": 40248,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 780,
+        "sat_25": 1480,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0401,
+        "undergraduate_enrollment": 7938,
+        "applicants": 57786,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 780,
+        "sat_25": 1490,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0324,
+        "undergraduate_enrollment": 7973,
+        "applicants": 61221,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1500,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0345,
+        "undergraduate_enrollment": 7755,
+        "applicants": 56937,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1510,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0365,
+        "undergraduate_enrollment": 7601,
+        "applicants": 54008,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Stanford University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?243744-Stanford-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 720,
+        "sat_math_75": 800,
+        "sat_reading_25": 700,
+        "sat_reading_75": 770,
+        "sat_25": 1420,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0519,
+        "undergraduate_enrollment": 6366,
+        "applicants": 45227,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1470,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0395,
+        "undergraduate_enrollment": 7645,
+        "applicants": 55471,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 780,
+        "sat_25": 1500,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0368,
+        "undergraduate_enrollment": 7761,
+        "applicants": 56378,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1510,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0391,
+        "undergraduate_enrollment": 7841,
+        "applicants": 53733,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1510,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0361,
+        "undergraduate_enrollment": 7554,
+        "applicants": 57326,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Massachusetts Institute of Technology",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?166683-Massachusetts-Institute-of-Technology"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 780,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 780,
+        "sat_25": 1510,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0726,
+        "undergraduate_enrollment": 4360,
+        "applicants": 20075,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0411,
+        "undergraduate_enrollment": 4629,
+        "applicants": 33240,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 790,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1530,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0396,
+        "undergraduate_enrollment": 4638,
+        "applicants": 33767,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 780,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 780,
+        "sat_25": 1510,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.048,
+        "undergraduate_enrollment": 4571,
+        "applicants": 26914,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 780,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1520,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0455,
+        "undergraduate_enrollment": 4535,
+        "applicants": 28232,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Yale University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?130794-Yale-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 740,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 780,
+        "sat_25": 1460,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0653,
+        "undergraduate_enrollment": 4701,
+        "applicants": 35220,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 780,
+        "sat_25": 1480,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0531,
+        "undergraduate_enrollment": 6535,
+        "applicants": 47240,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1500,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0457,
+        "undergraduate_enrollment": 6639,
+        "applicants": 50060,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1500,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.045,
+        "undergraduate_enrollment": 6811,
+        "applicants": 51803,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 740,
+        "sat_math_75": 790,
+        "sat_reading_25": 730,
+        "sat_reading_75": 780,
+        "sat_25": 1470,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0387,
+        "undergraduate_enrollment": 6758,
+        "applicants": 57517,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Princeton University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?186131-Princeton-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 740,
+        "sat_math_75": 800,
+        "sat_reading_25": 710,
+        "sat_reading_75": 770,
+        "sat_25": 1450,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0563,
+        "undergraduate_enrollment": 4688,
+        "applicants": 32835,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 740,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1460,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0438,
+        "undergraduate_enrollment": 5236,
+        "applicants": 37601,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1500,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.057,
+        "undergraduate_enrollment": 5527,
+        "applicants": 38019,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1500,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.045,
+        "undergraduate_enrollment": 5579,
+        "applicants": 39644,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1510,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0462,
+        "undergraduate_enrollment": 5709,
+        "applicants": 40468,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Columbia University in the City of New York",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?190150-Columbia-University-in-the-City-of-New-York"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 740,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1460,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0666,
+        "undergraduate_enrollment": 8148,
+        "applicants": 40462,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1470,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0413,
+        "undergraduate_enrollment": 8833,
+        "applicants": 61110,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 780,
+        "sat_25": 1490,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0395,
+        "undergraduate_enrollment": 8902,
+        "applicants": 60879,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1490,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0423,
+        "undergraduate_enrollment": 8899,
+        "applicants": 57613,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1510,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0399,
+        "undergraduate_enrollment": 8973,
+        "applicants": 60115,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "University of Pennsylvania",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?215062-University-of-Pennsylvania"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 710,
+        "sat_reading_75": 770,
+        "sat_25": 1460,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0898,
+        "undergraduate_enrollment": 10507,
+        "applicants": 42205,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1480,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0587,
+        "undergraduate_enrollment": 10644,
+        "applicants": 56332,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.065,
+        "undergraduate_enrollment": 10572,
+        "applicants": 54588,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0587,
+        "undergraduate_enrollment": 10768,
+        "applicants": 59465,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 770,
+        "sat_25": 1510,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.054,
+        "undergraduate_enrollment": 10650,
+        "applicants": 65226,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Brown University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?217156-Brown-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 730,
+        "sat_math_75": 790,
+        "sat_reading_25": 710,
+        "sat_reading_75": 770,
+        "sat_25": 1440,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0767,
+        "undergraduate_enrollment": 6632,
+        "applicants": 36793,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 740,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1460,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0551,
+        "undergraduate_enrollment": 7125,
+        "applicants": 46568,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 780,
+        "sat_25": 1490,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0506,
+        "undergraduate_enrollment": 7222,
+        "applicants": 50649,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 770,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0523,
+        "undergraduate_enrollment": 7273,
+        "applicants": 51316,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1510,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0539,
+        "undergraduate_enrollment": 7226,
+        "applicants": 48904,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Cornell University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?190415-Cornell-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 720,
+        "sat_math_75": 790,
+        "sat_reading_25": 680,
+        "sat_reading_75": 750,
+        "sat_25": 1400,
+        "sat_75": 1540,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1071,
+        "undergraduate_enrollment": 14741,
+        "applicants": 51500,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 700,
+        "sat_reading_75": 760,
+        "sat_25": 1450,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0869,
+        "undergraduate_enrollment": 15451,
+        "applicants": 67380,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 710,
+        "sat_reading_75": 770,
+        "sat_25": 1470,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0747,
+        "undergraduate_enrollment": 15676,
+        "applicants": 69195,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 760,
+        "sat_math_75": 790,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1480,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0816,
+        "undergraduate_enrollment": 15935,
+        "applicants": 65635,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0876,
+        "undergraduate_enrollment": 15995,
+        "applicants": 62993,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Dartmouth College",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?182670-Dartmouth-College"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 730,
+        "sat_math_75": 790,
+        "sat_reading_25": 710,
+        "sat_reading_75": 770,
+        "sat_25": 1440,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0922,
+        "undergraduate_enrollment": 4146,
+        "applicants": 21392,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 730,
+        "sat_math_75": 790,
+        "sat_reading_25": 710,
+        "sat_reading_75": 770,
+        "sat_25": 1440,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0617,
+        "undergraduate_enrollment": 4533,
+        "applicants": 28356,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1500,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0638,
+        "undergraduate_enrollment": 4412,
+        "applicants": 28336,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 760,
+        "sat_math_75": 790,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0623,
+        "undergraduate_enrollment": 4367,
+        "applicants": 28841,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 760,
+        "sat_math_75": 790,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.054,
+        "undergraduate_enrollment": 4541,
+        "applicants": 31656,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Duke University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?198419-Duke-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1470,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0774,
+        "undergraduate_enrollment": 6650,
+        "applicants": 39639,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 743,
+        "sat_math_75": 793,
+        "sat_reading_25": 725,
+        "sat_reading_75": 765,
+        "sat_25": 1468,
+        "sat_75": 1558,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0589,
+        "undergraduate_enrollment": 6815,
+        "applicants": 49703,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1490,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0635,
+        "undergraduate_enrollment": 6570,
+        "applicants": 50016,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 770,
+        "sat_25": 1510,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0678,
+        "undergraduate_enrollment": 6417,
+        "applicants": 46365,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 770,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0571,
+        "undergraduate_enrollment": 6442,
+        "applicants": 51795,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "University of Chicago",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?144050-University-of-Chicago"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0731,
+        "undergraduate_enrollment": 7010,
+        "applicants": 34350,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1510,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0648,
+        "undergraduate_enrollment": 7558,
+        "applicants": 37974,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1500,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0543,
+        "undergraduate_enrollment": 7511,
+        "applicants": 37522,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 770,
+        "sat_25": 1510,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0479,
+        "undergraduate_enrollment": 7540,
+        "applicants": 38631,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 780,
+        "sat_25": 1510,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0448,
+        "undergraduate_enrollment": 7569,
+        "applicants": 43612,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "University of California-Berkeley",
+    "control": "public",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?110635-University-of-California-Berkeley"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 660,
+        "sat_math_75": 790,
+        "sat_reading_25": 650,
+        "sat_reading_75": 740,
+        "sat_25": 1310,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1748,
+        "undergraduate_enrollment": 30796,
+        "applicants": 88062,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1444,
+        "undergraduate_enrollment": 31811,
+        "applicants": 112843,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1133,
+        "undergraduate_enrollment": 32475,
+        "applicants": 128209,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1166,
+        "undergraduate_enrollment": 33073,
+        "applicants": 125910,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1098,
+        "undergraduate_enrollment": 33068,
+        "applicants": 124242,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "University of California-Los Angeles",
+    "control": "public",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?110662-University-of-California-Los-Angeles"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1433,
+        "undergraduate_enrollment": 31636,
+        "applicants": 108870,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1077,
+        "undergraduate_enrollment": 32122,
+        "applicants": 139489,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0857,
+        "undergraduate_enrollment": 32423,
+        "applicants": 149801,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0873,
+        "undergraduate_enrollment": 33040,
+        "applicants": 145903,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0897,
+        "undergraduate_enrollment": 33475,
+        "applicants": 146272,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "University of Michigan-Ann Arbor",
+    "control": "public",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?170976-University-of-Michigan-Ann-Arbor"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 680,
+        "sat_math_75": 780,
+        "sat_reading_25": 660,
+        "sat_reading_75": 740,
+        "sat_25": 1340,
+        "sat_75": 1520,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.2611,
+        "undergraduate_enrollment": 31189,
+        "applicants": 65021,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.2015,
+        "undergraduate_enrollment": 32063,
+        "applicants": 79743,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 680,
+        "sat_math_75": 780,
+        "sat_reading_25": 670,
+        "sat_reading_75": 750,
+        "sat_25": 1350,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1769,
+        "undergraduate_enrollment": 32448,
+        "applicants": 84289,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 680,
+        "sat_math_75": 780,
+        "sat_reading_25": 670,
+        "sat_reading_75": 750,
+        "sat_25": 1350,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1794,
+        "undergraduate_enrollment": 33488,
+        "applicants": 87632,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 680,
+        "sat_math_75": 780,
+        "sat_reading_25": 680,
+        "sat_reading_75": 750,
+        "sat_25": 1360,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1564,
+        "undergraduate_enrollment": 34177,
+        "applicants": 98310,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "New York University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?193900-New-York-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 700,
+        "sat_math_75": 800,
+        "sat_reading_25": 670,
+        "sat_reading_75": 740,
+        "sat_25": 1370,
+        "sat_75": 1540,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.2109,
+        "undergraduate_enrollment": 27276,
+        "applicants": 80210,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 700,
+        "sat_reading_75": 770,
+        "sat_25": 1450,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1296,
+        "undergraduate_enrollment": 28556,
+        "applicants": 95517,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1470,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1246,
+        "undergraduate_enrollment": 29136,
+        "applicants": 100662,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1480,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0941,
+        "undergraduate_enrollment": 29430,
+        "applicants": 113578,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 760,
+        "sat_25": 1480,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0923,
+        "undergraduate_enrollment": 28663,
+        "applicants": 110807,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "University of Southern California",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?123961-University-of-Southern-California"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 680,
+        "sat_math_75": 790,
+        "sat_reading_25": 660,
+        "sat_reading_75": 740,
+        "sat_25": 1340,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1611,
+        "undergraduate_enrollment": 19521,
+        "applicants": 59712,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 720,
+        "sat_math_75": 790,
+        "sat_reading_25": 690,
+        "sat_reading_75": 750,
+        "sat_25": 1410,
+        "sat_75": 1540,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1251,
+        "undergraduate_enrollment": 20619,
+        "applicants": 71031,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 740,
+        "sat_math_75": 790,
+        "sat_reading_25": 710,
+        "sat_reading_75": 760,
+        "sat_25": 1450,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1202,
+        "undergraduate_enrollment": 20505,
+        "applicants": 69062,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 740,
+        "sat_math_75": 790,
+        "sat_reading_25": 700,
+        "sat_reading_75": 760,
+        "sat_25": 1440,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1002,
+        "undergraduate_enrollment": 20817,
+        "applicants": 80808,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 740,
+        "sat_math_75": 790,
+        "sat_reading_25": 710,
+        "sat_reading_75": 760,
+        "sat_25": 1450,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0981,
+        "undergraduate_enrollment": 20443,
+        "applicants": 82027,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Northwestern University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?147767-Northwestern-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 730,
+        "sat_math_75": 790,
+        "sat_reading_25": 700,
+        "sat_reading_75": 760,
+        "sat_25": 1430,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0931,
+        "undergraduate_enrollment": 8401,
+        "applicants": 39263,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1470,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0697,
+        "undergraduate_enrollment": 8691,
+        "applicants": 47636,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1490,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0721,
+        "undergraduate_enrollment": 8837,
+        "applicants": 51261,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 760,
+        "sat_math_75": 790,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1490,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0715,
+        "undergraduate_enrollment": 8960,
+        "applicants": 51769,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 770,
+        "sat_25": 1510,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0769,
+        "undergraduate_enrollment": 9201,
+        "applicants": 49474,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Johns Hopkins University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?162928-Johns-Hopkins-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 760,
+        "sat_25": 1470,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1106,
+        "undergraduate_enrollment": 5752,
+        "applicants": 30115,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": null,
+        "sat_math_75": null,
+        "sat_reading_25": null,
+        "sat_reading_75": null,
+        "sat_25": null,
+        "sat_75": null,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0752,
+        "undergraduate_enrollment": 5727,
+        "applicants": 39515,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 780,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 770,
+        "sat_25": 1520,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0752,
+        "undergraduate_enrollment": 5643,
+        "applicants": 37844,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 780,
+        "sat_math_75": 800,
+        "sat_reading_25": 750,
+        "sat_reading_75": 780,
+        "sat_25": 1530,
+        "sat_75": 1580,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0756,
+        "undergraduate_enrollment": 5617,
+        "applicants": 38926,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 780,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 770,
+        "sat_25": 1520,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0644,
+        "undergraduate_enrollment": 5693,
+        "applicants": 45895,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "The University of Texas at Austin",
+    "control": "public",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?228778-The-University-of-Texas-at-Austin"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 600,
+        "sat_math_75": 750,
+        "sat_reading_25": 610,
+        "sat_reading_75": 720,
+        "sat_25": 1210,
+        "sat_75": 1470,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.3195,
+        "undergraduate_enrollment": 39624,
+        "applicants": 57241,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 610,
+        "sat_math_75": 770,
+        "sat_reading_25": 620,
+        "sat_reading_75": 730,
+        "sat_25": 1230,
+        "sat_75": 1500,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.2875,
+        "undergraduate_enrollment": 40506,
+        "applicants": 66077,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 610,
+        "sat_math_75": 770,
+        "sat_reading_25": 620,
+        "sat_reading_75": 730,
+        "sat_25": 1230,
+        "sat_75": 1500,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.3135,
+        "undergraduate_enrollment": 40980,
+        "applicants": 60055,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 610,
+        "sat_math_75": 760,
+        "sat_reading_25": 620,
+        "sat_reading_75": 730,
+        "sat_25": 1230,
+        "sat_75": 1490,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.2912,
+        "undergraduate_enrollment": 42100,
+        "applicants": 66109,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 620,
+        "sat_math_75": 770,
+        "sat_reading_25": 630,
+        "sat_reading_75": 740,
+        "sat_25": 1250,
+        "sat_75": 1510,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.2664,
+        "undergraduate_enrollment": 42855,
+        "applicants": 72885,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Rice University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?227757-Rice-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 710,
+        "sat_reading_75": 770,
+        "sat_25": 1460,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1089,
+        "undergraduate_enrollment": 4052,
+        "applicants": 23455,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1490,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0948,
+        "undergraduate_enrollment": 4240,
+        "applicants": 29544,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1490,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0868,
+        "undergraduate_enrollment": 4480,
+        "applicants": 31443,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0788,
+        "undergraduate_enrollment": 4562,
+        "applicants": 31059,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 740,
+        "sat_reading_75": 770,
+        "sat_25": 1510,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.08,
+        "undergraduate_enrollment": 4776,
+        "applicants": 32473,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Vanderbilt University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?221999-Vanderbilt-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 750,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1470,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1162,
+        "undergraduate_enrollment": 7052,
+        "applicants": 36646,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1480,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0714,
+        "undergraduate_enrollment": 7104,
+        "applicants": 47152,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1490,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0667,
+        "undergraduate_enrollment": 7144,
+        "applicants": 46377,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 770,
+        "sat_math_75": 790,
+        "sat_reading_25": 740,
+        "sat_reading_75": 770,
+        "sat_25": 1510,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0628,
+        "undergraduate_enrollment": 7143,
+        "applicants": 45313,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.0586,
+        "undergraduate_enrollment": 7208,
+        "applicants": 45409,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Emory University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?139658-Emory-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 700,
+        "sat_math_75": 790,
+        "sat_reading_25": 680,
+        "sat_reading_75": 740,
+        "sat_25": 1380,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1917,
+        "undergraduate_enrollment": 6978,
+        "applicants": 28211,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 730,
+        "sat_math_75": 790,
+        "sat_reading_25": 690,
+        "sat_reading_75": 750,
+        "sat_25": 1420,
+        "sat_75": 1540,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1305,
+        "undergraduate_enrollment": 7050,
+        "applicants": 33435,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 730,
+        "sat_math_75": 790,
+        "sat_reading_25": 700,
+        "sat_reading_75": 760,
+        "sat_25": 1430,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1135,
+        "undergraduate_enrollment": 7017,
+        "applicants": 33179,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 750,
+        "sat_math_75": 790,
+        "sat_reading_25": 710,
+        "sat_reading_75": 760,
+        "sat_25": 1460,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.111,
+        "undergraduate_enrollment": 7275,
+        "applicants": 31929,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 750,
+        "sat_math_75": 790,
+        "sat_reading_25": 720,
+        "sat_reading_75": 760,
+        "sat_25": 1470,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1065,
+        "undergraduate_enrollment": 7298,
+        "applicants": 33450,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Georgetown University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?131496-Georgetown-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 690,
+        "sat_math_75": 790,
+        "sat_reading_25": 690,
+        "sat_reading_75": 760,
+        "sat_25": 1380,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1681,
+        "undergraduate_enrollment": 7119,
+        "applicants": 21190,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 710,
+        "sat_math_75": 780,
+        "sat_reading_25": 700,
+        "sat_reading_75": 770,
+        "sat_25": 1410,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1198,
+        "undergraduate_enrollment": 7395,
+        "applicants": 27629,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 710,
+        "sat_math_75": 790,
+        "sat_reading_25": 700,
+        "sat_reading_75": 770,
+        "sat_25": 1410,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1223,
+        "undergraduate_enrollment": 7343,
+        "applicants": 26638,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 690,
+        "sat_math_75": 780,
+        "sat_reading_25": 700,
+        "sat_reading_75": 770,
+        "sat_25": 1390,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1308,
+        "undergraduate_enrollment": 7462,
+        "applicants": 25485,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 690,
+        "sat_math_75": 780,
+        "sat_reading_25": 700,
+        "sat_reading_75": 770,
+        "sat_25": 1390,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1291,
+        "undergraduate_enrollment": 7569,
+        "applicants": 26131,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Carnegie Mellon University",
+    "control": "private",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?211440-Carnegie-Mellon-University"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 760,
+        "sat_math_75": 800,
+        "sat_reading_25": 700,
+        "sat_reading_75": 760,
+        "sat_25": 1460,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1727,
+        "undergraduate_enrollment": 6539,
+        "applicants": 26189,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 710,
+        "sat_reading_75": 760,
+        "sat_25": 1480,
+        "sat_75": 1560,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1354,
+        "undergraduate_enrollment": 6880,
+        "applicants": 32896,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 720,
+        "sat_reading_75": 770,
+        "sat_25": 1490,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.113,
+        "undergraduate_enrollment": 7005,
+        "applicants": 34261,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.114,
+        "undergraduate_enrollment": 7187,
+        "applicants": 33707,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 770,
+        "sat_math_75": 800,
+        "sat_reading_25": 730,
+        "sat_reading_75": 770,
+        "sat_25": 1500,
+        "sat_75": 1570,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1166,
+        "undergraduate_enrollment": 7304,
+        "applicants": 33941,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "Georgia Institute of Technology-Main Campus",
+    "control": "public",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?139755-Georgia-Institute-of-Technology-Main-Campus"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 700,
+        "sat_math_75": 790,
+        "sat_reading_25": 670,
+        "sat_reading_75": 740,
+        "sat_25": 1370,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.2134,
+        "undergraduate_enrollment": 15743,
+        "applicants": 40852,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 680,
+        "sat_math_75": 770,
+        "sat_reading_25": 630,
+        "sat_reading_75": 730,
+        "sat_25": 1310,
+        "sat_75": 1500,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1596,
+        "undergraduate_enrollment": 16552,
+        "applicants": 44048,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 700,
+        "sat_math_75": 790,
+        "sat_reading_25": 670,
+        "sat_reading_75": 760,
+        "sat_25": 1370,
+        "sat_75": 1550,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1713,
+        "undergraduate_enrollment": 17379,
+        "applicants": 50610,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 680,
+        "sat_math_75": 790,
+        "sat_reading_25": 650,
+        "sat_reading_75": 740,
+        "sat_25": 1330,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1646,
+        "undergraduate_enrollment": 18260,
+        "applicants": 52377,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 690,
+        "sat_math_75": 790,
+        "sat_reading_25": 680,
+        "sat_reading_75": 750,
+        "sat_25": 1370,
+        "sat_75": 1540,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1407,
+        "undergraduate_enrollment": 18785,
+        "applicants": 59789,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "University of Virginia-Main Campus",
+    "control": "public",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?234076-University-of-Virginia-Main-Campus"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 660,
+        "sat_math_75": 770,
+        "sat_reading_25": 660,
+        "sat_reading_75": 740,
+        "sat_25": 1320,
+        "sat_75": 1510,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.2258,
+        "undergraduate_enrollment": 17076,
+        "applicants": 40879,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 690,
+        "sat_math_75": 750,
+        "sat_reading_25": 690,
+        "sat_reading_75": 750,
+        "sat_25": 1380,
+        "sat_75": 1500,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.2074,
+        "undergraduate_enrollment": 17041,
+        "applicants": 47971,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 710,
+        "sat_math_75": 790,
+        "sat_reading_25": 690,
+        "sat_reading_75": 750,
+        "sat_25": 1400,
+        "sat_75": 1540,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1866,
+        "undergraduate_enrollment": 17103,
+        "applicants": 50926,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 710,
+        "sat_math_75": 780,
+        "sat_reading_25": 700,
+        "sat_reading_75": 750,
+        "sat_25": 1410,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1686,
+        "undergraduate_enrollment": 17315,
+        "applicants": 56528,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 710,
+        "sat_math_75": 780,
+        "sat_reading_25": 700,
+        "sat_reading_75": 760,
+        "sat_25": 1410,
+        "sat_75": 1540,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1681,
+        "undergraduate_enrollment": 17597,
+        "applicants": 58951,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "University of North Carolina at Chapel Hill",
+    "control": "public",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?199120-University-of-North-Carolina-at-Chapel-Hill"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 640,
+        "sat_math_75": 760,
+        "sat_reading_25": 640,
+        "sat_reading_75": 730,
+        "sat_25": 1280,
+        "sat_75": 1490,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.25,
+        "undergraduate_enrollment": 19261,
+        "applicants": 41773,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 570,
+        "sat_math_75": 700,
+        "sat_reading_25": 570,
+        "sat_reading_75": 680,
+        "sat_25": 1140,
+        "sat_75": 1380,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.204,
+        "undergraduate_enrollment": 19722,
+        "applicants": 50729,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 680,
+        "sat_math_75": 780,
+        "sat_reading_25": 670,
+        "sat_reading_75": 750,
+        "sat_25": 1350,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1711,
+        "undergraduate_enrollment": 19921,
+        "applicants": 56341,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 690,
+        "sat_math_75": 780,
+        "sat_reading_25": 680,
+        "sat_reading_75": 750,
+        "sat_25": 1370,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1874,
+        "undergraduate_enrollment": 20556,
+        "applicants": 57902,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 700,
+        "sat_math_75": 780,
+        "sat_reading_25": 690,
+        "sat_reading_75": 750,
+        "sat_25": 1390,
+        "sat_75": 1530,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.1534,
+        "undergraduate_enrollment": 20752,
+        "applicants": 66535,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "University of Wisconsin-Madison",
+    "control": "public",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?240444-University-of-Wisconsin-Madison"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 650,
+        "sat_math_75": 770,
+        "sat_reading_25": 610,
+        "sat_reading_75": 690,
+        "sat_25": 1260,
+        "sat_75": 1460,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.5725,
+        "undergraduate_enrollment": 31651,
+        "applicants": 45915,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 680,
+        "sat_math_75": 780,
+        "sat_reading_25": 640,
+        "sat_reading_75": 720,
+        "sat_25": 1320,
+        "sat_75": 1500,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.6035,
+        "undergraduate_enrollment": 33506,
+        "applicants": 53781,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 690,
+        "sat_math_75": 780,
+        "sat_reading_25": 650,
+        "sat_reading_75": 730,
+        "sat_25": 1340,
+        "sat_75": 1510,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.4906,
+        "undergraduate_enrollment": 35184,
+        "applicants": 60214,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 700,
+        "sat_math_75": 780,
+        "sat_reading_25": 660,
+        "sat_reading_75": 730,
+        "sat_25": 1360,
+        "sat_75": 1510,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.4335,
+        "undergraduate_enrollment": 35665,
+        "applicants": 63505,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 710,
+        "sat_math_75": 780,
+        "sat_reading_25": 670,
+        "sat_reading_75": 740,
+        "sat_25": 1380,
+        "sat_75": 1520,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.452,
+        "undergraduate_enrollment": 36902,
+        "applicants": 65894,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  },
+  {
+    "name": "University of Illinois Urbana-Champaign",
+    "control": "public",
+    "source_urls": [
+      {
+        "label": "U.S. Department of Education College Scorecard profile",
+        "url": "https://collegescorecard.ed.gov/school/?145637-University-of-Illinois-Urbana-Champaign"
+      },
+      {
+        "label": "NCES IPEDS Admissions files (applicants)",
+        "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?fromIpeds=true&gotoReportId=7&rtid=1&year=2024"
+      }
+    ],
+    "years": {
+      "2020-21": {
+        "sat_math_25": 610,
+        "sat_math_75": 770,
+        "sat_reading_25": 590,
+        "sat_reading_75": 690,
+        "sat_25": 1200,
+        "sat_75": 1460,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.633,
+        "undergraduate_enrollment": 33001,
+        "applicants": 43473,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2021-22": {
+        "sat_math_25": 680,
+        "sat_math_75": 780,
+        "sat_reading_25": 640,
+        "sat_reading_75": 730,
+        "sat_25": 1320,
+        "sat_75": 1510,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.5966,
+        "undergraduate_enrollment": 33889,
+        "applicants": 47593,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2022-23": {
+        "sat_math_25": 670,
+        "sat_math_75": 780,
+        "sat_reading_25": 650,
+        "sat_reading_75": 730,
+        "sat_25": 1320,
+        "sat_75": 1510,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.4482,
+        "undergraduate_enrollment": 34031,
+        "applicants": 63257,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2023-24": {
+        "sat_math_25": 640,
+        "sat_math_75": 780,
+        "sat_reading_25": 630,
+        "sat_reading_75": 730,
+        "sat_25": 1270,
+        "sat_75": 1510,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.4369,
+        "undergraduate_enrollment": 34623,
+        "applicants": 67398,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      },
+      "2024-25": {
+        "sat_math_25": 660,
+        "sat_math_75": 780,
+        "sat_reading_25": 650,
+        "sat_reading_75": 740,
+        "sat_25": 1310,
+        "sat_75": 1520,
+        "sat_note": "approximate composite",
+        "admit_rate": 0.4237,
+        "undergraduate_enrollment": 36258,
+        "applicants": 73742,
+        "pct_submitting_sat": null,
+        "avg_gpa_unweighted": null
+      }
+    }
+  }
+]

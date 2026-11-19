@@ -1,0 +1,31 @@
+INSTNM,ADM_RATE,SATMT25,SATMT75,SATVR25,SATVR75,UGDS,APPLCN
+Harvard University,0.0501,740,800,720,780,6099,40248
+Stanford University,0.0519,720,800,700,770,6366,45227
+Massachusetts Institute of Technology,0.0726,780,800,730,780,4360,20075
+Yale University,0.0653,740,800,720,780,4701,35220
+Princeton University,0.0563,740,800,710,770,4688,32835
+Columbia University in the City of New York,0.0666,740,800,720,770,8148,40462
+University of Pennsylvania,0.0898,750,800,710,770,10507,42205
+Brown University,0.0767,730,790,710,770,6632,36793
+Cornell University,0.1071,720,790,680,750,14741,51500
+Dartmouth College,0.0922,730,790,710,770,4146,21392
+Duke University,0.0774,750,800,720,770,6650,39639
+University of Chicago,0.0731,770,800,730,770,7010,34350
+University of California-Berkeley,0.1748,660,790,650,740,30796,88062
+University of California-Los Angeles,0.1433,NA,NA,NA,NA,31636,108870
+University of Michigan-Ann Arbor,0.2611,680,780,660,740,31189,65021
+New York University,0.2109,700,800,670,740,27276,80210
+University of Southern California,0.1611,680,790,660,740,19521,59712
+Northwestern University,0.0931,730,790,700,760,8401,39263
+Johns Hopkins University,0.1106,750,800,720,760,5752,30115
+The University of Texas at Austin,0.3195,600,750,610,720,39624,57241
+Rice University,0.1089,750,800,710,770,4052,23455
+Vanderbilt University,0.1162,750,800,720,770,7052,36646
+Emory University,0.1917,700,790,680,740,6978,28211
+Georgetown University,0.1681,690,790,690,760,7119,21190
+Carnegie Mellon University,0.1727,760,800,700,760,6539,26189
+Georgia Institute of Technology-Main Campus,0.2134,700,790,670,740,15743,40852
+University of Virginia-Main Campus,0.2258,660,770,660,740,17076,40879
+University of North Carolina at Chapel Hill,0.25,640,760,640,730,19261,41773
+University of Wisconsin-Madison,0.5725,650,770,610,690,31651,45915
+University of Illinois Urbana-Champaign,0.633,610,770,590,690,33001,43473
