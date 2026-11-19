@@ -65,6 +65,9 @@
 
 footer{border-top:1px solid var(--footer-rule)}
 
+/* Analytics disclosure line, shown in every footer */
+footer .privacy{margin:12px auto 0;max-width:64ch;font-size:.78rem;line-height:1.5;color:rgba(255,255,255,.55)}
+
 /* ---------- Toggle button ---------- */
 .theme-toggle{
   display:inline-flex;align-items:center;justify-content:center;flex:none;
@@ -85,4 +88,12 @@ footer{border-top:1px solid var(--footer-rule)}
 }
 @media (max-width:520px){
   .theme-toggle{width:36px;height:36px}
+}
+/* Small phones (iPhone SE and similar): tighten the nav so the toggle fits */
+@media (max-width:400px){
+  .nav .nav-inner{gap:8px}
+  .nav .nav-actions{gap:6px}
+  .nav .brand{font-size:1rem}
+  .nav .nav-actions .btn{padding:8px 7px;font-size:.75rem}
+  .nav .nav-actions .btn-outline > span[aria-hidden="true"]{display:none}
 }

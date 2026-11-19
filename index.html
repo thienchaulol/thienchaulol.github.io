@@ -149,6 +149,7 @@ section{padding:88px 0;scroll-margin-top:76px}
 .nav-links a:hover{color:var(--accent)}
 .nav .btn{min-height:40px;padding:8px 20px;font-size:.94rem}
 .nav-toggle{display:none}
+.nav-links .nav-links-practice{display:none}
 @media (max-width:880px){
   .nav-links{
     display:none;position:absolute;top:100%;left:0;right:0;
@@ -173,6 +174,9 @@ section{padding:88px 0;scroll-margin-top:76px}
   .nav-inner{gap:12px}
   .nav-actions{gap:8px}
   .nav-ai{display:none!important}
+  /* phones: Practice SAT moves from the bar into the menu to make room */
+  .nav-practice{display:none!important}
+  .nav-links .nav-links-practice{display:block}
   .nav .btn{padding:8px 8px;font-size:.78rem}
 }
 
@@ -436,6 +440,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
       <li><a href="#subjects">Subjects</a></li>
       <li><a href="#process">How it works</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li class="nav-links-practice"><a href="sat-practice.html">Practice SAT</a></li>
     </ul>
     <div class="nav-actions">
       <!--<a href="ai.html" class="btn btn-outline nav-ai">AI in My Work</a>-->
@@ -718,6 +723,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
       <a href="https://www.linkedin.com/in/thienchau/" rel="noopener" target="_blank">LinkedIn</a>
     </div>
     <p class="disclaimer">Independent tutoring services offered in a personal capacity. Not affiliated with, sponsored by, or endorsed by any school or school district. &copy; 2026 Thien Chau. All rights reserved.</p>
+    <p class="privacy">Privacy: this site counts anonymous page visits with Cloudflare Web Analytics. No cookies, no personal data, no tracking across sites. SAT practice progress is saved only in your own browser.</p>
   </div>
 </footer>
 
@@ -757,5 +763,6 @@ footer p{color:rgba(255,255,255,.72);font-size:.94rem}
 }
 </script>
 
+<!-- Cloudflare Web Analytics: cookieless, anonymous page counts --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3a2720a59a8c459d94bf7eee6164bf5d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
