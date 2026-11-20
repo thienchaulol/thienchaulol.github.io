@@ -1,4 +1,6 @@
-# Matriculation Plotter (static version)
+# College Comparison
+
+Live at https://chaututor.com/college-comparison/. (It was first published at `/matriculation-plotter-static/`; that folder now only holds a redirect to this page.)
 
 A standalone chart of college admit rate against SAT midpoint, with a five-year selector, 30 colleges, and a sortable data table.
 
