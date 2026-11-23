@@ -23,10 +23,12 @@
 <meta name="twitter:title" content="AI in My Work — Mr. Chau">
 <meta name="twitter:description" content="AI does the groundwork, so my time goes to students.">
 <meta name="twitter:image" content="https://chaututor.com/images/social-card.jpg">
-<meta name="theme-color" content="#EEF7F2">
+<meta name="theme-color" content="#EEF4FB">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F6F5C'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='20' fill='%23FBFAF8' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
-
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D2F4F'/%3E%3Cpath d='M22 10.6A8 8 0 1 0 22 21.4' fill='none' stroke='%23FFE066' stroke-width='4.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Lexend:wght@500;600;700&amp;family=Nunito+Sans:wght@400;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="theme.css">
 <script src="theme.js"></script>
 <style>
@@ -35,50 +37,50 @@
    page reads as its own space. Text and buttons keep the dark green.
    ============================================================ */
 :root{
-  --ink:#1A1A18;
-  --ink-soft:#403D38;
-  --muted:#6B6862;
-  --paper:#EEF7F2;
+  --ink:#1D2F4F;
+  --ink-soft:#2C4066;
+  --muted:#4A5F80;
+  --paper:#EEF4FB;
   --surface:#FFFFFF;
-  --surface-warm:#E2F1E8;
-  --rule:#D3E6DA;
-  --rule-soft:#E3EFE8;
-  --accent:#1F6F5C;
-  --accent-deep:#175447;
-  --accent-wash:#DCEFE4;
+  --surface-warm:#E3ECF7;
+  --rule:#C5D5EA;
+  --rule-soft:#DCE6F3;
+  --accent:#1D2F4F;
+  --accent-deep:#0F1C33;
+  --accent-wash:#FFF4C2;
 
   --measure:70ch;
   --wrap:1120px;
   --r:8px;
   --r-lg:12px;
-  --shadow:0 1px 2px rgba(26,26,24,.05), 0 4px 12px rgba(26,26,24,.04);
+  --shadow:0 1px 2px rgba(29,47,79,.05), 0 4px 12px rgba(29,47,79,.04);
 
-  --serif:ui-serif, Georgia, "Times New Roman", serif;
-  --sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --serif:"Lexend", ui-rounded, "Segoe UI", system-ui, sans-serif;
+  --sans:"Nunito Sans", ui-rounded, "Segoe UI", system-ui, -apple-system, sans-serif;
 
   /* page-specific */
-  --wire:#C2BBAE;
-  --accent-line:#BBD3CA;
+  --wire:#A9BBD6;
+  --accent-line:#E3CE72;
 
   /* light values for tokens this page hard-coded */
-  --nav-bg:rgba(238,247,242,.9);
-  --hover-border:#B9D9C6;
-  --ai-resume-hover:#CDE8D8;
-  --ai-box-hover:#AFD3BE;
-  --ai-mock-ink:#DCD6CB;
-  --ai-mock-bar:#E6E1D8;
+  --nav-bg:rgba(238,244,251,.9);
+  --hover-border:#9DB4D3;
+  --ai-resume-hover:#FFEDA3;
+  --ai-box-hover:#9DB4D3;
+  --ai-mock-ink:#C9D6E8;
+  --ai-mock-bar:#DCE6F3;
   --ai-mock-warn:#EED9B5;
-  --ai-mock-soft:#EFEBE4;
+  --ai-mock-soft:#E8EFF8;
   --ai-flag-ink:#8A5A0B;
   --ai-flag-bg:#F7E8CC;
-  --ai-progress:#D3E3DD;
+  --ai-progress:#C5D5EA;
   --ai-todo-border:#D9A441;
   --ai-todo-bg:#FFF8E8;
   --ai-todo-ink:#7A5A12;
 }
 /* Dark mode: mint-tinted night version of this page's palette (shared tokens come from theme.css) */
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#101915;--surface:#16211C;--surface-warm:#1C2A23;--rule:#2A3B33;--rule-soft:#21302A;--accent-wash:#183128;--nav-bg:rgba(16,25,21,.85);--hover-border:#3C5A4C;--wire:#5C6A63;--accent-line:#2F5446;--ai-resume-hover:#1F3D32;--ai-box-hover:#3C5A4C;--ai-mock-ink:#3A3F3C;--ai-mock-bar:#2C322F;--ai-mock-warn:#5A4626;--ai-mock-soft:#262B28;--ai-flag-ink:#F0C67A;--ai-flag-bg:#4A3815;--ai-progress:#2A3B33;--ai-todo-border:#B98A2E;--ai-todo-bg:#2A2312;--ai-todo-ink:#EBCB85}}
-:root[data-theme="dark"]{--paper:#101915;--surface:#16211C;--surface-warm:#1C2A23;--rule:#2A3B33;--rule-soft:#21302A;--accent-wash:#183128;--nav-bg:rgba(16,25,21,.85);--hover-border:#3C5A4C;--wire:#5C6A63;--accent-line:#2F5446;--ai-resume-hover:#1F3D32;--ai-box-hover:#3C5A4C;--ai-mock-ink:#3A3F3C;--ai-mock-bar:#2C322F;--ai-mock-warn:#5A4626;--ai-mock-soft:#262B28;--ai-flag-ink:#F0C67A;--ai-flag-bg:#4A3815;--ai-progress:#2A3B33;--ai-todo-border:#B98A2E;--ai-todo-bg:#2A2312;--ai-todo-ink:#EBCB85}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#121D33;--surface:#1A2742;--surface-warm:#20304F;--rule:#34496E;--rule-soft:#243656;--accent-wash:#33301A;--nav-bg:rgba(18,29,51,.88);--hover-border:#4A6694;--wire:#5F7699;--accent-line:#6B5F2A;--ai-resume-hover:#3D3820;--ai-box-hover:#4A6694;--ai-mock-ink:#33476A;--ai-mock-bar:#28395A;--ai-mock-warn:#5A4626;--ai-mock-soft:#22314F;--ai-flag-ink:#F0C67A;--ai-flag-bg:#4A3815;--ai-progress:#34496E;--ai-todo-border:#B98A2E;--ai-todo-bg:#2A2312;--ai-todo-ink:#EBCB85}}
+:root[data-theme="dark"]{--paper:#121D33;--surface:#1A2742;--surface-warm:#20304F;--rule:#34496E;--rule-soft:#243656;--accent-wash:#33301A;--nav-bg:rgba(18,29,51,.88);--hover-border:#4A6694;--wire:#5F7699;--accent-line:#6B5F2A;--ai-resume-hover:#3D3820;--ai-box-hover:#4A6694;--ai-mock-ink:#33476A;--ai-mock-bar:#28395A;--ai-mock-warn:#5A4626;--ai-mock-soft:#22314F;--ai-flag-ink:#F0C67A;--ai-flag-bg:#4A3815;--ai-progress:#34496E;--ai-todo-border:#B98A2E;--ai-todo-bg:#2A2312;--ai-todo-ink:#EBCB85}
 
 
 *,*::before,*::after{box-sizing:border-box}
@@ -297,7 +299,7 @@ section{padding:88px 0;scroll-margin-top:76px}
 .ai-box-tag{display:block;font-size:.84rem;color:var(--muted);margin-top:3px;line-height:1.4}
 .ai-box.is-active{
   border-color:var(--accent);
-  box-shadow:0 0 0 3px var(--accent-wash), 0 6px 18px rgba(31,111,92,.14);
+  box-shadow:0 0 0 3px var(--accent-wash), 0 6px 18px rgba(29,47,79,.14);
 }
 .ai-box--strip{
   margin-top:14px;background:var(--accent-wash);
@@ -393,7 +395,7 @@ section{padding:88px 0;scroll-margin-top:76px}
   background:var(--footer-bg);color:#fff;
   font-size:.84rem;line-height:1.45;
   padding:10px 12px;border-radius:var(--r);
-  box-shadow:0 8px 24px rgba(26,26,24,.18);
+  box-shadow:0 8px 24px rgba(29,47,79,.18);
   opacity:0;visibility:hidden;pointer-events:none;
   transition:opacity .15s, visibility .15s;
 }
@@ -430,7 +432,7 @@ section{padding:88px 0;scroll-margin-top:76px}
   max-height:calc(100vh - 108px);overflow:auto;
   background:var(--surface);
   border:1px solid var(--rule);border-radius:var(--r-lg);
-  box-shadow:0 2px 6px rgba(26,26,24,.06), 0 18px 48px rgba(26,26,24,.14);
+  box-shadow:0 2px 6px rgba(29,47,79,.06), 0 18px 48px rgba(29,47,79,.14);
   padding:20px 24px 22px;
   opacity:0;transform:translateY(8px);
   transition:opacity .2s, transform .2s;

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#FBFAF8">
+  <meta name="theme-color" content="#EEF4FB">
   <meta name="description" content="Choose one to four Reading and Writing categories and the number of original SAT-style questions to practice, with shuffled choices and clear explanations.">
   <title>SAT Reading and Writing Practice — Mr. Chau</title>
   <link rel="canonical" href="https://chaututor.com/sat-reading-writing.html">
@@ -17,19 +17,22 @@
   <meta name="twitter:title" content="SAT Reading and Writing Practice — Mr. Chau">
   <meta name="twitter:description" content="Original SAT-style Reading and Writing questions by category, with clear explanations. Independent practice, not official SAT content.">
   <meta name="twitter:image" content="https://chaututor.com/images/social-sat-rw.jpg">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F6F5C'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='20' fill='%23FBFAF8' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D2F4F'/%3E%3Cpath d='M22 10.6A8 8 0 1 0 22 21.4' fill='none' stroke='%23FFE066' stroke-width='4.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Lexend:wght@500;600;700&amp;family=Nunito+Sans:wght@400;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="theme.css">
 <script src="theme.js"></script>
   <style>
     :root{
-      --ink:#1A1A18;--ink-soft:#403D38;--muted:#6B6862;
-      --paper:#FBFAF8;--surface:#FFFFFF;--surface-warm:#F4F1EB;
-      --rule:#E4E0D8;--rule-soft:#F0EDE7;
-      --accent:#1F6F5C;--accent-deep:#175447;--accent-wash:#EAF2EF;
+      --ink:#1D2F4F;--ink-soft:#2C4066;--muted:#4A5F80;
+      --paper:#EEF4FB;--surface:#FFFFFF;--surface-warm:#E3ECF7;
+      --rule:#C5D5EA;--rule-soft:#DCE6F3;
+      --accent:#1D2F4F;--accent-deep:#0F1C33;--accent-wash:#FFF4C2;
       --wrap:1120px;--r:8px;--r-lg:12px;
-      --shadow:0 1px 2px rgba(26,26,24,.05),0 4px 12px rgba(26,26,24,.04);
-      --serif:ui-serif,Georgia,"Times New Roman",serif;
-      --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      --shadow:0 1px 2px rgba(29,47,79,.05),0 4px 12px rgba(29,47,79,.04);
+      --serif:"Lexend", ui-rounded, "Segoe UI", system-ui, sans-serif;
+      --sans:"Nunito Sans", ui-rounded, "Segoe UI", system-ui, -apple-system, sans-serif;
     }
     *,*::before,*::after{box-sizing:border-box}
     html{-webkit-text-size-adjust:100%}
@@ -94,12 +97,12 @@
     .choice:disabled{cursor:default}
     .review-choice{cursor:default}
     .choice-key{display:inline-flex;align-items:center;justify-content:center;flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--rule);color:var(--ink);font-size:.82rem;font-weight:700}
-    .choice.is-correct{border-color:var(--accent);background:var(--accent-wash);color:var(--ink)}
-    .choice.is-correct .choice-key{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+    .choice.is-correct{border-color:var(--ok);background:var(--ok-wash);color:var(--ink)}
+    .choice.is-correct .choice-key{border-color:var(--ok);background:var(--ok);color:var(--paper)}
     .choice.is-incorrect{border-color:var(--danger);background:var(--danger-wash)}
     .choice.is-incorrect .choice-key{border-color:var(--danger);background:var(--danger);color:var(--on-accent)}
     .feedback{margin-top:28px;padding:22px;border:1px solid var(--rule);border-radius:var(--r);background:var(--surface)}
-    .feedback.is-correct{border-left:4px solid var(--accent)}
+    .feedback.is-correct{border-left:4px solid var(--ok)}
     .feedback.is-incorrect{border-left:4px solid var(--danger)}
     .feedback h3{font-family:var(--sans);font-size:1.05rem;margin-bottom:12px}
     .feedback h4{font-size:.95rem;color:var(--ink);margin:20px 0 8px}

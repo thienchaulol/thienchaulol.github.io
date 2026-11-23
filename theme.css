@@ -7,59 +7,82 @@
    ============================================================ */
 :root{
   --on-accent:#FFFFFF;
-  --nav-bg:rgba(251,250,248,.88);
-  --hover-border:#D4CFC4;
+  --nav-bg:rgba(238,244,251,.9);
+  --hover-border:#9DB4D3;
   --danger:#A33E35;
   --danger-wash:#FBF0EF;
-  --footer-bg:#1A1A18;
+  --footer-bg:#1D2F4F;
   --footer-rule:transparent;
+  --paper-grid:#D6E4F3;
+  --pen:#B93A22;
+  --hl:#FFE066;
+  --hl-ink:#1D2F4F;
+  --line:#1D2F4F;
+  --offset:#1D2F4F;
+  --band:#1D2F4F;
+  --ok:#2A7148;
+  --ok-wash:#E3F4E9;
   color-scheme:light;
 }
 
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --ink:#ECE9E3;
-    --ink-soft:#CBC6BD;
-    --muted:#9D988F;
-    --paper:#141413;
-    --surface:#1C1C1A;
-    --surface-warm:#242320;
-    --rule:#34322E;
-    --rule-soft:#292825;
-    --accent:#5FBE9F;
-    --accent-deep:#86D3BA;
-    --accent-wash:#1A2C26;
-    --on-accent:#0C1914;
-    --nav-bg:rgba(20,20,19,.85);
-    --hover-border:#4A4741;
+    --ink:#E8EEF7;
+    --ink-soft:#C9D5E8;
+    --muted:#A3B6D2;
+    --paper:#121D33;
+    --surface:#1A2742;
+    --surface-warm:#20304F;
+    --rule:#34496E;
+    --rule-soft:#243656;
+    --accent:#FFE066;
+    --accent-deep:#FFEB99;
+    --accent-wash:#33301A;
+    --on-accent:#121D33;
+    --nav-bg:rgba(18,29,51,.88);
+    --hover-border:#4A6694;
     --danger:#E58378;
     --danger-wash:#2D1B19;
-    --footer-bg:#0C0C0B;
-    --footer-rule:#2A2926;
+    --footer-bg:#0B1426;
+    --footer-rule:#2A3D60;
     --shadow:0 1px 2px rgba(0,0,0,.35), 0 4px 12px rgba(0,0,0,.25);
+    --paper-grid:#1D2B47;
+    --pen:#FF9B85;
+    --line:#4A6694;
+    --offset:#0B1426;
+    --band:#0B1426;
+    --ok:#74D39C;
+    --ok-wash:#173226;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --ink:#ECE9E3;
-  --ink-soft:#CBC6BD;
-  --muted:#9D988F;
-  --paper:#141413;
-  --surface:#1C1C1A;
-  --surface-warm:#242320;
-  --rule:#34322E;
-  --rule-soft:#292825;
-  --accent:#5FBE9F;
-  --accent-deep:#86D3BA;
-  --accent-wash:#1A2C26;
-  --on-accent:#0C1914;
-  --nav-bg:rgba(20,20,19,.85);
-  --hover-border:#4A4741;
+  --ink:#E8EEF7;
+  --ink-soft:#C9D5E8;
+  --muted:#A3B6D2;
+  --paper:#121D33;
+  --surface:#1A2742;
+  --surface-warm:#20304F;
+  --rule:#34496E;
+  --rule-soft:#243656;
+  --accent:#FFE066;
+  --accent-deep:#FFEB99;
+  --accent-wash:#33301A;
+  --on-accent:#121D33;
+  --nav-bg:rgba(18,29,51,.88);
+  --hover-border:#4A6694;
   --danger:#E58378;
   --danger-wash:#2D1B19;
-  --footer-bg:#0C0C0B;
-  --footer-rule:#2A2926;
+  --footer-bg:#0B1426;
+  --footer-rule:#2A3D60;
   --shadow:0 1px 2px rgba(0,0,0,.35), 0 4px 12px rgba(0,0,0,.25);
+  --paper-grid:#1D2B47;
+  --pen:#FF9B85;
+  --line:#4A6694;
+  --offset:#0B1426;
+  --band:#0B1426;
+  --ok:#74D39C;
+  --ok-wash:#173226;
   color-scheme:dark;
 }
 
@@ -96,4 +119,53 @@ footer .privacy{margin:12px auto 0;max-width:64ch;font-size:.78rem;line-height:1
   .nav .brand{font-size:1rem}
   .nav .nav-actions .btn{padding:8px 7px;font-size:.75rem}
   .nav .nav-actions .btn-outline > span[aria-hidden="true"]{display:none}
+}
+
+/* ============================================================
+   Graph-paper look, shared by every page.
+   The "html" prefix lets these win over each page's own <style>.
+   ============================================================ */
+html body{
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--paper-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--paper-grid) 1px, transparent 1px);
+  background-size:24px 24px;
+}
+@media (max-width:700px){ html body{background-size:28px 28px} }
+html ::selection{background:var(--hl);color:var(--hl-ink)}
+
+/* Section labels read like a note in the margin, in red pen */
+html .eyebrow{
+  font-family:"Caveat", "Segoe Print", "Bradley Hand", cursive;
+  font-size:1.65rem;font-weight:700;line-height:1.1;
+  text-transform:none;letter-spacing:0;color:var(--pen);
+  transform:rotate(-1.5deg);transform-origin:left center;
+}
+html .center > .eyebrow, html .eyebrow.center{transform-origin:center}
+
+/* Buttons: bolder outline, rounded, a small offset shadow like a sticky note */
+html .btn{border-width:2px;border-radius:10px;font-weight:700}
+html .btn-primary{border-color:var(--accent);box-shadow:3px 3px 0 var(--hl)}
+html .btn-primary:hover{border-color:var(--accent-deep);box-shadow:3px 3px 0 var(--hl)}
+:root[data-theme="dark"] .btn-primary,:root[data-theme="dark"] .btn-primary:hover{box-shadow:3px 3px 0 var(--offset)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .btn-primary,
+  :root:not([data-theme="light"]) .btn-primary:hover{box-shadow:3px 3px 0 var(--offset)}
+}
+html .btn-ghost{border-color:var(--line);background:var(--surface)}
+html .btn-outline{border-color:var(--line);color:var(--ink)}
+html .btn-outline:hover{color:var(--ink)}
+
+/* Highlighter for a key phrase */
+.hl{
+  background:var(--hl);color:var(--hl-ink);
+  padding:0 .18em;border-radius:4px;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+}
+
+/* Links inside running text get an underline, since link and text are both navy */
+html main p a:not([class]), html main li a:not([class]){
+  text-decoration:underline;text-decoration-thickness:2px;
+  text-underline-offset:3px;text-decoration-color:var(--hl);
 }

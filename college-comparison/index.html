@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#FBFAF8">
+<meta name="theme-color" content="#EEF4FB">
 <title>College Comparison — Mr. Chau</title>
 <meta name="description" content="Compare college admit rates, SAT ranges, and applicant totals for 30 colleges, with sources for every number.">
 <link rel="canonical" href="https://chaututor.com/college-comparison/">
@@ -12,48 +12,51 @@
 <meta property="og:title" content="College Comparison: Admit Rates and SAT Ranges — Mr. Chau">
 <meta property="og:description" content="Compare historical college admit rates, SAT ranges, applicants, and enrollment for 30 popular colleges.">
 <meta property="og:url" content="https://chaututor.com/college-comparison/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F6F5C'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='20' fill='%23FBFAF8' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D2F4F'/%3E%3Cpath d='M22 10.6A8 8 0 1 0 22 21.4' fill='none' stroke='%23FFE066' stroke-width='4.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Lexend:wght@500;600;700&amp;family=Nunito+Sans:wght@400;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="../theme.css">
 <script src="../theme.js"></script>
 <style>
 /* Site tokens (light). Dark values come from ../theme.css; chart-only dark values are below. */
 :root{
-  --ink:#1A1A18;
-  --ink-soft:#403D38;
-  --muted:#6B6862;
-  --paper:#FBFAF8;
+  --ink:#1D2F4F;
+  --ink-soft:#2C4066;
+  --muted:#4A5F80;
+  --paper:#EEF4FB;
   --surface:#FFFFFF;
-  --surface-warm:#F4F1EB;
-  --rule:#E4E0D8;
-  --rule-soft:#F0EDE7;
-  --accent:#1F6F5C;
-  --accent-deep:#175447;
-  --accent-wash:#EAF2EF;
+  --surface-warm:#E3ECF7;
+  --rule:#C5D5EA;
+  --rule-soft:#DCE6F3;
+  --accent:#1D2F4F;
+  --accent-deep:#0F1C33;
+  --accent-wash:#FFF4C2;
   --wrap:1120px;
   --r:8px;
   --r-lg:12px;
-  --shadow:0 1px 2px rgba(26,26,24,.05), 0 4px 12px rgba(26,26,24,.04);
-  --serif:ui-serif, Georgia, "Times New Roman", serif;
-  --sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --shadow:0 1px 2px rgba(29,47,79,.05), 0 4px 12px rgba(29,47,79,.04);
+  --serif:"Lexend", ui-rounded, "Segoe UI", system-ui, sans-serif;
+  --sans:"Nunito Sans", ui-rounded, "Segoe UI", system-ui, -apple-system, sans-serif;
   /* chart */
-  --private:#1F6F5C;
+  --private:#2557A7;
   --public:#B8651A;
   --you:#7A1F5C;
-  --bar:#CBC5BA;
-  --leader:#8F8A81;
+  --bar:#B3C4DC;
+  --leader:#7D91B0;
   --plot-bg:#FFFFFF;
-  --grid:#EEEAE3;
-  --axis:#A39E95;
+  --grid:#E1E9F4;
+  --axis:#8DA0BE;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --private:#5FBE9F; --public:#E39B55; --you:#D98BC2; --bar:#4F4C46; --leader:#8A857C;
-    --plot-bg:#1C1C1A; --grid:#2A2926; --axis:#5A5650;
+    --private:#7FB0FF; --public:#E39B55; --you:#D98BC2; --bar:#4A5F80; --leader:#8DA0BE;
+    --plot-bg:#1A2742; --grid:#2A3D60; --axis:#5F7699;
   }
 }
 :root[data-theme="dark"]{
-  --private:#5FBE9F; --public:#E39B55; --you:#D98BC2; --bar:#4F4C46; --leader:#8A857C;
-  --plot-bg:#1C1C1A; --grid:#2A2926; --axis:#5A5650;
+  --private:#7FB0FF; --public:#E39B55; --you:#D98BC2; --bar:#4A5F80; --leader:#8DA0BE;
+  --plot-bg:#1A2742; --grid:#2A3D60; --axis:#5F7699;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -124,7 +127,7 @@ svg.chart{display:block;width:100%;height:auto}
 svg.chart circle.school{transition:opacity .12s}
 svg.chart.focusing circle.school:not(.active){opacity:.3}
 svg.chart circle.school.active{fill-opacity:.9;stroke-width:3}
-.tip{position:absolute;pointer-events:none;z-index:5;min-width:220px;max-width:260px;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:10px 12px;font-size:12px;line-height:1.45;box-shadow:0 6px 18px rgba(26,26,24,.14)}
+.tip{position:absolute;pointer-events:none;z-index:5;min-width:220px;max-width:260px;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:10px 12px;font-size:12px;line-height:1.45;box-shadow:0 6px 18px rgba(29,47,79,.14)}
 .tip[hidden]{display:none}
 .tip strong{display:block;font-size:13px;margin-bottom:6px;color:var(--ink)}
 .tip div{display:flex;justify-content:space-between;gap:14px;padding:2px 0;color:var(--muted)}
@@ -162,7 +165,7 @@ tr.hl td{background:var(--surface-warm)}
 .sources{position:relative;margin-top:24px;padding-top:12px;border-top:1px solid var(--rule)}
 .sources > button{background:none;border:0;color:var(--accent);font-size:13px;padding:6px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .sources > button:hover,.sources > button[aria-expanded="true"]{color:var(--accent-deep)}
-.sources .panelbox{display:none;position:absolute;left:0;bottom:46px;z-index:20;width:min(380px,calc(100vw - 32px));max-height:60vh;overflow-y:auto;text-align:left;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:14px 16px;box-shadow:0 10px 28px rgba(26,26,24,.16)}
+.sources .panelbox{display:none;position:absolute;left:0;bottom:46px;z-index:20;width:min(380px,calc(100vw - 32px));max-height:60vh;overflow-y:auto;text-align:left;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);padding:14px 16px;box-shadow:0 10px 28px rgba(29,47,79,.16)}
 .sources.open .panelbox{display:block}
 .panelbox h3{margin:0 0 10px;font-size:13px;color:var(--ink)}
 .srow{padding:7px 0;border-top:1px solid var(--rule);font-size:12px}
