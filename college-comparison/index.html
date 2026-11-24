@@ -100,7 +100,7 @@ h1{font-family:var(--serif);color:var(--ink);font-weight:600;font-size:clamp(2re
 .intro p.lede{margin:0;color:var(--muted);font-size:1.05rem;max-width:66ch}
 .datanote{margin:14px 0 0;font-size:.82rem;color:var(--muted)}
 
-.panel{background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:22px 24px 18px}
+.panel{background:var(--surface);border:2px solid var(--line);border-radius:14px;box-shadow:6px 6px 0 var(--offset);padding:22px 24px 18px}
 .controls{display:flex;flex-wrap:wrap;gap:22px 32px;align-items:flex-end;margin-bottom:18px}
 .field{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--muted)}
 .field input[type=number]{height:38px;padding:0 11px;border:1px solid var(--rule);border-radius:var(--r);background:var(--paper);font-size:14px;color:var(--ink);width:140px}
@@ -146,6 +146,16 @@ svg.chart circle.school.active{fill-opacity:.9;stroke-width:3}
 .below{display:grid;grid-template-columns:minmax(0,1fr);gap:30px;margin-top:40px}
 h2.sec{margin:0 0 12px;font:600 1.2rem var(--serif);color:var(--ink)}
 .tablewrap{overflow-x:auto}
+/* Solid cards under the table, the not-plotted list and the notes, so the graph paper stays behind them */
+.below > section,.below > aside{
+  background:var(--surface);border:2px solid var(--line);border-radius:14px;
+  padding:22px 24px 18px;
+}
+.below > aside{background:var(--surface-warm)}
+.below > aside p:last-child{margin-bottom:0}
+tbody tr:hover td{background:var(--accent-wash)}
+tbody tr:hover td,tbody tr:hover td .tag{color:var(--ink)}
+@media (max-width:640px){.below > section,.below > aside{padding:16px 12px 14px}}
 table{border-collapse:collapse;width:100%;font-size:13px}
 th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--rule);white-space:nowrap}
 td{color:var(--ink-soft)}

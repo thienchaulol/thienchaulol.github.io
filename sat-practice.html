@@ -75,15 +75,25 @@
     .eyebrow{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:16px}
     .lede{font-size:1.125rem;color:var(--muted);max-width:60ch;margin-bottom:36px}
     .subject-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-    .subject-card{display:flex;flex-direction:column;align-items:flex-start;min-height:240px;padding:28px;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r-lg);box-shadow:var(--shadow)}
+    .subject-card{display:flex;flex-direction:column;align-items:flex-start;min-height:240px;padding:28px;background:var(--surface);border:2px solid var(--line,var(--rule));border-radius:14px;box-shadow:5px 5px 0 var(--offset,transparent)}
     .subject-card h2{margin-bottom:10px}
     .subject-card p{color:var(--muted);margin-bottom:24px}
     .subject-card .btn{margin-top:auto}
-    .notice{margin-top:32px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--accent-wash);font-size:.94rem}
+    .notice{margin-top:32px;padding:14px 18px;border:2px dashed var(--rule);border-radius:12px;background:var(--surface);font-size:.94rem}
+    .official{margin-top:64px}
+    .official .lede{margin-bottom:24px}
+    .official-card{padding:28px 30px;background:var(--surface);border:2px solid var(--line,var(--rule));border-radius:14px;box-shadow:5px 5px 0 var(--hl,transparent)}
+    .official-card h3{margin:0 0 6px;font:600 1.3rem var(--serif);color:var(--ink)}
+    .official-card .tag{display:inline-block;margin:0 0 16px;padding:3px 10px;border-radius:99px;background:var(--accent-wash);color:var(--accent-deep);font-size:.8rem;font-weight:700}
+    .official-card ol{margin:0 0 22px;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+    .official-card ol strong{color:var(--ink)}
+    .official-card .btn{gap:8px}
+    .also{margin:18px 0 0;font-size:.98rem}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     footer{background:var(--footer-bg);color:rgba(255,255,255,.72);padding:25px 0;text-align:center;font-size:.86rem}
     footer p{margin:0}
     footer a{color:#fff}
-    @media(max-width:700px){.wrap,.nav-inner{padding:0 20px}main{padding:48px 0}.subject-grid{grid-template-columns:1fr}.subject-card{min-height:0}.nav-inner{gap:14px}.nav-actions{gap:10px}}
+    @media(max-width:700px){.wrap,.nav-inner{padding:0 20px}main{padding:48px 0}.official-card{padding:22px 20px}.subject-grid{grid-template-columns:1fr}.subject-card{min-height:0}.nav-inner{gap:14px}.nav-actions{gap:10px}}
     @media(max-width:520px){.nav-inner{gap:12px}.nav-actions{gap:8px}.nav .btn{padding:8px 8px;font-size:.78rem}}
     @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}.btn-primary:hover{transform:translateY(-1px)}}
     @view-transition{navigation:auto}
@@ -120,7 +130,23 @@
           <a class="btn btn-primary" href="sat-reading-writing.html">Practice Reading and Writing</a>
         </article>
       </div>
-      <p class="notice"><strong>Independent practice, not official SAT content.</strong> Not affiliated with or endorsed by the College Board.</p>
+    </section>
+    <section class="chooser official" aria-labelledby="official-title">
+      <p class="eyebrow">keep going</p>
+      <h2 id="official-title">Keep practicing with official questions</h2>
+      <p class="lede">When you want real SAT questions, the College Board&rsquo;s free question bank has thousands of them, sorted by topic and difficulty.</p>
+      <div class="official-card">
+        <h3>College Board Educator Question Bank</h3>
+        <span class="tag">Free &middot; no sign-in</span>
+        <ol>
+          <li>Choose <strong>SAT</strong>, then <strong>Math</strong> or <strong>Reading and Writing</strong>, then a topic.</li>
+          <li>Use the <strong>Difficulty</strong> filter. Tick <strong>Exclude Active Questions</strong> to skip questions from the full practice tests, if you plan to take those later.</li>
+          <li>Click any question ID to try it, or export a set as a PDF with answers to check your work.</li>
+        </ol>
+        <a class="btn btn-primary" href="https://satsuiteeducatorquestionbank.collegeboard.org/" target="_blank" rel="noopener">Open the question bank <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h4v4M13 3 7 9M12 9.5V13H3V4h3.5"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+      <p class="also">Ready for a full timed test? Try the College Board&rsquo;s free <a href="https://bluebook.collegeboard.org/students" target="_blank" rel="noopener">Bluebook app<span class="sr-only"> (opens in a new tab)</span></a>.</p>
+      <p class="notice"><strong>Independent practice, not official SAT content.</strong> Not affiliated with or endorsed by the College Board. Links to College Board resources are provided for convenience.</p>
     </section>
   </main>
   <footer>
